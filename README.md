@@ -1,4 +1,4 @@
-# Delphes_Analysis
+# Brown Delphes Analysis
 
 Setup Area (LPC):
 ```
@@ -11,4 +11,3 @@ Checkout Repository:
 ```
 git clone https://github.com/agarabed/Delphes_Analysis.git Delphes_Analysis
 ```
-
