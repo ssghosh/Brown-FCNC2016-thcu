@@ -7,4 +7,8 @@ Setup Area (LPC):
     cmsenv
 ```
 
-Checkout: git clone https://github.com/agarabed/Delphes_Analysis.git Delphes_Analysis
+Checkout Repository: 
+```
+git clone https://github.com/agarabed/Delphes_Analysis.git Delphes_Analysis
+```
+
