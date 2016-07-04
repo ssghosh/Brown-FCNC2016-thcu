@@ -1,6 +1,6 @@
 #include <iostream>
 
-R__ADD_INCLUDE_PATH(delphes)
+//R__ADD_INCLUDE_PATH(delphes)
 #ifdef __CLING__
 R__LOAD_LIBRARY(delphes/libDelphes)
 #include "classes/DelphesClasses.h"
