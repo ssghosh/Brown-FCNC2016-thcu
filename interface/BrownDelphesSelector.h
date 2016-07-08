@@ -59,20 +59,36 @@ public:
     Jet *jet;
     
     TClonesArray *branchEvent;
-    TClonesArray *branchScalarHT;
-    TClonesArray *branchMissingET;
     TClonesArray *branchElectron;
     TClonesArray *branchMuonTight;
+    TClonesArray *branchMissingET;
+    TClonesArray *branchGenMissingET;
+    TClonesArray *branchPUPPIMissingET;
+    TClonesArray *branchGenPileUpMissingET;
+    TClonesArray *branchScalarHT;
     TClonesArray *branchJet;
+    TClonesArray *branchGenJet;
+    TClonesArray *branchGenJetAK8;
+    TClonesArray *branchJetPUPPI;
+    TClonesArray *branchJetAK8;
+    TClonesArray *branchJetPUPPIAK8;
     //    TClonesArray *branchParticle;
     
     ExRootTreeBranch *branchEvent_new;
-    ExRootTreeBranch *branchScalarHT_new;
-    ExRootTreeBranch *branchMissingET_new;
     ExRootTreeBranch *branchElectron_new;
     ExRootTreeBranch *branchMuonTight_new;
+    ExRootTreeBranch *branchMissingET_new;
+    ExRootTreeBranch *branchGenMissingET_new;
+    ExRootTreeBranch *branchPUPPIMissingET_new;
+    ExRootTreeBranch *branchGenPileUpMissingET_new;
+    ExRootTreeBranch *branchScalarHT_new;
     ExRootTreeBranch *branchJet_new;
-    //    ExRootTreeBranch *branchParticle_new;
+    ExRootTreeBranch *branchGenJet_new;
+    ExRootTreeBranch *branchGenJetAK8_new;
+    ExRootTreeBranch *branchJetPUPPI_new;
+    ExRootTreeBranch *branchJetAK8_new;
+    ExRootTreeBranch *branchJetPUPPIAK8_new;
+    //    TClonesArray *branchParticle;
     
     vector <Electron*> GoodElectrons;
     vector <Muon*> GoodMuons;
@@ -119,21 +135,53 @@ void BrownDelphesSelector::Init(const char *inString, const char *outFileName, c
     branchEvent                 = treeReader->UseBranch("Event");
     branchElectron              = treeReader->UseBranch("Electron");
     branchMuonTight             = treeReader->UseBranch("MuonTight");
-    branchJet                   = treeReader->UseBranch("Jet");
+    
     branchMissingET             = treeReader->UseBranch("MissingET");
+    branchGenMissingET          = treeReader->UseBranch("GenMissingET");
+    branchPUPPIMissingET        = treeReader->UseBranch("PuppiMissingET");
+    branchGenPileUpMissingET    = treeReader->UseBranch("GenPileUpMissingET");
+    
+    
     branchScalarHT              = treeReader->UseBranch("ScalarHT");
+    
+    branchJet                   = treeReader->UseBranch("Jet");
+    branchGenJet                = treeReader->UseBranch("GenJet");
+    branchGenJetAK8             = treeReader->UseBranch("GenJetAK8");
+    branchJetPUPPI              = treeReader->UseBranch("JetPUPPI");
+    branchJetAK8                = treeReader->UseBranch("JetAK8");
+    branchJetPUPPIAK8           = treeReader->UseBranch("JetPUPPIAK8");
     //    branchParticle              = treeReader->UseBranch("Particle");
     
     outFile = new TFile(outFileName, "RECREATE");
     treeWriter = new ExRootTreeWriter(outFile, "Delphes");
     
+    branchEvent_new                 = treeWriter->NewBranch("Event", Event::Class());
+    branchElectron_new              = treeWriter->NewBranch("Electron", Electron::Class());
+    branchMuonTight_new             = treeWriter->NewBranch("MuonTight", Muon::Class());
     
-    branchEvent_new         = treeWriter->NewBranch("Event", Event::Class());
-    branchMissingET_new     = treeWriter->NewBranch("MissingET", MissingET::Class());
-    branchElectron_new      = treeWriter->NewBranch("Electron", Electron::Class());
-    branchMuonTight_new     = treeWriter->NewBranch("MuonTight", Muon::Class());
-    branchJet_new           = treeWriter->NewBranch("Jet", Jet::Class());
-    branchScalarHT_new      = treeWriter->NewBranch("ScalarHT", ScalarHT::Class());
+    branchMissingET_new             = treeWriter->NewBranch("MissingET", MissingET::Class());
+    branchGenMissingET_new          = treeWriter->NewBranch("GenMissingET", MissingET::Class());
+    branchPUPPIMissingET_new        = treeWriter->NewBranch("PuppiMissingET", MissingET::Class());
+    branchGenPileUpMissingET_new    = treeWriter->NewBranch("GenPileUpMissingET", MissingET::Class());
+    
+    
+    branchScalarHT_new              = treeWriter->NewBranch("ScalarHT", ScalarHT::Class());
+    
+    branchJet_new                   = treeWriter->NewBranch("Jet", Jet::Class());
+    branchGenJet_new                = treeWriter->NewBranch("GenJet", Jet::Class());
+    branchGenJetAK8_new             = treeWriter->NewBranch("GenJetAK8", Jet::Class());
+    branchJetPUPPI_new              = treeWriter->NewBranch("JetPUPPI", Jet::Class());
+    branchJetAK8_new                = treeWriter->NewBranch("JetAK8", Jet::Class());
+    branchJetPUPPIAK8_new           = treeWriter->NewBranch("JetPUPPIAK8", Jet::Class());
+    //    branchParticle_new              = treeWriter->NewBranch("Particle");
+    
+    
+//    branchEvent_new         = treeWriter->NewBranch("Event", Event::Class());
+//    branchMissingET_new     = treeWriter->NewBranch("MissingET", MissingET::Class());
+//    branchElectron_new      = treeWriter->NewBranch("Electron", Electron::Class());
+//    branchMuonTight_new     = treeWriter->NewBranch("MuonTight", Muon::Class());
+//    branchJet_new           = treeWriter->NewBranch("Jet", Jet::Class());
+//    branchScalarHT_new      = treeWriter->NewBranch("ScalarHT", ScalarHT::Class());
     //    branchParticle_new      = treeWriter->NewBranch("Particle", GenParticle::Class());
     
     cout << "INITIALIZED!" << endl;
@@ -283,8 +331,9 @@ vector <Jet*> BrownDelphesSelector::JetHandler(){
 //================================================================================
 void BrownDelphesSelector::Fill(){
     
-    MissingET* met_new = static_cast<MissingET*>(branchMissingET_new->NewEntry());
-    *met_new = *met;
+    Event *event = (Event*)branchEvent->At(0);
+    Event *event_new = static_cast<Event*>(branchEvent_new->NewEntry());
+    *event_new = *event;
     
     vector <Electron*> GoodElectrons_new;
     for(Int_t i = 0; i < GoodElectrons.size(); i++){
@@ -298,26 +347,66 @@ void BrownDelphesSelector::Fill(){
         *GoodMuons_new[i] = *GoodMuons[i];
     }
     
+    MissingET* met_new = static_cast<MissingET*>(branchMissingET_new->NewEntry());
+    *met_new = *met;
+    
+    MissingET* gen_met = (MissingET*)branchGenMissingET->At(0);
+    MissingET* gen_met_new = static_cast<MissingET*>(branchGenMissingET_new->NewEntry());
+    *gen_met_new = *gen_met;
+    
+    MissingET* puppi_met = (MissingET*)branchPUPPIMissingET->At(0);
+    MissingET* puppi_met_new = static_cast<MissingET*>(branchPUPPIMissingET_new->NewEntry());
+    *puppi_met_new = *puppi_met;
+    
+    MissingET* gen_pileup_met = (MissingET*)branchGenPileUpMissingET->At(0);
+    MissingET* gen_pileup_met_new = static_cast<MissingET*>(branchGenPileUpMissingET_new->NewEntry());
+    *gen_pileup_met_new = *gen_pileup_met;
+    
+    ScalarHT *ht = (ScalarHT*)branchScalarHT->At(0);
+    ScalarHT* ht_new = static_cast<ScalarHT*>(branchScalarHT_new->NewEntry());
+    *ht_new = *ht;
+    
     vector <Jet*> GoodJets_new;
     for(Int_t i = 0; i < GoodJets.size(); i++){
         GoodJets_new.push_back(static_cast<Jet*>(branchJet_new->NewEntry()));
         *GoodJets_new[i] = *GoodJets[i];
     }
-    
-    Event *event = (Event*)branchEvent->At(0);
-    Event *event_new = static_cast<Event*>(branchEvent_new->NewEntry());
-    *event_new = *event;
-    
+    vector<Jet*> GenJet_new;
+    for(Int_t i = 0; i < branchGenJet->GetEntries(); i++){
+        GenJet_new.push_back(static_cast<Jet*>(branchGenJet_new->NewEntry()));
+        Jet *GenJet = (Jet*)branchGenJet->At(i);
+        *GenJet_new[i] = *GenJet;
+    }
+    vector<Jet*> GenJetAK8_new;
+    for(Int_t i = 0; i < branchGenJetAK8->GetEntries(); i++){
+        GenJetAK8_new.push_back(static_cast<Jet*>(branchGenJetAK8_new->NewEntry()));
+        Jet *GenJetAK8 = (Jet*)branchGenJetAK8->At(i);
+        *GenJetAK8_new[i] = *GenJetAK8;
+    }
+    vector<Jet*> JetPUPPI_new;
+    for(Int_t i = 0; i < branchJetPUPPI->GetEntries(); i++){
+        JetPUPPI_new.push_back(static_cast<Jet*>(branchJetPUPPI_new->NewEntry()));
+        Jet *JetPUPPI = (Jet*)branchJetPUPPI->At(i);
+        *JetPUPPI_new[i] = *JetPUPPI;
+    }
+    vector<Jet*> JetAK8_new;
+    for(Int_t i = 0; i < branchJetAK8->GetEntries(); i++){
+        JetAK8_new.push_back(static_cast<Jet*>(branchJetAK8_new->NewEntry()));
+        Jet *JetAK8 = (Jet*)branchJetAK8->At(i);
+        *JetAK8_new[i] = *JetAK8;
+    }
+    vector<Jet*> JetPUPPIAK8_new;
+    for(Int_t i = 0; i < branchJetPUPPIAK8->GetEntries(); i++){
+        JetPUPPIAK8_new.push_back(static_cast<Jet*>(branchJetPUPPIAK8_new->NewEntry()));
+        Jet *JetPUPPIAK8 = (Jet*)branchJetPUPPIAK8->At(i);
+        *JetPUPPIAK8_new[i] = *JetPUPPIAK8;
+    }
     //    vector<GenParticle*> Particle_new;
     //    for(Int_t i = 0; i < branchParticle->GetEntries(); i++){
     //        Particle_new.push_back(static_cast<GenParticle*>(branchParticle_new->NewEntry()));
     //        GenParticle *particle = (GenParticle*)branchParticle->At(i);
     //        *Particle_new[i] = *particle;
     //    }
-    
-    ScalarHT *ht = (ScalarHT*)branchScalarHT->At(0);
-    ScalarHT* ht_new = static_cast<ScalarHT*>(branchScalarHT_new->NewEntry());
-    *ht_new = *ht;
     
     treeWriter->Fill();
     treeWriter->Clear();
