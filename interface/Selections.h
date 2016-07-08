@@ -1,6 +1,6 @@
 #include <iostream>
 
-//R__ADD_INCLUDE_PATH(delphes)
+R__ADD_INCLUDE_PATH(delphes)
 #ifdef __CLING__
 R__LOAD_LIBRARY(delphes/libDelphes)
 #include "classes/DelphesClasses.h"
@@ -76,6 +76,19 @@ Selection::Selection(TString typeString){
         minJets = 2;
         maxJets = 1000;
         
+    }
+    else if(analysisType == "SnowMass"){
+        minElec_pt = 30.0;
+	maxElec_eta = 2.5;
+
+	minMuon_pt = 30.0;
+	maxMuon_eta = 2.5;	
+
+	minJet_pt = 30.0;
+	maxJet_eta = 2.5;
+
+	minTightLeptons = 1;
+ 	maxTightLeptons = 1;	
     }
     else{ cout << "WARNING: No Selection Specified" << endl; }
 }

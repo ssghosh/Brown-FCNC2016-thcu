@@ -1,0 +1,1 @@
+root -l -q Delphes_Analysis/src/SelectorExample.C'("/eos/uscms/store/user/snowmass/DelphesFromLHE_2016June/tt-4p-0-600-v1510_14TEV_200PU/","/eos/uscms/store/user/snowmass/agarabed/SingleLeptonTest/tt-4p-0-600-v1510_14TEV_200PU.root","Delphes")'
