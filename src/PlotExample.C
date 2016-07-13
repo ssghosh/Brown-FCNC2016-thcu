@@ -15,7 +15,7 @@
 using namespace std;
 
 R__ADD_INCLUDE_PATH(delphes)
-void PlotExample(TString RFileName){
+void PlotExample(){
     Float_t lumi = 1000.0*300.0;
     
     map<TString, TLegend*> legs;
