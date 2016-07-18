@@ -155,7 +155,7 @@ void BrownDelphesSelector::Init(const char *inString, const char *outFileName, c
     outFile = new TFile(outFileName, "RECREATE");
     treeWriter = new ExRootTreeWriter(outFile, "Delphes");
     
-    branchEvent_new                 = treeWriter->NewBranch("Event", Event::Class());
+    branchEvent_new                 = treeWriter->NewBranch("Event", HepMCEvent::Class());
     branchElectron_new              = treeWriter->NewBranch("Electron", Electron::Class());
     branchMuonTight_new             = treeWriter->NewBranch("MuonTight", Muon::Class());
     
@@ -331,8 +331,8 @@ vector <Jet*> BrownDelphesSelector::JetHandler(){
 //================================================================================
 void BrownDelphesSelector::Fill(){
     
-    Event *event = (Event*)branchEvent->At(0);
-    Event *event_new = static_cast<Event*>(branchEvent_new->NewEntry());
+    HepMCEvent *event = (HepMCEvent*)branchEvent->At(0);
+    HepMCEvent *event_new = static_cast<HepMCEvent*>(branchEvent_new->NewEntry());
     *event_new = *event;
     
     vector <Electron*> GoodElectrons_new;

@@ -60,7 +60,7 @@ void Sample::LoadBranch(TString branchName){
     if(it != branches.end()) return;
     
     branches[branchName] = treeReader->UseBranch(branchName);
-    
+   
 }
 void Sample::FillFloat(aPlot thePlot){
     
@@ -68,18 +68,31 @@ void Sample::FillFloat(aPlot thePlot){
     TString branchName = thePlot.branchName;
     TString varName = thePlot.varName;
     
+    HepMCEvent *event = (HepMCEvent*)branches["Event"]->At(0);
+    Float_t weight = event->Weight;
+    
     if(branchName == "ScalarHT"){
         
         ScalarHT *ht = (ScalarHT*)branches[branchName]->At(0);
         if(varName == "HT"){
-            plots[plotName]->Fill(ht->HT);
+            plots[plotName]->Fill(weight * ht->HT);
         }
     }
     else if(branchName == "MissingET"){
         MissingET *met = (MissingET*)branches[branchName]->At(0);
         if(varName == "MET"){
-            plots[plotName]->Fill(met->MET);
+            plots[plotName]->Fill(weight * met->MET);
         }
+    }
+    else if(branchName == "JetAK8"){
+
+        for(Int_t j = 0; j<branches[branchName]->GetEntries(); j++){
+		Jet *jet = (Jet*)branches[branchName]->At(j);
+		if(varName == "Tau[0]"){plots[plotName]->Fill(weight * jet->Tau[0]);}
+		else if(varName == "Tau[1]"){plots[plotName]->Fill(weight * jet->Tau[1]);}
+                else if(varName == "Tau[2]"){plots[plotName]->Fill(weight * jet->Tau[2]);}
+	} 
+
     }
     else if(branchName == "Jet"){
         Float_t max_pt = 0.0;
@@ -91,9 +104,10 @@ void Sample::FillFloat(aPlot thePlot){
         Int_t sub_pt_i = 0;
         if(varName == "nJets"){
 	    //cout << branches[branchName]->GetEntries() << endl;
-	    plots[plotName]->Fill(branches[branchName]->GetEntries());
+	    plots[plotName]->Fill(weight * branches[branchName]->GetEntries());
             return;
 	}
+/*	
         for(Int_t j = 0; j<branches[branchName]->GetEntries(); j++){
             Jet *jet = (Jet*)branches[branchName]->At(j);
             if (jet->PT > max_pt){
@@ -110,8 +124,8 @@ void Sample::FillFloat(aPlot thePlot){
             }
             
             if(!plotName.Contains("Leading")){
-                if(varName=="PT") plots[plotName]->Fill(jet->PT);
-                else if(varName == "Eta") plots[plotName]->Fill(jet->Eta);
+                if(varName=="PT") plots[plotName]->Fill(weight * jet->PT);
+                else if(varName == "Eta") plots[plotName]->Fill(weight * jet->Eta);
             }
             
             ht+=jet->PT;
@@ -119,19 +133,19 @@ void Sample::FillFloat(aPlot thePlot){
         }
         if(plotName.Contains("Leading") && !plotName.Contains("Sub")){
             Jet *jet = (Jet*)branches[branchName]->At(max_pt_i);
-            if(varName=="PT") plots[plotName]->Fill(jet->PT);
-            else if(varName == "Eta") plots[plotName]->Fill(jet->Eta);
+            if(varName=="PT") plots[plotName]->Fill(weight * jet->PT);
+            else if(varName == "Eta") plots[plotName]->Fill(weight * jet->Eta);
         }
         else if(plotName.Contains("SubLeading")){
             Jet *jet = (Jet*)branches[branchName]->At(sub_pt_i);
-            if(varName=="PT") plots[plotName]->Fill(jet->PT);
-            else if(varName == "Eta") plots[plotName]->Fill(jet->Eta);
+            if(varName=="PT") plots[plotName]->Fill(weight * jet->PT);
+            else if(varName == "Eta") plots[plotName]->Fill(weight * jet->Eta);
         }
         else if(plotName == "HT"){
-            plots[plotName]->Fill(ht);
+            plots[plotName]->Fill(weight * ht);
         }
-    }
-    
+  */  
+   } 
     return;
     
 }

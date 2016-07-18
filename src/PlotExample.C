@@ -16,7 +16,7 @@ using namespace std;
 
 R__ADD_INCLUDE_PATH(delphes)
 void PlotExample(){
-    Float_t lumi = 1000.0*300.0;
+    Float_t lumi = 1000.0*3000.0;
     
     map<TString, TLegend*> legs;
     
@@ -25,22 +25,23 @@ void PlotExample(){
     outFile->mkdir("Stacks");
     outFile->mkdir("Hists");
     
-    map<TString, Sample> Samples = LoadSamples("SnowMass_200PU");
+    map<TString, Sample> Samples = LoadSamples("SnowMass_0PU");
     
     vector<TString> SampleOrder = {"tt_0_600","tt_600_1100","tt_1100_1700","tt_1700_2500","tt_2500_100000"};
     //vector<TString> SampleOrder = {"TTbar","TTbar2"};
     vector<aPlot> PlotInfo;
 //    PlotInfo.push_back( aPlot{"Scalar_HT", "ScalarHT", "HT", "Scalar HT [GeV]"} );
-    PlotInfo.push_back( aPlot{"HT", "Jet", "HT", "HT [GeV]"} );
-    PlotInfo.push_back( aPlot{"Leading_Jet_pT", "Jet", "PT", "Leading Jet p_{T} [GeV]"} );
+    //PlotInfo.push_back( aPlot{"HT", "Jet", "HT", "HT [GeV]"} );
+//    PlotInfo.push_back( aPlot{"Leading_Jet_pT", "Jet", "PT", "Leading Jet p_{T} [GeV]"} );
 //    PlotInfo.push_back( aPlot{"Leading_Jet_Eta", "Jet", "Eta", "Leading Jet Eta"} );
 //    PlotInfo.push_back( aPlot{"Jet_pT", "Jet", "PT", "Jet p_{T} [GeV]"} );
 //    PlotInfo.push_back( aPlot{"Jet_Eta", "Jet", "Eta", "Jet Eta"} );
-    PlotInfo.push_back( aPlot{"SubLeading_Jet_pT", "Jet", "PT", "Sub-Leading Jet p_{T} [GeV]"} );
+    //PlotInfo.push_back( aPlot{"SubLeading_Jet_pT", "Jet", "PT", "Sub-Leading Jet p_{T} [GeV]"} );
     //    PlotInfo.push_back( aPlot{"SubLeading_Jet_Eta", "Jet", "Eta", "Sub-Leading Jet Eta"} );
     PlotInfo.push_back( aPlot{"Missing_ET", "MissingET", "MET", "Missing ET"} );
     PlotInfo.push_back( aPlot{"nJets", "Jet","nJets", "Jet Multiplicity"} ); 
-    
+    PlotInfo.push_back( aPlot{"Jet Tau 1","JetAK8","Tau[1]","Jet Tau 1"} );
+    PlotInfo.push_back( aPlot{"Jet Tau 2","JetAK8","Tau[2]","Jet Tau 2"} );    
     //    map<TString, map<TString, TString> > BranchPlotNames;
     //    BranchPlotNames["ScalarHT"] = {"ScalarHT","HT"};
     //    BranchPlotNames["ScalarHT"] = "HT";
@@ -69,6 +70,7 @@ void PlotExample(){
         currentSample->OpenSample();
         
         cout << "\tOPENING NECESSARY BRANCHES IN SAMPLE & MAKING HISTS" << endl;
+        currentSample->LoadBranch("Event");
         for(Int_t it = 0; it < PlotInfo.size(); it++){
             aPlot thePlot = PlotInfo[it];
             TString plotName = thePlot.plotName;
@@ -79,25 +81,30 @@ void PlotExample(){
             if(varName == "PT" or varName == "HT" or varName == "MET") currentSample->plots[plotName] = new TH1F(plotName, plotName,100,0,1000);
             else if(varName == "Eta") currentSample->plots[plotName] = new TH1F(plotName, plotName,300,-3,3);
             else if(varName == "nJets") currentSample->plots[plotName] = new TH1F(plotName, plotName,100,0,100);
+	    else if(varName.Contains("Tau")) currentSample->plots[plotName] = new TH1F(plotName, plotName, 120,0,120);
 	    currentSample->plots[plotName]->SetFillColor(currentSample->color);
             currentSample->plots[plotName]->SetLineColor(currentSample->color);
             legs[plotName]->AddEntry(currentSample->plots[plotName], currentSample->name, "f");
         }
         
         Int_t alert = 0;
-        cout << "\n\tLOOPING OVER ENTRIES" << endl;
+        cout << "\n\tLOOPING OVER " << currentSample->nEvents << " ENTRIES" << endl;
         for(Int_t entry = 0; entry < currentSample->nEvents; entry++){
             if (entry >= (alert * .10 * currentSample->nEvents)){
                 cout << "\t\t" << alert*10 << "%" << endl;
                 alert++;
             }
+	    //cout << "bloop1" << endl;
             currentSample->treeReader->ReadEntry(entry);
-            for(Int_t it = 0; it < PlotInfo.size(); it++){
+            //cout << "bloop2" << endl;
+	    for(Int_t it = 0; it < PlotInfo.size(); it++){
                 aPlot thePlot = PlotInfo[it];
                 TString plotName = thePlot.plotName;
                 TString branchName = thePlot.branchName;
                 TString varName = thePlot.varName;
+		//cout << plotName << endl;
                 currentSample->FillFloat(thePlot);
+		//cout << "bloop3" << endl;
             }
             
         }
