@@ -61,6 +61,7 @@ public:
     TClonesArray *branchEvent;
     TClonesArray *branchElectron;
     TClonesArray *branchMuonTight;
+    TClonesArray *branchMuonLoose;
     TClonesArray *branchMissingET;
     TClonesArray *branchGenMissingET;
     TClonesArray *branchPUPPIMissingET;
@@ -72,11 +73,13 @@ public:
     TClonesArray *branchJetPUPPI;
     TClonesArray *branchJetAK8;
     TClonesArray *branchJetPUPPIAK8;
+    TClonesArray *branchPhoton;
     //    TClonesArray *branchParticle;
     
     ExRootTreeBranch *branchEvent_new;
     ExRootTreeBranch *branchElectron_new;
     ExRootTreeBranch *branchMuonTight_new;
+    ExRootTreeBranch *branchMuonLoose_new;
     ExRootTreeBranch *branchMissingET_new;
     ExRootTreeBranch *branchGenMissingET_new;
     ExRootTreeBranch *branchPUPPIMissingET_new;
@@ -88,6 +91,7 @@ public:
     ExRootTreeBranch *branchJetPUPPI_new;
     ExRootTreeBranch *branchJetAK8_new;
     ExRootTreeBranch *branchJetPUPPIAK8_new;
+    ExRootTreeBranch *branchPhoton_new;
     //    TClonesArray *branchParticle;
     
     vector <Electron*> GoodElectrons;
@@ -135,6 +139,8 @@ void BrownDelphesSelector::Init(const char *inString, const char *outFileName, c
     branchEvent                 = treeReader->UseBranch("Event");
     branchElectron              = treeReader->UseBranch("Electron");
     branchMuonTight             = treeReader->UseBranch("MuonTight");
+    branchMuonLoose             = treeReader->UseBranch("MuonLoose");
+    branchPhoton                = treeReader->UseBranch("Photon");
     
     branchMissingET             = treeReader->UseBranch("MissingET");
     branchGenMissingET          = treeReader->UseBranch("GenMissingET");
@@ -158,6 +164,9 @@ void BrownDelphesSelector::Init(const char *inString, const char *outFileName, c
     branchEvent_new                 = treeWriter->NewBranch("Event", HepMCEvent::Class());
     branchElectron_new              = treeWriter->NewBranch("Electron", Electron::Class());
     branchMuonTight_new             = treeWriter->NewBranch("MuonTight", Muon::Class());
+    branchMuonLoose_new             = treeWriter->NewBranch("MuonLoose", Muon::Class());
+    
+    branchPhoton_new             = treeWriter->NewBranch("Photon", Photon::Class());
     
     branchMissingET_new             = treeWriter->NewBranch("MissingET", MissingET::Class());
     branchGenMissingET_new          = treeWriter->NewBranch("GenMissingET", MissingET::Class());
@@ -346,6 +355,12 @@ void BrownDelphesSelector::Fill(){
         GoodMuons_new.push_back(static_cast<Muon*>(branchMuonTight_new->NewEntry()));
         *GoodMuons_new[i] = *GoodMuons[i];
     }
+    vector <Muon*> MuonLoose_new;
+    for(Int_t i = 0; i < branchMuonLoose->GetEntries(); i++){
+        MuonLoose_new.push_back(static_cast<Muon*>(branchMuonLoose_new->NewEntry()));
+        Muon *MuonLoose = (Muon*)branchMuonLoose->At(i);
+        *MuonLoose_new[i] = *MuonLoose;
+    }
     
     MissingET* met_new = static_cast<MissingET*>(branchMissingET_new->NewEntry());
     *met_new = *met;
@@ -407,6 +422,12 @@ void BrownDelphesSelector::Fill(){
     //        GenParticle *particle = (GenParticle*)branchParticle->At(i);
     //        *Particle_new[i] = *particle;
     //    }
+    vector<Photon*> Photon_new;
+    for(Int_t i = 0; i < branchPhoton->GetEntries(); i++){
+        Photon_new.push_back(static_cast<Photon*>(branchPhoton_new->NewEntry()));
+        Photon *photon = (Photon*)branchPhoton->At(i);
+        *Photon_new[i] = *photon;
+    }
     
     treeWriter->Fill();
     treeWriter->Clear();
