@@ -90,6 +90,9 @@ Selection::Selection(TString typeString){
 	minTightLeptons = 1;
  	maxTightLeptons = 1;	
     }
+    else if(analysisType == "FCNC"){
+      // let's keep the cuts here
+    }
     else{ cout << "WARNING: No Selection Specified" << endl; }
 }
 bool Selection::METCuts(MissingET *met){
