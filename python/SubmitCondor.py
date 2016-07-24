@@ -1,7 +1,8 @@
 import os,sys
 import argparse
+import math
 
-parser = argparse.ArgumentParser(description='Process some integers.')
+parser = argparse.ArgumentParser(description='Submit condor jobs for selectors and plotting.')
 parser.add_argument('--name')
 parser.add_argument('--outdir')
 parser.add_argument('--sample_path')
@@ -23,26 +24,23 @@ if not os.path.exists(args.sample_path):
 cmssw_base = os.environ['CMSSW_BASE']
 
 files = os.listdir(args.sample_path)
-tmp_1 = len(files) / int(args.nFiles)
-tmp_2 = len(files) % int(args.nFiles)
+numjobs = int(math.ceil(float(len(files)) / float(args.nFiles)))
 
-if tmp_2 != 0: tmp_1+=1
-
-print len(files), tmp_1, tmp_2
+print len(files), numjobs
 current = 0
-index = 0
+index   = 0
 
-for i in range(tmp_1):
+for i in range(numjobs):
     current_name = args.outdir + '/' + args.name + '_' + str(i)
     current_list = open(current_name + '.txt','w')
     current_conf = open(current_name + '.condor','w')
     current_shel = open(current_name + '.sh','w')
-    
+
     for j in range(int(args.nFiles)):
-        
+
         file_no = i*10 + j
         if file_no >= int(len(files)): break
-        
+
         if '.root' not in files[file_no]: continue
         toWrite = args.sample_path + '/' + files[file_no]+'\n'
         toWrite = 'root://cmseos.fnal.gov//' + toWrite[toWrite.find('store'):]
@@ -66,7 +64,7 @@ for i in range(tmp_1):
         if 'TREE_TITLE' in line: line = line.replace('TREE_TITLE', args.tree_name)
         if 'SELECTION' in line: line = line.replace('SELECTION', args.selection)
         if 'CMSSWBASE' in line: line = line.replace('CMSSWBASE', cmssw_base)
-        
+
         current_shel.write(line)
 
     shel_tmpl.close()
@@ -75,6 +73,8 @@ for i in range(tmp_1):
     current_conf.close()
     current_shel.close()
 
+
+for i in range(numjobs):
     os.chdir(args.outdir + '/')
     os.system('condor_submit ' + args.name+'_'+str(i) + '.condor')
 
