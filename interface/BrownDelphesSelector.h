@@ -1,4 +1,4 @@
-#include <iostream>
+//#include <iostream>
 #include <TROOT.h>
 #include <TChain.h>
 #include <TFile.h>
@@ -40,7 +40,7 @@ public:
     
     TString AnalysisType;
     TString inputString;
-    ifstream fileList;
+    //std::ifstream fileList;
     Selection *TheSelection = new Selection();
     
     TChain *inChain = new TChain();
@@ -208,9 +208,9 @@ void BrownDelphesSelector::LoadChain(){
     }
     else if(inputString.Contains(".txt", TString::kIgnoreCase)){
         cout << "in .txt condition" << endl;
-	fileList = ifstream(inputString);
+	std::ifstream fileList(inputString);
 	// cout << inputString << endl; 
-	// std::string line;
+	std::string line;
  	if(!fileList.is_open()){
 	    cout << "file can't be opened" << endl;
 	}

@@ -48,7 +48,7 @@ for i in range(numjobs):
 
     current_list.write('\n')
 
-    conf_tmpl = open(cmssw_base + '/src/Delphes_Analysis/condor/CondorConf.tmpl.condor')
+    conf_tmpl = open(cmssw_base + '/../Brown-FCNC2016-thcu/condor/CondorConf.tmpl.condor')
     for line in conf_tmpl:
         if 'OUTPUT_PATH' in line: line = line.replace('OUTPUT_PATH', args.outdir)
         if 'NAME' in line: line = line.replace('NAME', args.name+'_'+str(i))
@@ -57,7 +57,7 @@ for i in range(numjobs):
 
     conf_tmpl.close()
 
-    shel_tmpl = open(cmssw_base + '/src/Delphes_Analysis/condor/CondorShel.tmpl.sh')
+    shel_tmpl = open(cmssw_base + '/../Brown-FCNC2016-thcu/condor/CondorShel.tmpl.sh')
     for line in shel_tmpl:
         if 'OUTPUT_PATH' in line: line = line.replace('OUTPUT_PATH', args.outdir)
         if 'NAME' in line: line = line.replace('NAME', args.name+'_'+str(i))

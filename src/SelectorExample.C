@@ -1,6 +1,6 @@
 //root -l -q Delphes_Analysis/src/SelectorExample.C'("TChainArea/fileList.txt","out.root","Delphes")'
 
-#include <iostream>
+//#include <iostream>
 #include "../interface/BrownDelphesSelector.h"
 
 void SelectorExample(const char *inputFile, const char *outputFile, const char *treeName, const char *Selection="NoSelection"){
