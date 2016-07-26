@@ -19,8 +19,8 @@
 #include "TCanvas.h"
 #include "THStack.h"
 
-#include "Delphes_Analysis/interface/Sample.h"
-#include "Delphes_Analysis/interface/LoadSamples.h"
+#include "Brown-FCNC2016-thcu/interface/Sample.h"
+#include "Brown-FCNC2016-thcu/interface/LoadSamples.h"
 
 using namespace std;
 
@@ -33,7 +33,7 @@ void PlotExample(TString outputBasedir,     // directory to place plots
                  bool logPlots=false,       // if true, and savePlots==true, save plots with log scales on the y axis
                  Int_t numEvents=-1,        // plot a given number of events for each sample (-1 for all)
                  Int_t numSamples=-1,       // plot a given number of samples (-1 for all)
-                 Float_t lumi=1000.0*3000.0 // integrated luminosity of the sample (units?)
+                 Float_t lumi=1000.0*3000.0, // integrated luminosity of the sample (units?)
                                             // comma-separated list of sample names to open (order matters!)
                  const char* SampleOrderString="tt_0_600,tt_600_1100,tt_1100_1700,tt_1700_2500,tt_2500_100000")
 {
@@ -48,7 +48,7 @@ void PlotExample(TString outputBasedir,     // directory to place plots
     map<TString, TCanvas*> canvases;
     map<TString, THStack*> stacks;
     map<TString, Sample> Samples = LoadSamples("SnowMass_0PU");
-    vector<TString> SampleOrder  = strtok(SampeOrderString,",");
+    vector<TString> SampleOrder  = strtok(SampleOrderString,",");
     //////////vector<TString> SampleOrder = {"TTbar","TTbar2"}; TODO understand this
     vector<aPlot> PlotInfo;
 
