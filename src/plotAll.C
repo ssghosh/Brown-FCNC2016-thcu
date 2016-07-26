@@ -65,7 +65,9 @@ void PlotExample(TString outputBasedir,     // directory to place plots
     PlotInfo.push_back( aPlot{"nJets",              "Jet",       "nJets",  "Jet Multiplicity",            100,0,  100  }); 
     PlotInfo.push_back( aPlot{"Jet Tau 1",          "JetAK8",    "Tau[1]", "Jet Tau 1",                   120,0,  120  });
     PlotInfo.push_back( aPlot{"Jet Tau 2",          "JetAK8",    "Tau[2]", "Jet Tau 2",                   120,0,  120  });   
-
+    PlotInfo.push_back( aPlot{"Electron_pT",        "Electron",  "PT",     "Electron pT [GeV]",           120,0,  120  });   
+    PlotInfo.push_back( aPlot{"Electron_Eta",       "Electron",  "Eta",    "Electron Eta",                120,0,  120  });   
+    
     // calculate the number of samples
     Int_t sampleSize = SampleOrder.size();
     if(numSamples >=0) sampleSize = min(sampleSize,numSamples);

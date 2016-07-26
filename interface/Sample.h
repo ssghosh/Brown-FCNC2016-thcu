@@ -21,9 +21,9 @@ struct aPlot {
     TString branchName;
     TString varName;
     TString xAxisLabel;
-    TString xAxisMin;
-    TString xAxisMax;
-    TString nBins;
+    Int_t   nBins;
+    Float_t xAxisMin;
+    Float_t xAxisMax;
 };
 
 class Sample {
@@ -144,6 +144,13 @@ void Sample::FillFloat(aPlot thePlot){
                 plots[plotName]->Fill(weight * ht);
             }
             break;
+        case "Electron" :
+            for(Int_t j = 0; j<branches[branchName]->GetEntries(); j++){
+            	Electron *electron = (Electron*)branches[branchName]->At(0);
+            	if(varName == "PT") plots[plotName]->Fill(weight * electron->PT);
+		else if(varName == "Eta") plots[plotName]->Fill(weight * electron->Eta);
+            break;
+	}
     }
 
     return;
