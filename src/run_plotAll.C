@@ -2,5 +2,5 @@
 
 void run_plotAll()
 {
-    plotAll("Plots","test");
+    plotAll("Plots","test",false,false,10,1);
 }

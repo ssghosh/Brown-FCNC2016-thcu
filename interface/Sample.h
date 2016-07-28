@@ -101,10 +101,16 @@ void Sample::FillFloat(aPlot thePlot){
 
         if(varName == "nJets") {
             plots[plotName]->Fill(weight * branches[branchName]->GetEntries());
+            return;
         }
 
         bool leading = plotName.Contains("Leading");
         bool sub     = plotName.Contains("Sub");
+
+        if(branches[branchName]->GetEntries() == 0) {
+            cout << "WARNING : EVENT DOES NOT CONTAIN ANY JETS" << endl;
+            return;
+        }
 
         for(Int_t j = 0; j<branches[branchName]->GetEntries(); j++){
             Jet *jet = (Jet*)branches[branchName]->At(j);

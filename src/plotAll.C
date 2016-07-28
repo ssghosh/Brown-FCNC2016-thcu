@@ -41,6 +41,7 @@ void plotAll(TString outputBasedir,     // directory to place plots
     cout << "\n Running plotAll \n";
     // set batchmode (for speed) and open output file
     gROOT->ProcessLine("gROOT->SetBatch()");
+    system(("mkdir "+outputBasedir).Data());
     TFile *outFile = new TFile(outputBasedir+"/"+outputBaseName+".root","RECREATE");
     outFile->mkdir("Stacks");
     outFile->mkdir("Hists");
@@ -101,9 +102,6 @@ void plotAll(TString outputBasedir,     // directory to place plots
         cout << "created a legend" << endl;
         stacks[plotName]   = new THStack(plotName, plotName);
         cout << "created a stack" << endl;
-        
-        canvases[plotName]->SetLogy(1);
-        stacks[plotName]->GetYaxis()->SetTitle("Events");
     }
 
     // start sample loop, prepare to fill histograms
@@ -144,7 +142,6 @@ void plotAll(TString outputBasedir,     // directory to place plots
         // read the tree data for one event, fill histos
         cout << "\n\t\t - LOOPING OVER " << eventsSize << " ENTRIES" << endl;
         for(Int_t entry = 0; entry < eventsSize; entry++) {
-
             currentSample->treeReader->ReadEntry(entry);
             for(Int_t it = 0; it < PlotInfo.size(); it++){
                 aPlot thePlot = PlotInfo[it];
