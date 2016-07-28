@@ -24,7 +24,7 @@ An example *selection* macro is available in `src/SelectorExample.C`. To run, us
 ```
 #   Argument 1: path to .txt list of input ntuples, or path to ntuples themselves
 #            2: path to / filename of output sample (should have extension .root)
-#            3: name of the tree to look for in the ntuples (should be Delphes)
+#            3: name of the tree to look for in the ntuples (should be "Delphes")
 #            4: name of the selection to use (listed in src/Selections.h)
 root -l -b -q src/SelectorExample.C'("OUTPUT_PATH/NAME.txt", "OUTPUT_PATH/NAME.root","TREE_TITLE","SELECTION")'
 ```

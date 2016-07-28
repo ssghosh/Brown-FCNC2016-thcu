@@ -11,6 +11,7 @@
 #include <iostream>
 #include <vector>
 #include <map>
+#include <string.h>
 
 #include "TString.h"
 #include "TFile.h"
@@ -19,24 +20,25 @@
 #include "TCanvas.h"
 #include "THStack.h"
 
-#include "Delphes_Analysis/interface/Sample.h"
-#include "Delphes_Analysis/interface/LoadSamples.h"
+#include "Brown-FCNC2016-thcu/interface/Sample.h"
+#include "Brown-FCNC2016-thcu/interface/LoadSamples.h"
 
 using namespace std;
 
 R__ADD_INCLUDE_PATH(delphes)
 
 
-void PlotExample(TString outputBasedir,     // directory to place plots
+void plotAll(TString outputBasedir,     // directory to place plots
                  TString outputBaseName,    // base name format for plots 
                  bool savePlots=false,      // if true, save all plots in pdf/png format 
                  bool logPlots=false,       // if true, and savePlots==true, save plots with log scales on the y axis
                  Int_t numEvents=-1,        // plot a given number of events for each sample (-1 for all)
                  Int_t numSamples=-1,       // plot a given number of samples (-1 for all)
-                 Float_t lumi=1000.0*3000.0 // integrated luminosity of the sample (units?)
+                 Float_t lumi=1000.0*3000.0, // integrated luminosity of the sample (units?)
                                             // comma-separated list of sample names to open (order matters!)
-                 const char* SampleOrderString="tt_0_600,tt_600_1100,tt_1100_1700,tt_1700_2500,tt_2500_100000")
+                 char *SampleOrderString = (char*)"tt_0_600,tt_600_1100,tt_1100_1700,tt_1700_2500,tt_2500_100000")
 {
+    cout << "\n Running plotAll \n";
     // set batchmode (for speed) and open output file
     gROOT->ProcessLine("gROOT->SetBatch()");
     TFile *outFile = new TFile(outputBasedir+"/"+outputBaseName+".root","RECREATE");
@@ -48,7 +50,20 @@ void PlotExample(TString outputBasedir,     // directory to place plots
     map<TString, TCanvas*> canvases;
     map<TString, THStack*> stacks;
     map<TString, Sample> Samples = LoadSamples("SnowMass_0PU");
-    vector<TString> SampleOrder  = strtok(SampeOrderString,",");
+    vector<TString> SampleOrder;
+
+    // tokenize the SampleOrderString and store it in SampleOrder vector
+    size_t len = strlen(SampleOrderString)+1;
+    char *internal_samplestring = new char[len];
+    strcpy(internal_samplestring,SampleOrderString);
+    char *current;
+    current = strtok(internal_samplestring,",");
+    while (current != NULL) {
+        SampleOrder.push_back(current);
+        current = strtok(NULL,",");
+    }
+   
+    cout << "Tokenized the sampleorderstring \n"; 
     //////////vector<TString> SampleOrder = {"TTbar","TTbar2"}; TODO understand this
     vector<aPlot> PlotInfo;
 
@@ -65,7 +80,9 @@ void PlotExample(TString outputBasedir,     // directory to place plots
     PlotInfo.push_back( aPlot{"nJets",              "Jet",       "nJets",  "Jet Multiplicity",            100,0,  100  }); 
     PlotInfo.push_back( aPlot{"Jet Tau 1",          "JetAK8",    "Tau[1]", "Jet Tau 1",                   120,0,  120  });
     PlotInfo.push_back( aPlot{"Jet Tau 2",          "JetAK8",    "Tau[2]", "Jet Tau 2",                   120,0,  120  });   
-
+    PlotInfo.push_back( aPlot{"Electron_pT",        "Electron",  "PT",     "Electron pT [GeV]",           120,0,  120  });   
+    PlotInfo.push_back( aPlot{"Electron_Eta",       "Electron",  "Eta",    "Electron Eta",                120,0,  120  });   
+    
     // calculate the number of samples
     Int_t sampleSize = SampleOrder.size();
     if(numSamples >=0) sampleSize = min(sampleSize,numSamples);
@@ -79,8 +96,11 @@ void PlotExample(TString outputBasedir,     // directory to place plots
         cout << "\t - preparing plot canvas: " << plotName << endl;
 
         canvases[plotName] = new TCanvas();
+        cout << "created a canvas" << endl;
         legs[plotName]     = new TLegend(.65,.45,.85,.75);
+        cout << "created a legend" << endl;
         stacks[plotName]   = new THStack(plotName, plotName);
+        cout << "created a stack" << endl;
         
         canvases[plotName]->SetLogy(1);
         stacks[plotName]->GetYaxis()->SetTitle("Events");
@@ -105,7 +125,7 @@ void PlotExample(TString outputBasedir,     // directory to place plots
             TString varName    = thePlot.varName;
             TString xAxisLabel = thePlot.xAxisLabel;
             Float_t xAxisMin   = thePlot.xAxisMin;
-            Float_t xAxisMin   = thePlot.xAxisMax;
+            Float_t xAxisMax   = thePlot.xAxisMax;
             Float_t nBins      = thePlot.nBins;
 
             cout << "\t\t - initializing histogram for " << plotName << endl;

@@ -21,9 +21,9 @@ struct aPlot {
     TString branchName;
     TString varName;
     TString xAxisLabel;
-    TString xAxisMin;
-    TString xAxisMax;
-    TString nBins;
+    Int_t   nBins;
+    Float_t xAxisMin;
+    Float_t xAxisMax;
 };
 
 class Sample {
@@ -65,7 +65,6 @@ void Sample::LoadBranch(TString branchName){
     if(it != branches.end()) return;
 
     branches[branchName] = treeReader->UseBranch(branchName);
-
 }
 
 void Sample::FillFloat(aPlot thePlot){
@@ -77,75 +76,81 @@ void Sample::FillFloat(aPlot thePlot){
     HepMCEvent *event = (HepMCEvent*)branches["Event"]->At(0);
     Float_t weight = event->Weight;
 
-    switch(branchName) {
-        case "ScalarHT":
-            ScalarHT *ht = (ScalarHT*)branches[branchName]->At(0);
-            if(varName == "HT") plots[plotName]->Fill(weight * ht->HT);
-            break;
-        case "MissingET":
-            MissingET *met = (MissingET*)branches[branchName]->At(0);
-            if(varName == "MET") plots[plotName]->Fill(weight * met->MET);
-            break;
-        case "JetAK8" :
-            for(Int_t j = 0; j<branches[branchName]->GetEntries(); j++){
-                Jet *jet = (Jet*)branches[branchName]->At(j);
-                if(     varName == "Tau[0]") plots[plotName]->Fill(weight * jet->Tau[0]);
-                else if(varName == "Tau[1]") plots[plotName]->Fill(weight * jet->Tau[1]);
-                else if(varName == "Tau[2]") plots[plotName]->Fill(weight * jet->Tau[2]);
-            }
-            break;
-        case "Jet" :
-            Float_t max_pt = 0.0;
-            Float_t sub_pt = 0.0;
-            Float_t ht     = 0.0;
-            Int_t max_pt_i = 0;
-            Int_t sub_pt_i = 0;
-
-            if(varName == "nJets") {
-                plots[plotName]->Fill(weight * branches[branchName]->GetEntries());
-                break;
-            }
-
-            bool leading = plotName.Contains("Leading");
-            bool sub     = plotName.Contains("Sub");
-
-            for(Int_t j = 0; j<branches[branchName]->GetEntries(); j++){
-                Jet *jet = (Jet*)branches[branchName]->At(j);
-
-                if (jet->PT > max_pt){
-                    sub_pt = max_pt;
-                    sub_pt_i = max_pt_i;
-
-                    max_pt = jet->PT;
-                    max_pt_i = j;
-                } else if (jet->PT > sub_pt){
-                    sub_pt = jet->PT;
-                    sub_pt_i = j;
-                }
-
-                if(!leading){
-                    if(varName=="PT") plots[plotName]->Fill(weight * jet->PT);
-                    else if(varName == "Eta") plots[plotName]->Fill(weight * jet->Eta);
-                }
-
-                ht+=jet->PT;
-
-            }
-
-            if(leading && !sub) {
-                Jet *jet = (Jet*)branches[branchName]->At(max_pt_i);
-                if(varName=="PT") plots[plotName]->Fill(weight * jet->PT);
-                else if(varName == "Eta") plots[plotName]->Fill(weight * jet->Eta);
-            } else if(sub && leading) { 
-                Jet *jet = (Jet*)branches[branchName]->At(sub_pt_i);
-                if(varName=="PT") plots[plotName]->Fill(weight * jet->PT);
-                else if(varName == "Eta") plots[plotName]->Fill(weight * jet->Eta);
-            } else if(plotName == "HT") {
-                plots[plotName]->Fill(weight * ht);
-            }
-            break;
+    if (branchName == "ScalarHT") {
+        ScalarHT *scalarht = (ScalarHT*)branches[branchName]->At(0);
+        if(varName == "HT") plots[plotName]->Fill(weight * scalarht->HT);
     }
+    else if (branchName == "MissingET") {
+        MissingET *met = (MissingET*)branches[branchName]->At(0);
+        if(varName == "MET") plots[plotName]->Fill(weight * met->MET);
+    }
+    else if (branchName == "JetAK8") {
+        for(Int_t j = 0; j<branches[branchName]->GetEntries(); j++){
+            Jet *jet = (Jet*)branches[branchName]->At(j);
+            if(     varName == "Tau[0]") plots[plotName]->Fill(weight * jet->Tau[0]);
+            else if(varName == "Tau[1]") plots[plotName]->Fill(weight * jet->Tau[1]);
+            else if(varName == "Tau[2]") plots[plotName]->Fill(weight * jet->Tau[2]);
+        }
+    }
+    else if (branchName == "Jet") {
+        Float_t max_pt = 0.0;
+        Float_t sub_pt = 0.0;
+        Float_t ht     = 0.0;
+        Int_t max_pt_i = 0;
+        Int_t sub_pt_i = 0;
 
-    return;
+        if(varName == "nJets") {
+            plots[plotName]->Fill(weight * branches[branchName]->GetEntries());
+        }
 
+        bool leading = plotName.Contains("Leading");
+        bool sub     = plotName.Contains("Sub");
+
+        for(Int_t j = 0; j<branches[branchName]->GetEntries(); j++){
+            Jet *jet = (Jet*)branches[branchName]->At(j);
+
+            if (jet->PT > max_pt){
+                sub_pt = max_pt;
+                sub_pt_i = max_pt_i;
+
+                max_pt = jet->PT;
+                max_pt_i = j;
+            } 
+            else if (jet->PT > sub_pt){
+                sub_pt = jet->PT;
+                sub_pt_i = j;
+            }
+
+            if(!leading){
+                if(varName=="PT") plots[plotName]->Fill(weight * jet->PT);
+                else if(varName == "Eta") plots[plotName]->Fill(weight * jet->Eta);
+            }
+
+            ht+=jet->PT;
+
+        }
+
+        if(leading && !sub) {
+            Jet *jet = (Jet*)branches[branchName]->At(max_pt_i);
+            if(varName=="PT") plots[plotName]->Fill(weight * jet->PT);
+            else if(varName == "Eta") plots[plotName]->Fill(weight * jet->Eta);
+        } 
+        else if(sub && leading) { 
+            Jet *jet = (Jet*)branches[branchName]->At(sub_pt_i);
+            if(varName=="PT") plots[plotName]->Fill(weight * jet->PT);
+            else if(varName == "Eta") plots[plotName]->Fill(weight * jet->Eta);
+        } 
+        else if(plotName == "HT") {
+            plots[plotName]->Fill(weight * ht);
+        }
+    }
+    else if (branchName == "Electron") {
+        for(Int_t j = 0; j<branches[branchName]->GetEntries(); j++){
+            Electron *electron = (Electron*)branches[branchName]->At(0);
+            if(varName == "PT") plots[plotName]->Fill(weight * electron->PT);
+            else if(varName == "Eta") plots[plotName]->Fill(weight * electron->Eta);
+        }
+    }
 }
+
+
