@@ -4,10 +4,10 @@ Codebase for Brown's analysis of Flavor-Changing Neutral Currents: measuring the
 ##Setup Area (LPC):
 ```
    $ cd ~/nobackup/
-   $ git clone https://github.com/eacoleman/Brown-FCNC2016-thcu.git
    $ cmsrel CMSSW_8_0_4
    $ cd CMSSW_8_0_4/src/
    $ cmsenv
+   $ git clone https://github.com/eacoleman/Brown-FCNC2016-thcu.git
 
    $ git clone https://github.com/delphes/delphes 
    $ cd delphes
@@ -19,7 +19,7 @@ Codebase for Brown's analysis of Flavor-Changing Neutral Currents: measuring the
 
 ##Running locally:
 
-An example *selection* macro is available in `src/SelectorExample.C`. To run, use:
+An example **selection** macro is available in `src/SelectorExample.C`. To run, use:
 
 ```
 #   Argument 1: path to .txt list of input ntuples, or path to ntuples themselves
@@ -29,7 +29,7 @@ An example *selection* macro is available in `src/SelectorExample.C`. To run, us
 root -l -b -q src/SelectorExample.C'("OUTPUT_PATH/NAME.txt", "OUTPUT_PATH/NAME.root","TREE_TITLE","SELECTION")'
 ```
 
-See `src/PlotExample.C` for a full plotting macro. It can be run with:
+See `src/PlotExample.C` for a full **plotting** macro. It can be run with:
 
 ```
 root -l -b -q src/PlotExample.C
@@ -49,3 +49,5 @@ python python/SubmitCondor.py --name  \ # name of output root files
         --selection    \ # name of the selection settings to use (see src/Selections.h) 
         --tree_name      # name of tree to use in ntuples (should be Delphes)
 ```
+
+One can use `launchJobs.sh` to process all files in `/eos/uscms/store/user/snowmass/DelphesFromLHE_2016June/` and have them shipped directly to your `eos` directory.

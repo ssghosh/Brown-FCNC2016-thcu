@@ -9,5 +9,5 @@ source /cvmfs/cms.cern.ch/cmsset_default.csh
 eval `scramv1 runtime -csh`
 rehash
 
-root -l -b -q $CMSSW_BASE/../Brown-FCNC2016-thcu/src/SelectorExample.C'("OUTPUT_PATH/NAME.txt", "${_CONDOR_SCRATCH_DIR}/NAME.root","TREE_TITLE","SELECTION")'
+root -l -b -q $CMSSW_BASE/src/Brown-FCNC2016-thcu/src/SelectorExample.C'("OUTPUT_PATH/NAME.txt", "${_CONDOR_SCRATCH_DIR}/NAME.root","TREE_TITLE","SELECTION")'
 
