@@ -1,53 +1,37 @@
 # Brown-FCNC2016-thcu
 Codebase for Brown's analysis of Flavor-Changing Neutral Currents: measuring the branching fraction for t->H(c/u) decays.
 
-##Setup Area (LPC):
+##Setup Area (LXPLUS):
+
+Setting up only needs to be done once:
+
 ```
-   $ cd ~/nobackup/
-   $ cmsrel CMSSW_8_0_4
-   $ cd CMSSW_8_0_4/src/
+   $ cd ~
+   $ cmsrel CMSSW_8_0_11
+   $ cd CMSSW_8_0_11/src/
    $ cmsenv
+   $ cd ~
    $ git clone https://github.com/eacoleman/Brown-FCNC2016-thcu.git
-
-   $ git clone https://github.com/delphes/delphes 
-   $ cd delphes
-   $ git checkout tags/3.3.3pre11
-   $ ./configure
-   $ make -j 9
-   $ make -j 9 # may have to run make twice because of DELPHES issues
+   $ source env.sh
 ```
 
-##Running locally:
-
-An example **selection** macro is available in `src/SelectorExample.C`. To run, use:
+For each fresh logon to LXPLUS, source the environment script:
 
 ```
-#   Argument 1: path to .txt list of input ntuples, or path to ntuples themselves
-#            2: path to / filename of output sample (should have extension .root)
-#            3: name of the tree to look for in the ntuples (should be "Delphes")
-#            4: name of the selection to use (listed in src/Selections.h)
-root -l -b -q src/SelectorExample.C'("OUTPUT_PATH/NAME.txt", "OUTPUT_PATH/NAME.root","TREE_TITLE","SELECTION")'
+   $ source env.sh
 ```
 
-See `src/PlotExample.C` for a full **plotting** macro. It can be run with:
+##Running Sample Generation:
 
-```
-root -l -b -q src/PlotExample.C
-```
+Sample generation is performed with the DAnalysis framework (by Kieseler, J., Caillol, C., and E. Coleman). 
 
-A more comprehensive plotting script, complete with options, is available in `src/plotAll.C` .
+###Using LXBATCH
 
-##Running via Condor 
 
-Running this analysis in Condor jobs is done on LPC with `python/SubmitCondor.py`:
 
-```
-python python/SubmitCondor.py --name  \ # name of output root files 
-        --outdir       \ # absolute path to output directory 
-        --sample_path  \ # absolute path to ntuples
-        --nFiles       \ # number of output root files to produce 
-        --selection    \ # name of the selection settings to use (see src/Selections.h) 
-        --tree_name      # name of tree to use in ntuples (should be Delphes)
-```
+###Locally
 
-One can use `launchJobs.sh` to process all files in `/eos/uscms/store/user/snowmass/DelphesFromLHE_2016June/` and have them shipped directly to your `eos` directory.
+
+##Running Analysis: 
+
+The statistical analysis is performed using the Theta suite.
