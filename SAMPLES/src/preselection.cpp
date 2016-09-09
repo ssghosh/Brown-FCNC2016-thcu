@@ -10,33 +10,33 @@
 
 void preselection::analyze(size_t childid /* this info can be used for printouts */){
 
-	/*
-	 * This skeleton analyser runs directly on the Delphes output.
-	 * It can be used to create histograms directly or a skim.
-	 * If a skim is created, a new input configuration will be written automatically
-	 * and stored in the output directory together with the ntuples.
-	 * The skim can contain delphes objects again or can be flat. This is up
-	 * to the user.
-	 * Examples for both are given here.
-	 *
-	 * The same skeleton can be used to read the skim. Please refer to the comments
-	 * marked with "==SKIM=="
-	 *
-	 * These parts are commented, since the code is supposed to work as an example without
-	 * modifications on Delphes output directly.
-	 */
+    /*
+     * This skeleton analyser runs directly on the Delphes output.
+     * It can be used to create histograms directly or a skim.
+     * If a skim is created, a new input configuration will be written automatically
+     * and stored in the output directory together with the ntuples.
+     * The skim can contain delphes objects again or can be flat. This is up
+     * to the user.
+     * Examples for both are given here.
+     *
+     * The same skeleton can be used to read the skim. Please refer to the comments
+     * marked with "==SKIM=="
+     *
+     * These parts are commented, since the code is supposed to work as an example without
+     * modifications on Delphes output directly.
+     */
 
 
 
-	/*
-	 * Define the branches that are to be considered for the analysis
-	 * This branch handler (notice the "d")
-	 * is used to run directly in Delphes output.
-	 * For skimmed ntuples, see below
-	 */
-	d_ana::dBranchHandler<Electron>  elecs(tree(),"Electron");
-	d_ana::dBranchHandler<Muon>      muons(tree(),"Muon");
-	d_ana::dBranchHandler<MissingET> met(  tree(),"MET");
+    /*
+     * Define the branches that are to be considered for the analysis
+     * This branch handler (notice the "d")
+     * is used to run directly in Delphes output.
+     * For skimmed ntuples, see below
+     */
+    d_ana::dBranchHandler<Electron>  elecs(tree(),"Electron");
+    d_ana::dBranchHandler<Muon>      muons(tree(),"Muon");
+    d_ana::dBranchHandler<MissingET> met(  tree(),"MET");
 
     d_ana::dBranchHandler<Event>        events(      tree(),"Event");
     d_ana::dBranchHandler<LHCOEvent>    lhcoevents(  tree(),"LHCOEvent");
@@ -55,54 +55,54 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
     d_ana::dBranchHandler<HectorHit>    hectorhits(  tree(),"HectorHit");
     d_ana::dBranchHandler<Candidate>    candidates(  tree(),"Candidate");
 
-	/* ==SKIM==
-	 *
-	 * If a skim of the Delphes outout was created in a way indicated
-	 * further below, use the tBranchHandler (please notive the "t")
-	 * to access vectors of objects...
-	 *
-	 */
-	// d_ana::tBranchHandler<std::vector<Electron> > electrons(tree(),"Electrons");
+    /* ==SKIM==
+     *
+     * If a skim of the Delphes outout was created in a way indicated
+     * further below, use the tBranchHandler (please notive the "t")
+     * to access vectors of objects...
+     *
+     */
+    // d_ana::tBranchHandler<std::vector<Electron> > electrons(tree(),"Electrons");
 
-	/*==SKIM==
-	 *
-	 * Or an object directly
-	 *
-	 */
-	//d_ana::tBranchHandler<MissingET> met(tree(),"MET");
-
-
-
-	/*
-	 * Always use this function to add a new histogram (can also be 2D)!
-	 * Histograms created this way are automatically added to the output file
-	 */
-	//TH1* histo=addPlot(new TH1D("histoname1","histotitle1",100,0,100),"p_{T} [GeV]","N_{e}");
+    /*==SKIM==
+     *
+     * Or an object directly
+     *
+     */
+    //d_ana::tBranchHandler<MissingET> met(tree(),"MET");
 
 
-	/*
-	 * If (optionally) a skim or a flat ntuple is to be created, please use the following function to initialize
-	 * the tree.
-	 * The output files will be written automatically, and a config file will be created.
-	 */
-	TTree* myskim=addTree();
 
-	/*
-	 * Helper variables 
-	 */
-	Double_t nElecs=0;
-	Double_t nMuons=0;
-	Double_t  nTaus=0;
-	Double_t elecPt=0;
-	Double_t muonPt=0;
-	Double_t  tauPt=0;
-    
-	/*
-	 * Or store a vector of objects (also possible to store only one object)
-	 */
-	std::vector<Electron> skimmedelecs;
-	std::vector<Muon>     skimmedmuons;
-	std::vector<Jet>      skimmedtaus;
+    /*
+     * Always use this function to add a new histogram (can also be 2D)!
+     * Histograms created this way are automatically added to the output file
+     */
+    //TH1* histo=addPlot(new TH1D("histoname1","histotitle1",100,0,100),"p_{T} [GeV]","N_{e}");
+
+
+    /*
+     * If (optionally) a skim or a flat ntuple is to be created, please use the following function to initialize
+     * the tree.
+     * The output files will be written automatically, and a config file will be created.
+     */
+    TTree* myskim=addTree();
+
+    /*
+     * Helper variables 
+     */
+    Double_t nElecs=0;
+    Double_t nMuons=0;
+    Double_t  nTaus=0;
+    Double_t elecPt=0;
+    Double_t muonPt=0;
+    Double_t  tauPt=0;
+
+    /*
+     * Or store a vector of objects (also possible to store only one object)
+     */
+    std::vector<Electron> skimmedelecs;
+    std::vector<Muon>     skimmedmuons;
+    std::vector<Jet>      skimmedtaus;
 
     myskim->Branch("Electrons", &skimmedelecs);
     myskim->Branch("Muons"    , &skimmedmuons);
@@ -149,16 +149,16 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
 
 
 
-	size_t nevents=tree()->entries();
-	if(isTestMode())
-		nevents/=100;
-	for(size_t eventno=0;eventno<nevents;eventno++){
-		/*
-		 * The following two lines report the status and set the event link
-		 * Do not remove!
-		 */
-		reportStatus(eventno,nevents);
-		tree()->setEntry(eventno);
+    size_t nevents=tree()->entries();
+    if(isTestMode())
+        nevents/=100;
+    for(size_t eventno=0;eventno<nevents;eventno++){
+        /*
+         * The following two lines report the status and set the event link
+         * Do not remove!
+         */
+        reportStatus(eventno,nevents);
+        tree()->setEntry(eventno);
 
         nElecs=elecs.size();
         nMuons=muons.size();
@@ -167,44 +167,44 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
         /*
          * Perform pre-selection
          */
-		
+
         skimmedelecs.clear();
-		for(size_t i=0;i<elecs.size();i++){
-			elecPt=elecs.at(i)->PT;
-			if(elecPt > 20) {
+        for(size_t i=0;i<elecs.size();i++){
+            elecPt=elecs.at(i)->PT;
+            if(elecPt > 20) {
                 nElecs--;
                 continue;
             }
-			skimmedelecs.push_back(*elecs.at(i));
-		}
-		
+            skimmedelecs.push_back(*elecs.at(i));
+        }
+
         skimmedmuons.clear();
-		for(size_t i=0;i<muons.size();i++){
-			muonPt=muons.at(i)->PT;
-			if(muonPt > 20) {
+        for(size_t i=0;i<muons.size();i++){
+            muonPt=muons.at(i)->PT;
+            if(muonPt > 20) {
                 nMuons--;
                 continue;
             }
-			skimmedmuons.push_back(*muons.at(i));
-		}
-		
+            skimmedmuons.push_back(*muons.at(i));
+        }
+
         skimmedtaus.clear();
-		for(size_t i=0;i<jets.size();i++){
+        for(size_t i=0;i<jets.size();i++){
             bool isTau=(jets.at(i)->TauTag>>2) & 0x1;
-			tauPt=jets.at(i)->PT;
-			if(tauPt > 20 || !isTau) {
+            tauPt=jets.at(i)->PT;
+            if(tauPt > 20 || !isTau) {
                 nTaus--;
                 continue;
             }
-			skimmedtaus.push_back(*jets.at(i));
-		}
-       
+            skimmedtaus.push_back(*jets.at(i));
+        }
+
         // PRESEL: Must have at least 1 lepton
         if(nElecs + nMuons + nTaus < 1) continue;
 
-		/*
-		 * Begin the event-by-event storage 
-		 */
+        /*
+         * Begin the event-by-event storage 
+         */
 
         skimmedevents.clear();  
         skimmedlhcoevents.clear();
@@ -241,14 +241,14 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
         for(size_t i=0; i<hectorhits.size(); i++)   skimmedhectorhits.push_back(*hectorhits.at(i));
         for(size_t i=0; i<candidates.size(); i++)   skimmedcandidates.push_back(*candidates.at(i));
         for(size_t i=0; i<met.size(); i++)          skimmedmet.push_back(*met.at(i));
-                                              
-        myskim->Fill();                       
-	}                                         
-                                              
 
-	/*
-	 * Must be called in the end, takes care of thread-safe writeout and
-	 * call-back to the parent process
-	 */
-	processEndFunction();
+        myskim->Fill();                       
+    }                                         
+
+
+    /*
+     * Must be called in the end, takes care of thread-safe writeout and
+     * call-back to the parent process
+     */
+    processEndFunction();
 }
