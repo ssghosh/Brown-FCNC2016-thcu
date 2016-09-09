@@ -267,12 +267,12 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
         myskim->Fill();                       
     }                                        
     
-    cout << "Number of ee4j: " << to_string(ee4jcounter) << endl;
-    cout << "Number of ee>=5j: " << to_string(eegte5jcounter) << endl;
-    cout << "Number of emu4j: " << to_string(em4jcounter) << endl;
-    cout << "Number of emu>=5j: " << to_string(emgte5jcounter) << endl;
-    cout << "Number of mumu4j: " << to_string(mm4jcounter) << endl;
-    cout << "Number of mumu>=5j: " << to_string(mmgte5jcounter) << endl; 
+    std::cout << "Number of ee4j: " << std::to_string(ee4jcounter) << std::endl;
+    std::cout << "Number of ee>=5j: " << std::to_string(eegte5jcounter) << std::endl;
+    std::cout << "Number of emu4j: " << std::to_string(em4jcounter) << std::endl;
+    std::cout << "Number of emu>=5j: " << std::to_string(emgte5jcounter) << std::endl;
+    std::cout << "Number of mumu4j: " << std::to_string(mm4jcounter) << std::endl;
+    std::cout << "Number of mumu>=5j: " << std::to_string(mmgte5jcounter) << std::endl; 
 
     /*
      * Must be called in the end, takes care of thread-safe writeout and
