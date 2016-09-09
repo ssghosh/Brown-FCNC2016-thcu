@@ -90,9 +90,10 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
     /*
      * Helper variables 
      */
-    Double_t nElecs=0;
-    Double_t nMuons=0;
-    Double_t  nTaus=0;
+    Int_t    nElecs=0;
+    Int_t    nMuons=0;
+    Int_t     nTaus=0;
+    Int_t     nJets=0;
     Double_t elecPt=0;
     Double_t muonPt=0;
     Double_t  tauPt=0;
@@ -127,7 +128,7 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
     std::vector<Tower>       skimmedtowers;
     std::vector<HectorHit>   skimmedhectorhits;
     std::vector<Candidate>   skimmedcandidates;
-    std::vector<MissingET>         skimmedmet;
+    std::vector<MissingET>   skimmedmet;
 
     myskim->Branch("Event"        , &skimmedevents);
     myskim->Branch("LHCOEvent"    , &skimmedlhcoevents);
@@ -152,6 +153,14 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
     size_t nevents=tree()->entries();
     if(isTestMode())
         nevents/=100;
+    
+    Int_t ee4jcounter   = 0;
+    Int_t eegte5jcounter = 0;
+    Int_t em4jcounter = 0;
+    Int_t emgte5jcounter = 0;
+    Int_t mm4jcounter = 0;
+    Int_t mmgte5jcounter = 0;
+
     for(size_t eventno=0;eventno<nevents;eventno++){
         /*
          * The following two lines report the status and set the event link
@@ -160,31 +169,33 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
         reportStatus(eventno,nevents);
         tree()->setEntry(eventno);
 
-        nElecs=elecs.size();
-        nMuons=muons.size();
-        nTaus = jets.size(); 
+        nElecs=0;
+        nMuons=0;
+        nTaus =0; 
+        nJets =0;
 
         /*
          * Perform pre-selection
+         * Must have lepton Pts > 20
          */
 
         skimmedelecs.clear();
         for(size_t i=0;i<elecs.size();i++){
             elecPt=elecs.at(i)->PT;
-            if(elecPt > 20) {
-                nElecs--;
+            if(elecPt < 20) {
                 continue;
             }
+            nElecs++;
             skimmedelecs.push_back(*elecs.at(i));
         }
 
         skimmedmuons.clear();
         for(size_t i=0;i<muons.size();i++){
             muonPt=muons.at(i)->PT;
-            if(muonPt > 20) {
-                nMuons--;
+            if(muonPt < 20) {
                 continue;
             }
+            nMuons++;
             skimmedmuons.push_back(*muons.at(i));
         }
 
@@ -192,12 +203,13 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
         for(size_t i=0;i<jets.size();i++){
             bool isTau=(jets.at(i)->TauTag>>2) & 0x1;
             tauPt=jets.at(i)->PT;
-            if(tauPt > 20 || !isTau) {
-                nTaus--;
+            if(tauPt < 20 || !isTau) {
                 continue;
             }
+            nTaus++;
             skimmedtaus.push_back(*jets.at(i));
         }
+
 
         // PRESEL: Must have at least 1 lepton
         if(nElecs + nMuons + nTaus < 1) continue;
@@ -242,9 +254,25 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
         for(size_t i=0; i<candidates.size(); i++)   skimmedcandidates.push_back(*candidates.at(i));
         for(size_t i=0; i<met.size(); i++)          skimmedmet.push_back(*met.at(i));
 
-        myskim->Fill();                       
-    }                                         
+        // Probably not the correct way to get nJets
+        nJets = jets.size() - nTaus;
+        // Output channel counts
+        if (nElecs == 2 && nJets == 4) ee4jcounter++;
+        if (nElecs == 2 && nJets >= 5) eegte5jcounter++;
+        if (nElecs == 1 && nMuons == 1 && nJets == 4) em4jcounter++;
+        if (nElecs == 1 && nMuons == 1 && nJets >= 5) emgte5jcounter++;
+        if (nMuons == 2 && nJets == 4) mm4jcounter++;
+        if (nMuons == 2 && nJets >= 5) mmgte5jcounter++;
 
+        myskim->Fill();                       
+    }                                        
+    
+    cout << "Number of ee4j: " << to_string(ee4jcounter) << endl;
+    cout << "Number of ee>=5j: " << to_string(eegte5jcounter) << endl;
+    cout << "Number of emu4j: " << to_string(em4jcounter) << endl;
+    cout << "Number of emu>=5j: " << to_string(emgte5jcounter) << endl;
+    cout << "Number of mumu4j: " << to_string(mm4jcounter) << endl;
+    cout << "Number of mumu>=5j: " << to_string(mmgte5jcounter) << endl; 
 
     /*
      * Must be called in the end, takes care of thread-safe writeout and
