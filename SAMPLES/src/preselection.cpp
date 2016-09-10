@@ -160,6 +160,8 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
     Int_t emgte5jcounter = 0;
     Int_t mm4jcounter = 0;
     Int_t mmgte5jcounter = 0;
+    Int_t lllcounter = 0;
+    Int_t lltcounter = 0;
 
     for(size_t eventno=0;eventno<nevents;eventno++){
         /*
@@ -263,17 +265,39 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
         if (nElecs == 1 && nMuons == 1 && nJets >= 5) emgte5jcounter++;
         if (nMuons == 2 && nJets == 4) mm4jcounter++;
         if (nMuons == 2 && nJets >= 5) mmgte5jcounter++;
+        if ((nMuons + nElecs + nTaus) == 3) lllcounter++;
+        if ((nMuons + nElecs + nTaus) == 2 && nTaus == 1) lltcounter++; 
 
         myskim->Fill();                       
     }                                        
-    
+    TH1I *h = addPlot(new TH1I("count_histo", "count consistency check", 8, 0, 8), "Category", "Events");
+
+    h->GetXaxis()->SetBinLabel(1, "ee4j"        );          
+    h->GetXaxis()->SetBinLabel(2, "ee#leq5j"    );
+    h->GetXaxis()->SetBinLabel(3, "#mu#mu4j"    );
+    h->GetXaxis()->SetBinLabel(4, "#mu#mu#leq5j");
+    h->GetXaxis()->SetBinLabel(5, "e#mu4j"      );
+    h->GetXaxis()->SetBinLabel(6, "e#mu#leq5j"  );
+    h->GetXaxis()->SetBinLabel(7, "3l"          );
+    h->GetXaxis()->SetBinLabel(8, "2l1#tau"     );
+
+    h->Fill("ee4j"        ,  ee4jcounter     );              
+    h->Fill("ee#leq5j"    ,  eegte5jcounter );       
+    h->Fill("#mu#mu4j"    ,  mm4jcounter   );      
+    h->Fill("#mu#mu#leq5j",  mmgte5jcounter);     
+    h->Fill("e#mu4j"      ,  em4jcounter    );       
+    h->Fill("e#mu#leq5j"  ,  emgte5jcounter );      
+    h->Fill("3l"          ,  3lcounter        );  
+    h->Fill("2l1#tau"     ,  2l1tcounter   );
+
     std::cout << "Number of ee4j: " << std::to_string(ee4jcounter) << std::endl;
     std::cout << "Number of ee>=5j: " << std::to_string(eegte5jcounter) << std::endl;
     std::cout << "Number of emu4j: " << std::to_string(em4jcounter) << std::endl;
     std::cout << "Number of emu>=5j: " << std::to_string(emgte5jcounter) << std::endl;
     std::cout << "Number of mumu4j: " << std::to_string(mm4jcounter) << std::endl;
     std::cout << "Number of mumu>=5j: " << std::to_string(mmgte5jcounter) << std::endl; 
-
+    std::cout << "Number of 3l: " << std::to_string(lllcounter) << std::endl; 
+    std::cout << "Number of llt: " << std::to_string(lltcounter) << std::endl; 
     /*
      * Must be called in the end, takes care of thread-safe writeout and
      * call-back to the parent process
