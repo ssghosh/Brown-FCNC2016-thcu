@@ -189,25 +189,25 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
 
         myskim->Fill();                       
     }                                        
-    TH1I *h = addPlot(new TH1I("count_histo", "count consistency check", 8, 0, 8), "Category", "Events");
+    TH1 *h = addPlot(new TH1I("count_histo", "count consistency check", 8, 0, 8), "Category", "Events");
 
     h->GetXaxis()->SetBinLabel(1, "ee4j"        );          
-    h->GetXaxis()->SetBinLabel(2, "ee#leq5j"    );
+    h->GetXaxis()->SetBinLabel(2, "ee#geq5j"    );
     h->GetXaxis()->SetBinLabel(3, "#mu#mu4j"    );
-    h->GetXaxis()->SetBinLabel(4, "#mu#mu#leq5j");
+    h->GetXaxis()->SetBinLabel(4, "#mu#mu#geq5j");
     h->GetXaxis()->SetBinLabel(5, "e#mu4j"      );
-    h->GetXaxis()->SetBinLabel(6, "e#mu#leq5j"  );
+    h->GetXaxis()->SetBinLabel(6, "e#mu#geq5j"  );
     h->GetXaxis()->SetBinLabel(7, "3l"          );
     h->GetXaxis()->SetBinLabel(8, "2l1#tau"     );
 
     h->Fill("ee4j"        ,  ee4jcounter     );              
-    h->Fill("ee#leq5j"    ,  eegte5jcounter );       
+    h->Fill("ee#geq5j"    ,  eegte5jcounter );       
     h->Fill("#mu#mu4j"    ,  mm4jcounter   );      
-    h->Fill("#mu#mu#leq5j",  mmgte5jcounter);     
+    h->Fill("#mu#mu#geq5j",  mmgte5jcounter);     
     h->Fill("e#mu4j"      ,  em4jcounter    );       
-    h->Fill("e#mu#leq5j"  ,  emgte5jcounter );      
-    h->Fill("3l"          ,  3lcounter        );  
-    h->Fill("2l1#tau"     ,  2l1tcounter   );
+    h->Fill("e#mu#geq5j"  ,  emgte5jcounter );      
+    h->Fill("3l"          ,  lllcounter        );  
+    h->Fill("2l1#tau"     ,  lltcounter   );
 
     std::cout << "Number of ee4j: " << std::to_string(ee4jcounter) << std::endl;
     std::cout << "Number of ee>=5j: " << std::to_string(eegte5jcounter) << std::endl;
