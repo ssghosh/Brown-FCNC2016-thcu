@@ -64,13 +64,6 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
 
 
     /*
-     * If (optionally) a skim or a flat ntuple is to be created, please use the following function to initialize
-     * the tree.
-     * The output files will be written automatically, and a config file will be created.
-     */
-    TTree* myskim=addTree();
-
-    /*
      * Helper variables 
      */
     Int_t    nElecs=0;
@@ -80,25 +73,6 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
     Double_t elecPt=0;
     Double_t muonPt=0;
     Double_t  tauPt=0;
-
-    /*
-     * Or store a vector of objects (also possible to store only one object)
-     */
-    std::vector<Electron> skimmedelecs;
-    std::vector<Muon>     skimmedmuons;
-    std::vector<Jet>      skimmedtaus;
-
-    myskim->Branch("Electrons", &skimmedelecs);
-    myskim->Branch("Muons"    , &skimmedmuons);
-    myskim->Branch("Taus"     , &skimmedtaus );
-
-    /*
-     * Additional branches to store other Delphes objects
-     */
-    std::vector<Jet>         skimmedjets;
-
-    myskim->Branch("Jet"          , &skimmedjets);
-
 
 
     size_t nevents=tree()->entries();
@@ -132,27 +106,22 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
          * Must have lepton Pts > 20
          */
 
-        skimmedelecs.clear();
         for(size_t i=0;i<elecs.size();i++){
             elecPt=elecs.at(i)->PT;
             if(elecPt < 20) {
                 continue;
             }
             nElecs++;
-            skimmedelecs.push_back(*elecs.at(i));
         }
 
-        skimmedmuons.clear();
         for(size_t i=0;i<muons.size();i++){
             muonPt=muons.at(i)->PT;
             if(muonPt < 20) {
                 continue;
             }
             nMuons++;
-            skimmedmuons.push_back(*muons.at(i));
         }
 
-        skimmedtaus.clear();
         for(size_t i=0;i<jets.size();i++){
             bool isTau=(jets.at(i)->TauTag>>2) & 0x1;
             tauPt=jets.at(i)->PT;
@@ -160,20 +129,12 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
                 continue;
             }
             nTaus++;
-            skimmedtaus.push_back(*jets.at(i));
         }
 
 
         // PRESEL: Must have at least 1 lepton
         if(nElecs + nMuons + nTaus < 1) continue;
 
-        /*
-         * Begin the event-by-event storage 
-         */
-
-        skimmedjets.clear();
-
-                for(size_t i=0; i<jets.size(); i++)         skimmedjets.push_back(*jets.at(i));
 
         // Probably not the correct way to get nJets
         nJets = jets.size() - nTaus;
@@ -187,7 +148,6 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
         if ((nMuons + nElecs + nTaus) == 3) lllcounter++;
         if ((nMuons + nElecs + nTaus) == 2 && nTaus == 1) lltcounter++; 
 
-        myskim->Fill();                       
     }                                        
     TH1 *h = addPlot(new TH1I("count_histo", "count consistency check", 8, 0, 8), "Category", "Events");
 
@@ -209,14 +169,14 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
     h->Fill("3l"          ,  lllcounter        );  
     h->Fill("2l1#tau"     ,  lltcounter   );
 
-    std::cout << "Number of ee4j: " << std::to_string(ee4jcounter) << std::endl;
-    std::cout << "Number of ee>=5j: " << std::to_string(eegte5jcounter) << std::endl;
-    std::cout << "Number of emu4j: " << std::to_string(em4jcounter) << std::endl;
-    std::cout << "Number of emu>=5j: " << std::to_string(emgte5jcounter) << std::endl;
-    std::cout << "Number of mumu4j: " << std::to_string(mm4jcounter) << std::endl;
-    std::cout << "Number of mumu>=5j: " << std::to_string(mmgte5jcounter) << std::endl; 
-    std::cout << "Number of 3l: " << std::to_string(lllcounter) << std::endl; 
-    std::cout << "Number of llt: " << std::to_string(lltcounter) << std::endl; 
+    std::cout << "Number of ee4j: " << ee4jcounter << std::endl;
+    std::cout << "Number of ee>=5j: " << eegte5jcounter << std::endl;
+    std::cout << "Number of emu4j: " << em4jcounter << std::endl;
+    std::cout << "Number of emu>=5j: " << emgte5jcounter << std::endl;
+    std::cout << "Number of mumu4j: " << mm4jcounter << std::endl;
+    std::cout << "Number of mumu>=5j: " << mmgte5jcounter << std::endl; 
+    std::cout << "Number of 3l: " << lllcounter << std::endl; 
+    std::cout << "Number of llt: " << lltcounter << std::endl; 
     /*
      * Must be called in the end, takes care of thread-safe writeout and
      * call-back to the parent process
