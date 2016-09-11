@@ -14,6 +14,9 @@ all: $(patsubst bin/%.cpp, %, $(wildcard bin/*.cpp))
 	g++ $(CC_FLAGS) $(LD_FLAGS) $(OBJ_FILES) $< -o $@ 
 
 
+stackPlotter:
+	g++ $(CC_FLAGS) $(LD_FLAGS) src/stackPlotter.cpp -o $@ $^
+
 obj/%.o: src/%.cpp
 	g++ $(CC_FLAGS) -c -o $@ $<
 
