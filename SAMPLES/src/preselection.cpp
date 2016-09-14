@@ -6,7 +6,7 @@
  */
 
 #include "interface/preselection.h"
-
+#include <cmath>
 
 void preselection::analyze(size_t childid /* this info can be used for printouts */){
 
@@ -36,7 +36,9 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
      */
     d_ana::dBranchHandler<Electron>  elecs(tree(),"Electron");
     d_ana::dBranchHandler<Muon>      muons(tree(),"MuonTight");
-    d_ana::dBranchHandler<Jet>          jets(        tree(),"Jet");
+    d_ana::dBranchHandler<Jet>       jets( tree(),"JetPUPPI");
+    d_ana::dBranchHandler<Vertex>    ( tree(),"JetPUPPI");
+    
 
     /* ==SKIM==
      *
@@ -103,12 +105,13 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
 
         /*
          * Perform pre-selection
-         * Must have lepton Pts > 20
+         * Must have lepton Pts > 24
          */
 
         for(size_t i=0;i<elecs.size();i++){
             elecPt=elecs.at(i)->PT;
-            if(elecPt < 20) {
+            elecEta=elecs.at(i)->Eta;
+            if(elecPt < 25 || std::abs(elecEta) > 2.4) {
                 continue;
             }
             nElecs++;
@@ -116,16 +119,18 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
 
         for(size_t i=0;i<muons.size();i++){
             muonPt=muons.at(i)->PT;
-            if(muonPt < 20) {
+            muonEta=muons.at(i)->Eta;
+            if(muonPt < 25 || std::abs(muonEta) > 2.5) {
                 continue;
             }
             nMuons++;
         }
 
         for(size_t i=0;i<jets.size();i++){
-            bool isTau=(jets.at(i)->TauTag>>2) & 0x1;
+            bool isTau = (jets.at(i)->TauTag>>2) & 0x1;
             tauPt=jets.at(i)->PT;
-            if(tauPt < 20 || !isTau) {
+            tauEta=jets.at(i)->Eta;
+            if(tauPt < 24 || !isTau || std::abs(tauEta) > 2.5) {
                 continue;
             }
             nTaus++;
@@ -138,6 +143,7 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
 
         // Probably not the correct way to get nJets
         nJets = jets.size() - nTaus;
+        
         // Output channel counts
         if (nElecs == 2 && nJets == 4) ee4jcounter++;
         if (nElecs == 2 && nJets >= 5) eegte5jcounter++;

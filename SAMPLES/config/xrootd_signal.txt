@@ -1,0 +1,38 @@
+
+[config-begin]
+
+    Outputdir  = output
+    Outputfile = signal_outputfile.root
+    Lumi       = 3000
+    
+    Testmode   = true 
+
+    Maxchilds  = 4
+    
+    Samplesdir = root://cmseos.fnal.gov//store/user/snowmass/noreplica/DelphesFromLHE_333pre16_2016Aug
+
+[config-end]
+
+
+[inputfiles-begin]
+
+TT_antitopHadronicDecay_eta_hct_LO_14TEV_0PU/       , tt_signal, 630, 0.0   , auto, 1, true
+TT_antitopHadronicDecay_eta_hct_LO_14TEV_200PU/     , tt_signal, 630, 0.0   , auto, 2, true  
+TT_antitopHadronicDecay_eta_hut_LO_14TEV_0PU/       , tt_signal, 630, 0.0   , auto, 3, true
+TT_antitopHadronicDecay_eta_hut_LO_14TEV_200PU/     , tt_signal, 630, 0.0   , auto, 4, true
+TT_antitopLeptonicDecay_eta_hct_LO_14TEV_0PU/       , tt_signal, 630, 0.0   , auto, 5, true
+TT_antitopLeptonicDecay_eta_hct_LO_14TEV_200PU/     , tt_signal, 630, 0.0   , auto, 6, true
+TT_antitopLeptonicDecay_eta_hut_LO_14TEV_0PU/       , tt_signal, 630, 0.0   , auto, 7, true
+TT_antitopLeptonicDecay_eta_hut_LO_14TEV_200PU/     , tt_signal, 630, 0.0   , auto, 8, true
+TT_topHadronicDecay_eta_hct_LO_14TEV_0PU/           , tt_signal, 630, 0.0   , auto, 9, true
+TT_topHadronicDecay_eta_hct_LO_14TEV_200PU/         , tt_signal, 630, 0.0   , auto, 10, true
+TT_topHadronicDecay_eta_hut_LO_14TEV_0PU/           , tt_signal, 630, 0.0   , auto, 11, true
+TT_topHadronicDecay_eta_hut_LO_14TEV_200PU/         , tt_signal, 630, 0.0   , auto, 12, true
+TT_topLeptonicDecay_eta_hct_LO_14TEV_0PU/           , tt_signal, 630, 0.0   , auto, 13, true
+TT_topLeptonicDecay_eta_hct_LO_14TEV_200PU/         , tt_signal, 630, 0.0   , auto, 14, true
+TT_topLeptonicDecay_eta_hut_LO_14TEV_0PU/           , tt_signal, 630, 0.0   , auto, 15, true
+TT_topLeptonicDecay_eta_hut_LO_14TEV_200PU/         , tt_signal, 630, 0.0   , auto, 16, true
+
+
+[inputfiles-end]
+
