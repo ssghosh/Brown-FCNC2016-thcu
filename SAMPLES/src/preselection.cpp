@@ -37,7 +37,6 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
     d_ana::dBranchHandler<Electron>  elecs(tree(),"Electron");
     d_ana::dBranchHandler<Muon>      muons(tree(),"MuonTight");
     d_ana::dBranchHandler<Jet>       jets( tree(),"JetPUPPI");
-    d_ana::dBranchHandler<Vertex>    ( tree(),"JetPUPPI");
     
 
     /* ==SKIM==
@@ -75,6 +74,9 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
     Double_t elecPt=0;
     Double_t muonPt=0;
     Double_t  tauPt=0;
+    Double_t elecEta=0;
+    Double_t muonEta=0;
+    Double_t tauEta=0;
 
 
     size_t nevents=tree()->entries();
@@ -102,6 +104,7 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
         nMuons=0;
         nTaus =0; 
         nJets =0;
+        Double_t nBJets=0; //needs to be reset each loop
 
         /*
          * Perform pre-selection
@@ -128,22 +131,26 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
 
         for(size_t i=0;i<jets.size();i++){
             bool isTau = (jets.at(i)->TauTag>>2) & 0x1;
+            bool isBJet = (jets.at(i)->BTag>>2) & 0x1;
             tauPt=jets.at(i)->PT;
             tauEta=jets.at(i)->Eta;
-            if(tauPt < 24 || !isTau || std::abs(tauEta) > 2.5) {
+            if(!isTau) {
+                if (tauPt > 25 && std::abs(tauEta) < 2.5){
+                   nBJets = ((isBJet) ? nBJets + 1 : nBJets);
+                   nJets++;
+                   continue;
+                } 
                 continue;
             }
+            if (tauPt < 24 || tauEta > 2.5) continue; 
             nTaus++;
-        }
-
-
-        // PRESEL: Must have at least 1 lepton
-        if(nElecs + nMuons + nTaus < 1) continue;
-
-
-        // Probably not the correct way to get nJets
-        nJets = jets.size() - nTaus;
+        } 
         
+
+        // PRESEL: Must have at least 1 lepton and 2 B jets
+        if(nElecs + nMuons + nTaus < 1) continue;
+        if (nBJets < 2) continue;
+
         // Output channel counts
         if (nElecs == 2 && nJets == 4) ee4jcounter++;
         if (nElecs == 2 && nJets >= 5) eegte5jcounter++;
