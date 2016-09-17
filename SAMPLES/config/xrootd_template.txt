@@ -1,0 +1,22 @@
+
+[config-begin]
+
+    Outputdir  = OUTPUT
+    Outputfile = OUTPUTFILE
+    Lumi       = LUMINOSITY
+    
+    Testmode   = TESTMODE 
+
+    Maxchilds  = 4
+    
+    Samplesdir = SAMPLESDIR
+
+[config-end]
+
+
+[inputfiles-begin]
+
+FOLDERNAME/           , LEGENDNAME,       COLOR, XSECTION , NUMEVTS, LEGENDORDER, SIGNAL
+ 
+[inputfiles-end]
+
