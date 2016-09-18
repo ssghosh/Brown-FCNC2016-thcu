@@ -21,21 +21,23 @@ if options.indir == "":
     quit()
 
 # check that output directory exists
-options.outdir = os.path.abspath(options.outdir)
-if not os.path.exists(options.outdir):
-    os.system('mkdir -p ' + options.outdir)
+options.outdir = os.path.abspath(options.outputdir)
+if not os.path.exists(options.outputdir):
+    os.system('mkdir -p ' + options.outputdir)
 
 # prepare all configs
-with open(sampleinfo) as samples:
+with open(options.sampleinfo) as samples:
    for config_line in samples:
-       current_name = config_line.split(',')[0].strip('/')
+       if config_line == '':
+         continue 
+       current_name = config_line.split(',')[0].strip('/ ')
        current_conf_name = 'batch_configs/' + current_name + '.conf'
        current_conf = open(current_conf_name,'w')
        current_script_name = 'batch_scripts/' + current_name + '.sh'
        current_shel = open(current_script_name,'w')
 
        # write analyzer config
-       conf_tmpl = open('CondorConf.tmpl.condor')
+       conf_tmpl = open('config/xrootd_template.txt')
        for line in conf_tmpl:
             if 'OUTPUTDIR'  in line: line = line.replace('OUTPUTDIR',  options.outputdir + current_name)       
             if 'OUTPUTFILE' in line: line = line.replace('OUTPUTFILE', current_name)
@@ -49,7 +51,7 @@ with open(sampleinfo) as samples:
        conf_tmpl.close()
 
        # write shell script
-       shel_tmpl = open('CondorShel.tmpl.sh')
+       shel_tmpl = open('bsubshell_template.sh')
        for line in shel_tmpl:
            if 'CMSSWBASE' in line: line = line.replace('CMSSWBASE', cmssw_base)
            if 'CONFIG'  in line: line = line.replace('CONFIG',  current_conf_name)
@@ -62,7 +64,6 @@ with open(sampleinfo) as samples:
        current_shel.close()
 
 # run jobs
-for i,j in [(i,j) for i in range(len(files)) for j in range(nFilesPerLHE)]:
-    current_name = files[i].split('.')[0] + "_%i"%j
-    os.chdir(options.outdir + '/')
-    os.system('sh ' + current_name)
+for script in os.listdir('batch_scripts/'):
+    current_script = 'batch_scripts/' + script
+    os.system('sh ' + current_script)
