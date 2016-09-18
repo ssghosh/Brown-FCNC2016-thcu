@@ -1,7 +1,7 @@
 
 [config-begin]
 
-    Outputdir  = OUTPUT
+    Outputdir  = OUTPUTDIR
     Outputfile = OUTPUTFILE
     Lumi       = LUMINOSITY
     
@@ -16,7 +16,7 @@
 
 [inputfiles-begin]
 
-FOLDERNAME/           , LEGENDNAME,       COLOR, XSECTION , NUMEVTS, LEGENDORDER, SIGNAL
+INPUTFILE_INFO
  
 [inputfiles-end]
 
