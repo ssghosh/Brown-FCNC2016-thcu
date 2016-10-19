@@ -92,6 +92,15 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
     Int_t lllcounter = 0;
     Int_t lltcounter = 0;
 
+    TH1 *ee4j = addPlot(new TH1I("ee4j", "2 electrons + 4 jets", 1, 0, 1), "Category", "Events");
+    TH1 *eegte5j = addPlot(new TH1I("eegte5j", "2 electrons + #geq 5 jets", 1, 0, 1), "Category", "Events");
+    TH1 *em4j = addPlot(new TH1I("em4j", "1 electron + 1 muon + 4 jets", 1, 0, 1), "Category", "Events");
+    TH1 *emgte5j = addPlot(new TH1I("emgte5j", "1 electron + 1 muon + #geq 5 jets", 1, 0, 1), "Category", "Events");
+    TH1 *mm4j = addPlot(new TH1I("mm4j", "2 muons + 4 jets", 1, 0, 1), "Category", "Events");
+    TH1 *mmgte5j = addPlot(new TH1I("mmgte5j", "2 muons + #gte 5 jets", 1, 0, 1), "Category", "Events");
+    TH1 *lll = addPlot(new TH1I("lll", "3 leptons", 1, 0, 1), "Category", "Events");
+    TH1 *llt = addPlot(new TH1I("llt", "2 leptons + 1 #tau", 1, 0, 1), "Category", "Events");
+    
     for(size_t eventno=0;eventno<nevents;eventno++){
         /*
          * The following two lines report the status and set the event link
@@ -151,38 +160,34 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
         if(nElecs + nMuons + nTaus < 1) continue;
         if (nBJets < 2) continue;
 
-        // Output channel counts
-        if (nElecs == 2 && nJets == 4) ee4jcounter++;
-        if (nElecs == 2 && nJets >= 5) eegte5jcounter++;
-        if (nElecs == 1 && nMuons == 1 && nJets == 4) em4jcounter++;
-        if (nElecs == 1 && nMuons == 1 && nJets >= 5) emgte5jcounter++;
-        if (nMuons == 2 && nJets == 4) mm4jcounter++;
-        if (nMuons == 2 && nJets >= 5) mmgte5jcounter++;
-        if ((nMuons + nElecs + nTaus) == 3) lllcounter++;
-        if ((nMuons + nElecs + nTaus) == 2 && nTaus == 1) lltcounter++; 
+        // Output channel counts and fills
+        if (nElecs == 2 && nJets == 4) {
+           ee4jcounter++;
+           ee4j->Fill(0.5); }
+        if (nElecs == 2 && nJets >= 5) {
+            eegte5jcounter++;
+            eegte5j->Fill(0.5); }
+        if (nElecs == 1 && nMuons == 1 && nJets == 4) {
+            em4jcounter++;
+            em4j->Fill(0.5); }
+        if (nElecs == 1 && nMuons == 1 && nJets >= 5) {
+            emgte5jcounter++;
+            emgte5j->Fill(0.5); }
+        if (nMuons == 2 && nJets == 4) {
+            mm4jcounter++;
+            mm4j->Fill(0.5); }
+        if (nMuons == 2 && nJets >= 5) {
+            mmgte5jcounter++;
+            mmgte5j->Fill(0.5); }
+        if ((nMuons + nElecs + nTaus) == 3) {
+            lllcounter++;
+            lll->Fill(0.5); }
+        if ((nMuons + nElecs + nTaus) == 2 && nTaus == 1) {
+            lltcounter++; 
+            llt->Fill(0.5); }
 
     }                                        
-    TH1 *h = addPlot(new TH1I("count_histo", "count consistency check", 8, 0, 8), "Category", "Events");
 
-    h->GetXaxis()->SetBinLabel(1, "ee4j"        );          
-    h->GetXaxis()->SetBinLabel(2, "ee#geq5j"    );
-    h->GetXaxis()->SetBinLabel(3, "#mu#mu4j"    );
-    h->GetXaxis()->SetBinLabel(4, "#mu#mu#geq5j");
-    h->GetXaxis()->SetBinLabel(5, "e#mu4j"      );
-    h->GetXaxis()->SetBinLabel(6, "e#mu#geq5j"  );
-    h->GetXaxis()->SetBinLabel(7, "3l"          );
-    h->GetXaxis()->SetBinLabel(8, "2l1#tau"     );
-
-    h->Fill("ee4j"        ,  ee4jcounter     );              
-    h->Fill("ee#geq5j"    ,  eegte5jcounter );       
-    h->Fill("#mu#mu4j"    ,  mm4jcounter   );      
-    h->Fill("#mu#mu#geq5j",  mmgte5jcounter);     
-    h->Fill("e#mu4j"      ,  em4jcounter    );       
-    h->Fill("e#mu#geq5j"  ,  emgte5jcounter );      
-    h->Fill("3l"          ,  lllcounter        );  
-    h->Fill("2l1#tau"     ,  lltcounter   );
-
-    std::cout << "Number of ee4j: " << ee4jcounter << std::endl;
     std::cout << "Number of ee>=5j: " << eegte5jcounter << std::endl;
     std::cout << "Number of emu4j: " << em4jcounter << std::endl;
     std::cout << "Number of emu>=5j: " << emgte5jcounter << std::endl;
