@@ -1,0 +1,8 @@
+python makeDataCard.py 'TT_Tleptonic_eta_hct'
+python makeDataCard.py 'TT_Tleptonic_eta_hut'
+python makeDataCard.py 'TT_aTleptonic_eta_hct'
+python makeDataCard.py 'TT_aTleptonic_eta_hut'
+python makeDataCard.py 'TT_Thadronic_eta_hct'
+python makeDataCard.py 'TT_Thadronic_eta_hut'
+python makeDataCard.py 'TT_aThadronic_eta_hct'
+python makeDataCard.py 'TT_aThadronic_eta_hut'
