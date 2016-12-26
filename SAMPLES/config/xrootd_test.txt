@@ -2,10 +2,10 @@
 [config-begin]
 
     Outputdir  = full_outputs
-    Outputfile = bkg_output.root
+    Outputfile = bkg_test_output.root
     Lumi       = 3000000
     
-    Testmode   = false 
+    Testmode   = true 
 
     Maxchilds  = 4
     
