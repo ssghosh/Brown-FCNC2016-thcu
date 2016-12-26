@@ -36,7 +36,7 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
      */
     d_ana::dBranchHandler<Electron>  elecs(tree(),"Electron");
     d_ana::dBranchHandler<Muon>      muons(tree(),"MuonTight");
-    d_ana::dBranchHandler<Jet>       jets( tree(),"JetPUPPI");
+    d_ana::dBranchHandler<Jet>       jets( tree(),"Jet");
     
 
     /* ==SKIM==
@@ -91,7 +91,10 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
     Int_t mmgte5jcounter = 0;
     Int_t lllcounter = 0;
     Int_t lltcounter = 0;
+    Int_t nTauTest = 0;
 
+    TH1 *data_obs = addPlot(new TH1I("data_obs", "Observed yields", 1, 0, 1), "Category", "Events");
+    
     TH1 *ee4j = addPlot(new TH1I("ee4j", "2 electrons + 4 jets", 1, 0, 1), "Category", "Events");
     TH1 *eegte5j = addPlot(new TH1I("eegte5j", "2 electrons + #geq 5 jets", 1, 0, 1), "Category", "Events");
     TH1 *em4j = addPlot(new TH1I("em4j", "1 electron + 1 muon + 4 jets", 1, 0, 1), "Category", "Events");
@@ -100,7 +103,15 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
     TH1 *mmgte5j = addPlot(new TH1I("mmgte5j", "2 muons + #gte 5 jets", 1, 0, 1), "Category", "Events");
     TH1 *lll = addPlot(new TH1I("lll", "3 leptons", 1, 0, 1), "Category", "Events");
     TH1 *llt = addPlot(new TH1I("llt", "2 leptons + 1 #tau", 1, 0, 1), "Category", "Events");
-    
+    data_obs->Fill(0.5);
+    //ee4j->Fill(0.5);
+    //eegte5j->Fill(0.5);
+    //em4j->Fill(0.5);
+    //emgte5j->Fill(0.5);
+    //mm4j->Fill(0.5);
+    //mmgte5j->Fill(0.5);
+    //lll->Fill(0.5);
+    //llt->Fill(0.5);
     for(size_t eventno=0;eventno<nevents;eventno++){
         /*
          * The following two lines report the status and set the event link
@@ -139,10 +150,11 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
         }
 
         for(size_t i=0;i<jets.size();i++){
-            bool isTau = (jets.at(i)->TauTag>>2) & 0x1;
+            bool isTau = jets.at(i)->TauTag > 0;
             bool isBJet = (jets.at(i)->BTag>>2) & 0x1;
             tauPt=jets.at(i)->PT;
             tauEta=jets.at(i)->Eta;
+            if (isTau) nTauTest++;
             if(!isTau) {
                 if (tauPt > 25 && std::abs(tauEta) < 2.5){
                    nBJets = ((isBJet) ? nBJets + 1 : nBJets);
@@ -195,6 +207,7 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
     std::cout << "Number of mumu>=5j: " << mmgte5jcounter << std::endl; 
     std::cout << "Number of 3l: " << lllcounter << std::endl; 
     std::cout << "Number of llt: " << lltcounter << std::endl; 
+    std::cout << "Number of taus: " << nTauTest << std::endl;
     /*
      * Must be called in the end, takes care of thread-safe writeout and
      * call-back to the parent process
