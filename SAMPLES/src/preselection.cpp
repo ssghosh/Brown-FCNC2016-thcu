@@ -68,7 +68,9 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
      * Helper variables 
      */
     Int_t    nElecs=0;
+    Int_t   naElecs=0;
     Int_t    nMuons=0;
+    Int_t   naMuons=0;
     Int_t     nTaus=0;
     Int_t     nJets=0;
     Double_t elecPt=0;
@@ -77,6 +79,8 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
     Double_t elecEta=0;
     Double_t muonEta=0;
     Double_t tauEta=0;
+    Double_t elecCharge=0;
+    Double_t muonCharge=0;
 
 
     size_t nevents=tree()->entries();
@@ -103,6 +107,19 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
     TH1 *mmgte5j = addPlot(new TH1I("mmgte5j", "2 muons + #gte 5 jets", 1, 0, 1), "Category", "Events");
     TH1 *lll = addPlot(new TH1I("lll", "3 leptons", 1, 0, 1), "Category", "Events");
     TH1 *llt = addPlot(new TH1I("llt", "2 leptons + 1 #tau", 1, 0, 1), "Category", "Events");
+
+    // produce an additional hist which contains all the events binned by category    
+    TH1 *totals = addPlot(new TH1I("totals", "Events by Category", 8, 0, 8), "Category", "Events");
+    
+    totals->GetXaxis()->SetBinLabel(1, "ee4j"        );          
+    totals->GetXaxis()->SetBinLabel(2, "ee#geq5j"    );
+    totals->GetXaxis()->SetBinLabel(3, "#mu#mu4j"    );
+    totals->GetXaxis()->SetBinLabel(4, "#mu#mu#geq5j");
+    totals->GetXaxis()->SetBinLabel(5, "e#mu4j"      );
+    totals->GetXaxis()->SetBinLabel(6, "e#mu#geq5j"  );
+    totals->GetXaxis()->SetBinLabel(7, "3l"          );
+    totals->GetXaxis()->SetBinLabel(8, "2l1#tau"     );
+
     data_obs->Fill(0.5);
     //ee4j->Fill(0.5);
     //eegte5j->Fill(0.5);
@@ -121,7 +138,9 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
         tree()->setEntry(eventno);
 
         nElecs=0;
+        naElecs=0;
         nMuons=0;
+        naMuons=0;
         nTaus =0; 
         nJets =0;
         Double_t nBJets=0; //needs to be reset each loop
@@ -134,19 +153,24 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
         for(size_t i=0;i<elecs.size();i++){
             elecPt=elecs.at(i)->PT;
             elecEta=elecs.at(i)->Eta;
+            elecCharge=elecs.at(i)->Charge;
+            //std::cout << "electron charge is" << elecCharge << std::endl;
             if(elecPt < 25 || std::abs(elecEta) > 2.4) {
                 continue;
             }
-            nElecs++;
+            if (elecCharge == -1) nElecs++;
+            if (elecCharge == 1) naElecs++;
         }
 
         for(size_t i=0;i<muons.size();i++){
             muonPt=muons.at(i)->PT;
             muonEta=muons.at(i)->Eta;
+            muonCharge=muons.at(i)->Charge;
             if(muonPt < 25 || std::abs(muonEta) > 2.5) {
                 continue;
             }
-            nMuons++;
+            if (muonCharge == -1) nMuons++;
+            if (muonCharge == 1) naMuons++;
         }
 
         for(size_t i=0;i<jets.size();i++){
@@ -154,7 +178,6 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
             bool isBJet = (jets.at(i)->BTag>>2) & 0x1;
             tauPt=jets.at(i)->PT;
             tauEta=jets.at(i)->Eta;
-            if (isTau) nTauTest++;
             if(!isTau) {
                 if (tauPt > 25 && std::abs(tauEta) < 2.5){
                    nBJets = ((isBJet) ? nBJets + 1 : nBJets);
@@ -168,35 +191,43 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
         } 
         
 
-        // PRESEL: Must have at least 1 lepton and 2 B jets
+        // PRESEL: Must have at least 1 lepton and 1 B jets
         if(nElecs + nMuons + nTaus < 1) continue;
-        if (nBJets < 2) continue;
+        if (nBJets < 1) continue;
 
         // Output channel counts and fills
-        if (nElecs == 2 && nJets == 4) {
+        if ((nElecs == 2 || naElecs == 2) && nTaus == 0 && nJets == 4) {
            ee4jcounter++;
-           ee4j->Fill(0.5); }
-        if (nElecs == 2 && nJets >= 5) {
+           ee4j->Fill(0.5);
+           totals->Fill("ee4j", 1); }
+        if ((nElecs == 2 || naElecs == 2) && nTaus == 0 && nJets >= 5) {
             eegte5jcounter++;
-            eegte5j->Fill(0.5); }
-        if (nElecs == 1 && nMuons == 1 && nJets == 4) {
+            eegte5j->Fill(0.5);
+            totals->Fill("ee#geq5j", 1); }
+        if (((nElecs + nMuons) == 2 || (naElecs + naMuons) == 2) && nJets == 4) {
             em4jcounter++;
-            em4j->Fill(0.5); }
-        if (nElecs == 1 && nMuons == 1 && nJets >= 5) {
+            em4j->Fill(0.5);
+            totals->Fill("e#mu4j", 1); }
+        if (((nElecs + nMuons) == 2 || (naElecs + naMuons) == 2) && nJets >= 5) {
             emgte5jcounter++;
-            emgte5j->Fill(0.5); }
-        if (nMuons == 2 && nJets == 4) {
+            emgte5j->Fill(0.5); 
+            totals->Fill("e#mu#geq5j", 1);}
+        if ((nMuons == 2 || naMuons == 2) && nJets == 4) {
             mm4jcounter++;
-            mm4j->Fill(0.5); }
-        if (nMuons == 2 && nJets >= 5) {
+            mm4j->Fill(0.5); 
+            totals->Fill("#mu#mu4j", 1);}
+        if ((nMuons == 2 || naMuons == 2) && nJets >= 5) {
             mmgte5jcounter++;
-            mmgte5j->Fill(0.5); }
-        if ((nMuons + nElecs + nTaus) == 3) {
+            mmgte5j->Fill(0.5); 
+            totals->Fill("#mu#mu#geq5j", 1);}
+        if (((nMuons + nElecs + naMuons + naElecs) == 3) && ((nJets >= 3 && nBJets >= 2) || (nJets >= 4 && nBJets >= 1))) {
             lllcounter++;
-            lll->Fill(0.5); }
-        if ((nMuons + nElecs + nTaus) == 2 && nTaus == 1) {
+            lll->Fill(0.5); 
+            totals->Fill("3l", 1);}
+        if (((nMuons + nElecs) == 2 || (naMuons + naElecs) == 2) && nTaus == 1 && nJets >= 4) {
             lltcounter++; 
-            llt->Fill(0.5); }
+            llt->Fill(0.5); 
+            totals->Fill("2l1#tau", 1);}
 
     }                                        
 
