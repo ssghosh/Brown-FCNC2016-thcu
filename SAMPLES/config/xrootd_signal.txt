@@ -28,7 +28,7 @@ $ TT_topLeptonicDecay_eta_hut_LO_14TEV_0PU/         , TT_Tleptonic_eta_hut,  9, 
 
 $ 200PU
 $ ensure the legend ordering is consistent across all config files
-$ ensure color coding is consistend across all config files
+$ ensure color coding is consistent across all config files
 $ legend names and cross sections from https://twiki.cern.ch/twiki/bin/view/CMS/TopFCNCxsection
 $ fix color coding
 $                                                                             xsection, pb

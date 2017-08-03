@@ -1,0 +1,57 @@
+>>> including systematics
+>>> method used to compute upper limit is Asymptotic
+>>> random number generator seed is 123456
+[?1034hComputing limit starting from observation
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+  [WARNING] Found [B4pxs] at boundary. 
+  [WARNING] Found [BB4pxs] at boundary. 
+  [WARNING] Found [Bj4pxs] at boundary. 
+  [WARNING] Found [BjjVBFxs] at boundary. 
+  [WARNING] Found [LL4pxs] at boundary. 
+  [WARNING] Found [btag] at boundary. 
+  [WARNING] Found [cID] at boundary. 
+  [WARNING] Found [jEres] at boundary. 
+  [WARNING] Found [jEscale] at boundary. 
+  [WARNING] Found [jID] at boundary. 
+  [WARNING] Found [leptonID] at boundary. 
+  [WARNING] Found [lumi] at boundary. 
+  [WARNING] Found [pileup] at boundary. 
+  [WARNING] Found [tB4pxs] at boundary. 
+  [WARNING] Found [tj4pxs] at boundary. 
+  [WARNING] Found [tt4pxs] at boundary. 
+  [WARNING] Found [ttB4pxs] at boundary. 
+Constraints of type SimpleGaussianConstraint: 20
+Median for expected limits: 0.0258789
+Sigma  for expected limits: 0.0132038
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -1.71885e+06 (r = 4.29878e-12)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -1.2468e+06 (r = 1.90735e-05)
+At r = 1.200000:	q_mu = 82326.20045	q_A  = 7383.46526	CLsb = 0.00000	CLb  = 0.00000	CLs  = 0.00000
+At r = 0.600000:	q_mu = 41163.91288	q_A  = 1967.23112	CLsb = 0.00000	CLb  = 0.00000	CLs  = 0.00000
+At r = 0.300000:	q_mu = 20582.76910	q_A  = 508.83131	CLsb = 0.00000	CLb  = 0.00000	CLs  = 0.00000
+At r = 0.150000:	q_mu = 10292.19721	q_A  = 129.46997	CLsb = 0.00000	CLb  = 0.00000	CLs  = 0.00000
+At r = 0.075000:	q_mu = 5146.91126	q_A  = 32.65896	CLsb = 0.00000	CLb  = 0.00000	CLs  = 0.00000
+At r = 0.037500:	q_mu = 2574.26829	q_A  = 8.20153	CLsb = 0.00000	CLb  = 0.00000	CLs  = 0.00000
+At r = 0.018750:	q_mu = 1287.94680	q_A  = 2.05490	CLsb = 0.00000	CLb  = 0.00000	CLs  = 0.00000
+At r = 0.009375:	q_mu = 644.78606	q_A  = 0.51423	CLsb = 0.00000	CLb  = 0.00000	CLs  = 0.00000
+At r = 0.004688:	q_mu = 323.20569	q_A  = 0.12859	CLsb = 0.00000	CLb  = 0.00000	CLs  = 0.00000
+At r = 0.002344:	q_mu = 162.41550	q_A  = 0.03214	CLsb = 0.00000	CLb  = 0.00000	CLs  = 0.00000
+At r = 0.001172:	q_mu = 82.02041	q_A  = 0.00802	CLsb = 0.00000	CLb  = 0.00000	CLs  = 0.00000
+At r = 0.000586:	q_mu = 41.82286	q_A  = 0.00200	CLsb = 0.00000	CLb  = 0.00000	CLs  = 0.00000
+At r = 0.000293:	q_mu = 21.72409	q_A  = 0.00050	CLsb = 0.00000	CLb  = 0.00000	CLs  = 0.00000
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0003
+Expected  2.5%: r < 0.0142
+Expected 16.0%: r < 0.0182
+Expected 50.0%: r < 0.0259
+Expected 84.0%: r < 0.0354
+Expected 97.5%: r < 0.0472
+
+Done in 0.01 min (cpu), 0.01 min (real)

@@ -17,6 +17,9 @@ all: $(patsubst bin/%.cpp, %, $(wildcard bin/*.cpp))
 stackPlotter:
 	g++ $(CC_FLAGS) $(LD_FLAGS) src/stackPlotter.cpp -o $@ $^
 
+plottingFiles:
+	g++ $(CC_FLAGS) $(LD_FLAGS) make_plotting_files.cpp -o $@ $^
+
 obj/%.o: src/%.cpp
 	g++ $(CC_FLAGS) -c -o $@ $<
 
