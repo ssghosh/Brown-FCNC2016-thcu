@@ -2,15 +2,6 @@ import CombineHarvester.CombineTools.ch as ch
 from ROOT import TFile
 import os,sys
 
-signals = ['TT_Tleptonic_eta_hut',
-            'TT_Tleptonic_eta_hct',
-            'TT_aTleptonic_eta_hut',
-            'TT_aTleptonic_eta_hct',
-            'TT_Thadronic_eta_hut',
-            'TT_Thadronic_eta_hct',
-            'TT_aThadronic_eta_hut',
-            'TT_aThadronic_eta_hct']
-
 hut_sigs = ['TT_Tleptonic_eta_hut',
             'TT_aTleptonic_eta_hut',
             'TT_Thadronic_eta_hut',
@@ -22,8 +13,6 @@ hct_sigs = ['TT_Tleptonic_eta_hct',
             'TT_aThadronic_eta_hct']
 
 sig_types = {'hut': hut_sigs, 'hct': hct_sigs}
-
-if len(sys.argv)>1: signal = sys.argv[1]
 
 cats = [(0, 'ee4j'), 
 		(1, 'eegte5j'), 
@@ -45,18 +34,34 @@ obs_rates = {
     'llt': 0
 }
 
-bkg_procs = [   'B4p',
-                'BB4p',
-                'BBB4p',
-                'Bj4p',
-                'BjjVBF',
-                'H4p',
-                'LL4p',
-                'LLB',
-                'tB4p',
-                'tj4p',
-                'tt4p',
-                'ttB4p']
+# what follows are numbers you may want to use in scaling/normalizing the counts
+
+sig_xs = {
+    'TT_aThadronic_eta_hct' : 65.65372,
+    'TT_aThadronic_eta_hut' : 65.66524,
+    'TT_aTleptonic_eta_hct' : 31.46717,
+    'TT_aTleptonic_eta_hut' : 31.47269,
+    'TT_Thadronic_eta_hct' : 65.65372,
+    'TT_Thadronic_eta_hut' : 65.66524,
+    'TT_Tleptonic_eta_hct' : 31.46717,
+    'TT_Tleptonic_eta_hut' : 31.47269}
+
+ttbar_xs = 984.5 #pb, from https://twiki.cern.ch/twiki/bin/view/LHCPhysics/TtbarNNLO for 14 TeV
+br_w_leptonic = 0.1086 # from http://pdg.lbl.gov/2014/listings/rpp2014-list-w-boson.pdf
+br_w_hadronic = 0.6741 # ibid
+hut_pw = 0.1904399 #GeV, from https://twiki.cern.ch/twiki/bin/view/CMS/TopFCNCxsection
+hct_pw = 0.1904065 #GeV
+
+# constructing some signal normalizations
+# normalize everything to 1 pb:
+sig_1pb_norm = {name : 1./sig_xs[name] for name in sig_xs} 
+print sig_1pb_norm
+# normalize everything to just the anomalous decay BR
+sig_br_norm = {name : (ttbar_xs*br_w_leptonic)/sig_xs[name] if "leptonic" in name else (ttbar_xs*br_w_hadronic)/sig_xs[name] for name in sig_xs} 
+print sig_br_norm
+# normalize everything to the non-anomalous cross section, leaving anomalous decay as the free param
+# the 2 in the numerator is there because analyzer used xs's for one top and we needed to account for 2
+sig_anom_norm = {name : 2./hut_pw if "hut" in name else 2./hct_pw for name in sig_xs}
 
 # want a list of the lumis we're interested in scanning through
 # since the nominal lumi in the analyser is 3000 fb^-1 these scalings
@@ -64,7 +69,13 @@ bkg_procs = [   'B4p',
 nominal_lumi = 3000. #fb^-1
 lumi_setpoints = [35., 100., 500., 1000., 1500., 2000., 2500., 3000.]
 
-def produce_cards(output_dir, scaling):
+# inputs: output_dir, a string with a path to which the datacards will be written
+#         sig_channel_normalizations, a dict with strings of the names of the signal
+#           channels as keys and floats (multiplicative factors) as values. These 
+#           values only affect the signal counts.
+#         scaling, a float which is applied multiplicatively to all counts
+# output: A set of datacards in output_dir
+def produce_cards(output_dir, scaling, sig_channel_normalizations=None):
     for sig_type in sig_types:
         for cat in cats:
             cb = ch.CombineHarvester()
@@ -91,11 +102,13 @@ def produce_cards(output_dir, scaling):
             def set_rates(x):
                 print "setting rate for", x.bin()+'__'+x.process() + "..."
                 nominal = tfile.Get(x.bin()+'__'+x.process()).Integral() 
-                scaled = nominal * scaling
+                if x.process() in sig_types[sig_type] and sig_channel_normalizations:
+                    scaled = nominal * sig_channel_normalizations[x.process()] * scaling
+                else:
+                    scaled = nominal * scaling
                 x.set_rate(scaled)
 
             cb.ForEachObs(lambda x: x.set_rate(obs_rates[x.bin()]))
-            #cb.ForEachProc(lambda x: x.set_rate(tfile.Get(x.bin()+'__'+x.process()).Integral()))
             cb.ForEachProc(set_rates)
 
 
@@ -143,4 +156,4 @@ def produce_cards(output_dir, scaling):
             cb.WriteDatacard(output_dir + '/' + sig_type + '_' + cat[1]+'.txt')
 
 for setpoint in lumi_setpoints:
-    produce_cards("lumi"+str(int(setpoint)), setpoint/nominal_lumi)
+    produce_cards("lumi"+str(int(setpoint)), setpoint/nominal_lumi, sig_anom_norm)

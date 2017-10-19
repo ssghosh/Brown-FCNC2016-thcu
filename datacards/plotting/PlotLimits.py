@@ -13,69 +13,17 @@ rt.gROOT.SetBatch(1)
 from tdrStyle import *
 setTDRStyle()
 
-#blind=False
-#saveKey=''
-#signal = 'X53'
-#lumiPlot = '35.9'
-#lumiStr = '35p867'
-#
-#mass_str = ['800','900','1000','1100','1200','1300','1400','1500','1600']
-#theory_xsec = [0.196,0.0903,0.0440,0.0224,0.0118,0.00639,0.00354,0.00200,0.001148,0.000666,0.000391][:len(mass_str)]#pb
-#scale_up = [1.9,1.9,1.9,1.8,1.8,1.8,1.7,1.8,1.7,1.6,1.7,1.7][:len(mass_str)]#%
-#scale_dn = [1.9,1.8,1.7,1.6,1.6,1.5,1.5,1.5,1.5,1.5,1.5,1.5][:len(mass_str)]#%
-#pdf_up   = [3.7,3.9,4.1,4.4,4.7,5.1,5.6,6.1,6.7,7.0,8.0,9.0][:len(mass_str)]#%
-#pdf_dn   = [3.6,3.7,3.9,4.0,4.2,4.5,4.8,5.2,5.6,6.1,6.6,7.2][:len(mass_str)]#%
-#
-#mass   =array('d', [float(item) for item in mass_str])
-#masserr=array('d',[0 for i in range(len(mass))])
-#exp   =array('d',[0 for i in range(len(mass))])
-#experr=array('d',[0 for i in range(len(mass))])
-#obs   =array('d',[0 for i in range(len(mass))])
-#obserr=array('d',[0 for i in range(len(mass))]) 
-#exp68H=array('d',[0 for i in range(len(mass))])
-#exp68L=array('d',[0 for i in range(len(mass))])
-#exp95H=array('d',[0 for i in range(len(mass))])
-#exp95L=array('d',[0 for i in range(len(mass))])
-#
-#theory_xsec_up = [math.sqrt(scale**2+pdf**2)*xsec/100 for xsec,scale,pdf in zip(theory_xsec,scale_up,pdf_up)]
-#theory_xsec_dn = [math.sqrt(scale**2+pdf**2)*xsec/100 for xsec,scale,pdf in zip(theory_xsec,scale_dn,pdf_dn)]
-#
-#theory_xsec_v    = rt.TVectorD(len(mass),array('d',theory_xsec))
-#theory_xsec_up_v = rt.TVectorD(len(mass),array('d',theory_xsec_up))
-#theory_xsec_dn_v = rt.TVectorD(len(mass),array('d',theory_xsec_dn))      
-#
-#theory_xsec_gr = rt.TGraphAsymmErrors(rt.TVectorD(len(mass),mass),theory_xsec_v,rt.TVectorD(len(mass),masserr),rt.TVectorD(len(mass),masserr),theory_xsec_dn_v,theory_xsec_up_v)
-#theory_xsec_gr.SetFillStyle(3001)
-#theory_xsec_gr.SetFillColor(rt.kRed)
-#			   
-#theory = rt.TGraph(len(mass))
-#for i in range(len(mass)):
-#	theory.SetPoint(i, mass[i], theory_xsec[i])
-#
-#def getSensitivity(index, exp):
-#	a1=mass[index]-mass[index-1]
-#	b1=mass[index]-mass[index-1]
-#	c1=0
-#	a2=exp[index]-exp[index-1]
-#	b2=theory_xsec[index]-theory_xsec[index-1]
-#	c2=theory_xsec[index-1]-exp[index-1]
-#	s = (c1*b2-c2*b1)/(a1*b2-a2*b1)
-#	t = (a1*c2-a2*c1)/(a1*b2-a2*b1)
-#	return mass[index-1]+s*(mass[index]-mass[index-1]), exp[index-1]+s*(exp[index]-exp[index-1])
-#
-#set the tdr style
-#tdrstyle.setTDRStyle()
 
 #change the CMS_lumi variables (see CMS_lumi.py)
 CMS_lumi.writeExtraText = 1
-CMS_lumi.extraText = "Preliminary"
+CMS_lumi.extraText = "Simulation"
 CMS_lumi.lumi_sqrtS = "14 TeV" # used with iPeriod = 0, e.g. for simulation-only plots (default is an empty string)
 
 iPos = 11
 if( iPos==0 ): CMS_lumi.relPosX = 0.12
 
-H_ref = 600; 
-W_ref = 800; 
+H_ref = 600 
+W_ref = 800 
 W = W_ref
 H  = H_ref
 
@@ -110,7 +58,11 @@ lumi_dirs = ['lumi100',
 
 lumis = array('d',[100., 500., 1000., 1500., 2000., 2500., 3000.])
 
-lumi_dir_path = '/uscms_data/d3/ssghosh/CMSSW_8_0_11/src/Brown-FCNC2016-thcu/datacards/test'
+lumi_dir_path = '/uscms_data/d3/ssghosh/CMSSW_8_0_11/src/Brown-FCNC2016-thcu/datacards/'
+hut_plot_filename = 'hut_1pb_norm.png'
+hct_plot_filename = 'hct_1pb_norm.png'
+XaxisTitle = "Integrated Luminosity (fb^{-1})"
+YaxisTitle = "Cross section (pb)"
 
 hut_lims = array('d',[0 for i in range(len(lumis))])
 hut_95H = array('d',[0 for i in range(len(lumis))])
@@ -155,10 +107,12 @@ def read_single_asymptotic_file(filename):
         p = re.compile('\d\.\d+[^%]')
         result_list = p.findall(contents[result_idx])
         band68_list = [p.findall(contents[band68_idxs[0]])[0], p.findall(contents[band68_idxs[1]])[0]]
+        print "68% band:", band68_list
         band95_list = [p.findall(contents[band95_idxs[0]])[0], p.findall(contents[band95_idxs[1]])[0]]
+        print "95% band:", band95_list
         result_val = float(result_list[0])
-        band68_vals = [float(item) for item in band68_list]
-        band95_vals = [float(item) for item in band95_list]
+        band68_vals = [abs(float(item) - result_val) for item in band68_list]
+        band95_vals = [abs(float(item) - result_val) for item in band95_list]
 
         return result_val, band68_vals, band95_vals
         
@@ -179,8 +133,6 @@ for jentry, lumi_dir in enumerate(lumi_dirs):
     hct_95L[jentry] = hct_band95[0]
     hct_95H[jentry] = hct_band95[1]
 
-hut_plot_filename = 'hut_single_asymp_graph.png'
-hct_plot_filename = 'hct_single_asymp_graph.png'
 # vectors to be used by both plots
 lumisv = rt.TVectorD(len(lumis),lumis)
 limerrsv = rt.TVectorD(len(limerrs),limerrs)
@@ -202,27 +154,26 @@ hut_expected68.SetFillColor(rt.kGreen+1)
 hut_expected95 = rt.TGraphAsymmErrors(lumisv,hut_limsv,lumierrsv,lumierrsv,hut_95Lv,hut_95Hv)
 hut_expected95.SetFillColor(rt.kOrange)
 
-XaxisTitle = "Integrated Luminosity (fb^{-1})"
-YaxisTitle = "Signal Strength (\sigma_{tuh}/\sigma_{nom}"
 
 hut_canvas = rt.TCanvas("c1","c1",50,50,W,H)
 hut_canvas.SetFillColor(0)
 hut_canvas.SetBorderMode(0)
 hut_canvas.SetFrameFillStyle(0)
 hut_canvas.SetFrameBorderMode(0)
-hut_canvas.SetLeftMargin( L/W )
-hut_canvas.SetRightMargin( R/W )
-hut_canvas.SetTopMargin( T/H )
-hut_canvas.SetBottomMargin( B/H )
+#hut_canvas.SetLeftMargin( L/W )
+#hut_canvas.SetRightMargin( R/W )
+#hut_canvas.SetTopMargin( T/H )
+#hut_canvas.SetBottomMargin( B/H )
 hut_canvas.SetTickx(0)
 hut_canvas.SetTicky(0)
+
+hut_expected95.GetXaxis().SetTitle(XaxisTitle)
+hut_expected95.GetYaxis().SetTitle(YaxisTitle)
 
 hut_expected95.Draw("a3")
 hut_expected68.Draw("3same")
 hut_expected.Draw("same")
 CMS_lumi.CMS_lumi(hut_canvas, iPeriod, iPos)
-hut_expected.GetXaxis().SetTitle(XaxisTitle)
-hut_expected.GetYaxis().SetTitle(YaxisTitle)
 
 hut_legend = rt.TLegend(.6,.75,.9,.89) # top right
 hut_legend.AddEntry(hut_expected, "95%CL upper lim", "l")
@@ -259,26 +210,26 @@ hct_expected95 = rt.TGraphAsymmErrors(lumisv,hct_limsv,lumierrsv,lumierrsv,hct_9
 hct_expected95.SetFillColor(rt.kOrange)
 
 XaxisTitle = "Integrated Luminosity (fb^{-1})"
-YaxisTitle = "Signal Strength (\sigma_{tuh}/\sigma_{nom}"
+YaxisTitle = "Cross section (pb)"
 
 hct_canvas = rt.TCanvas("c2","c2",50,50,W,H)
 hct_canvas.SetFillColor(0)
 hct_canvas.SetBorderMode(0)
 hct_canvas.SetFrameFillStyle(0)
 hct_canvas.SetFrameBorderMode(0)
-hct_canvas.SetLeftMargin( L/W )
-hct_canvas.SetRightMargin( R/W )
-hct_canvas.SetTopMargin( T/H )
-hct_canvas.SetBottomMargin( B/H )
+#hct_canvas.SetLeftMargin( L/W )
+#hct_canvas.SetRightMargin( R/W )
+#hct_canvas.SetTopMargin( T/H )
+#hct_canvas.SetBottomMargin( B/H )
 hct_canvas.SetTickx(0)
 hct_canvas.SetTicky(0)
+hct_expected95.GetXaxis().SetTitle(XaxisTitle)
+hct_expected95.GetYaxis().SetTitle(YaxisTitle)
 
 hct_expected95.Draw("a3")
 hct_expected68.Draw("3same")
 hct_expected.Draw("same")
 CMS_lumi.CMS_lumi(hct_canvas, iPeriod, iPos)
-hct_expected.GetXaxis().SetTitle(XaxisTitle)
-hct_expected.GetYaxis().SetTitle(YaxisTitle)
 
 hct_legend = rt.TLegend(.6,.75,.9,.89) # top right
 hct_legend.AddEntry(hct_expected, "95%CL upper lim", "l")
