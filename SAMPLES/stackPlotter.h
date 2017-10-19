@@ -42,7 +42,7 @@ public:
 	stackPlotter();
 	virtual ~stackPlotter();
 
-    void plot();
+    void plot(TString histname, TString legpos);
 
     // runtime settings
     void rewriteOutfile(Bool_t rewrite=true){rewriteoutfile_=rewrite;} 
@@ -61,7 +61,7 @@ protected:
 
 	bool isTestMode()const{return testmode_;}
 
-	virtual legendposition estimateBestLegendPosition(TH1* )const;
+	//virtual legendposition estimateBestLegendPosition(TH1* )const;
 
 	virtual void applyStyleToAxis(THStack *, legendposition pos)const;
 	virtual void applyStyleToCanvas(TVirtualPad* ,legendposition pos)const;
@@ -75,8 +75,8 @@ private:
 
     // utils for stacks
     std::map<TString, std::vector< std::pair<Int_t,TH1*> > > stacksLegEntries_;
-    void moveDirHistsToStacks(TDirectory* tdir);
-    void plotStack(const TString& key);
+    void moveDirHistsToStacks(TDirectory* tdir, TString histname, int color);
+    void plotStack(const TString& key, legendposition legpos);
 
     // runtime settings
     Bool_t rewriteoutfile_=true;

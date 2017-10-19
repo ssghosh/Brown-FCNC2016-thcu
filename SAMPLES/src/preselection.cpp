@@ -110,6 +110,12 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
 
     // produce an additional hist which contains all the events binned by category    
     TH1 *totals = addPlot(new TH1I("totals", "Events by Category", 8, 0, 8), "Category", "Events");
+
+    // kinematic variables plots
+    TH1 *lepton_pt = addPlot(new TH1F("lep_pt", "Light lepton p_{T}", 30, 20, 100), "p_{T} / 2.6 GeV", "Number");
+    TH1 *lepton_eta = addPlot(new TH1F("lep_eta", "Light lepton #eta", 20, -2.5, 2.5), "#eta", "Number");
+    TH1 *tau_pt = addPlot(new TH1F("tau_pt", "Tau p_{T}", 30, 20, 100), "p_{T} / 2.6 GeV", "Number"); 
+    TH1 *tau_eta = addPlot(new TH1F("tau_eta", "Tau #eta", 20, -2.5, 2.5), "#eta", "Number");
     
     totals->GetXaxis()->SetBinLabel(1, "ee4j"        );          
     totals->GetXaxis()->SetBinLabel(2, "ee#geq5j"    );
@@ -160,6 +166,8 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
             }
             if (elecCharge == -1) nElecs++;
             if (elecCharge == 1) naElecs++;
+            lepton_pt->Fill(elecPt);
+            lepton_eta->Fill(elecEta);
         }
 
         for(size_t i=0;i<muons.size();i++){
@@ -171,6 +179,8 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
             }
             if (muonCharge == -1) nMuons++;
             if (muonCharge == 1) naMuons++;
+            lepton_pt->Fill(elecPt);
+            lepton_eta->Fill(elecEta);
         }
 
         for(size_t i=0;i<jets.size();i++){
@@ -187,6 +197,8 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
                 continue;
             }
             if (tauPt < 24 || tauEta > 2.5) continue; 
+            tau_pt->Fill(tauPt);
+            tau_eta->Fill(tauEta);
             nTaus++;
         } 
         

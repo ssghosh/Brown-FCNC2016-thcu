@@ -21,7 +21,7 @@ stackPlotter::~stackPlotter(){
 }
 
 
-void stackPlotter::moveDirHistsToStacks(TDirectory* tdir){
+void stackPlotter::moveDirHistsToStacks(TDirectory* tdir, TString histname, int color){
 	if(debug)
 		std::cout << "stackPlotter::moveDirHistsToStacks" << std::endl;
 
@@ -45,6 +45,7 @@ void stackPlotter::moveDirHistsToStacks(TDirectory* tdir){
 
 	// loop through keys in the directory
 	while((cHistKey = (TKey*) histIter())) {
+        if(histname != cHistKey->GetName()) continue;
 		cHistObj=tdir->Get(cHistKey->GetName());
 		if(!cHistObj->InheritsFrom(TH1::Class())) continue;
 
@@ -66,7 +67,7 @@ void stackPlotter::moveDirHistsToStacks(TDirectory* tdir){
 			stacksLegEntries_[mapName] = legInfo;
 		}
 
-		cHist->SetFillColor(tMI.color);
+		cHist->SetFillColor(color);
 		cHist->SetFillStyle(1001);
 		cHist->SetMarkerStyle(kNone);
 		cHist->SetMarkerColor(kBlack);
@@ -100,7 +101,7 @@ void stackPlotter::moveDirHistsToStacks(TDirectory* tdir){
 }
 
 
-void stackPlotter::plotStack(const TString& key) {
+void stackPlotter::plotStack(const TString& key, legendposition legpos) {
 	if(debug)
 		std::cout << "stackPlotter::plotStack" << std::endl;
 
@@ -123,7 +124,6 @@ void stackPlotter::plotStack(const TString& key) {
 //	float ymax=h->GetBinContent(maxbin);
 	//float ymin=h->GetBinContent(minbin);
 	//pass this to the style functions
-	legendposition legpos=estimateBestLegendPosition(h);
 	delete h;
 
 	//gStyle->SetOptTitle(0);//no title
@@ -159,6 +159,7 @@ void stackPlotter::plotStack(const TString& key) {
 	applyStyleToLegend(leg,legpos);
 	stack->Draw();
 	leg->Draw();
+    //c->BuildLegend();
 
 
 	// save and exit
@@ -179,7 +180,34 @@ void stackPlotter::plotStack(const TString& key) {
 }
 
 
-void stackPlotter::plot() {
+void stackPlotter::plot(TString histname, TString legpos_string) {
+    std::vector<int> colors; 
+    //colors.push_back(kAzure+3);
+    //colors.push_back(kOrange+3); 
+    //colors.push_back(kSpring-7); 
+    //colors.push_back(kOrange-3);
+    //colors.push_back(kCyan-5);
+    //colors.push_back(kPink-6); 
+    //colors.push_back(kViolet+6);
+    //colors.push_back(kYellow-9);
+    colors.push_back(kCyan-6);
+    colors.push_back(kYellow-9);
+    colors.push_back(kMagenta-8);
+    colors.push_back(kRed-7);
+    colors.push_back(kAzure-4);
+    colors.push_back(kOrange-3);
+    colors.push_back(kSpring+5);
+    colors.push_back(kMagenta-10);
+    colors.push_back(kGray);
+    colors.push_back(kMagenta-2);
+    colors.push_back(kGreen-8);
+    colors.push_back(kYellow-7);
+
+    // set legpos:
+    legendposition legpos;
+    if(legpos_string == "t") legpos = lp_top;
+    if(legpos_string == "l") legpos = lp_left;
+    if(legpos_string == "r") legpos = lp_right;
 	if(debug)
 		std::cout << "stackPlotter::plot" << std::endl;
 
@@ -197,6 +225,7 @@ void stackPlotter::plot() {
 	TKey    *key;
 
 	// iterate over directories and get all stacks
+    int count = 0;
 	while((key = (TKey *) dirIter())) {
 		cDirObj=fIn->Get(key->GetName());
 		if(!cDirObj->InheritsFrom(TDirectory::Class())) continue;
@@ -206,7 +235,8 @@ void stackPlotter::plot() {
 			std::cout << "stackPlotter::plot || Moving histograms from directory " << cDir->GetName()
 			<< " to relevant maps." << std::endl;
 
-		moveDirHistsToStacks(cDir);
+		moveDirHistsToStacks(cDir, histname, colors.at(count));
+        count++;
 
 	}
 
@@ -228,56 +258,46 @@ void stackPlotter::plot() {
 		outfile_ = new TFile(outdir_+"/plotter.root",writeOption);
 	}
 
-	// plot all the stacks & save appropriately
-	if(debug)
-		std::cout << "stackPlotter::plot || Plotting all the canvases" << std::endl;
-	for(const auto& it : stacksLegEntries_) {
-		plotStack(it.first);
-	}
+    // plot all the stacks & save appropriately
+    if(debug)
+        std::cout << "stackPlotter::plot || Plotting all the canvases" << std::endl;
+    for(const auto& it : stacksLegEntries_) {
+        plotStack(it.first, legpos);
+    }
 
-	// close, save, and cleanup
-	if(savecanvases_ && outfile_) {
-		if(debug)
-			std::cout << "stackPlotter::plot || Closing the outfile" << std::endl;
-		outfile_->Close();
-	}
+    // close, save, and cleanup
+    if(savecanvases_ && outfile_) {
+        if(debug)
+            std::cout << "stackPlotter::plot || Closing the outfile" << std::endl;
+        outfile_->Close();
+    }
 
-	if(debug)
-		std::cout << "stackPlotter::plot || Done!" << std::endl;
+    if(debug)
+        std::cout << "stackPlotter::plot || Done!" << std::endl;
 }
 
-
-stackPlotter::legendposition stackPlotter::estimateBestLegendPosition(TH1* h)const{
-
-//	int maxbin=h->GetMaximumBin();
-//	int minbin=h->GetMinimumBin();
-	//int nbins=h->GetNbinsX();
-
-	//float ymax=h->GetBinContent(maxbin);
-	//float ymin=h->GetBinContent(minbin);
-	float mean=h->GetMean();
-
-	float xmin=h->GetBinLowEdge(1);
-	float xmax=h->GetBinLowEdge(h->GetNbinsX()+1);
-
-
-	float range=xmax-xmin;
-	float middle=range/2+xmin;
-
-	float relative=(mean - middle)/fabs(range);
-
-	if(fabs(relative) < 0.02)
-		return lp_top;
-
-	if(relative>0)
-		return lp_left;
-
-	if(relative<0)
-		return lp_right;
-
-	else
-		return lp_right;
-}
+//stackPlotter::legendposition stackPlotter::estimaeBestLegendPosition
+//	float xmin=h->GetBinLowEdge(1);
+//	float xmax=h->GetBinLowEdge(h->GetNbinsX()+1);
+//
+//
+//	float range=xmax-xmin;
+//	float middle=range/2+xmin;
+//
+//	float relative=(mean - middle)/fabs(range);
+//
+//	if(fabs(relative) < 0.02)
+//		return lp_top;
+//
+//	if(relative>0)
+//		return lp_left;
+//
+//	if(relative<0)
+//		return lp_right;
+//
+//	else
+//		return lp_right;
+//}
 
 
 /*
@@ -375,5 +395,5 @@ int main(int argc, const char** argv){
 	sPlots.setOutDir(argv[2]);
 	sPlots.setLumi(1);
 
-	sPlots.plot();
+	sPlots.plot(argv[3], argv[4]);
 }
