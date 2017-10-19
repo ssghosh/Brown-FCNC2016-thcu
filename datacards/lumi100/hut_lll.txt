@@ -1,4 +1,4 @@
-# Datacard produced by CombineHarvester with git status: analysis-HIG-16-006-freeze-080416-153-g1fd2a80-dirty
+# Datacard produced by CombineHarvester with git status: analysis-HIG-16-006-freeze-080416-276-g7cedd49-dirty
 imax    1 number of bins
 jmax    15 number of processes minus 1
 kmax    * number of nuisance parameters
@@ -11,7 +11,7 @@ observation  0.0
 bin                    lll             lll             lll             lll             lll             lll             lll             lll             lll             lll             lll             lll             lll             lll             lll             lll             
 process                TT_Tleptonic_eta_hut TT_aTleptonic_eta_hut TT_Thadronic_eta_hut TT_aThadronic_eta_hut B4p             BB4p            BBB4p           Bj4p            BjjVBF          H4p             LL4p            LLB             tB4p            tj4p            tt4p            ttB4p           
 process                -3              -2              -1              0               1               2               3               4               5               6               7               8               9               10              11              12              
-rate                   12973.9         12931.5         3491.17         3469.73         5201.47         1953.77         170.2           90671.9         335.1           86.0667         831.233         47.7            20338.3         2655.77         249410          6133.63         
+rate                   136252          135806          36664.2         36439.1         5201.47         1953.77         170.2           90671.9         335.1           86.0667         831.233         47.7            20338.3         2655.77         249410          6133.63         
 --------------------------------------------------------------------------------
 B4pxs          lnN     -               -               -               -               1.056           -               -               -               -               -               -               -               -               -               -               -               
 BB4pxs         lnN     -               -               -               -               -               1.065           -               -               -               -               -               -               -               -               -               -               

@@ -1,0 +1,3420 @@
+>>> including systematics
+>>> method used to compute upper limit is Asymptotic
+>>> random number generator seed is 123456
+Generate toy 1/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+Median for expected limits: 0.105957
+Sigma  for expected limits: 0.0540607
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -14675.5 (r = 0.0199587)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -14684 (r = 9.82844e-05)
+At r = 1.219959:	q_mu = 487.75794	q_A  = 502.41349	CLsb = 0.00000	CLb  = 0.62905	CLs  = 0.00000
+At r = 0.619959:	q_mu = 102.90919	q_A  = 6294.23342	CLsb = 0.00000	CLb  = 1.00000	CLs  = 0.00000
+At r = 0.319959:	q_mu = 1847.84644	q_A  = 15439.67678	CLsb = 0.00000	CLb  = 1.00000	CLs  = 0.00000
+At r = 0.169959:	q_mu = 3329.89209	q_A  = 21724.85391	CLsb = 0.00000	CLb  = 1.00000	CLs  = 0.00000
+At r = 0.094959:	q_mu = 4669.08674	q_A  = 25316.69982	CLsb = 0.00000	CLb  = 1.00000	CLs  = 0.00000
+At r = 0.057459:	q_mu = 5433.47189	q_A  = 27227.75178	CLsb = 0.00000	CLb  = 1.00000	CLs  = 0.00000
+At r = 0.038709:	q_mu = 5839.63066	q_A  = 28212.42341	CLsb = 0.00000	CLb  = 1.00000	CLs  = 0.00000
+At r = 0.029334:	q_mu = 6048.73573	q_A  = 28712.09182	CLsb = 0.00000	CLb  = 1.00000	CLs  = 0.00000
+At r = 0.024646:	q_mu = 6154.79898	q_A  = 28963.76498	CLsb = 0.00000	CLb  = 1.00000	CLs  = 0.00000
+At r = 0.022302:	q_mu = 6208.20882	q_A  = 29090.06204	CLsb = 0.00000	CLb  = 1.00000	CLs  = 0.00000
+At r = 0.021131:	q_mu = 6235.00837	q_A  = 29153.32578	CLsb = 0.00000	CLb  = 1.00000	CLs  = 0.00000
+At r = 0.020545:	q_mu = 6248.43180	q_A  = 29184.98646	CLsb = 0.00000	CLb  = 1.00000	CLs  = 0.00000
+At r = 0.020252:	q_mu = 6255.14944	q_A  = 29200.82401	CLsb = 0.00000	CLb  = 1.00000	CLs  = 0.00000
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0203
+Expected  2.5%: r < 0.0575
+Expected 16.0%: r < 0.0764
+Expected 50.0%: r < 0.1060
+Expected 84.0%: r < 0.1486
+Expected 97.5%: r < 0.1981
+
+Done in 0.03 min (cpu), 0.03 min (real)
+Generate toy 2/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000061 (0.002731 times rMax), while it should be at zero
+Median for expected limits: 0.106093
+Sigma  for expected limits: 0.0541303
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -9941.57 (r = 0.0797495)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6933 (r = 2.66665e-06)
+At r = 0.245526:	q_mu = 7.76123	q_A  = 18410.85588	CLsb = 0.00267	CLb  = 1.00000	CLs  = 0.00267
+At r = 0.162638:	q_mu = 1.97997	q_A  = 22062.07666	CLsb = 0.07970	CLb  = 1.00000	CLs  = 0.07970
+At r = 0.204082:	q_mu = 4.41651	q_A  = 20190.86167	CLsb = 0.01780	CLb  = 1.00000	CLs  = 0.01780
+At r = 0.181237:	q_mu = 2.95610	q_A  = 21210.98176	CLsb = 0.04278	CLb  = 1.00000	CLs  = 0.04278
+At r = 0.173786:	q_mu = 2.54310	q_A  = 21549.70448	CLsb = 0.05539	CLb  = 1.00000	CLs  = 0.05539
+At r = 0.177637:	q_mu = 2.75251	q_A  = 21374.24549	CLsb = 0.04855	CLb  = 1.00000	CLs  = 0.04855
+At r = 0.176179:	q_mu = 2.67212	q_A  = 21440.57299	CLsb = 0.05106	CLb  = 1.00000	CLs  = 0.05106
+At r = 0.176957:	q_mu = 2.71485	q_A  = 21405.19958	CLsb = 0.04971	CLb  = 1.00000	CLs  = 0.04971
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1770
+Expected  2.5%: r < 0.0576
+Expected 16.0%: r < 0.0762
+Expected 50.0%: r < 0.1061
+Expected 84.0%: r < 0.1488
+Expected 97.5%: r < 0.1984
+
+Done in 0.04 min (cpu), 0.04 min (real)
+Generate toy 3/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.004919 (0.025269 times rMax), while it should be at zero
+Median for expected limits: 0.10645
+Sigma  for expected limits: 0.0543124
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -12170.8 (r = 6.127e-05)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.3 (r = 0.000249342)
+At r = 0.015642:	q_mu = 0.47890	q_A  = 29450.62438	CLsb = 0.24446	CLb  = 1.00000	CLs  = 0.24446
+At r = 0.031285:	q_mu = 1.10453	q_A  = 28607.69012	CLsb = 0.14664	CLb  = 1.00000	CLs  = 0.14664
+At r = 0.062570:	q_mu = 2.78064	q_A  = 26962.71276	CLsb = 0.04771	CLb  = 1.00000	CLs  = 0.04771
+At r = 0.031316:	q_mu = 1.10689	q_A  = 28606.05269	CLsb = 0.14638	CLb  = 1.00000	CLs  = 0.14638
+At r = 0.055271:	q_mu = 2.33929	q_A  = 27341.62526	CLsb = 0.06307	CLb  = 1.00000	CLs  = 0.06307
+At r = 0.060128:	q_mu = 2.63021	q_A  = 27089.16838	CLsb = 0.05242	CLb  = 1.00000	CLs  = 0.05242
+At r = 0.061108:	q_mu = 2.69043	q_A  = 27038.35693	CLsb = 0.05048	CLb  = 1.00000	CLs  = 0.05048
+At r = 0.061597:	q_mu = 2.72093	q_A  = 27013.05521	CLsb = 0.04952	CLb  = 1.00000	CLs  = 0.04952
+At r = 0.061400:	q_mu = 2.70832	q_A  = 27023.26013	CLsb = 0.04991	CLb  = 1.00000	CLs  = 0.04991
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0614
+Expected  2.5%: r < 0.0578
+Expected 16.0%: r < 0.0764
+Expected 50.0%: r < 0.1065
+Expected 84.0%: r < 0.1485
+Expected 97.5%: r < 0.1984
+
+Done in 0.03 min (cpu), 0.03 min (real)
+Generate toy 4/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.001729 (0.025593 times rMax), while it should be at zero
+Median for expected limits: 0.106322
+Sigma  for expected limits: 0.0542471
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -11443.6 (r = 1.42915e-07)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.84 (r = 2.73409e-10)
+At r = 0.106956:	q_mu = 5.15605	q_A  = 24721.59093	CLsb = 0.01158	CLb  = 1.00000	CLs  = 0.01158
+At r = 0.053478:	q_mu = 1.66646	q_A  = 27435.16009	CLsb = 0.09837	CLb  = 1.00000	CLs  = 0.09837
+At r = 0.080217:	q_mu = 3.18506	q_A  = 26058.71136	CLsb = 0.03716	CLb  = 1.00000	CLs  = 0.03716
+At r = 0.068346:	q_mu = 2.45488	q_A  = 26664.91185	CLsb = 0.05858	CLb  = 1.00000	CLs  = 0.05858
+At r = 0.074024:	q_mu = 2.79249	q_A  = 26373.99251	CLsb = 0.04735	CLb  = 1.00000	CLs  = 0.04735
+At r = 0.071728:	q_mu = 2.65324	q_A  = 26491.45080	CLsb = 0.05167	CLb  = 1.00000	CLs  = 0.05167
+At r = 0.072879:	q_mu = 2.72252	q_A  = 26432.53976	CLsb = 0.04947	CLb  = 1.00000	CLs  = 0.04947
+At r = 0.072423:	q_mu = 2.69493	q_A  = 26455.84606	CLsb = 0.05033	CLb  = 1.00000	CLs  = 0.05033
+At r = 0.072655:	q_mu = 2.70896	q_A  = 26444.00746	CLsb = 0.04989	CLb  = 1.00000	CLs  = 0.04989
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0727
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0763
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1483
+Expected 97.5%: r < 0.1982
+
+Done in 0.04 min (cpu), 0.04 min (real)
+Generate toy 5/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000419 (0.005238 times rMax), while it should be at zero
+Median for expected limits: 0.106394
+Sigma  for expected limits: 0.0542835
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -4653.61 (r = 0.0808829)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.54 (r = 0.00133377)
+At r = 0.245023:	q_mu = 9.11336	q_A  = 18431.91976	CLsb = 0.00127	CLb  = 1.00000	CLs  = 0.00127
+At r = 0.162953:	q_mu = 2.33100	q_A  = 22047.50022	CLsb = 0.06341	CLb  = 1.00000	CLs  = 0.06341
+At r = 0.203988:	q_mu = 5.18665	q_A  = 20195.00014	CLsb = 0.01138	CLb  = 1.00000	CLs  = 0.01138
+At r = 0.183470:	q_mu = 3.62818	q_A  = 21110.00802	CLsb = 0.02840	CLb  = 1.00000	CLs  = 0.02840
+At r = 0.171913:	q_mu = 2.86063	q_A  = 21635.33181	CLsb = 0.04539	CLb  = 1.00000	CLs  = 0.04539
+At r = 0.168046:	q_mu = 2.62537	q_A  = 21812.69881	CLsb = 0.05258	CLb  = 1.00000	CLs  = 0.05258
+At r = 0.169878:	q_mu = 2.73547	q_A  = 21728.55654	CLsb = 0.04907	CLb  = 1.00000	CLs  = 0.04907
+At r = 0.169114:	q_mu = 2.68923	q_A  = 21763.61584	CLsb = 0.05051	CLb  = 1.00000	CLs  = 0.05051
+At r = 0.169483:	q_mu = 2.71162	q_A  = 21746.69406	CLsb = 0.04981	CLb  = 1.00000	CLs  = 0.04981
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1695
+Expected  2.5%: r < 0.0574
+Expected 16.0%: r < 0.0761
+Expected 50.0%: r < 0.1064
+Expected 84.0%: r < 0.1484
+Expected 97.5%: r < 0.1983
+
+Done in 0.03 min (cpu), 0.03 min (real)
+Generate toy 6/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+Median for expected limits: 0.106324
+Sigma  for expected limits: 0.0542479
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -15826.5 (r = 0.015193)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.83 (r = 0.00477427)
+At r = 0.136774:	q_mu = 5.05468	q_A  = 23276.51830	CLsb = 0.01228	CLb  = 1.00000	CLs  = 0.01228
+At r = 0.075984:	q_mu = 1.28132	q_A  = 26274.01281	CLsb = 0.12883	CLb  = 1.00000	CLs  = 0.12883
+At r = 0.106379:	q_mu = 2.86421	q_A  = 24750.04611	CLsb = 0.04529	CLb  = 1.00000	CLs  = 0.04529
+At r = 0.097996:	q_mu = 2.36696	q_A  = 25165.28310	CLsb = 0.06196	CLb  = 1.00000	CLs  = 0.06196
+At r = 0.102584:	q_mu = 2.63305	q_A  = 24937.54234	CLsb = 0.05233	CLb  = 1.00000	CLs  = 0.05233
+At r = 0.104299:	q_mu = 2.73623	q_A  = 24852.69381	CLsb = 0.04905	CLb  = 1.00000	CLs  = 0.04905
+At r = 0.103549:	q_mu = 2.69078	q_A  = 24889.79093	CLsb = 0.05047	CLb  = 1.00000	CLs  = 0.05047
+At r = 0.103894:	q_mu = 2.71175	q_A  = 24872.72158	CLsb = 0.04981	CLb  = 1.00000	CLs  = 0.04981
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1039
+Expected  2.5%: r < 0.0573
+Expected 16.0%: r < 0.0765
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1483
+Expected 97.5%: r < 0.1982
+
+Done in 0.03 min (cpu), 0.03 min (real)
+Generate toy 7/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000574 (0.005019 times rMax), while it should be at zero
+Median for expected limits: 0.106069
+Sigma  for expected limits: 0.0541181
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -20092.1 (r = 0.0351343)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6933.1 (r = 0.000178468)
+At r = 0.077991:	q_mu = 0.49259	q_A  = 26171.81472	CLsb = 0.24139	CLb  = 1.00000	CLs  = 0.24139
+At r = 0.155982:	q_mu = 4.03695	q_A  = 22371.17420	CLsb = 0.02226	CLb  = 1.00000	CLs  = 0.02226
+At r = 0.095558:	q_mu = 0.99541	q_A  = 25286.78778	CLsb = 0.15921	CLb  = 1.00000	CLs  = 0.15921
+At r = 0.125770:	q_mu = 2.26673	q_A  = 23804.20272	CLsb = 0.06609	CLb  = 1.00000	CLs  = 0.06609
+At r = 0.138008:	q_mu = 2.92352	q_A  = 23217.77847	CLsb = 0.04365	CLb  = 1.00000	CLs  = 0.04365
+At r = 0.132354:	q_mu = 2.60997	q_A  = 23487.69167	CLsb = 0.05310	CLb  = 1.00000	CLs  = 0.05310
+At r = 0.134872:	q_mu = 2.74722	q_A  = 23367.27202	CLsb = 0.04871	CLb  = 1.00000	CLs  = 0.04871
+At r = 0.133758:	q_mu = 2.68589	q_A  = 23420.48272	CLsb = 0.05062	CLb  = 1.00000	CLs  = 0.05062
+At r = 0.134267:	q_mu = 2.71371	q_A  = 23396.17258	CLsb = 0.04974	CLb  = 1.00000	CLs  = 0.04974
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1343
+Expected  2.5%: r < 0.0576
+Expected 16.0%: r < 0.0762
+Expected 50.0%: r < 0.1061
+Expected 84.0%: r < 0.1488
+Expected 97.5%: r < 0.1983
+
+Done in 0.04 min (cpu), 0.04 min (real)
+Generate toy 8/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+Median for expected limits: 0.106386
+Sigma  for expected limits: 0.0542793
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -3182.39 (r = 1.52426e-10)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.55 (r = 0.000997931)
+At r = 0.041530:	q_mu = 3.43580	q_A  = 28062.96558	CLsb = 0.03190	CLb  = 1.00000	CLs  = 0.03190
+At r = 0.020765:	q_mu = 1.58992	q_A  = 29173.03815	CLsb = 0.10367	CLb  = 1.00000	CLs  = 0.10367
+At r = 0.031042:	q_mu = 2.47132	q_A  = 28620.62086	CLsb = 0.05797	CLb  = 1.00000	CLs  = 0.05797
+At r = 0.035217:	q_mu = 2.84786	q_A  = 28397.89453	CLsb = 0.04575	CLb  = 1.00000	CLs  = 0.04575
+At r = 0.033129:	q_mu = 2.65810	q_A  = 28509.19879	CLsb = 0.05151	CLb  = 1.00000	CLs  = 0.05151
+At r = 0.033966:	q_mu = 2.73379	q_A  = 28464.55531	CLsb = 0.04912	CLb  = 1.00000	CLs  = 0.04912
+At r = 0.033549:	q_mu = 2.69612	q_A  = 28486.78828	CLsb = 0.05030	CLb  = 1.00000	CLs  = 0.05030
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0335
+Expected  2.5%: r < 0.0573
+Expected 16.0%: r < 0.0761
+Expected 50.0%: r < 0.1064
+Expected 84.0%: r < 0.1484
+Expected 97.5%: r < 0.1983
+
+Done in 0.04 min (cpu), 0.04 min (real)
+Generate toy 9/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.002308 (0.062532 times rMax), while it should be at zero
+Median for expected limits: 0.106329
+Sigma  for expected limits: 0.0542507
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -8672.33 (r = 0.0423424)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.81 (r = 0.000280087)
+At r = 0.200778:	q_mu = 7.87621	q_A  = 20336.68757	CLsb = 0.00250	CLb  = 1.00000	CLs  = 0.00250
+At r = 0.121560:	q_mu = 2.01887	q_A  = 24007.80794	CLsb = 0.07768	CLb  = 1.00000	CLs  = 0.07768
+At r = 0.161169:	q_mu = 4.48035	q_A  = 22130.08483	CLsb = 0.01714	CLb  = 1.00000	CLs  = 0.01714
+At r = 0.138721:	q_mu = 2.96661	q_A  = 23183.86659	CLsb = 0.04250	CLb  = 1.00000	CLs  = 0.04250
+At r = 0.131589:	q_mu = 2.54935	q_A  = 23524.35253	CLsb = 0.05517	CLb  = 1.00000	CLs  = 0.05517
+At r = 0.135167:	q_mu = 2.75473	q_A  = 23353.18940	CLsb = 0.04848	CLb  = 1.00000	CLs  = 0.04848
+At r = 0.133769:	q_mu = 2.67345	q_A  = 23419.98217	CLsb = 0.05102	CLb  = 1.00000	CLs  = 0.05102
+At r = 0.134491:	q_mu = 2.71522	q_A  = 23385.48134	CLsb = 0.04970	CLb  = 1.00000	CLs  = 0.04970
+At r = 0.134213:	q_mu = 2.69915	q_A  = 23398.76592	CLsb = 0.05020	CLb  = 1.00000	CLs  = 0.05020
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1342
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0763
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1483
+Expected 97.5%: r < 0.1982
+
+Done in 0.04 min (cpu), 0.04 min (real)
+Generate toy 10/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.005333 (0.036122 times rMax), while it should be at zero
+Median for expected limits: 0.106343
+Sigma  for expected limits: 0.0542574
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -1515.95 (r = 5.6925e-09)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.75 (r = 0.00214593)
+At r = 0.512867:	q_mu = 79.22909	q_A  = 9050.91569	CLsb = 0.00000	CLb  = 1.00000	CLs  = 0.00000
+At r = 0.256434:	q_mu = 22.29645	q_A  = 17957.40248	CLsb = 0.00000	CLb  = 1.00000	CLs  = 0.00000
+At r = 0.128217:	q_mu = 6.19809	q_A  = 23686.29126	CLsb = 0.00639	CLb  = 1.00000	CLs  = 0.00639
+At r = 0.064108:	q_mu = 1.78270	q_A  = 26883.21448	CLsb = 0.09091	CLb  = 1.00000	CLs  = 0.09091
+At r = 0.096163:	q_mu = 3.66000	q_A  = 25256.62309	CLsb = 0.02787	CLb  = 1.00000	CLs  = 0.02787
+At r = 0.077074:	q_mu = 2.45995	q_A  = 26218.47926	CLsb = 0.05839	CLb  = 1.00000	CLs  = 0.05839
+At r = 0.084094:	q_mu = 2.87380	q_A  = 25862.39891	CLsb = 0.04502	CLb  = 1.00000	CLs  = 0.04502
+At r = 0.080423:	q_mu = 2.65330	q_A  = 26048.25891	CLsb = 0.05167	CLb  = 1.00000	CLs  = 0.05167
+At r = 0.081857:	q_mu = 2.73826	q_A  = 25975.60016	CLsb = 0.04899	CLb  = 1.00000	CLs  = 0.04899
+At r = 0.081129:	q_mu = 2.69478	q_A  = 26012.46869	CLsb = 0.05034	CLb  = 1.00000	CLs  = 0.05034
+At r = 0.081419:	q_mu = 2.71189	q_A  = 25997.78464	CLsb = 0.04980	CLb  = 1.00000	CLs  = 0.04980
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0814
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0763
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1483
+Expected 97.5%: r < 0.1982
+
+Done in 0.04 min (cpu), 0.04 min (real)
+Generate toy 11/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.002367 (0.026425 times rMax), while it should be at zero
+Median for expected limits: 0.106353
+Sigma  for expected limits: 0.0542628
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -2290.1 (r = 0.0298062)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.71 (r = 0.00225142)
+At r = 0.180913:	q_mu = 7.46988	q_A  = 21225.65023	CLsb = 0.00314	CLb  = 1.00000	CLs  = 0.00314
+At r = 0.105359:	q_mu = 1.90455	q_A  = 24800.34384	CLsb = 0.08378	CLb  = 1.00000	CLs  = 0.08378
+At r = 0.143136:	q_mu = 4.24474	q_A  = 22974.44777	CLsb = 0.01969	CLb  = 1.00000	CLs  = 0.01969
+At r = 0.123686:	q_mu = 2.92897	q_A  = 23904.84295	CLsb = 0.04350	CLb  = 1.00000	CLs  = 0.04350
+At r = 0.116907:	q_mu = 2.52337	q_A  = 24233.98515	CLsb = 0.05609	CLb  = 1.00000	CLs  = 0.05609
+At r = 0.120714:	q_mu = 2.74622	q_A  = 24048.82329	CLsb = 0.04874	CLb  = 1.00000	CLs  = 0.04874
+At r = 0.119400:	q_mu = 2.66816	q_A  = 24112.66076	CLsb = 0.05119	CLb  = 1.00000	CLs  = 0.05119
+At r = 0.120167:	q_mu = 2.71352	q_A  = 24075.39540	CLsb = 0.04975	CLb  = 1.00000	CLs  = 0.04975
+At r = 0.119906:	q_mu = 2.69808	q_A  = 24088.08248	CLsb = 0.05023	CLb  = 1.00000	CLs  = 0.05023
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1199
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0764
+Expected 50.0%: r < 0.1064
+Expected 84.0%: r < 0.1483
+Expected 97.5%: r < 0.1982
+
+Done in 0.04 min (cpu), 0.04 min (real)
+Generate toy 12/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.130198 (0.987126 times rMax), while it should be at zero
+Median for expected limits: 0.2302
+Sigma  for expected limits: 0.117451
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -50528.7 (r = 0.0654222)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6481.31 (r = 3.17858e-05)
+At r = 0.113645:	q_mu = 0.58952	q_A  = 24393.23767	CLsb = 0.22130	CLb  = 1.00000	CLs  = 0.22130
+At r = 0.227290:	q_mu = 6.66455	q_A  = 19182.93581	CLsb = 0.00492	CLb  = 1.00000	CLs  = 0.00492
+At r = 0.146356:	q_mu = 1.67703	q_A  = 22822.39721	CLsb = 0.09766	CLb  = 1.00000	CLs  = 0.09766
+At r = 0.186823:	q_mu = 3.77156	q_A  = 20958.97539	CLsb = 0.02607	CLb  = 1.00000	CLs  = 0.02607
+At r = 0.162764:	q_mu = 2.42734	q_A  = 22056.24194	CLsb = 0.05962	CLb  = 1.00000	CLs  = 0.05962
+At r = 0.171668:	q_mu = 2.89148	q_A  = 21646.51302	CLsb = 0.04452	CLb  = 1.00000	CLs  = 0.04452
+At r = 0.167057:	q_mu = 2.64592	q_A  = 21858.16292	CLsb = 0.05191	CLb  = 1.00000	CLs  = 0.05191
+At r = 0.168880:	q_mu = 2.74157	q_A  = 21774.36795	CLsb = 0.04888	CLb  = 1.00000	CLs  = 0.04888
+At r = 0.167967:	q_mu = 2.69341	q_A  = 21816.30985	CLsb = 0.05038	CLb  = 1.00000	CLs  = 0.05038
+At r = 0.168334:	q_mu = 2.71276	q_A  = 21799.45611	CLsb = 0.04977	CLb  = 1.00000	CLs  = 0.04977
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1683
+Expected  2.5%: r < 0.2113
+Expected 16.0%: r < 0.2166
+Expected 50.0%: r < 0.2302
+Expected 84.0%: r < 0.2531
+Expected 97.5%: r < 0.2872
+
+Done in 0.06 min (cpu), 0.06 min (real)
+Generate toy 13/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000257 (0.001389 times rMax), while it should be at zero
+Median for expected limits: 0.106254
+Sigma  for expected limits: 0.0542123
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -12355.1 (r = 6.18919e-11)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6933.13 (r = 2.40517e-08)
+At r = 0.097480:	q_mu = 4.62108	q_A  = 25191.00524	CLsb = 0.01579	CLb  = 1.00000	CLs  = 0.01579
+At r = 0.048740:	q_mu = 1.49515	q_A  = 27683.20552	CLsb = 0.11071	CLb  = 1.00000	CLs  = 0.11071
+At r = 0.074403:	q_mu = 2.94037	q_A  = 26354.67160	CLsb = 0.04320	CLb  = 1.00000	CLs  = 0.04320
+At r = 0.066079:	q_mu = 2.42242	q_A  = 26781.58629	CLsb = 0.05981	CLb  = 1.00000	CLs  = 0.05981
+At r = 0.069744:	q_mu = 2.64447	q_A  = 26593.14450	CLsb = 0.05196	CLb  = 1.00000	CLs  = 0.05196
+At r = 0.071450:	q_mu = 2.75112	q_A  = 26505.67514	CLsb = 0.04859	CLb  = 1.00000	CLs  = 0.04859
+At r = 0.070527:	q_mu = 2.69316	q_A  = 26553.00024	CLsb = 0.05039	CLb  = 1.00000	CLs  = 0.05039
+At r = 0.070869:	q_mu = 2.71455	q_A  = 26535.42957	CLsb = 0.04972	CLb  = 1.00000	CLs  = 0.04972
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0709
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0763
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1482
+Expected 97.5%: r < 0.1981
+
+Done in 0.04 min (cpu), 0.04 min (real)
+Generate toy 14/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.003718 (0.047694 times rMax), while it should be at zero
+Median for expected limits: 0.106459
+Sigma  for expected limits: 0.0543168
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -2468.57 (r = 0.000331982)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.26 (r = 0.000182607)
+At r = 0.095174:	q_mu = 3.50627	q_A  = 25305.95803	CLsb = 0.03057	CLb  = 1.00000	CLs  = 0.03057
+At r = 0.047753:	q_mu = 1.06943	q_A  = 27735.02225	CLsb = 0.15054	CLb  = 1.00000	CLs  = 0.15054
+At r = 0.071463:	q_mu = 2.20999	q_A  = 26504.98920	CLsb = 0.06856	CLb  = 1.00000	CLs  = 0.06856
+At r = 0.083619:	q_mu = 2.78951	q_A  = 25886.43514	CLsb = 0.04744	CLb  = 1.00000	CLs  = 0.04744
+At r = 0.079801:	q_mu = 2.56878	q_A  = 26079.85734	CLsb = 0.05450	CLb  = 1.00000	CLs  = 0.05450
+At r = 0.081698:	q_mu = 2.67709	q_A  = 25983.64805	CLsb = 0.05090	CLb  = 1.00000	CLs  = 0.05090
+At r = 0.082472:	q_mu = 2.72182	q_A  = 25944.45112	CLsb = 0.04949	CLb  = 1.00000	CLs  = 0.04949
+At r = 0.082092:	q_mu = 2.69963	q_A  = 25963.68842	CLsb = 0.05019	CLb  = 1.00000	CLs  = 0.05019
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0821
+Expected  2.5%: r < 0.0578
+Expected 16.0%: r < 0.0764
+Expected 50.0%: r < 0.1065
+Expected 84.0%: r < 0.1485
+Expected 97.5%: r < 0.1984
+
+Done in 0.05 min (cpu), 0.05 min (real)
+Generate toy 15/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000778 (0.008617 times rMax), while it should be at zero
+Median for expected limits: 0.106386
+Sigma  for expected limits: 0.0542796
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -4633.29 (r = 0.0395184)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.57 (r = 0.000246721)
+At r = 0.191111:	q_mu = 7.15423	q_A  = 20766.66526	CLsb = 0.00374	CLb  = 1.00000	CLs  = 0.00374
+At r = 0.115315:	q_mu = 1.79997	q_A  = 24311.64714	CLsb = 0.08986	CLb  = 1.00000	CLs  = 0.08986
+At r = 0.153213:	q_mu = 4.04673	q_A  = 22500.46966	CLsb = 0.02213	CLb  = 1.00000	CLs  = 0.02213
+At r = 0.135577:	q_mu = 2.89264	q_A  = 23333.62439	CLsb = 0.04449	CLb  = 1.00000	CLs  = 0.04449
+At r = 0.128833:	q_mu = 2.50049	q_A  = 23656.65728	CLsb = 0.05691	CLb  = 1.00000	CLs  = 0.05691
+At r = 0.131669:	q_mu = 2.66161	q_A  = 23520.49261	CLsb = 0.05140	CLb  = 1.00000	CLs  = 0.05140
+At r = 0.133048:	q_mu = 2.74179	q_A  = 23454.44776	CLsb = 0.04888	CLb  = 1.00000	CLs  = 0.04888
+At r = 0.132274:	q_mu = 2.69659	q_A  = 23491.50138	CLsb = 0.05028	CLb  = 1.00000	CLs  = 0.05028
+At r = 0.132552:	q_mu = 2.71283	q_A  = 23478.20924	CLsb = 0.04977	CLb  = 1.00000	CLs  = 0.04977
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1326
+Expected  2.5%: r < 0.0573
+Expected 16.0%: r < 0.0761
+Expected 50.0%: r < 0.1064
+Expected 84.0%: r < 0.1484
+Expected 97.5%: r < 0.1983
+
+Done in 0.05 min (cpu), 0.05 min (real)
+Generate toy 16/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000402 (0.002760 times rMax), while it should be at zero
+Median for expected limits: 0.106166
+Sigma  for expected limits: 0.0541672
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -155.244 (r = 0.0463817)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6933.5 (r = 0.00252235)
+At r = 0.177491:	q_mu = 5.68926	q_A  = 21380.87443	CLsb = 0.00853	CLb  = 1.00000	CLs  = 0.00853
+At r = 0.111937:	q_mu = 1.45828	q_A  = 24476.86442	CLsb = 0.11360	CLb  = 1.00000	CLs  = 0.11360
+At r = 0.144714:	q_mu = 3.24072	q_A  = 22899.86103	CLsb = 0.03591	CLb  = 1.00000	CLs  = 0.03591
+At r = 0.130624:	q_mu = 2.38565	q_A  = 23570.61811	CLsb = 0.06123	CLb  = 1.00000	CLs  = 0.06123
+At r = 0.137722:	q_mu = 2.79789	q_A  = 23231.35697	CLsb = 0.04719	CLb  = 1.00000	CLs  = 0.04719
+At r = 0.135043:	q_mu = 2.63859	q_A  = 23359.10134	CLsb = 0.05215	CLb  = 1.00000	CLs  = 0.05215
+At r = 0.136482:	q_mu = 2.72364	q_A  = 23290.43787	CLsb = 0.04944	CLb  = 1.00000	CLs  = 0.04944
+At r = 0.135950:	q_mu = 2.69193	q_A  = 23315.82078	CLsb = 0.05043	CLb  = 1.00000	CLs  = 0.05043
+At r = 0.136239:	q_mu = 2.70920	q_A  = 23302.01828	CLsb = 0.04989	CLb  = 1.00000	CLs  = 0.04989
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1362
+Expected  2.5%: r < 0.0576
+Expected 16.0%: r < 0.0762
+Expected 50.0%: r < 0.1062
+Expected 84.0%: r < 0.1481
+Expected 97.5%: r < 0.1979
+
+Done in 0.05 min (cpu), 0.05 min (real)
+Generate toy 17/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.066588 (0.444328 times rMax), while it should be at zero
+Median for expected limits: 0.126681
+Sigma  for expected limits: 0.0646345
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -35.7591 (r = 3.34964e-09)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6859.29 (r = 3.00098e-05)
+At r = 0.587389:	q_mu = 94.46356	q_A  = 7074.35397	CLsb = 0.00000	CLb  = 1.00000	CLs  = 0.00000
+At r = 0.293695:	q_mu = 27.11186	q_A  = 16455.25409	CLsb = 0.00000	CLb  = 1.00000	CLs  = 0.00000
+At r = 0.146847:	q_mu = 7.64479	q_A  = 22799.24089	CLsb = 0.00285	CLb  = 1.00000	CLs  = 0.00285
+At r = 0.073424:	q_mu = 2.24902	q_A  = 26404.68744	CLsb = 0.06685	CLb  = 1.00000	CLs  = 0.06685
+At r = 0.110135:	q_mu = 4.56066	q_A  = 24565.21303	CLsb = 0.01636	CLb  = 1.00000	CLs  = 0.01636
+At r = 0.086825:	q_mu = 3.00204	q_A  = 25724.64260	CLsb = 0.04158	CLb  = 1.00000	CLs  = 0.04158
+At r = 0.079981:	q_mu = 2.60221	q_A  = 26070.70319	CLsb = 0.05336	CLb  = 1.00000	CLs  = 0.05336
+At r = 0.082776:	q_mu = 2.76148	q_A  = 25929.03719	CLsb = 0.04828	CLb  = 1.00000	CLs  = 0.04828
+At r = 0.081434:	q_mu = 2.68424	q_A  = 25996.99819	CLsb = 0.05067	CLb  = 1.00000	CLs  = 0.05067
+At r = 0.081999:	q_mu = 2.71650	q_A  = 25968.37629	CLsb = 0.04966	CLb  = 1.00000	CLs  = 0.04966
+At r = 0.081733:	q_mu = 2.70131	q_A  = 25981.87350	CLsb = 0.05013	CLb  = 1.00000	CLs  = 0.05013
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0817
+Expected  2.5%: r < 0.0896
+Expected 16.0%: r < 0.1026
+Expected 50.0%: r < 0.1267
+Expected 84.0%: r < 0.1635
+Expected 97.5%: r < 0.2112
+
+Done in 0.05 min (cpu), 0.05 min (real)
+Generate toy 18/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000450 (0.005006 times rMax), while it should be at zero
+Median for expected limits: 0.106483
+Sigma  for expected limits: 0.0543288
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -2337.93 (r = 1.87791e-06)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.16 (r = 0.00164289)
+At r = 0.126002:	q_mu = 7.27888	q_A  = 23793.00508	CLsb = 0.00349	CLb  = 1.00000	CLs  = 0.00349
+At r = 0.063002:	q_mu = 2.36487	q_A  = 26940.37841	CLsb = 0.06205	CLb  = 1.00000	CLs  = 0.06205
+At r = 0.094502:	q_mu = 4.51166	q_A  = 25339.51334	CLsb = 0.01683	CLb  = 1.00000	CLs  = 0.01683
+At r = 0.073472:	q_mu = 3.01001	q_A  = 26402.23103	CLsb = 0.04138	CLb  = 1.00000	CLs  = 0.04138
+At r = 0.067464:	q_mu = 2.63051	q_A  = 26710.27856	CLsb = 0.05241	CLb  = 1.00000	CLs  = 0.05241
+At r = 0.069624:	q_mu = 2.76365	q_A  = 26599.30276	CLsb = 0.04821	CLb  = 1.00000	CLs  = 0.04821
+At r = 0.068440:	q_mu = 2.69025	q_A  = 26660.12778	CLsb = 0.05048	CLb  = 1.00000	CLs  = 0.05048
+At r = 0.068874:	q_mu = 2.71708	q_A  = 26637.80035	CLsb = 0.04964	CLb  = 1.00000	CLs  = 0.04964
+At r = 0.068638:	q_mu = 2.70256	q_A  = 26649.94169	CLsb = 0.05009	CLb  = 1.00000	CLs  = 0.05009
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0686
+Expected  2.5%: r < 0.0570
+Expected 16.0%: r < 0.0767
+Expected 50.0%: r < 0.1065
+Expected 84.0%: r < 0.1485
+Expected 97.5%: r < 0.1985
+
+Done in 0.06 min (cpu), 0.06 min (real)
+Generate toy 19/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000158 (0.002093 times rMax), while it should be at zero
+Median for expected limits: 0.106174
+Sigma  for expected limits: 0.0541714
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -2833.9 (r = 2.19161e-07)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6933.47 (r = 0.00240503)
+At r = 0.088041:	q_mu = 5.65112	q_A  = 25663.42143	CLsb = 0.00872	CLb  = 1.00000	CLs  = 0.00872
+At r = 0.044021:	q_mu = 2.21332	q_A  = 27931.48358	CLsb = 0.06841	CLb  = 1.00000	CLs  = 0.06841
+At r = 0.066031:	q_mu = 3.78077	q_A  = 26784.07411	CLsb = 0.02592	CLb  = 1.00000	CLs  = 0.02592
+At r = 0.054111:	q_mu = 2.89333	q_A  = 27402.11108	CLsb = 0.04447	CLb  = 1.00000	CLs  = 0.04447
+At r = 0.049898:	q_mu = 2.60104	q_A  = 27622.48084	CLsb = 0.05340	CLb  = 1.00000	CLs  = 0.05340
+At r = 0.051952:	q_mu = 2.74207	q_A  = 27514.91401	CLsb = 0.04887	CLb  = 1.00000	CLs  = 0.04887
+At r = 0.051117:	q_mu = 2.68440	q_A  = 27558.61970	CLsb = 0.05067	CLb  = 1.00000	CLs  = 0.05067
+At r = 0.051529:	q_mu = 2.71282	q_A  = 27537.04132	CLsb = 0.04977	CLb  = 1.00000	CLs  = 0.04977
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0515
+Expected  2.5%: r < 0.0576
+Expected 16.0%: r < 0.0762
+Expected 50.0%: r < 0.1062
+Expected 84.0%: r < 0.1481
+Expected 97.5%: r < 0.1979
+
+Done in 0.06 min (cpu), 0.06 min (real)
+Generate toy 20/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.001053 (0.018569 times rMax), while it should be at zero
+Median for expected limits: 0.106633
+Sigma  for expected limits: 0.0544056
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -3955.17 (r = 0.00140732)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6931.52 (r = 0.000560485)
+At r = 0.017015:	q_mu = 0.04900	q_A  = 29376.10195	CLsb = 0.41241	CLb  = 1.00000	CLs  = 0.41241
+At r = 0.034030:	q_mu = 0.29121	q_A  = 28461.15133	CLsb = 0.29472	CLb  = 1.00000	CLs  = 0.29472
+At r = 0.068061:	q_mu = 1.35092	q_A  = 26679.58839	CLsb = 0.12256	CLb  = 1.00000	CLs  = 0.12256
+At r = 0.136122:	q_mu = 5.69990	q_A  = 23307.61604	CLsb = 0.00848	CLb  = 1.00000	CLs  = 0.00848
+At r = 0.068765:	q_mu = 1.38122	q_A  = 26643.42722	CLsb = 0.11995	CLb  = 1.00000	CLs  = 0.11995
+At r = 0.102443:	q_mu = 3.18095	q_A  = 24944.52434	CLsb = 0.03725	CLb  = 1.00000	CLs  = 0.03725
+At r = 0.088925:	q_mu = 2.37002	q_A  = 25618.94032	CLsb = 0.06184	CLb  = 1.00000	CLs  = 0.06184
+At r = 0.096164:	q_mu = 2.79017	q_A  = 25256.56869	CLsb = 0.04742	CLb  = 1.00000	CLs  = 0.04742
+At r = 0.093562:	q_mu = 2.63509	q_A  = 25386.51162	CLsb = 0.05226	CLb  = 1.00000	CLs  = 0.05226
+At r = 0.095030:	q_mu = 2.72197	q_A  = 25313.13482	CLsb = 0.04949	CLb  = 1.00000	CLs  = 0.04949
+At r = 0.094515:	q_mu = 2.69134	q_A  = 25338.87418	CLsb = 0.05045	CLb  = 1.00000	CLs  = 0.05045
+At r = 0.094809:	q_mu = 2.70880	q_A  = 25324.17311	CLsb = 0.04990	CLb  = 1.00000	CLs  = 0.04990
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0948
+Expected  2.5%: r < 0.0571
+Expected 16.0%: r < 0.0768
+Expected 50.0%: r < 0.1066
+Expected 84.0%: r < 0.1487
+Expected 97.5%: r < 0.1988
+
+Done in 0.07 min (cpu), 0.07 min (real)
+Generate toy 21/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000949 (0.009103 times rMax), while it should be at zero
+Median for expected limits: 0.106408
+Sigma  for expected limits: 0.054291
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -169.557 (r = 0.0468329)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.47 (r = 9.56143e-06)
+At r = 0.198230:	q_mu = 7.25715	q_A  = 20449.49983	CLsb = 0.00353	CLb  = 1.00000	CLs  = 0.00353
+At r = 0.122532:	q_mu = 1.83063	q_A  = 23960.72570	CLsb = 0.08803	CLb  = 1.00000	CLs  = 0.08803
+At r = 0.160381:	q_mu = 4.10655	q_A  = 22166.60393	CLsb = 0.02136	CLb  = 1.00000	CLs  = 0.02136
+At r = 0.142195:	q_mu = 2.90351	q_A  = 23018.98544	CLsb = 0.04419	CLb  = 1.00000	CLs  = 0.04419
+At r = 0.135444:	q_mu = 2.50666	q_A  = 23339.94423	CLsb = 0.05668	CLb  = 1.00000	CLs  = 0.05668
+At r = 0.138166:	q_mu = 2.66195	q_A  = 23210.23013	CLsb = 0.05139	CLb  = 1.00000	CLs  = 0.05139
+At r = 0.139557:	q_mu = 2.74315	q_A  = 23144.11867	CLsb = 0.04884	CLb  = 1.00000	CLs  = 0.04884
+At r = 0.138764:	q_mu = 2.69648	q_A  = 23181.79142	CLsb = 0.05028	CLb  = 1.00000	CLs  = 0.05028
+At r = 0.139046:	q_mu = 2.71284	q_A  = 23168.39428	CLsb = 0.04977	CLb  = 1.00000	CLs  = 0.04977
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1390
+Expected  2.5%: r < 0.0574
+Expected 16.0%: r < 0.0761
+Expected 50.0%: r < 0.1064
+Expected 84.0%: r < 0.1484
+Expected 97.5%: r < 0.1984
+
+Done in 0.08 min (cpu), 0.08 min (real)
+Generate toy 22/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.150085 (0.981264 times rMax), while it should be at zero
+Median for expected limits: 0.294251
+Sigma  for expected limits: 0.150131
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -4449.51 (r = 1.21936e-07)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6248.62 (r = 1.27445e-06)
+At r = 0.060524:	q_mu = 3.84113	q_A  = 27068.62086	CLsb = 0.02500	CLb  = 1.00000	CLs  = 0.02500
+At r = 0.030262:	q_mu = 1.61572	q_A  = 28662.38952	CLsb = 0.10184	CLb  = 1.00000	CLs  = 0.10184
+At r = 0.042526:	q_mu = 2.44243	q_A  = 28010.36223	CLsb = 0.05905	CLb  = 1.00000	CLs  = 0.05905
+At r = 0.048913:	q_mu = 2.91482	q_A  = 27674.14210	CLsb = 0.04388	CLb  = 1.00000	CLs  = 0.04388
+At r = 0.045389:	q_mu = 2.65082	q_A  = 27859.34945	CLsb = 0.05175	CLb  = 1.00000	CLs  = 0.05175
+At r = 0.046682:	q_mu = 2.74662	q_A  = 27791.33287	CLsb = 0.04873	CLb  = 1.00000	CLs  = 0.04873
+At r = 0.045981:	q_mu = 2.69452	q_A  = 27828.21650	CLsb = 0.05035	CLb  = 1.00000	CLs  = 0.05035
+At r = 0.046240:	q_mu = 2.71379	q_A  = 27814.58781	CLsb = 0.04974	CLb  = 1.00000	CLs  = 0.04974
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0462
+Expected  2.5%: r < 0.2793
+Expected 16.0%: r < 0.2840
+Expected 50.0%: r < 0.2943
+Expected 84.0%: r < 0.3142
+Expected 97.5%: r < 0.3425
+
+Done in 0.09 min (cpu), 0.09 min (real)
+Generate toy 23/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000320 (0.006283 times rMax), while it should be at zero
+Median for expected limits: 0.106337
+Sigma  for expected limits: 0.0542544
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -167.427 (r = 0.00824318)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.78 (r = 0.000180548)
+At r = 0.088498:	q_mu = 2.01919	q_A  = 25640.43419	CLsb = 0.07766	CLb  = 1.00000	CLs  = 0.07766
+At r = 0.176996:	q_mu = 8.78706	q_A  = 21403.41085	CLsb = 0.00152	CLb  = 1.00000	CLs  = 0.00152
+At r = 0.092620:	q_mu = 2.23228	q_A  = 25433.64652	CLsb = 0.06758	CLb  = 1.00000	CLs  = 0.06758
+At r = 0.134808:	q_mu = 4.98662	q_A  = 23370.33577	CLsb = 0.01277	CLb  = 1.00000	CLs  = 0.01277
+At r = 0.113714:	q_mu = 3.47547	q_A  = 24389.87033	CLsb = 0.03114	CLb  = 1.00000	CLs  = 0.03114
+At r = 0.103400:	q_mu = 2.83503	q_A  = 24897.14904	CLsb = 0.04611	CLb  = 1.00000	CLs  = 0.04611
+At r = 0.099418:	q_mu = 2.60519	q_A  = 25094.56422	CLsb = 0.05326	CLb  = 1.00000	CLs  = 0.05326
+At r = 0.101611:	q_mu = 2.73007	q_A  = 24985.75962	CLsb = 0.04924	CLb  = 1.00000	CLs  = 0.04924
+At r = 0.100829:	q_mu = 2.68483	q_A  = 25024.53716	CLsb = 0.05065	CLb  = 1.00000	CLs  = 0.05065
+At r = 0.101272:	q_mu = 2.71009	q_A  = 25002.56348	CLsb = 0.04986	CLb  = 1.00000	CLs  = 0.04986
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1013
+Expected  2.5%: r < 0.0573
+Expected 16.0%: r < 0.0765
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1483
+Expected 97.5%: r < 0.1982
+
+Done in 0.09 min (cpu), 0.09 min (real)
+Generate toy 24/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000524 (0.004702 times rMax), while it should be at zero
+Median for expected limits: 0.106177
+Sigma  for expected limits: 0.0541731
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -2244.78 (r = 0.0781841)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6933.45 (r = 3.40199e-06)
+At r = 0.244565:	q_mu = 8.04445	q_A  = 18451.08698	CLsb = 0.00228	CLb  = 1.00000	CLs  = 0.00228
+At r = 0.161375:	q_mu = 2.05136	q_A  = 22120.54422	CLsb = 0.07604	CLb  = 1.00000	CLs  = 0.07604
+At r = 0.202970:	q_mu = 4.57384	q_A  = 20239.86322	CLsb = 0.01623	CLb  = 1.00000	CLs  = 0.01623
+At r = 0.178727:	q_mu = 2.98518	q_A  = 21324.76466	CLsb = 0.04202	CLb  = 1.00000	CLs  = 0.04202
+At r = 0.171184:	q_mu = 2.55911	q_A  = 21668.68035	CLsb = 0.05483	CLb  = 1.00000	CLs  = 0.05483
+At r = 0.174783:	q_mu = 2.75816	q_A  = 21504.20898	CLsb = 0.04838	CLb  = 1.00000	CLs  = 0.04838
+At r = 0.173305:	q_mu = 2.67540	q_A  = 21571.65255	CLsb = 0.05095	CLb  = 1.00000	CLs  = 0.05095
+At r = 0.174032:	q_mu = 2.71589	q_A  = 21538.46811	CLsb = 0.04968	CLb  = 1.00000	CLs  = 0.04968
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1740
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0762
+Expected 50.0%: r < 0.1062
+Expected 84.0%: r < 0.1481
+Expected 97.5%: r < 0.1979
+
+Done in 0.07 min (cpu), 0.07 min (real)
+Generate toy 25/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000622 (0.003251 times rMax), while it should be at zero
+Median for expected limits: 0.106187
+Sigma  for expected limits: 0.0541779
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -946.099 (r = 0.0870479)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6926.78 (r = 0.167882)
+At r = 0.247568:	q_mu = 7.63461	q_A  = 18312.22582	CLsb = 0.00286	CLb  = 1.00000	CLs  = 0.00286
+At r = 0.167308:	q_mu = 1.96642	q_A  = 21833.35227	CLsb = 0.08041	CLb  = 1.00000	CLs  = 0.08041
+At r = 0.207438:	q_mu = 4.35583	q_A  = 20030.07114	CLsb = 0.01844	CLb  = 1.00000	CLs  = 0.01844
+At r = 0.185693:	q_mu = 2.94595	q_A  = 20996.53449	CLsb = 0.04305	CLb  = 1.00000	CLs  = 0.04305
+At r = 0.178491:	q_mu = 2.53939	q_A  = 21322.16121	CLsb = 0.05552	CLb  = 1.00000	CLs  = 0.05552
+At r = 0.182302:	q_mu = 2.75099	q_A  = 21149.50018	CLsb = 0.04860	CLb  = 1.00000	CLs  = 0.04860
+At r = 0.180889:	q_mu = 2.67143	q_A  = 21213.46185	CLsb = 0.05108	CLb  = 1.00000	CLs  = 0.05108
+At r = 0.181657:	q_mu = 2.71409	q_A  = 21178.68706	CLsb = 0.04973	CLb  = 1.00000	CLs  = 0.04973
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1817
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0762
+Expected 50.0%: r < 0.1062
+Expected 84.0%: r < 0.1481
+Expected 97.5%: r < 0.1979
+
+Done in 0.06 min (cpu), 0.06 min (real)
+Generate toy 26/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.004659 (0.023315 times rMax), while it should be at zero
+Median for expected limits: 0.106468
+Sigma  for expected limits: 0.0543214
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -45594.9 (r = 0.0438072)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.21 (r = 0.00671382)
+At r = 0.207355:	q_mu = 9.73919	q_A  = 20046.96168	CLsb = 0.00090	CLb  = 1.00000	CLs  = 0.00090
+At r = 0.125581:	q_mu = 2.48682	q_A  = 23813.29168	CLsb = 0.05740	CLb  = 1.00000	CLs  = 0.05740
+At r = 0.166468:	q_mu = 5.53892	q_A  = 21885.26613	CLsb = 0.00930	CLb  = 1.00000	CLs  = 0.00930
+At r = 0.146025:	q_mu = 3.86568	q_A  = 22837.99866	CLsb = 0.02464	CLb  = 1.00000	CLs  = 0.02464
+At r = 0.132340:	q_mu = 2.91044	q_A  = 23488.35479	CLsb = 0.04400	CLb  = 1.00000	CLs  = 0.04400
+At r = 0.128389:	q_mu = 2.65894	q_A  = 23677.97692	CLsb = 0.05148	CLb  = 1.00000	CLs  = 0.05148
+At r = 0.129768:	q_mu = 2.74506	q_A  = 23611.68486	CLsb = 0.04878	CLb  = 1.00000	CLs  = 0.04878
+At r = 0.128987:	q_mu = 2.69589	q_A  = 23649.23152	CLsb = 0.05030	CLb  = 1.00000	CLs  = 0.05030
+At r = 0.129266:	q_mu = 2.71347	q_A  = 23635.81605	CLsb = 0.04975	CLb  = 1.00000	CLs  = 0.04975
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1293
+Expected  2.5%: r < 0.0578
+Expected 16.0%: r < 0.0764
+Expected 50.0%: r < 0.1065
+Expected 84.0%: r < 0.1485
+Expected 97.5%: r < 0.1985
+
+Done in 0.06 min (cpu), 0.06 min (real)
+Generate toy 27/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000306 (0.002153 times rMax), while it should be at zero
+Median for expected limits: 0.106311
+Sigma  for expected limits: 0.0542415
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -1071.01 (r = 7.56582e-07)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.88 (r = 0.000458795)
+At r = 0.068469:	q_mu = 3.67963	q_A  = 26658.59988	CLsb = 0.02754	CLb  = 1.00000	CLs  = 0.02754
+At r = 0.034235:	q_mu = 1.48703	q_A  = 28450.25039	CLsb = 0.11134	CLb  = 1.00000	CLs  = 0.11134
+At r = 0.049930:	q_mu = 2.40017	q_A  = 27620.76278	CLsb = 0.06066	CLb  = 1.00000	CLs  = 0.06066
+At r = 0.057268:	q_mu = 2.88207	q_A  = 27237.64874	CLsb = 0.04479	CLb  = 1.00000	CLs  = 0.04479
+At r = 0.053670:	q_mu = 2.64130	q_A  = 27425.15225	CLsb = 0.05206	CLb  = 1.00000	CLs  = 0.05206
+At r = 0.055162:	q_mu = 2.73999	q_A  = 27347.33847	CLsb = 0.04893	CLb  = 1.00000	CLs  = 0.04893
+At r = 0.054448:	q_mu = 2.69248	q_A  = 27384.57164	CLsb = 0.05041	CLb  = 1.00000	CLs  = 0.05041
+At r = 0.054748:	q_mu = 2.71245	q_A  = 27368.92065	CLsb = 0.04978	CLb  = 1.00000	CLs  = 0.04978
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0547
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0763
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1483
+Expected 97.5%: r < 0.1982
+
+Done in 0.07 min (cpu), 0.07 min (real)
+Generate toy 28/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.051636 (0.857420 times rMax), while it should be at zero
+Median for expected limits: 0.118563
+Sigma  for expected limits: 0.0604923
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -288.348 (r = 0.0236445)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6888.24 (r = 0.00159273)
+At r = 0.136027:	q_mu = 4.23996	q_A  = 23312.14815	CLsb = 0.01974	CLb  = 1.00000	CLs  = 0.01974
+At r = 0.079836:	q_mu = 1.09120	q_A  = 26078.07456	CLsb = 0.14810	CLb  = 1.00000	CLs  = 0.14810
+At r = 0.104059:	q_mu = 2.20123	q_A  = 24864.60189	CLsb = 0.06895	CLb  = 1.00000	CLs  = 0.06895
+At r = 0.117024:	q_mu = 2.94947	q_A  = 24228.28060	CLsb = 0.04295	CLb  = 1.00000	CLs  = 0.04295
+At r = 0.111101:	q_mu = 2.59372	q_A  = 24517.81197	CLsb = 0.05364	CLb  = 1.00000	CLs  = 0.05364
+At r = 0.113785:	q_mu = 2.75217	q_A  = 24386.36070	CLsb = 0.04856	CLb  = 1.00000	CLs  = 0.04856
+At r = 0.112619:	q_mu = 2.68292	q_A  = 24443.44818	CLsb = 0.05071	CLb  = 1.00000	CLs  = 0.05071
+At r = 0.113157:	q_mu = 2.71470	q_A  = 24417.08377	CLsb = 0.04971	CLb  = 1.00000	CLs  = 0.04971
+At r = 0.112926:	q_mu = 2.70096	q_A  = 24428.42742	CLsb = 0.05014	CLb  = 1.00000	CLs  = 0.05014
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1129
+Expected  2.5%: r < 0.0773
+Expected 16.0%: r < 0.0925
+Expected 50.0%: r < 0.1186
+Expected 84.0%: r < 0.1578
+Expected 97.5%: r < 0.2061
+
+Done in 0.07 min (cpu), 0.07 min (real)
+Generate toy 29/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.002982 (0.024004 times rMax), while it should be at zero
+Median for expected limits: 0.105974
+Sigma  for expected limits: 0.0540692
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -233.136 (r = 6.18592e-05)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6933.51 (r = 0.000330896)
+At r = 0.083687:	q_mu = 2.58555	q_A  = 25882.96802	CLsb = 0.05392	CLb  = 1.00000	CLs  = 0.05392
+At r = 0.167375:	q_mu = 9.54502	q_A  = 21843.54913	CLsb = 0.00100	CLb  = 1.00000	CLs  = 0.00100
+At r = 0.083718:	q_mu = 2.59121	q_A  = 25881.40458	CLsb = 0.05373	CLb  = 1.00000	CLs  = 0.05373
+At r = 0.125547:	q_mu = 5.53909	q_A  = 23814.97755	CLsb = 0.00930	CLb  = 1.00000	CLs  = 0.00930
+At r = 0.104632:	q_mu = 3.92888	q_A  = 24836.24520	CLsb = 0.02373	CLb  = 1.00000	CLs  = 0.02373
+At r = 0.089374:	q_mu = 2.92342	q_A  = 25596.40597	CLsb = 0.04365	CLb  = 1.00000	CLs  = 0.04365
+At r = 0.086416:	q_mu = 2.74533	q_A  = 25745.23401	CLsb = 0.04877	CLb  = 1.00000	CLs  = 0.04877
+At r = 0.085321:	q_mu = 2.68077	q_A  = 25800.44788	CLsb = 0.05078	CLb  = 1.00000	CLs  = 0.05078
+At r = 0.085877:	q_mu = 2.71336	q_A  = 25772.42681	CLsb = 0.04976	CLb  = 1.00000	CLs  = 0.04976
+At r = 0.085659:	q_mu = 2.70058	q_A  = 25783.40377	CLsb = 0.05016	CLb  = 1.00000	CLs  = 0.05016
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0857
+Expected  2.5%: r < 0.0575
+Expected 16.0%: r < 0.0768
+Expected 50.0%: r < 0.1060
+Expected 84.0%: r < 0.1486
+Expected 97.5%: r < 0.1981
+
+Done in 0.07 min (cpu), 0.07 min (real)
+Generate toy 30/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000635 (0.006741 times rMax), while it should be at zero
+Median for expected limits: 0.106298
+Sigma  for expected limits: 0.0542345
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -17463.9 (r = 2.68637e-07)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.94 (r = 2.41365e-08)
+At r = 0.059489:	q_mu = 3.07347	q_A  = 27122.27621	CLsb = 0.03979	CLb  = 1.00000	CLs  = 0.03979
+At r = 0.029745:	q_mu = 1.23824	q_A  = 28690.07584	CLsb = 0.13291	CLb  = 1.00000	CLs  = 0.13291
+At r = 0.049034:	q_mu = 2.36071	q_A  = 27667.78106	CLsb = 0.06221	CLb  = 1.00000	CLs  = 0.06221
+At r = 0.055215:	q_mu = 2.77399	q_A  = 27344.56973	CLsb = 0.04790	CLb  = 1.00000	CLs  = 0.04790
+At r = 0.053168:	q_mu = 2.63419	q_A  = 27451.35240	CLsb = 0.05229	CLb  = 1.00000	CLs  = 0.05229
+At r = 0.054005:	q_mu = 2.69095	q_A  = 27407.63665	CLsb = 0.05046	CLb  = 1.00000	CLs  = 0.05046
+At r = 0.054418:	q_mu = 2.71905	q_A  = 27386.13058	CLsb = 0.04958	CLb  = 1.00000	CLs  = 0.04958
+At r = 0.054177:	q_mu = 2.70266	q_A  = 27398.69690	CLsb = 0.05009	CLb  = 1.00000	CLs  = 0.05009
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0542
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0763
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1482
+Expected 97.5%: r < 0.1981
+
+Done in 0.08 min (cpu), 0.08 min (real)
+Generate toy 31/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.054498 (0.914486 times rMax), while it should be at zero
+Median for expected limits: 0.12012
+Sigma  for expected limits: 0.0612869
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -4670.44 (r = 8.34335e-05)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6882.67 (r = 0.00111872)
+At r = 0.053929:	q_mu = 1.62853	q_A  = 27411.64263	CLsb = 0.10095	CLb  = 1.00000	CLs  = 0.10095
+At r = 0.107857:	q_mu = 5.02867	q_A  = 24677.21076	CLsb = 0.01247	CLb  = 1.00000	CLs  = 0.01247
+At r = 0.053970:	q_mu = 1.63048	q_A  = 27409.46542	CLsb = 0.10082	CLb  = 1.00000	CLs  = 0.10082
+At r = 0.080914:	q_mu = 3.11377	q_A  = 26023.37607	CLsb = 0.03882	CLb  = 1.00000	CLs  = 0.03882
+At r = 0.069808:	q_mu = 2.45049	q_A  = 26589.87281	CLsb = 0.05874	CLb  = 1.00000	CLs  = 0.05874
+At r = 0.075485:	q_mu = 2.77964	q_A  = 26299.44694	CLsb = 0.04773	CLb  = 1.00000	CLs  = 0.04773
+At r = 0.073335:	q_mu = 2.65235	q_A  = 26409.23131	CLsb = 0.05170	CLb  = 1.00000	CLs  = 0.05170
+At r = 0.074485:	q_mu = 2.72036	q_A  = 26350.46244	CLsb = 0.04954	CLb  = 1.00000	CLs  = 0.04954
+At r = 0.074055:	q_mu = 2.69469	q_A  = 26372.43497	CLsb = 0.05034	CLb  = 1.00000	CLs  = 0.05034
+At r = 0.074286:	q_mu = 2.70837	q_A  = 26360.60407	CLsb = 0.04991	CLb  = 1.00000	CLs  = 0.04991
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0743
+Expected  2.5%: r < 0.0793
+Expected 16.0%: r < 0.0943
+Expected 50.0%: r < 0.1201
+Expected 84.0%: r < 0.1589
+Expected 97.5%: r < 0.2065
+
+Done in 0.11 min (cpu), 0.11 min (real)
+Generate toy 32/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.001160 (0.014190 times rMax), while it should be at zero
+Median for expected limits: 0.10674
+Sigma  for expected limits: 0.0544604
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -3.00515 (r = 8.48934e-09)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6931.47 (r = 1.19821e-07)
+At r = 0.580372:	q_mu = 97.17989	q_A  = 7249.05090	CLsb = 0.00000	CLb  = 1.00000	CLs  = 0.00000
+At r = 0.290186:	q_mu = 27.63940	q_A  = 16593.61440	CLsb = 0.00000	CLb  = 1.00000	CLs  = 0.00000
+At r = 0.145093:	q_mu = 7.63614	q_A  = 22881.96277	CLsb = 0.00286	CLb  = 1.00000	CLs  = 0.00286
+At r = 0.072547:	q_mu = 2.17036	q_A  = 26449.54010	CLsb = 0.07035	CLb  = 1.00000	CLs  = 0.07035
+At r = 0.108820:	q_mu = 4.50188	q_A  = 24629.85958	CLsb = 0.01693	CLb  = 1.00000	CLs  = 0.01693
+At r = 0.086757:	q_mu = 2.98520	q_A  = 25728.08309	CLsb = 0.04201	CLb  = 1.00000	CLs  = 0.04201
+At r = 0.080077:	q_mu = 2.58620	q_A  = 26065.84750	CLsb = 0.05390	CLb  = 1.00000	CLs  = 0.05390
+At r = 0.083024:	q_mu = 2.75860	q_A  = 25916.53605	CLsb = 0.04837	CLb  = 1.00000	CLs  = 0.04837
+At r = 0.081711:	q_mu = 2.68100	q_A  = 25982.97245	CLsb = 0.05078	CLb  = 1.00000	CLs  = 0.05078
+At r = 0.082306:	q_mu = 2.71607	q_A  = 25952.83645	CLsb = 0.04967	CLb  = 1.00000	CLs  = 0.04967
+At r = 0.082044:	q_mu = 2.70069	q_A  = 25966.09450	CLsb = 0.05015	CLb  = 1.00000	CLs  = 0.05015
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0820
+Expected  2.5%: r < 0.0571
+Expected 16.0%: r < 0.0761
+Expected 50.0%: r < 0.1067
+Expected 84.0%: r < 0.1484
+Expected 97.5%: r < 0.1987
+
+Done in 0.10 min (cpu), 0.10 min (real)
+Generate toy 33/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000259 (0.002874 times rMax), while it should be at zero
+Median for expected limits: 0.106324
+Sigma  for expected limits: 0.0542481
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -237.898 (r = 0.0523343)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.82 (r = 0.00843465)
+At r = 0.213806:	q_mu = 7.86229	q_A  = 19765.04065	CLsb = 0.00252	CLb  = 1.00000	CLs  = 0.00252
+At r = 0.133070:	q_mu = 2.00541	q_A  = 23453.37819	CLsb = 0.07837	CLb  = 1.00000	CLs  = 0.07837
+At r = 0.173438:	q_mu = 4.46974	q_A  = 21565.56685	CLsb = 0.01725	CLb  = 1.00000	CLs  = 0.01725
+At r = 0.150732:	q_mu = 2.96636	q_A  = 22616.59733	CLsb = 0.04251	CLb  = 1.00000	CLs  = 0.04251
+At r = 0.143450:	q_mu = 2.54856	q_A  = 22959.57876	CLsb = 0.05520	CLb  = 1.00000	CLs  = 0.05520
+At r = 0.147112:	q_mu = 2.75511	q_A  = 22786.76361	CLsb = 0.04847	CLb  = 1.00000	CLs  = 0.04847
+At r = 0.145679:	q_mu = 2.67354	q_A  = 22854.26601	CLsb = 0.05101	CLb  = 1.00000	CLs  = 0.05101
+At r = 0.146416:	q_mu = 2.71543	q_A  = 22819.53657	CLsb = 0.04969	CLb  = 1.00000	CLs  = 0.04969
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1464
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0763
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1483
+Expected 97.5%: r < 0.1982
+
+Done in 0.08 min (cpu), 0.08 min (real)
+Generate toy 34/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000478 (0.002967 times rMax), while it should be at zero
+Median for expected limits: 0.106197
+Sigma  for expected limits: 0.0541833
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -154.949 (r = 6.26323e-12)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6933.35 (r = 0.00617098)
+At r = 0.140442:	q_mu = 9.17533	q_A  = 23102.07828	CLsb = 0.00123	CLb  = 1.00000	CLs  = 0.00123
+At r = 0.070221:	q_mu = 3.01651	q_A  = 26568.64516	CLsb = 0.04121	CLb  = 1.00000	CLs  = 0.04121
+At r = 0.035110:	q_mu = 1.10217	q_A  = 28403.59447	CLsb = 0.14690	CLb  = 1.00000	CLs  = 0.14690
+At r = 0.058926:	q_mu = 2.31158	q_A  = 27151.47013	CLsb = 0.06421	CLb  = 1.00000	CLs  = 0.06421
+At r = 0.064022:	q_mu = 2.61871	q_A  = 26887.63018	CLsb = 0.05281	CLb  = 1.00000	CLs  = 0.05281
+At r = 0.066354:	q_mu = 2.76439	q_A  = 26767.39711	CLsb = 0.04819	CLb  = 1.00000	CLs  = 0.04819
+At r = 0.065136:	q_mu = 2.68760	q_A  = 26830.16010	CLsb = 0.05057	CLb  = 1.00000	CLs  = 0.05057
+At r = 0.065608:	q_mu = 2.71709	q_A  = 26805.84470	CLsb = 0.04964	CLb  = 1.00000	CLs  = 0.04964
+At r = 0.065366:	q_mu = 2.70196	q_A  = 26818.31788	CLsb = 0.05011	CLb  = 1.00000	CLs  = 0.05011
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0654
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0762
+Expected 50.0%: r < 0.1062
+Expected 84.0%: r < 0.1481
+Expected 97.5%: r < 0.1980
+
+Done in 0.08 min (cpu), 0.08 min (real)
+Generate toy 35/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.006340 (0.088168 times rMax), while it should be at zero
+Median for expected limits: 0.106505
+Sigma  for expected limits: 0.0543405
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -10358.5 (r = 0.0937078)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.06 (r = 0.000167934)
+At r = 0.252531:	q_mu = 8.35332	q_A  = 18118.92093	CLsb = 0.00192	CLb  = 1.00000	CLs  = 0.00192
+At r = 0.173120:	q_mu = 2.13575	q_A  = 21580.14725	CLsb = 0.07195	CLb  = 1.00000	CLs  = 0.07195
+At r = 0.212825:	q_mu = 4.75379	q_A  = 19807.77765	CLsb = 0.01462	CLb  = 1.00000	CLs  = 0.01462
+At r = 0.192972:	q_mu = 3.32012	q_A  = 20683.46497	CLsb = 0.03422	CLb  = 1.00000	CLs  = 0.03422
+At r = 0.184868:	q_mu = 2.80605	q_A  = 21046.98210	CLsb = 0.04695	CLb  = 1.00000	CLs  = 0.04695
+At r = 0.181134:	q_mu = 2.58316	q_A  = 21215.61848	CLsb = 0.05400	CLb  = 1.00000	CLs  = 0.05400
+At r = 0.182779:	q_mu = 2.67996	q_A  = 21141.23569	CLsb = 0.05081	CLb  = 1.00000	CLs  = 0.05081
+At r = 0.183537:	q_mu = 2.72513	q_A  = 21107.01456	CLsb = 0.04939	CLb  = 1.00000	CLs  = 0.04939
+At r = 0.183123:	q_mu = 2.70025	q_A  = 21125.71826	CLsb = 0.05017	CLb  = 1.00000	CLs  = 0.05017
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1831
+Expected  2.5%: r < 0.0578
+Expected 16.0%: r < 0.0765
+Expected 50.0%: r < 0.1065
+Expected 84.0%: r < 0.1485
+Expected 97.5%: r < 0.1985
+
+Done in 0.09 min (cpu), 0.09 min (real)
+Generate toy 36/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000218 (0.001082 times rMax), while it should be at zero
+Median for expected limits: 0.106068
+Sigma  for expected limits: 0.0541173
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -2468.81 (r = 0.0716571)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6933.09 (r = 0.00184911)
+At r = 0.236846:	q_mu = 7.76657	q_A  = 18776.13571	CLsb = 0.00266	CLb  = 1.00000	CLs  = 0.00266
+At r = 0.154251:	q_mu = 1.98286	q_A  = 22451.87856	CLsb = 0.07954	CLb  = 1.00000	CLs  = 0.07954
+At r = 0.195549:	q_mu = 4.41731	q_A  = 20568.61643	CLsb = 0.01779	CLb  = 1.00000	CLs  = 0.01779
+At r = 0.172752:	q_mu = 2.95818	q_A  = 21596.90498	CLsb = 0.04272	CLb  = 1.00000	CLs  = 0.04272
+At r = 0.165306:	q_mu = 2.54433	q_A  = 21938.78444	CLsb = 0.05535	CLb  = 1.00000	CLs  = 0.05535
+At r = 0.169133:	q_mu = 2.75273	q_A  = 21762.72895	CLsb = 0.04854	CLb  = 1.00000	CLs  = 0.04854
+At r = 0.167678:	q_mu = 2.67224	q_A  = 21829.58800	CLsb = 0.05106	CLb  = 1.00000	CLs  = 0.05106
+At r = 0.168451:	q_mu = 2.71469	q_A  = 21794.04329	CLsb = 0.04971	CLb  = 1.00000	CLs  = 0.04971
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1685
+Expected  2.5%: r < 0.0576
+Expected 16.0%: r < 0.0761
+Expected 50.0%: r < 0.1061
+Expected 84.0%: r < 0.1488
+Expected 97.5%: r < 0.1983
+
+Done in 0.08 min (cpu), 0.08 min (real)
+Generate toy 37/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000421 (0.002271 times rMax), while it should be at zero
+Median for expected limits: 0.106328
+Sigma  for expected limits: 0.05425
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -23819.4 (r = 0.111266)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.81 (r = 0.00328163)
+At r = 0.268848:	q_mu = 8.09050	q_A  = 17448.88983	CLsb = 0.00222	CLb  = 1.00000	CLs  = 0.00222
+At r = 0.190057:	q_mu = 2.11522	q_A  = 20813.82319	CLsb = 0.07292	CLb  = 1.00000	CLs  = 0.07292
+At r = 0.229453:	q_mu = 4.60496	q_A  = 19090.44159	CLsb = 0.01594	CLb  = 1.00000	CLs  = 0.01594
+At r = 0.205757:	q_mu = 2.97095	q_A  = 20117.13305	CLsb = 0.04239	CLb  = 1.00000	CLs  = 0.04239
+At r = 0.198793:	q_mu = 2.54899	q_A  = 20424.56213	CLsb = 0.05518	CLb  = 1.00000	CLs  = 0.05518
+At r = 0.202268:	q_mu = 2.75261	q_A  = 20270.81803	CLsb = 0.04855	CLb  = 1.00000	CLs  = 0.04855
+At r = 0.200934:	q_mu = 2.67325	q_A  = 20329.78895	CLsb = 0.05102	CLb  = 1.00000	CLs  = 0.05102
+At r = 0.201636:	q_mu = 2.71466	q_A  = 20298.75942	CLsb = 0.04972	CLb  = 1.00000	CLs  = 0.04972
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.2016
+Expected  2.5%: r < 0.0573
+Expected 16.0%: r < 0.0765
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1483
+Expected 97.5%: r < 0.1982
+
+Done in 0.09 min (cpu), 0.09 min (real)
+Generate toy 38/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000781 (0.003521 times rMax), while it should be at zero
+Median for expected limits: 0.106394
+Sigma  for expected limits: 0.0542838
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -1376.69 (r = 8.9395e-06)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.53 (r = 0.00099703)
+At r = 0.015582:	q_mu = 0.65276	q_A  = 29453.91291	CLsb = 0.20956	CLb  = 1.00000	CLs  = 0.20956
+At r = 0.031164:	q_mu = 1.45464	q_A  = 28614.16180	CLsb = 0.11389	CLb  = 1.00000	CLs  = 0.11389
+At r = 0.062328:	q_mu = 3.50277	q_A  = 26975.23648	CLsb = 0.03063	CLb  = 1.00000	CLs  = 0.03063
+At r = 0.031168:	q_mu = 1.45485	q_A  = 28613.92286	CLsb = 0.11388	CLb  = 1.00000	CLs  = 0.11388
+At r = 0.046794:	q_mu = 2.40787	q_A  = 27785.39968	CLsb = 0.06036	CLb  = 1.00000	CLs  = 0.06036
+At r = 0.053352:	q_mu = 2.85237	q_A  = 27441.75371	CLsb = 0.04562	CLb  = 1.00000	CLs  = 0.04562
+At r = 0.050323:	q_mu = 2.64375	q_A  = 27600.19068	CLsb = 0.05198	CLb  = 1.00000	CLs  = 0.05198
+At r = 0.051649:	q_mu = 2.73438	q_A  = 27530.74201	CLsb = 0.04910	CLb  = 1.00000	CLs  = 0.04910
+At r = 0.051047:	q_mu = 2.69305	q_A  = 27562.26652	CLsb = 0.05039	CLb  = 1.00000	CLs  = 0.05039
+At r = 0.051313:	q_mu = 2.71136	q_A  = 27548.33132	CLsb = 0.04982	CLb  = 1.00000	CLs  = 0.04982
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0513
+Expected  2.5%: r < 0.0574
+Expected 16.0%: r < 0.0761
+Expected 50.0%: r < 0.1064
+Expected 84.0%: r < 0.1484
+Expected 97.5%: r < 0.1983
+
+Done in 0.09 min (cpu), 0.09 min (real)
+Generate toy 39/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+Median for expected limits: 0.106187
+Sigma  for expected limits: 0.0541778
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -1067.75 (r = 0.0961052)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6933.41 (r = 0.000510756)
+At r = 0.259137:	q_mu = 7.72154	q_A  = 17846.00696	CLsb = 0.00273	CLb  = 1.00000	CLs  = 0.00273
+At r = 0.177621:	q_mu = 1.97227	q_A  = 21374.99004	CLsb = 0.08010	CLb  = 1.00000	CLs  = 0.08010
+At r = 0.218379:	q_mu = 4.39262	q_A  = 19566.56871	CLsb = 0.01805	CLb  = 1.00000	CLs  = 0.01805
+At r = 0.196084:	q_mu = 2.95290	q_A  = 20544.84147	CLsb = 0.04286	CLb  = 1.00000	CLs  = 0.04286
+At r = 0.188753:	q_mu = 2.54074	q_A  = 20872.28845	CLsb = 0.05547	CLb  = 1.00000	CLs  = 0.05547
+At r = 0.192581:	q_mu = 2.75203	q_A  = 20700.95803	CLsb = 0.04857	CLb  = 1.00000	CLs  = 0.04857
+At r = 0.191145:	q_mu = 2.67172	q_A  = 20765.14336	CLsb = 0.05107	CLb  = 1.00000	CLs  = 0.05107
+At r = 0.191916:	q_mu = 2.71471	q_A  = 20730.63872	CLsb = 0.04971	CLb  = 1.00000	CLs  = 0.04971
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1919
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0762
+Expected 50.0%: r < 0.1062
+Expected 84.0%: r < 0.1481
+Expected 97.5%: r < 0.1979
+
+Done in 0.13 min (cpu), 0.13 min (real)
+Generate toy 40/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000518 (0.002456 times rMax), while it should be at zero
+Median for expected limits: 0.106544
+Sigma  for expected limits: 0.0543599
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -154.518 (r = 3.45068e-05)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6931.9 (r = 0.000489555)
+At r = 0.015629:	q_mu = 0.11710	q_A  = 29451.33814	CLsb = 0.36610	CLb  = 1.00000	CLs  = 0.36610
+At r = 0.031259:	q_mu = 0.39681	q_A  = 28609.09467	CLsb = 0.26437	CLb  = 1.00000	CLs  = 0.26437
+At r = 0.062517:	q_mu = 1.42622	q_A  = 26965.43060	CLsb = 0.11619	CLb  = 1.00000	CLs  = 0.11619
+At r = 0.125035:	q_mu = 5.32145	q_A  = 23839.68496	CLsb = 0.01053	CLb  = 1.00000	CLs  = 0.01053
+At r = 0.062535:	q_mu = 1.42991	q_A  = 26964.53833	CLsb = 0.11589	CLb  = 1.00000	CLs  = 0.11589
+At r = 0.093785:	q_mu = 3.07414	q_A  = 25375.35733	CLsb = 0.03977	CLb  = 1.00000	CLs  = 0.03977
+At r = 0.082185:	q_mu = 2.39288	q_A  = 25958.95295	CLsb = 0.06094	CLb  = 1.00000	CLs  = 0.06094
+At r = 0.088809:	q_mu = 2.77107	q_A  = 25624.78583	CLsb = 0.04799	CLb  = 1.00000	CLs  = 0.04799
+At r = 0.086575:	q_mu = 2.64009	q_A  = 25737.23202	CLsb = 0.05210	CLb  = 1.00000	CLs  = 0.05210
+At r = 0.087470:	q_mu = 2.69197	q_A  = 25692.16076	CLsb = 0.05043	CLb  = 1.00000	CLs  = 0.05043
+At r = 0.087922:	q_mu = 2.71835	q_A  = 25669.40935	CLsb = 0.04960	CLb  = 1.00000	CLs  = 0.04960
+At r = 0.087656:	q_mu = 2.70271	q_A  = 25682.78975	CLsb = 0.05009	CLb  = 1.00000	CLs  = 0.05009
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0877
+Expected  2.5%: r < 0.0570
+Expected 16.0%: r < 0.0768
+Expected 50.0%: r < 0.1065
+Expected 84.0%: r < 0.1486
+Expected 97.5%: r < 0.1986
+
+Done in 0.09 min (cpu), 0.09 min (real)
+Generate toy 41/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+Median for expected limits: 0.106365
+Sigma  for expected limits: 0.0542689
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -555.973 (r = 0.0164079)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.65 (r = 0.000107182)
+At r = 0.162104:	q_mu = 6.68079	q_A  = 22086.75748	CLsb = 0.00487	CLb  = 1.00000	CLs  = 0.00487
+At r = 0.089256:	q_mu = 1.70053	q_A  = 25602.32205	CLsb = 0.09611	CLb  = 1.00000	CLs  = 0.09611
+At r = 0.125680:	q_mu = 3.79341	q_A  = 23808.52276	CLsb = 0.02573	CLb  = 1.00000	CLs  = 0.02573
+At r = 0.110989:	q_mu = 2.85380	q_A  = 24523.32151	CLsb = 0.04558	CLb  = 1.00000	CLs  = 0.04558
+At r = 0.104485:	q_mu = 2.47660	q_A  = 24843.52299	CLsb = 0.05778	CLb  = 1.00000	CLs  = 0.05778
+At r = 0.107657:	q_mu = 2.65633	q_A  = 24687.07736	CLsb = 0.05157	CLb  = 1.00000	CLs  = 0.05157
+At r = 0.108990:	q_mu = 2.73375	q_A  = 24621.46578	CLsb = 0.04912	CLb  = 1.00000	CLs  = 0.04912
+At r = 0.108336:	q_mu = 2.69552	q_A  = 24653.67001	CLsb = 0.05032	CLb  = 1.00000	CLs  = 0.05032
+At r = 0.108604:	q_mu = 2.71117	q_A  = 24640.46759	CLsb = 0.04982	CLb  = 1.00000	CLs  = 0.04982
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1086
+Expected  2.5%: r < 0.0573
+Expected 16.0%: r < 0.0761
+Expected 50.0%: r < 0.1064
+Expected 84.0%: r < 0.1483
+Expected 97.5%: r < 0.1983
+
+Done in 0.09 min (cpu), 0.09 min (real)
+Generate toy 42/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+Median for expected limits: 0.106398
+Sigma  for expected limits: 0.0542857
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -1014.8 (r = 0.0605527)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.52 (r = 0.00035474)
+At r = 0.216572:	q_mu = 7.34004	q_A  = 19644.88052	CLsb = 0.00337	CLb  = 1.00000	CLs  = 0.00337
+At r = 0.138562:	q_mu = 1.88915	q_A  = 23191.40261	CLsb = 0.08465	CLb  = 1.00000	CLs  = 0.08465
+At r = 0.177567:	q_mu = 4.18345	q_A  = 21377.44437	CLsb = 0.02041	CLb  = 1.00000	CLs  = 0.02041
+At r = 0.157912:	q_mu = 2.91730	q_A  = 22281.27306	CLsb = 0.04382	CLb  = 1.00000	CLs  = 0.04382
+At r = 0.150939:	q_mu = 2.52230	q_A  = 22606.92263	CLsb = 0.05612	CLb  = 1.00000	CLs  = 0.05612
+At r = 0.154938:	q_mu = 2.74576	q_A  = 22419.87861	CLsb = 0.04876	CLb  = 1.00000	CLs  = 0.04876
+At r = 0.153565:	q_mu = 2.66818	q_A  = 22483.97401	CLsb = 0.05119	CLb  = 1.00000	CLs  = 0.05119
+At r = 0.154369:	q_mu = 2.71331	q_A  = 22446.41762	CLsb = 0.04976	CLb  = 1.00000	CLs  = 0.04976
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1544
+Expected  2.5%: r < 0.0578
+Expected 16.0%: r < 0.0764
+Expected 50.0%: r < 0.1064
+Expected 84.0%: r < 0.1484
+Expected 97.5%: r < 0.1983
+
+Done in 0.10 min (cpu), 0.10 min (real)
+Generate toy 43/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+Median for expected limits: 0.106659
+Sigma  for expected limits: 0.0544191
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -28.2079 (r = 0.0458015)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6931.41 (r = 6.98497e-05)
+At r = 0.205429:	q_mu = 8.04549	q_A  = 20131.59055	CLsb = 0.00228	CLb  = 1.00000	CLs  = 0.00228
+At r = 0.125615:	q_mu = 2.06369	q_A  = 23811.66932	CLsb = 0.07542	CLb  = 1.00000	CLs  = 0.07542
+At r = 0.165522:	q_mu = 4.57815	q_A  = 21928.88303	CLsb = 0.01619	CLb  = 1.00000	CLs  = 0.01619
+At r = 0.142126:	q_mu = 2.98305	q_A  = 23022.26250	CLsb = 0.04207	CLb  = 1.00000	CLs  = 0.04207
+At r = 0.134917:	q_mu = 2.55882	q_A  = 23365.13736	CLsb = 0.05484	CLb  = 1.00000	CLs  = 0.05484
+At r = 0.138369:	q_mu = 2.75773	q_A  = 23200.59796	CLsb = 0.04839	CLb  = 1.00000	CLs  = 0.04839
+At r = 0.136957:	q_mu = 2.67530	q_A  = 23267.81483	CLsb = 0.05096	CLb  = 1.00000	CLs  = 0.05096
+At r = 0.137654:	q_mu = 2.71573	q_A  = 23234.59846	CLsb = 0.04968	CLb  = 1.00000	CLs  = 0.04968
+At r = 0.137374:	q_mu = 2.69949	q_A  = 23247.92682	CLsb = 0.05019	CLb  = 1.00000	CLs  = 0.05019
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1374
+Expected  2.5%: r < 0.0571
+Expected 16.0%: r < 0.0764
+Expected 50.0%: r < 0.1067
+Expected 84.0%: r < 0.1487
+Expected 97.5%: r < 0.1988
+
+Done in 0.09 min (cpu), 0.09 min (real)
+Generate toy 44/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000442 (0.002922 times rMax), while it should be at zero
+Median for expected limits: 0.106251
+Sigma  for expected limits: 0.0542105
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -30790.4 (r = 1.63106e-09)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6933.14 (r = 7.23374e-08)
+At r = 0.062601:	q_mu = 2.74533	q_A  = 26961.09118	CLsb = 0.04877	CLb  = 1.00000	CLs  = 0.04877
+At r = 0.031301:	q_mu = 1.03196	q_A  = 28606.85029	CLsb = 0.15485	CLb  = 1.00000	CLs  = 0.15485
+At r = 0.046951:	q_mu = 1.80358	q_A  = 27777.16937	CLsb = 0.08964	CLb  = 1.00000	CLs  = 0.08964
+At r = 0.058959:	q_mu = 2.51197	q_A  = 27149.82284	CLsb = 0.05649	CLb  = 1.00000	CLs  = 0.05649
+At r = 0.061379:	q_mu = 2.66645	q_A  = 27024.35026	CLsb = 0.05124	CLb  = 1.00000	CLs  = 0.05124
+At r = 0.062108:	q_mu = 2.71391	q_A  = 26986.57866	CLsb = 0.04974	CLb  = 1.00000	CLs  = 0.04974
+At r = 0.061860:	q_mu = 2.69771	q_A  = 26999.45222	CLsb = 0.05025	CLb  = 1.00000	CLs  = 0.05025
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0619
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0763
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1482
+Expected 97.5%: r < 0.1981
+
+Done in 0.10 min (cpu), 0.10 min (real)
+Generate toy 45/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.001073 (0.015765 times rMax), while it should be at zero
+Median for expected limits: 0.105896
+Sigma  for expected limits: 0.0540296
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -77464.3 (r = 0.000214116)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6933.84 (r = 2.05145e-05)
+At r = 0.015742:	q_mu = 0.59225	q_A  = 29445.21601	CLsb = 0.22078	CLb  = 1.00000	CLs  = 0.22078
+At r = 0.031484:	q_mu = 1.39603	q_A  = 28597.04826	CLsb = 0.11870	CLb  = 1.00000	CLs  = 0.11870
+At r = 0.062968:	q_mu = 3.56556	q_A  = 26942.12330	CLsb = 0.02949	CLb  = 1.00000	CLs  = 0.02949
+At r = 0.031591:	q_mu = 1.40428	q_A  = 28591.32748	CLsb = 0.11800	CLb  = 1.00000	CLs  = 0.11800
+At r = 0.047137:	q_mu = 2.38237	q_A  = 27767.37741	CLsb = 0.06136	CLb  = 1.00000	CLs  = 0.06136
+At r = 0.053842:	q_mu = 2.85803	q_A  = 27416.15823	CLsb = 0.04546	CLb  = 1.00000	CLs  = 0.04546
+At r = 0.050798:	q_mu = 2.63653	q_A  = 27575.29814	CLsb = 0.05222	CLb  = 1.00000	CLs  = 0.05222
+At r = 0.052169:	q_mu = 2.73537	q_A  = 27503.56547	CLsb = 0.04907	CLb  = 1.00000	CLs  = 0.04907
+At r = 0.051565:	q_mu = 2.69159	q_A  = 27535.18151	CLsb = 0.05044	CLb  = 1.00000	CLs  = 0.05044
+At r = 0.051840:	q_mu = 2.71155	q_A  = 27520.78942	CLsb = 0.04981	CLb  = 1.00000	CLs  = 0.04981
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0518
+Expected  2.5%: r < 0.0575
+Expected 16.0%: r < 0.0768
+Expected 50.0%: r < 0.1059
+Expected 84.0%: r < 0.1485
+Expected 97.5%: r < 0.1980
+
+Done in 0.12 min (cpu), 0.12 min (real)
+Generate toy 46/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.007253 (0.127196 times rMax), while it should be at zero
+Median for expected limits: 0.106563
+Sigma  for expected limits: 0.0543699
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -266.85 (r = 7.11524e-09)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6931.82 (r = 6.37491e-07)
+At r = 0.046440:	q_mu = 3.62503	q_A  = 27804.01892	CLsb = 0.02846	CLb  = 1.00000	CLs  = 0.02846
+At r = 0.023220:	q_mu = 1.63661	q_A  = 29040.56965	CLsb = 0.10040	CLb  = 1.00000	CLs  = 0.10040
+At r = 0.033492:	q_mu = 2.47413	q_A  = 28489.85997	CLsb = 0.05787	CLb  = 1.00000	CLs  = 0.05787
+At r = 0.038214:	q_mu = 2.88258	q_A  = 28238.64503	CLsb = 0.04477	CLb  = 1.00000	CLs  = 0.04477
+At r = 0.035644:	q_mu = 2.65800	q_A  = 28375.25309	CLsb = 0.05152	CLb  = 1.00000	CLs  = 0.05152
+At r = 0.036595:	q_mu = 2.74027	q_A  = 28324.63603	CLsb = 0.04892	CLb  = 1.00000	CLs  = 0.04892
+At r = 0.036084:	q_mu = 2.69563	q_A  = 28351.82086	CLsb = 0.05031	CLb  = 1.00000	CLs  = 0.05031
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0361
+Expected  2.5%: r < 0.0579
+Expected 16.0%: r < 0.0773
+Expected 50.0%: r < 0.1066
+Expected 84.0%: r < 0.1486
+Expected 97.5%: r < 0.1986
+
+Done in 0.10 min (cpu), 0.10 min (real)
+Generate toy 47/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000208 (0.005243 times rMax), while it should be at zero
+Median for expected limits: 0.106425
+Sigma  for expected limits: 0.0542996
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -3214.64 (r = 6.44216e-07)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.4 (r = 0.000795665)
+At r = 0.021187:	q_mu = 1.07540	q_A  = 29150.29841	CLsb = 0.14986	CLb  = 1.00000	CLs  = 0.14986
+At r = 0.042373:	q_mu = 2.42607	q_A  = 28018.44120	CLsb = 0.05967	CLb  = 1.00000	CLs  = 0.05967
+At r = 0.084747:	q_mu = 5.92915	q_A  = 25829.46055	CLsb = 0.00745	CLb  = 1.00000	CLs  = 0.00745
+At r = 0.042374:	q_mu = 2.42688	q_A  = 28018.42418	CLsb = 0.05963	CLb  = 1.00000	CLs  = 0.05963
+At r = 0.063560:	q_mu = 4.04496	q_A  = 26911.53773	CLsb = 0.02215	CLb  = 1.00000	CLs  = 0.02215
+At r = 0.049627:	q_mu = 2.95187	q_A  = 27636.67735	CLsb = 0.04289	CLb  = 1.00000	CLs  = 0.04289
+At r = 0.045476:	q_mu = 2.64631	q_A  = 27854.79860	CLsb = 0.05190	CLb  = 1.00000	CLs  = 0.05190
+At r = 0.046954:	q_mu = 2.75337	q_A  = 27777.00257	CLsb = 0.04852	CLb  = 1.00000	CLs  = 0.04852
+At r = 0.046131:	q_mu = 2.69359	q_A  = 27820.30075	CLsb = 0.05038	CLb  = 1.00000	CLs  = 0.05038
+At r = 0.046427:	q_mu = 2.71514	q_A  = 27804.70272	CLsb = 0.04970	CLb  = 1.00000	CLs  = 0.04970
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0464
+Expected  2.5%: r < 0.0570
+Expected 16.0%: r < 0.0767
+Expected 50.0%: r < 0.1064
+Expected 84.0%: r < 0.1484
+Expected 97.5%: r < 0.1984
+
+Done in 0.13 min (cpu), 0.13 min (real)
+Generate toy 48/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000545 (0.010675 times rMax), while it should be at zero
+Median for expected limits: 0.10629
+Sigma  for expected limits: 0.0542305
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -51.7237 (r = 1.77979e-10)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.98 (r = 0.000499336)
+At r = 0.043486:	q_mu = 3.57843	q_A  = 27959.66077	CLsb = 0.02927	CLb  = 1.00000	CLs  = 0.02927
+At r = 0.021743:	q_mu = 1.64189	q_A  = 29120.24189	CLsb = 0.10003	CLb  = 1.00000	CLs  = 0.10003
+At r = 0.031558:	q_mu = 2.48063	q_A  = 28593.09302	CLsb = 0.05763	CLb  = 1.00000	CLs  = 0.05763
+At r = 0.035944:	q_mu = 2.87506	q_A  = 28359.29229	CLsb = 0.04498	CLb  = 1.00000	CLs  = 0.04498
+At r = 0.033569:	q_mu = 2.65951	q_A  = 28485.77650	CLsb = 0.05147	CLb  = 1.00000	CLs  = 0.05147
+At r = 0.034451:	q_mu = 2.73888	q_A  = 28438.72929	CLsb = 0.04897	CLb  = 1.00000	CLs  = 0.04897
+At r = 0.033979:	q_mu = 2.69606	q_A  = 28463.92136	CLsb = 0.05030	CLb  = 1.00000	CLs  = 0.05030
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0340
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0763
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1482
+Expected 97.5%: r < 0.1981
+
+Done in 0.14 min (cpu), 0.14 min (real)
+Generate toy 49/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.037296 (0.997844 times rMax), while it should be at zero
+Median for expected limits: 0.112596
+Sigma  for expected limits: 0.0574481
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -10814.4 (r = 0.00140491)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6909.69 (r = 2.27734e-05)
+At r = 0.023775:	q_mu = 0.70679	q_A  = 29010.69850	CLsb = 0.20026	CLb  = 1.00000	CLs  = 0.20026
+At r = 0.047549:	q_mu = 1.83584	q_A  = 27745.72797	CLsb = 0.08772	CLb  = 1.00000	CLs  = 0.08772
+At r = 0.095098:	q_mu = 5.21081	q_A  = 25309.72942	CLsb = 0.01122	CLb  = 1.00000	CLs  = 0.01122
+At r = 0.048252:	q_mu = 1.87480	q_A  = 27708.83088	CLsb = 0.08546	CLb  = 1.00000	CLs  = 0.08546
+At r = 0.071675:	q_mu = 3.36287	q_A  = 26494.15327	CLsb = 0.03334	CLb  = 1.00000	CLs  = 0.03334
+At r = 0.058923:	q_mu = 2.50888	q_A  = 27151.67061	CLsb = 0.05660	CLb  = 1.00000	CLs  = 0.05660
+At r = 0.063864:	q_mu = 2.82655	q_A  = 26895.82751	CLsb = 0.04636	CLb  = 1.00000	CLs  = 0.04636
+At r = 0.061379:	q_mu = 2.66449	q_A  = 27024.34285	CLsb = 0.05131	CLb  = 1.00000	CLs  = 0.05131
+At r = 0.062381:	q_mu = 2.72930	q_A  = 26972.46409	CLsb = 0.04926	CLb  = 1.00000	CLs  = 0.04926
+At r = 0.061887:	q_mu = 2.69719	q_A  = 26998.02956	CLsb = 0.05026	CLb  = 1.00000	CLs  = 0.05026
+At r = 0.062089:	q_mu = 2.71033	q_A  = 26987.59231	CLsb = 0.04985	CLb  = 1.00000	CLs  = 0.04985
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0621
+Expected  2.5%: r < 0.0682
+Expected 16.0%: r < 0.0852
+Expected 50.0%: r < 0.1126
+Expected 84.0%: r < 0.1534
+Expected 97.5%: r < 0.2029
+
+Done in 0.12 min (cpu), 0.12 min (real)
+Generate toy 50/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000293 (0.004288 times rMax), while it should be at zero
+Median for expected limits: 0.106289
+Sigma  for expected limits: 0.0542298
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -87.9244 (r = 2.32918e-07)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.98 (r = 1.20748e-09)
+At r = 0.168120:	q_mu = 10.89701	q_A  = 21809.29185	CLsb = 0.00048	CLb  = 1.00000	CLs  = 0.00048
+At r = 0.084060:	q_mu = 3.33148	q_A  = 25864.13727	CLsb = 0.03398	CLb  = 1.00000	CLs  = 0.03398
+At r = 0.042030:	q_mu = 1.12129	q_A  = 28036.57428	CLsb = 0.14482	CLb  = 1.00000	CLs  = 0.14482
+At r = 0.066697:	q_mu = 2.28729	q_A  = 26749.75947	CLsb = 0.06522	CLb  = 1.00000	CLs  = 0.06522
+At r = 0.075832:	q_mu = 2.81533	q_A  = 26281.76686	CLsb = 0.04668	CLb  = 1.00000	CLs  = 0.04668
+At r = 0.072505:	q_mu = 2.61680	q_A  = 26451.67871	CLsb = 0.05287	CLb  = 1.00000	CLs  = 0.05287
+At r = 0.074364:	q_mu = 2.72666	q_A  = 26356.67015	CLsb = 0.04934	CLb  = 1.00000	CLs  = 0.04934
+At r = 0.073707:	q_mu = 2.68747	q_A  = 26390.22500	CLsb = 0.05057	CLb  = 1.00000	CLs  = 0.05057
+At r = 0.074081:	q_mu = 2.70957	q_A  = 26371.12493	CLsb = 0.04987	CLb  = 1.00000	CLs  = 0.04987
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0741
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0763
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1482
+Expected 97.5%: r < 0.1981
+
+Done in 0.13 min (cpu), 0.13 min (real)
+Generate toy 51/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000486 (0.005964 times rMax), while it should be at zero
+Median for expected limits: 0.106444
+Sigma  for expected limits: 0.0543094
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -77.8243 (r = 3.87657e-10)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.32 (r = 0.000321368)
+At r = 0.100850:	q_mu = 5.96033	q_A  = 25023.51305	CLsb = 0.00732	CLb  = 1.00000	CLs  = 0.00732
+At r = 0.050425:	q_mu = 2.20060	q_A  = 27594.85595	CLsb = 0.06898	CLb  = 1.00000	CLs  = 0.06898
+At r = 0.075637:	q_mu = 3.88902	q_A  = 26291.67860	CLsb = 0.02430	CLb  = 1.00000	CLs  = 0.02430
+At r = 0.061688:	q_mu = 2.90917	q_A  = 27008.32508	CLsb = 0.04404	CLb  = 1.00000	CLs  = 0.04404
+At r = 0.056886:	q_mu = 2.59627	q_A  = 27257.52802	CLsb = 0.05356	CLb  = 1.00000	CLs  = 0.05356
+At r = 0.059196:	q_mu = 2.74451	q_A  = 27137.50241	CLsb = 0.04879	CLb  = 1.00000	CLs  = 0.04879
+At r = 0.058250:	q_mu = 2.68306	q_A  = 27186.63218	CLsb = 0.05071	CLb  = 1.00000	CLs  = 0.05071
+At r = 0.058716:	q_mu = 2.71297	q_A  = 27162.40550	CLsb = 0.04977	CLb  = 1.00000	CLs  = 0.04977
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0587
+Expected  2.5%: r < 0.0570
+Expected 16.0%: r < 0.0767
+Expected 50.0%: r < 0.1064
+Expected 84.0%: r < 0.1484
+Expected 97.5%: r < 0.1984
+
+Done in 0.13 min (cpu), 0.13 min (real)
+Generate toy 52/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.054519 (0.844106 times rMax), while it should be at zero
+Median for expected limits: 0.119891
+Sigma  for expected limits: 0.0611702
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -313.173 (r = 1.58274e-05)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6883.62 (r = 0.00232773)
+At r = 0.137734:	q_mu = 8.23386	q_A  = 23230.79927	CLsb = 0.00206	CLb  = 1.00000	CLs  = 0.00206
+At r = 0.068875:	q_mu = 2.66966	q_A  = 26637.75634	CLsb = 0.05114	CLb  = 1.00000	CLs  = 0.05114
+At r = 0.103305:	q_mu = 5.10166	q_A  = 24901.89080	CLsb = 0.01195	CLb  = 1.00000	CLs  = 0.01195
+At r = 0.086090:	q_mu = 3.79940	q_A  = 25761.68680	CLsb = 0.02564	CLb  = 1.00000	CLs  = 0.02564
+At r = 0.072767:	q_mu = 2.90984	q_A  = 26438.25763	CLsb = 0.04402	CLb  = 1.00000	CLs  = 0.04402
+At r = 0.070121:	q_mu = 2.74636	q_A  = 26573.78624	CLsb = 0.04874	CLb  = 1.00000	CLs  = 0.04874
+At r = 0.069591:	q_mu = 2.71398	q_A  = 26600.98160	CLsb = 0.04974	CLb  = 1.00000	CLs  = 0.04974
+At r = 0.069339:	q_mu = 2.69871	q_A  = 26613.92568	CLsb = 0.05021	CLb  = 1.00000	CLs  = 0.05021
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0693
+Expected  2.5%: r < 0.0801
+Expected 16.0%: r < 0.0947
+Expected 50.0%: r < 0.1199
+Expected 84.0%: r < 0.1586
+Expected 97.5%: r < 0.2061
+
+Done in 0.10 min (cpu), 0.10 min (real)
+Generate toy 53/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.002815 (0.036902 times rMax), while it should be at zero
+Median for expected limits: 0.106425
+Sigma  for expected limits: 0.0542993
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -21.897 (r = 1.14191e-05)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.4 (r = 0.000820521)
+At r = 0.479710:	q_mu = 70.96127	q_A  = 10017.15010	CLsb = 0.00000	CLb  = 1.00000	CLs  = 0.00000
+At r = 0.239861:	q_mu = 20.72300	q_A  = 18648.83754	CLsb = 0.00000	CLb  = 1.00000	CLs  = 0.00000
+At r = 0.119936:	q_mu = 6.15247	q_A  = 24086.60921	CLsb = 0.00656	CLb  = 1.00000	CLs  = 0.00656
+At r = 0.059974:	q_mu = 1.97638	q_A  = 27097.15607	CLsb = 0.07989	CLb  = 1.00000	CLs  = 0.07989
+At r = 0.089955:	q_mu = 3.79126	q_A  = 25567.22986	CLsb = 0.02576	CLb  = 1.00000	CLs  = 0.02576
+At r = 0.075900:	q_mu = 2.86583	q_A  = 26278.26280	CLsb = 0.04524	CLb  = 1.00000	CLs  = 0.04524
+At r = 0.070473:	q_mu = 2.54168	q_A  = 26555.73855	CLsb = 0.05544	CLb  = 1.00000	CLs  = 0.05544
+At r = 0.072678:	q_mu = 2.67118	q_A  = 26442.80788	CLsb = 0.05109	CLb  = 1.00000	CLs  = 0.05109
+At r = 0.073780:	q_mu = 2.73695	q_A  = 26386.49231	CLsb = 0.04903	CLb  = 1.00000	CLs  = 0.04903
+At r = 0.073139:	q_mu = 2.69843	q_A  = 26419.23983	CLsb = 0.05022	CLb  = 1.00000	CLs  = 0.05022
+At r = 0.073362:	q_mu = 2.71183	q_A  = 26407.84564	CLsb = 0.04980	CLb  = 1.00000	CLs  = 0.04980
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0734
+Expected  2.5%: r < 0.0578
+Expected 16.0%: r < 0.0764
+Expected 50.0%: r < 0.1064
+Expected 84.0%: r < 0.1484
+Expected 97.5%: r < 0.1984
+
+Done in 0.14 min (cpu), 0.14 min (real)
+Generate toy 54/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000735 (0.009111 times rMax), while it should be at zero
+Median for expected limits: 0.106168
+Sigma  for expected limits: 0.0541685
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -664.48 (r = 0.0561775)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6933.49 (r = 0.00086921)
+At r = 0.209428:	q_mu = 7.24449	q_A  = 19956.13702	CLsb = 0.00356	CLb  = 1.00000	CLs  = 0.00356
+At r = 0.132803:	q_mu = 1.86345	q_A  = 23466.19644	CLsb = 0.08611	CLb  = 1.00000	CLs  = 0.08611
+At r = 0.171116:	q_mu = 4.12788	q_A  = 21671.82915	CLsb = 0.02109	CLb  = 1.00000	CLs  = 0.02109
+At r = 0.152310:	q_mu = 2.90689	q_A  = 22542.71447	CLsb = 0.04410	CLb  = 1.00000	CLs  = 0.04410
+At r = 0.145481:	q_mu = 2.51573	q_A  = 22863.67078	CLsb = 0.05636	CLb  = 1.00000	CLs  = 0.05636
+At r = 0.149513:	q_mu = 2.74317	q_A  = 22673.85431	CLsb = 0.04884	CLb  = 1.00000	CLs  = 0.04884
+At r = 0.148176:	q_mu = 2.66657	q_A  = 22736.70231	CLsb = 0.05124	CLb  = 1.00000	CLs  = 0.05124
+At r = 0.148721:	q_mu = 2.69761	q_A  = 22711.08192	CLsb = 0.05025	CLb  = 1.00000	CLs  = 0.05025
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1487
+Expected  2.5%: r < 0.0576
+Expected 16.0%: r < 0.0762
+Expected 50.0%: r < 0.1062
+Expected 84.0%: r < 0.1481
+Expected 97.5%: r < 0.1979
+
+Done in 0.13 min (cpu), 0.13 min (real)
+Generate toy 55/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.162648 (0.994226 times rMax), while it should be at zero
+Median for expected limits: 0.195544
+Sigma  for expected limits: 0.0997694
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -4470.45 (r = 3.4026e-11)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6606.76 (r = 0.000675259)
+At r = 0.066371:	q_mu = 3.93586	q_A  = 26766.56719	CLsb = 0.02363	CLb  = 1.00000	CLs  = 0.02363
+At r = 0.033185:	q_mu = 1.63500	q_A  = 28506.21661	CLsb = 0.10051	CLb  = 1.00000	CLs  = 0.10051
+At r = 0.052627:	q_mu = 2.90375	q_A  = 27479.60826	CLsb = 0.04419	CLb  = 1.00000	CLs  = 0.04419
+At r = 0.046400:	q_mu = 2.47219	q_A  = 27806.16147	CLsb = 0.05794	CLb  = 1.00000	CLs  = 0.05794
+At r = 0.049109:	q_mu = 2.65642	q_A  = 27663.82258	CLsb = 0.05157	CLb  = 1.00000	CLs  = 0.05157
+At r = 0.050375:	q_mu = 2.74406	q_A  = 27597.46638	CLsb = 0.04881	CLb  = 1.00000	CLs  = 0.04881
+At r = 0.049677:	q_mu = 2.69556	q_A  = 27634.02290	CLsb = 0.05031	CLb  = 1.00000	CLs  = 0.05031
+At r = 0.049932:	q_mu = 2.71324	q_A  = 27620.68358	CLsb = 0.04976	CLb  = 1.00000	CLs  = 0.04976
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0499
+Expected  2.5%: r < 0.1734
+Expected 16.0%: r < 0.1810
+Expected 50.0%: r < 0.1955
+Expected 84.0%: r < 0.2228
+Expected 97.5%: r < 0.2599
+
+Done in 0.13 min (cpu), 0.13 min (real)
+Generate toy 56/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000416 (0.007581 times rMax), while it should be at zero
+Median for expected limits: 0.106074
+Sigma  for expected limits: 0.0541204
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -11021.5 (r = 0.000275251)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6933.08 (r = 3.42848e-07)
+At r = 0.015829:	q_mu = 0.16534	q_A  = 29440.47751	CLsb = 0.34214	CLb  = 1.00000	CLs  = 0.34214
+At r = 0.031659:	q_mu = 0.50066	q_A  = 28587.72499	CLsb = 0.23961	CLb  = 1.00000	CLs  = 0.23961
+At r = 0.063317:	q_mu = 1.67007	q_A  = 26924.08830	CLsb = 0.09812	CLb  = 1.00000	CLs  = 0.09812
+At r = 0.126634:	q_mu = 5.94373	q_A  = 23762.51353	CLsb = 0.00738	CLb  = 1.00000	CLs  = 0.00738
+At r = 0.063455:	q_mu = 1.67524	q_A  = 26916.97747	CLsb = 0.09778	CLb  = 1.00000	CLs  = 0.09778
+At r = 0.095045:	q_mu = 3.49297	q_A  = 25312.41626	CLsb = 0.03082	CLb  = 1.00000	CLs  = 0.03082
+At r = 0.078133:	q_mu = 2.43913	q_A  = 26164.56878	CLsb = 0.05917	CLb  = 1.00000	CLs  = 0.05917
+At r = 0.085008:	q_mu = 2.84554	q_A  = 25816.27464	CLsb = 0.04581	CLb  = 1.00000	CLs  = 0.04581
+At r = 0.081753:	q_mu = 2.64919	q_A  = 25980.83648	CLsb = 0.05180	CLb  = 1.00000	CLs  = 0.05180
+At r = 0.083154:	q_mu = 2.73281	q_A  = 25909.92006	CLsb = 0.04915	CLb  = 1.00000	CLs  = 0.04915
+At r = 0.082509:	q_mu = 2.69414	q_A  = 25942.55921	CLsb = 0.05036	CLb  = 1.00000	CLs  = 0.05036
+At r = 0.082791:	q_mu = 2.71101	q_A  = 25928.32262	CLsb = 0.04983	CLb  = 1.00000	CLs  = 0.04983
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0828
+Expected  2.5%: r < 0.0576
+Expected 16.0%: r < 0.0762
+Expected 50.0%: r < 0.1061
+Expected 84.0%: r < 0.1488
+Expected 97.5%: r < 0.1983
+
+Done in 0.16 min (cpu), 0.16 min (real)
+Generate toy 57/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000564 (0.006193 times rMax), while it should be at zero
+Median for expected limits: 0.106153
+Sigma  for expected limits: 0.0541607
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -701.143 (r = 0.061307)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6933.56 (r = 0.000417481)
+At r = 0.214302:	q_mu = 7.14748	q_A  = 19743.46157	CLsb = 0.00375	CLb  = 1.00000	CLs  = 0.00375
+At r = 0.137805:	q_mu = 1.83868	q_A  = 23227.43815	CLsb = 0.08755	CLb  = 1.00000	CLs  = 0.08755
+At r = 0.176054:	q_mu = 4.07479	q_A  = 21446.29802	CLsb = 0.02176	CLb  = 1.00000	CLs  = 0.02176
+At r = 0.157769:	q_mu = 2.89882	q_A  = 22287.92049	CLsb = 0.04432	CLb  = 1.00000	CLs  = 0.04432
+At r = 0.150948:	q_mu = 2.51079	q_A  = 22606.48735	CLsb = 0.05653	CLb  = 1.00000	CLs  = 0.05653
+At r = 0.153703:	q_mu = 2.66404	q_A  = 22477.55733	CLsb = 0.05132	CLb  = 1.00000	CLs  = 0.05132
+At r = 0.155094:	q_mu = 2.74323	q_A  = 22412.56631	CLsb = 0.04883	CLb  = 1.00000	CLs  = 0.04883
+At r = 0.154287:	q_mu = 2.69711	q_A  = 22450.26630	CLsb = 0.05027	CLb  = 1.00000	CLs  = 0.05027
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1543
+Expected  2.5%: r < 0.0576
+Expected 16.0%: r < 0.0762
+Expected 50.0%: r < 0.1062
+Expected 84.0%: r < 0.1480
+Expected 97.5%: r < 0.1979
+
+Done in 0.14 min (cpu), 0.14 min (real)
+Generate toy 58/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000403 (0.002372 times rMax), while it should be at zero
+Median for expected limits: 0.106602
+Sigma  for expected limits: 0.05439
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -24567.6 (r = 2.24965e-05)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6931.65 (r = 6.58346e-08)
+At r = 0.015626:	q_mu = 0.87626	q_A  = 29451.52222	CLsb = 0.17461	CLb  = 1.00000	CLs  = 0.17461
+At r = 0.031252:	q_mu = 1.89140	q_A  = 28609.45682	CLsb = 0.08452	CLb  = 1.00000	CLs  = 0.08452
+At r = 0.062504:	q_mu = 4.32608	q_A  = 26966.13125	CLsb = 0.01877	CLb  = 1.00000	CLs  = 0.01877
+At r = 0.031263:	q_mu = 1.89227	q_A  = 28608.85557	CLsb = 0.08447	CLb  = 1.00000	CLs  = 0.08447
+At r = 0.046223:	q_mu = 2.99049	q_A  = 27815.43567	CLsb = 0.04188	CLb  = 1.00000	CLs  = 0.04188
+At r = 0.040208:	q_mu = 2.53422	q_A  = 28132.98509	CLsb = 0.05570	CLb  = 1.00000	CLs  = 0.05570
+At r = 0.043232:	q_mu = 2.76102	q_A  = 27973.06577	CLsb = 0.04829	CLb  = 1.00000	CLs  = 0.04829
+At r = 0.042039:	q_mu = 2.67080	q_A  = 28036.12557	CLsb = 0.05110	CLb  = 1.00000	CLs  = 0.05110
+At r = 0.042646:	q_mu = 2.71655	q_A  = 28004.04452	CLsb = 0.04966	CLb  = 1.00000	CLs  = 0.04966
+At r = 0.042408:	q_mu = 2.69859	q_A  = 28016.62637	CLsb = 0.05022	CLb  = 1.00000	CLs  = 0.05022
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0424
+Expected  2.5%: r < 0.0570
+Expected 16.0%: r < 0.0768
+Expected 50.0%: r < 0.1066
+Expected 84.0%: r < 0.1487
+Expected 97.5%: r < 0.1987
+
+Done in 0.13 min (cpu), 0.13 min (real)
+Generate toy 59/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000272 (0.005823 times rMax), while it should be at zero
+Median for expected limits: 0.106417
+Sigma  for expected limits: 0.0542952
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -49.1319 (r = 0.00171224)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.44 (r = 0.000733289)
+At r = 0.539837:	q_mu = 80.99966	q_A  = 8304.57723	CLsb = 0.00000	CLb  = 1.00000	CLs  = 0.00000
+At r = 0.270775:	q_mu = 22.27233	q_A  = 17370.69151	CLsb = 0.00000	CLb  = 1.00000	CLs  = 0.00000
+At r = 0.136244:	q_mu = 5.88186	q_A  = 23301.81548	CLsb = 0.00765	CLb  = 1.00000	CLs  = 0.00765
+At r = 0.068978:	q_mu = 1.53863	q_A  = 26632.47203	CLsb = 0.10741	CLb  = 1.00000	CLs  = 0.10741
+At r = 0.102611:	q_mu = 3.37912	q_A  = 24936.23223	CLsb = 0.03301	CLb  = 1.00000	CLs  = 0.03301
+At r = 0.086417:	q_mu = 2.39841	q_A  = 25745.19715	CLsb = 0.06073	CLb  = 1.00000	CLs  = 0.06073
+At r = 0.093788:	q_mu = 2.81851	q_A  = 25375.20513	CLsb = 0.04659	CLb  = 1.00000	CLs  = 0.04659
+At r = 0.090743:	q_mu = 2.64058	q_A  = 25527.70311	CLsb = 0.05208	CLb  = 1.00000	CLs  = 0.05208
+At r = 0.092244:	q_mu = 2.72627	q_A  = 25452.45243	CLsb = 0.04935	CLb  = 1.00000	CLs  = 0.04935
+At r = 0.091654:	q_mu = 2.69198	q_A  = 25482.01977	CLsb = 0.05043	CLb  = 1.00000	CLs  = 0.05043
+At r = 0.091959:	q_mu = 2.70973	q_A  = 25466.74128	CLsb = 0.04987	CLb  = 1.00000	CLs  = 0.04987
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0920
+Expected  2.5%: r < 0.0574
+Expected 16.0%: r < 0.0761
+Expected 50.0%: r < 0.1064
+Expected 84.0%: r < 0.1484
+Expected 97.5%: r < 0.1984
+
+Done in 0.19 min (cpu), 0.19 min (real)
+Generate toy 60/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.014524 (0.143584 times rMax), while it should be at zero
+Median for expected limits: 0.109057
+Sigma  for expected limits: 0.0556425
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -131.867 (r = 4.78334e-10)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6922.91 (r = 1.27011e-05)
+At r = 0.064310:	q_mu = 4.19854	q_A  = 26872.83048	CLsb = 0.02023	CLb  = 1.00000	CLs  = 0.02023
+At r = 0.032155:	q_mu = 1.77912	q_A  = 28561.21624	CLsb = 0.09113	CLb  = 1.00000	CLs  = 0.09113
+At r = 0.048844:	q_mu = 2.95519	q_A  = 27677.70990	CLsb = 0.04280	CLb  = 1.00000	CLs  = 0.04280
+At r = 0.042760:	q_mu = 2.50642	q_A  = 27998.01666	CLsb = 0.05669	CLb  = 1.00000	CLs  = 0.05669
+At r = 0.046152:	q_mu = 2.75369	q_A  = 27819.19054	CLsb = 0.04852	CLb  = 1.00000	CLs  = 0.04852
+At r = 0.044948:	q_mu = 2.66507	q_A  = 27882.57219	CLsb = 0.05129	CLb  = 1.00000	CLs  = 0.05129
+At r = 0.045630:	q_mu = 2.71512	q_A  = 27846.69439	CLsb = 0.04970	CLb  = 1.00000	CLs  = 0.04970
+At r = 0.045389:	q_mu = 2.69770	q_A  = 27859.35079	CLsb = 0.05025	CLb  = 1.00000	CLs  = 0.05025
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0454
+Expected  2.5%: r < 0.0626
+Expected 16.0%: r < 0.0804
+Expected 50.0%: r < 0.1091
+Expected 84.0%: r < 0.1504
+Expected 97.5%: r < 0.2006
+
+Done in 0.12 min (cpu), 0.12 min (real)
+Generate toy 61/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.006240 (0.124977 times rMax), while it should be at zero
+Median for expected limits: 0.106721
+Sigma  for expected limits: 0.0544507
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -121.325 (r = 6.47961e-11)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6931.15 (r = 0.00051701)
+At r = 0.097715:	q_mu = 5.75888	q_A  = 25179.29818	CLsb = 0.00820	CLb  = 1.00000	CLs  = 0.00820
+At r = 0.048857:	q_mu = 2.15474	q_A  = 27677.03571	CLsb = 0.07107	CLb  = 1.00000	CLs  = 0.07107
+At r = 0.073286:	q_mu = 3.77813	q_A  = 26411.72134	CLsb = 0.02596	CLb  = 1.00000	CLs  = 0.02596
+At r = 0.060567:	q_mu = 2.88221	q_A  = 27066.41530	CLsb = 0.04478	CLb  = 1.00000	CLs  = 0.04478
+At r = 0.055989:	q_mu = 2.58638	q_A  = 27304.23324	CLsb = 0.05389	CLb  = 1.00000	CLs  = 0.05389
+At r = 0.058387:	q_mu = 2.73969	q_A  = 27179.49911	CLsb = 0.04894	CLb  = 1.00000	CLs  = 0.04894
+At r = 0.057482:	q_mu = 2.68123	q_A  = 27226.55540	CLsb = 0.05077	CLb  = 1.00000	CLs  = 0.05077
+At r = 0.057964:	q_mu = 2.71225	q_A  = 27201.46822	CLsb = 0.04979	CLb  = 1.00000	CLs  = 0.04979
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0580
+Expected  2.5%: r < 0.0579
+Expected 16.0%: r < 0.0774
+Expected 50.0%: r < 0.1067
+Expected 84.0%: r < 0.1488
+Expected 97.5%: r < 0.1989
+
+Done in 0.13 min (cpu), 0.13 min (real)
+Generate toy 62/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000411 (0.006447 times rMax), while it should be at zero
+Median for expected limits: 0.106202
+Sigma  for expected limits: 0.0541855
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -9869.66 (r = 0.0325631)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6933.35 (r = 0.00396947)
+At r = 0.159086:	q_mu = 5.41127	q_A  = 22226.70534	CLsb = 0.01000	CLb  = 1.00000	CLs  = 0.01000
+At r = 0.095825:	q_mu = 1.37284	q_A  = 25273.47758	CLsb = 0.12066	CLb  = 1.00000	CLs  = 0.12066
+At r = 0.127455:	q_mu = 3.06594	q_A  = 23722.94413	CLsb = 0.03997	CLb  = 1.00000	CLs  = 0.03997
+At r = 0.116003:	q_mu = 2.37662	q_A  = 24278.01952	CLsb = 0.06158	CLb  = 1.00000	CLs  = 0.06158
+At r = 0.122711:	q_mu = 2.76945	q_A  = 23952.04291	CLsb = 0.04804	CLb  = 1.00000	CLs  = 0.04804
+At r = 0.120505:	q_mu = 2.63689	q_A  = 24058.97012	CLsb = 0.05220	CLb  = 1.00000	CLs  = 0.05220
+At r = 0.121421:	q_mu = 2.69148	q_A  = 24014.55330	CLsb = 0.05044	CLb  = 1.00000	CLs  = 0.05044
+At r = 0.121865:	q_mu = 2.71819	q_A  = 23993.00670	CLsb = 0.04961	CLb  = 1.00000	CLs  = 0.04961
+At r = 0.121608:	q_mu = 2.70277	q_A  = 24005.47293	CLsb = 0.05009	CLb  = 1.00000	CLs  = 0.05009
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1216
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0762
+Expected 50.0%: r < 0.1062
+Expected 84.0%: r < 0.1481
+Expected 97.5%: r < 0.1980
+
+Done in 0.15 min (cpu), 0.15 min (real)
+Generate toy 63/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.003522 (0.026328 times rMax), while it should be at zero
+Median for expected limits: 0.106388
+Sigma  for expected limits: 0.0542806
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -6529.21 (r = 0.0384248)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.56 (r = 0.00250456)
+At r = 0.190649:	q_mu = 6.87880	q_A  = 20787.33760	CLsb = 0.00436	CLb  = 1.00000	CLs  = 0.00436
+At r = 0.114537:	q_mu = 1.73946	q_A  = 24349.63370	CLsb = 0.09360	CLb  = 1.00000	CLs  = 0.09360
+At r = 0.152593:	q_mu = 3.89890	q_A  = 22529.46920	CLsb = 0.02416	CLb  = 1.00000	CLs  = 0.02416
+At r = 0.136243:	q_mu = 2.86797	q_A  = 23301.85399	CLsb = 0.04518	CLb  = 1.00000	CLs  = 0.04518
+At r = 0.129485:	q_mu = 2.48770	q_A  = 23625.32860	CLsb = 0.05737	CLb  = 1.00000	CLs  = 0.05737
+At r = 0.132597:	q_mu = 2.65937	q_A  = 23476.07133	CLsb = 0.05147	CLb  = 1.00000	CLs  = 0.05147
+At r = 0.133974:	q_mu = 2.73737	q_A  = 23410.14896	CLsb = 0.04901	CLb  = 1.00000	CLs  = 0.04901
+At r = 0.133250:	q_mu = 2.69623	q_A  = 23444.81188	CLsb = 0.05029	CLb  = 1.00000	CLs  = 0.05029
+At r = 0.133526:	q_mu = 2.71194	q_A  = 23431.59218	CLsb = 0.04980	CLb  = 1.00000	CLs  = 0.04980
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1335
+Expected  2.5%: r < 0.0578
+Expected 16.0%: r < 0.0764
+Expected 50.0%: r < 0.1064
+Expected 84.0%: r < 0.1484
+Expected 97.5%: r < 0.1983
+
+Done in 0.13 min (cpu), 0.13 min (real)
+Generate toy 64/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+Median for expected limits: 0.106315
+Sigma  for expected limits: 0.0542433
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -10090.5 (r = 0.0322772)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.87 (r = 0.0011272)
+At r = 0.184573:	q_mu = 6.53179	q_A  = 21060.27304	CLsb = 0.00530	CLb  = 1.00000	CLs  = 0.00530
+At r = 0.108425:	q_mu = 1.61113	q_A  = 24649.27773	CLsb = 0.10217	CLb  = 1.00000	CLs  = 0.10217
+At r = 0.146499:	q_mu = 3.67231	q_A  = 22815.65435	CLsb = 0.02766	CLb  = 1.00000	CLs  = 0.02766
+At r = 0.125084:	q_mu = 2.41272	q_A  = 23837.32210	CLsb = 0.06018	CLb  = 1.00000	CLs  = 0.06018
+At r = 0.133450:	q_mu = 2.87430	q_A  = 23435.21664	CLsb = 0.04500	CLb  = 1.00000	CLs  = 0.04500
+At r = 0.129351:	q_mu = 2.64294	q_A  = 23631.75663	CLsb = 0.05201	CLb  = 1.00000	CLs  = 0.05201
+At r = 0.131062:	q_mu = 2.73830	q_A  = 23549.59005	CLsb = 0.04898	CLb  = 1.00000	CLs  = 0.04898
+At r = 0.130251:	q_mu = 2.69285	q_A  = 23588.54078	CLsb = 0.05040	CLb  = 1.00000	CLs  = 0.05040
+At r = 0.130595:	q_mu = 2.71215	q_A  = 23572.03252	CLsb = 0.04979	CLb  = 1.00000	CLs  = 0.04979
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1306
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0763
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1483
+Expected 97.5%: r < 0.1982
+
+Done in 0.13 min (cpu), 0.13 min (real)
+Generate toy 65/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000757 (0.005272 times rMax), while it should be at zero
+Median for expected limits: 0.106394
+Sigma  for expected limits: 0.0542836
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -13.4793 (r = 0.00274913)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.54 (r = 0.000323113)
+At r = 0.033177:	q_mu = 0.33506	q_A  = 28506.67768	CLsb = 0.28135	CLb  = 1.00000	CLs  = 0.28135
+At r = 0.066353:	q_mu = 1.40257	q_A  = 26767.45733	CLsb = 0.11815	CLb  = 1.00000	CLs  = 0.11815
+At r = 0.132707:	q_mu = 5.65847	q_A  = 23470.80249	CLsb = 0.00869	CLb  = 1.00000	CLs  = 0.00869
+At r = 0.067728:	q_mu = 1.46387	q_A  = 26696.71400	CLsb = 0.11316	CLb  = 1.00000	CLs  = 0.11316
+At r = 0.100217:	q_mu = 3.22624	q_A  = 25054.89308	CLsb = 0.03623	CLb  = 1.00000	CLs  = 0.03623
+At r = 0.086369:	q_mu = 2.39317	q_A  = 25747.59754	CLsb = 0.06093	CLb  = 1.00000	CLs  = 0.06093
+At r = 0.093354:	q_mu = 2.79735	q_A  = 25396.91163	CLsb = 0.04721	CLb  = 1.00000	CLs  = 0.04721
+At r = 0.090700:	q_mu = 2.63969	q_A  = 25529.85862	CLsb = 0.05211	CLb  = 1.00000	CLs  = 0.05211
+At r = 0.092120:	q_mu = 2.72334	q_A  = 25458.68080	CLsb = 0.04945	CLb  = 1.00000	CLs  = 0.04945
+At r = 0.091594:	q_mu = 2.69216	q_A  = 25484.99339	CLsb = 0.05042	CLb  = 1.00000	CLs  = 0.05042
+At r = 0.091880:	q_mu = 2.70912	q_A  = 25470.68739	CLsb = 0.04989	CLb  = 1.00000	CLs  = 0.04989
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0919
+Expected  2.5%: r < 0.0574
+Expected 16.0%: r < 0.0761
+Expected 50.0%: r < 0.1064
+Expected 84.0%: r < 0.1484
+Expected 97.5%: r < 0.1983
+
+Done in 0.14 min (cpu), 0.14 min (real)
+Generate toy 66/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.013616 (0.134726 times rMax), while it should be at zero
+Median for expected limits: 0.108964
+Sigma  for expected limits: 0.0555948
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -458.248 (r = 0.0167089)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6923.3 (r = 3.45978e-06)
+At r = 0.156607:	q_mu = 5.94790	q_A  = 22342.04730	CLsb = 0.00737	CLb  = 1.00000	CLs  = 0.00737
+At r = 0.086658:	q_mu = 1.49851	q_A  = 25733.05755	CLsb = 0.11045	CLb  = 1.00000	CLs  = 0.11045
+At r = 0.121632:	q_mu = 3.36487	q_A  = 24004.30695	CLsb = 0.03330	CLb  = 1.00000	CLs  = 0.03330
+At r = 0.105152:	q_mu = 2.39390	q_A  = 24810.56142	CLsb = 0.06090	CLb  = 1.00000	CLs  = 0.06090
+At r = 0.112757:	q_mu = 2.82202	q_A  = 24436.69923	CLsb = 0.04649	CLb  = 1.00000	CLs  = 0.04649
+At r = 0.109596:	q_mu = 2.64058	q_A  = 24591.70034	CLsb = 0.05208	CLb  = 1.00000	CLs  = 0.05208
+At r = 0.111136:	q_mu = 2.72810	q_A  = 24516.08881	CLsb = 0.04930	CLb  = 1.00000	CLs  = 0.04930
+At r = 0.110511:	q_mu = 2.69226	q_A  = 24546.75497	CLsb = 0.05042	CLb  = 1.00000	CLs  = 0.05042
+At r = 0.110822:	q_mu = 2.70993	q_A  = 24531.52040	CLsb = 0.04986	CLb  = 1.00000	CLs  = 0.04986
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1108
+Expected  2.5%: r < 0.0617
+Expected 16.0%: r < 0.0798
+Expected 50.0%: r < 0.1090
+Expected 84.0%: r < 0.1502
+Expected 97.5%: r < 0.2005
+
+Done in 0.15 min (cpu), 0.15 min (real)
+Generate toy 67/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+Median for expected limits: 0.10638
+Sigma  for expected limits: 0.0542767
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -25315.2 (r = 0.00287885)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.59 (r = 0.00207824)
+At r = 0.035659:	q_mu = 0.32126	q_A  = 28374.41284	CLsb = 0.28543	CLb  = 1.00000	CLs  = 0.28543
+At r = 0.071319:	q_mu = 1.54926	q_A  = 26512.40711	CLsb = 0.10662	CLb  = 1.00000	CLs  = 0.10662
+At r = 0.142637:	q_mu = 6.64873	q_A  = 22998.05682	CLsb = 0.00496	CLb  = 1.00000	CLs  = 0.00496
+At r = 0.072758:	q_mu = 1.62028	q_A  = 26438.72258	CLsb = 0.10153	CLb  = 1.00000	CLs  = 0.10153
+At r = 0.107698:	q_mu = 3.71841	q_A  = 24685.07803	CLsb = 0.02691	CLb  = 1.00000	CLs  = 0.02691
+At r = 0.087667:	q_mu = 2.40950	q_A  = 25682.22544	CLsb = 0.06030	CLb  = 1.00000	CLs  = 0.06030
+At r = 0.095393:	q_mu = 2.88181	q_A  = 25295.01669	CLsb = 0.04479	CLb  = 1.00000	CLs  = 0.04479
+At r = 0.091561:	q_mu = 2.64227	q_A  = 25486.64153	CLsb = 0.05203	CLb  = 1.00000	CLs  = 0.05203
+At r = 0.093141:	q_mu = 2.73971	q_A  = 25407.52367	CLsb = 0.04894	CLb  = 1.00000	CLs  = 0.04894
+At r = 0.092383:	q_mu = 2.69266	q_A  = 25445.48334	CLsb = 0.05041	CLb  = 1.00000	CLs  = 0.05041
+At r = 0.092701:	q_mu = 2.71242	q_A  = 25429.56427	CLsb = 0.04979	CLb  = 1.00000	CLs  = 0.04979
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0927
+Expected  2.5%: r < 0.0578
+Expected 16.0%: r < 0.0764
+Expected 50.0%: r < 0.1064
+Expected 84.0%: r < 0.1484
+Expected 97.5%: r < 0.1983
+
+Done in 0.14 min (cpu), 0.14 min (real)
+Generate toy 68/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.005554 (0.054469 times rMax), while it should be at zero
+Median for expected limits: 0.106592
+Sigma  for expected limits: 0.0543845
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -4313.85 (r = 0.0110725)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6931.7 (r = 2.71368e-05)
+At r = 0.026674:	q_mu = 0.07951	q_A  = 28854.72100	CLsb = 0.38898	CLb  = 1.00000	CLs  = 0.38898
+At r = 0.053349:	q_mu = 0.56427	q_A  = 27441.91900	CLsb = 0.22627	CLb  = 1.00000	CLs  = 0.22627
+At r = 0.106698:	q_mu = 2.82645	q_A  = 24734.34115	CLsb = 0.04636	CLb  = 1.00000	CLs  = 0.04636
+At r = 0.058885:	q_mu = 0.71955	q_A  = 27153.64585	CLsb = 0.19815	CLb  = 1.00000	CLs  = 0.19815
+At r = 0.082791:	q_mu = 1.59726	q_A  = 25928.28679	CLsb = 0.10315	CLb  = 1.00000	CLs  = 0.10315
+At r = 0.100109:	q_mu = 2.44833	q_A  = 25060.25231	CLsb = 0.05882	CLb  = 1.00000	CLs  = 0.05882
+At r = 0.103707:	q_mu = 2.64758	q_A  = 24881.96699	CLsb = 0.05185	CLb  = 1.00000	CLs  = 0.05185
+At r = 0.105083:	q_mu = 2.72411	q_A  = 24813.97960	CLsb = 0.04942	CLb  = 1.00000	CLs  = 0.04942
+At r = 0.104542:	q_mu = 2.69320	q_A  = 24840.73671	CLsb = 0.05039	CLb  = 1.00000	CLs  = 0.05039
+At r = 0.104823:	q_mu = 2.70930	q_A  = 24826.83042	CLsb = 0.04988	CLb  = 1.00000	CLs  = 0.04988
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1048
+Expected  2.5%: r < 0.0579
+Expected 16.0%: r < 0.0765
+Expected 50.0%: r < 0.1066
+Expected 84.0%: r < 0.1487
+Expected 97.5%: r < 0.1987
+
+Done in 0.15 min (cpu), 0.15 min (real)
+Generate toy 69/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000687 (0.005962 times rMax), while it should be at zero
+Median for expected limits: 0.106387
+Sigma  for expected limits: 0.0542802
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -17791.9 (r = 6.20511e-08)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.56 (r = 8.85069e-05)
+At r = 0.077426:	q_mu = 3.09339	q_A  = 26200.55685	CLsb = 0.03931	CLb  = 1.00000	CLs  = 0.03931
+At r = 0.038713:	q_mu = 1.12524	q_A  = 28212.19632	CLsb = 0.14440	CLb  = 1.00000	CLs  = 0.14440
+At r = 0.063955:	q_mu = 2.31333	q_A  = 26891.12109	CLsb = 0.06413	CLb  = 1.00000	CLs  = 0.06413
+At r = 0.069435:	q_mu = 2.61917	q_A  = 26609.00470	CLsb = 0.05279	CLb  = 1.00000	CLs  = 0.05279
+At r = 0.072210:	q_mu = 2.78054	q_A  = 26466.76517	CLsb = 0.04771	CLb  = 1.00000	CLs  = 0.04771
+At r = 0.070626:	q_mu = 2.68765	q_A  = 26547.91227	CLsb = 0.05056	CLb  = 1.00000	CLs  = 0.05056
+At r = 0.071187:	q_mu = 2.72024	q_A  = 26519.13271	CLsb = 0.04954	CLb  = 1.00000	CLs  = 0.04954
+At r = 0.070873:	q_mu = 2.70180	q_A  = 26535.26290	CLsb = 0.05012	CLb  = 1.00000	CLs  = 0.05012
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0709
+Expected  2.5%: r < 0.0573
+Expected 16.0%: r < 0.0761
+Expected 50.0%: r < 0.1064
+Expected 84.0%: r < 0.1484
+Expected 97.5%: r < 0.1983
+
+Done in 0.15 min (cpu), 0.15 min (real)
+Generate toy 70/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000741 (0.009506 times rMax), while it should be at zero
+Median for expected limits: 0.106464
+Sigma  for expected limits: 0.0543193
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -795.636 (r = 0.0221616)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.24 (r = 0.000550954)
+At r = 0.131469:	q_mu = 3.42971	q_A  = 23530.09763	CLsb = 0.03202	CLb  = 1.00000	CLs  = 0.03202
+At r = 0.076815:	q_mu = 0.84840	q_A  = 26231.64414	CLsb = 0.17850	CLb  = 1.00000	CLs  = 0.17850
+At r = 0.104142:	q_mu = 1.92335	q_A  = 24860.47325	CLsb = 0.08274	CLb  = 1.00000	CLs  = 0.08274
+At r = 0.115740:	q_mu = 2.51114	q_A  = 24290.87419	CLsb = 0.05652	CLb  = 1.00000	CLs  = 0.05652
+At r = 0.121600:	q_mu = 2.83769	q_A  = 24005.85473	CLsb = 0.04604	CLb  = 1.00000	CLs  = 0.04604
+At r = 0.118542:	q_mu = 2.66465	q_A  = 24154.37137	CLsb = 0.05130	CLb  = 1.00000	CLs  = 0.05130
+At r = 0.119734:	q_mu = 2.73134	q_A  = 24096.42290	CLsb = 0.04920	CLb  = 1.00000	CLs  = 0.04920
+At r = 0.119127:	q_mu = 2.69722	q_A  = 24125.91267	CLsb = 0.05026	CLb  = 1.00000	CLs  = 0.05026
+At r = 0.119367:	q_mu = 2.71071	q_A  = 24114.25261	CLsb = 0.04984	CLb  = 1.00000	CLs  = 0.04984
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1194
+Expected  2.5%: r < 0.0570
+Expected 16.0%: r < 0.0767
+Expected 50.0%: r < 0.1065
+Expected 84.0%: r < 0.1485
+Expected 97.5%: r < 0.1985
+
+Done in 0.17 min (cpu), 0.17 min (real)
+Generate toy 71/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000307 (0.002337 times rMax), while it should be at zero
+Median for expected limits: 0.106274
+Sigma  for expected limits: 0.0542224
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -8376.36 (r = 0.0156264)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6933.04 (r = 1.79517e-06)
+At r = 0.037726:	q_mu = 0.00000	q_A  = 28264.57497	CLsb = 0.50000	CLb  = 1.00000	CLs  = 0.50000
+At r = 0.075452:	q_mu = 0.02935	q_A  = 26301.13291	CLsb = 0.43198	CLb  = 1.00000	CLs  = 0.43198
+At r = 0.150904:	q_mu = 3.32996	q_A  = 22608.59183	CLsb = 0.03401	CLb  = 1.00000	CLs  = 0.03401
+At r = 0.083265:	q_mu = 0.20192	q_A  = 25904.32206	CLsb = 0.32659	CLb  = 1.00000	CLs  = 0.32659
+At r = 0.117084:	q_mu = 1.41080	q_A  = 24225.33088	CLsb = 0.11746	CLb  = 1.00000	CLs  = 0.11746
+At r = 0.135730:	q_mu = 2.38148	q_A  = 23326.32424	CLsb = 0.06139	CLb  = 1.00000	CLs  = 0.06139
+At r = 0.142984:	q_mu = 2.81750	q_A  = 22981.65353	CLsb = 0.04662	CLb  = 1.00000	CLs  = 0.04662
+At r = 0.140057:	q_mu = 2.63781	q_A  = 23120.35525	CLsb = 0.05217	CLb  = 1.00000	CLs  = 0.05217
+At r = 0.141528:	q_mu = 2.72753	q_A  = 23050.59589	CLsb = 0.04932	CLb  = 1.00000	CLs  = 0.04932
+At r = 0.140946:	q_mu = 2.69174	q_A  = 23078.18429	CLsb = 0.05043	CLb  = 1.00000	CLs  = 0.05043
+At r = 0.141242:	q_mu = 2.70977	q_A  = 23064.14845	CLsb = 0.04987	CLb  = 1.00000	CLs  = 0.04987
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1412
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0763
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1482
+Expected 97.5%: r < 0.1981
+
+Done in 0.15 min (cpu), 0.15 min (real)
+Generate toy 72/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+Median for expected limits: 0.106329
+Sigma  for expected limits: 0.0542504
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -339.103 (r = 6.21683e-06)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.81 (r = 0.000124561)
+At r = 0.072297:	q_mu = 4.04555	q_A  = 26462.29924	CLsb = 0.02214	CLb  = 1.00000	CLs  = 0.02214
+At r = 0.036152:	q_mu = 1.62671	q_A  = 28348.22057	CLsb = 0.10108	CLb  = 1.00000	CLs  = 0.10108
+At r = 0.056786:	q_mu = 2.91029	q_A  = 27262.73861	CLsb = 0.04401	CLb  = 1.00000	CLs  = 0.04401
+At r = 0.050125:	q_mu = 2.46770	q_A  = 27610.56049	CLsb = 0.05810	CLb  = 1.00000	CLs  = 0.05810
+At r = 0.053006:	q_mu = 2.65563	q_A  = 27459.83593	CLsb = 0.05159	CLb  = 1.00000	CLs  = 0.05159
+At r = 0.054358:	q_mu = 2.74570	q_A  = 27389.24239	CLsb = 0.04876	CLb  = 1.00000	CLs  = 0.04876
+At r = 0.053606:	q_mu = 2.69545	q_A  = 27428.49039	CLsb = 0.05032	CLb  = 1.00000	CLs  = 0.05032
+At r = 0.053877:	q_mu = 2.71361	q_A  = 27414.32291	CLsb = 0.04975	CLb  = 1.00000	CLs  = 0.04975
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0539
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0771
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1483
+Expected 97.5%: r < 0.1982
+
+Done in 0.14 min (cpu), 0.14 min (real)
+Generate toy 73/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.056568 (0.954487 times rMax), while it should be at zero
+Median for expected limits: 0.120938
+Sigma  for expected limits: 0.0617041
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -1072.4 (r = 0.00849619)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6880.2 (r = 0.00053478)
+At r = 0.081074:	q_mu = 1.65524	q_A  = 26015.26227	CLsb = 0.09912	CLb  = 1.00000	CLs  = 0.09912
+At r = 0.162148:	q_mu = 7.29540	q_A  = 22084.74411	CLsb = 0.00346	CLb  = 1.00000	CLs  = 0.00346
+At r = 0.085322:	q_mu = 1.85156	q_A  = 25800.41080	CLsb = 0.08680	CLb  = 1.00000	CLs  = 0.08680
+At r = 0.123735:	q_mu = 4.13602	q_A  = 23902.49758	CLsb = 0.02099	CLb  = 1.00000	CLs  = 0.02099
+At r = 0.104945:	q_mu = 2.90662	q_A  = 24820.79005	CLsb = 0.04411	CLb  = 1.00000	CLs  = 0.04411
+At r = 0.098113:	q_mu = 2.51276	q_A  = 25159.46199	CLsb = 0.05646	CLb  = 1.00000	CLs  = 0.05646
+At r = 0.102171:	q_mu = 2.74689	q_A  = 24958.03299	CLsb = 0.04872	CLb  = 1.00000	CLs  = 0.04872
+At r = 0.100789:	q_mu = 2.66673	q_A  = 25026.51016	CLsb = 0.05123	CLb  = 1.00000	CLs  = 0.05123
+At r = 0.101601:	q_mu = 2.71349	q_A  = 24986.24304	CLsb = 0.04975	CLb  = 1.00000	CLs  = 0.04975
+At r = 0.101329:	q_mu = 2.69458	q_A  = 24999.76177	CLsb = 0.05034	CLb  = 1.00000	CLs  = 0.05034
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1013
+Expected  2.5%: r < 0.0808
+Expected 16.0%: r < 0.0955
+Expected 50.0%: r < 0.1209
+Expected 84.0%: r < 0.1590
+Expected 97.5%: r < 0.2071
+
+Done in 0.19 min (cpu), 0.19 min (real)
+Generate toy 74/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000936 (0.008396 times rMax), while it should be at zero
+Median for expected limits: 0.106237
+Sigma  for expected limits: 0.0542034
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -6611.66 (r = 0.0656026)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6933.2 (r = 0.000680016)
+At r = 0.206689:	q_mu = 5.87914	q_A  = 20076.19042	CLsb = 0.00766	CLb  = 1.00000	CLs  = 0.00766
+At r = 0.136146:	q_mu = 1.49271	q_A  = 23306.46436	CLsb = 0.11090	CLb  = 1.00000	CLs  = 0.11090
+At r = 0.171418:	q_mu = 3.33365	q_A  = 21657.98958	CLsb = 0.03394	CLb  = 1.00000	CLs  = 0.03394
+At r = 0.155129:	q_mu = 2.39411	q_A  = 22410.92902	CLsb = 0.06090	CLb  = 1.00000	CLs  = 0.06090
+At r = 0.162781:	q_mu = 2.81672	q_A  = 22055.44093	CLsb = 0.04664	CLb  = 1.00000	CLs  = 0.04664
+At r = 0.159655:	q_mu = 2.63984	q_A  = 22200.27596	CLsb = 0.05211	CLb  = 1.00000	CLs  = 0.05211
+At r = 0.161212:	q_mu = 2.72702	q_A  = 22128.06922	CLsb = 0.04933	CLb  = 1.00000	CLs  = 0.04933
+At r = 0.160595:	q_mu = 2.69219	q_A  = 22156.70056	CLsb = 0.05042	CLb  = 1.00000	CLs  = 0.05042
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1606
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0763
+Expected 50.0%: r < 0.1062
+Expected 84.0%: r < 0.1482
+Expected 97.5%: r < 0.1980
+
+Done in 0.15 min (cpu), 0.15 min (real)
+Generate toy 75/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000200 (0.001130 times rMax), while it should be at zero
+Median for expected limits: 0.106268
+Sigma  for expected limits: 0.0542196
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -34150.1 (r = 0.0211978)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6933.06 (r = 0.00577862)
+At r = 0.080462:	q_mu = 1.24997	q_A  = 26046.30192	CLsb = 0.13178	CLb  = 1.00000	CLs  = 0.13178
+At r = 0.160923:	q_mu = 6.85107	q_A  = 22141.45766	CLsb = 0.00443	CLb  = 1.00000	CLs  = 0.00443
+At r = 0.091061:	q_mu = 1.73630	q_A  = 25511.74323	CLsb = 0.09380	CLb  = 1.00000	CLs  = 0.09380
+At r = 0.125992:	q_mu = 3.88166	q_A  = 23793.47809	CLsb = 0.02441	CLb  = 1.00000	CLs  = 0.02441
+At r = 0.111107:	q_mu = 2.86633	q_A  = 24517.53164	CLsb = 0.04523	CLb  = 1.00000	CLs  = 0.04523
+At r = 0.104891:	q_mu = 2.48530	q_A  = 24823.44023	CLsb = 0.05746	CLb  = 1.00000	CLs  = 0.05746
+At r = 0.107779:	q_mu = 2.65847	q_A  = 24681.05530	CLsb = 0.05150	CLb  = 1.00000	CLs  = 0.05150
+At r = 0.109050:	q_mu = 2.73651	q_A  = 24618.51948	CLsb = 0.04904	CLb  = 1.00000	CLs  = 0.04904
+At r = 0.108393:	q_mu = 2.69598	q_A  = 24650.84071	CLsb = 0.05030	CLb  = 1.00000	CLs  = 0.05030
+At r = 0.108649:	q_mu = 2.71177	q_A  = 24638.26558	CLsb = 0.04981	CLb  = 1.00000	CLs  = 0.04981
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1086
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0763
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1482
+Expected 97.5%: r < 0.1981
+
+Done in 0.15 min (cpu), 0.15 min (real)
+Generate toy 76/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.079787 (0.667602 times rMax), while it should be at zero
+Median for expected limits: 0.134826
+Sigma  for expected limits: 0.0687901
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -15495.2 (r = 2.80441e-08)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6829.88 (r = 3.93175e-08)
+At r = 0.083962:	q_mu = 3.20906	q_A  = 25869.10039	CLsb = 0.03662	CLb  = 1.00000	CLs  = 0.03662
+At r = 0.041981:	q_mu = 0.96848	q_A  = 28039.17474	CLsb = 0.16253	CLb  = 1.00000	CLs  = 0.16253
+At r = 0.062971:	q_mu = 1.93136	q_A  = 26941.95936	CLsb = 0.08230	CLb  = 1.00000	CLs  = 0.08230
+At r = 0.073305:	q_mu = 2.52292	q_A  = 26410.77438	CLsb = 0.05610	CLb  = 1.00000	CLs  = 0.05610
+At r = 0.077737:	q_mu = 2.79797	q_A  = 26184.74531	CLsb = 0.04719	CLb  = 1.00000	CLs  = 0.04719
+At r = 0.075665:	q_mu = 2.66713	q_A  = 26290.25184	CLsb = 0.05122	CLb  = 1.00000	CLs  = 0.05122
+At r = 0.076567:	q_mu = 2.72372	q_A  = 26244.27588	CLsb = 0.04943	CLb  = 1.00000	CLs  = 0.04943
+At r = 0.076155:	q_mu = 2.69776	q_A  = 26265.26463	CLsb = 0.05024	CLb  = 1.00000	CLs  = 0.05024
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0762
+Expected  2.5%: r < 0.0998
+Expected 16.0%: r < 0.1124
+Expected 50.0%: r < 0.1348
+Expected 84.0%: r < 0.1698
+Expected 97.5%: r < 0.2157
+
+Done in 0.13 min (cpu), 0.13 min (real)
+Generate toy 77/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000127 (0.001520 times rMax), while it should be at zero
+Median for expected limits: 0.106415
+Sigma  for expected limits: 0.0542945
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -399.156 (r = 0.0596899)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.44 (r = 0.000467695)
+At r = 0.218375:	q_mu = 8.09099	q_A  = 19566.75081	CLsb = 0.00222	CLb  = 1.00000	CLs  = 0.00222
+At r = 0.139032:	q_mu = 2.06519	q_A  = 23169.05431	CLsb = 0.07535	CLb  = 1.00000	CLs  = 0.07535
+At r = 0.178703:	q_mu = 4.60046	q_A  = 21325.81631	CLsb = 0.01598	CLb  = 1.00000	CLs  = 0.01598
+At r = 0.155360:	q_mu = 2.99070	q_A  = 22400.17995	CLsb = 0.04187	CLb  = 1.00000	CLs  = 0.04187
+At r = 0.148150:	q_mu = 2.56181	q_A  = 22737.92248	CLsb = 0.05474	CLb  = 1.00000	CLs  = 0.05474
+At r = 0.151540:	q_mu = 2.75940	q_A  = 22578.74555	CLsb = 0.04834	CLb  = 1.00000	CLs  = 0.04834
+At r = 0.150126:	q_mu = 2.67608	q_A  = 22645.06621	CLsb = 0.05093	CLb  = 1.00000	CLs  = 0.05093
+At r = 0.150810:	q_mu = 2.71587	q_A  = 22612.99718	CLsb = 0.04968	CLb  = 1.00000	CLs  = 0.04968
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1508
+Expected  2.5%: r < 0.0574
+Expected 16.0%: r < 0.0761
+Expected 50.0%: r < 0.1064
+Expected 84.0%: r < 0.1484
+Expected 97.5%: r < 0.1984
+
+Done in 0.16 min (cpu), 0.16 min (real)
+Generate toy 78/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000923 (0.005565 times rMax), while it should be at zero
+Median for expected limits: 0.106274
+Sigma  for expected limits: 0.0542223
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -12793.4 (r = 0.0193565)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6933.04 (r = 0.000403576)
+At r = 0.087670:	q_mu = 1.31590	q_A  = 25682.06823	CLsb = 0.12566	CLb  = 1.00000	CLs  = 0.12566
+At r = 0.175340:	q_mu = 7.01532	q_A  = 21478.78564	CLsb = 0.00404	CLb  = 1.00000	CLs  = 0.00404
+At r = 0.097348:	q_mu = 1.72817	q_A  = 25197.52808	CLsb = 0.09432	CLb  = 1.00000	CLs  = 0.09432
+At r = 0.136344:	q_mu = 3.94182	q_A  = 23296.99930	CLsb = 0.02355	CLb  = 1.00000	CLs  = 0.02355
+At r = 0.119417:	q_mu = 2.87262	q_A  = 24111.80728	CLsb = 0.04505	CLb  = 1.00000	CLs  = 0.04505
+At r = 0.112512:	q_mu = 2.48476	q_A  = 24448.65415	CLsb = 0.05748	CLb  = 1.00000	CLs  = 0.05748
+At r = 0.115672:	q_mu = 2.65867	q_A  = 24294.18496	CLsb = 0.05149	CLb  = 1.00000	CLs  = 0.05149
+At r = 0.117081:	q_mu = 2.73812	q_A  = 24225.50140	CLsb = 0.04899	CLb  = 1.00000	CLs  = 0.04899
+At r = 0.116338:	q_mu = 2.69602	q_A  = 24261.72279	CLsb = 0.05030	CLb  = 1.00000	CLs  = 0.05030
+At r = 0.116621:	q_mu = 2.71207	q_A  = 24247.91187	CLsb = 0.04980	CLb  = 1.00000	CLs  = 0.04980
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1166
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0763
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1482
+Expected 97.5%: r < 0.1981
+
+Done in 0.14 min (cpu), 0.14 min (real)
+Generate toy 79/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.126673 (0.987449 times rMax), while it should be at zero
+Median for expected limits: 0.387755
+Sigma  for expected limits: 0.197838
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -6907.11 (r = 1.52943e-10)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -5916.56 (r = 1.17728e-06)
+At r = 0.103425:	q_mu = 6.13373	q_A  = 3.63324	CLsb = 0.00520	CLb  = 0.25594	CLs  = 0.02033
+At r = 0.051713:	q_mu = 2.18855	q_A  = 0.91760	CLsb = 0.05248	CLb  = 0.25354	CLs  = 0.20697
+At r = 0.077569:	q_mu = 3.94467	q_A  = 2.05385	CLsb = 0.01818	CLb  = 0.25473	CLs  = 0.07138
+At r = 0.088604:	q_mu = 4.82833	q_A  = 2.67626	CLsb = 0.01090	CLb  = 0.25535	CLs  = 0.04270
+At r = 0.083687:	q_mu = 4.42447	q_A  = 2.38855	CLsb = 0.01376	CLb  = 0.25506	CLs  = 0.05394
+At r = 0.085947:	q_mu = 4.60789	q_A  = 2.51852	CLsb = 0.01238	CLb  = 0.25518	CLs  = 0.04850
+At r = 0.084976:	q_mu = 4.52855	q_A  = 2.46213	CLsb = 0.01295	CLb  = 0.25512	CLs  = 0.05078
+At r = 0.085431:	q_mu = 4.56551	q_A  = 2.48833	CLsb = 0.01268	CLb  = 0.25514	CLs  = 0.04970
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0854
+Expected  2.5%: r < 0.3741
+Expected 16.0%: r < 0.3792
+Expected 50.0%: r < 0.3878
+Expected 84.0%: r < 0.4048
+Expected 97.5%: r < 0.4274
+
+Done in 0.33 min (cpu), 0.33 min (real)
+Generate toy 80/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000198 (0.002108 times rMax), while it should be at zero
+Median for expected limits: 0.106308
+Sigma  for expected limits: 0.0542396
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -1596.02 (r = 0.005621)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.9 (r = 0.00214463)
+At r = 0.091297:	q_mu = 2.40597	q_A  = 2.84172	CLsb = 0.06044	CLb  = 0.55354	CLs  = 0.10918
+At r = 0.182594:	q_mu = 9.98302	q_A  = 11.11154	CLsb = 0.00079	CLb  = 0.56899	CLs  = 0.00139
+At r = 0.094107:	q_mu = 2.56422	q_A  = 3.01631	CLsb = 0.05465	CLb  = 0.55387	CLs  = 0.09868
+At r = 0.138351:	q_mu = 5.69060	q_A  = 6.45349	CLsb = 0.00853	CLb  = 0.56154	CLs  = 0.01519
+At r = 0.115814:	q_mu = 3.94827	q_A  = 4.54573	CLsb = 0.02346	CLb  = 0.55766	CLs  = 0.04207
+At r = 0.107954:	q_mu = 3.41437	q_A  = 3.95757	CLsb = 0.03232	CLb  = 0.55629	CLs  = 0.05809
+At r = 0.112448:	q_mu = 3.71483	q_A  = 4.28884	CLsb = 0.02697	CLb  = 0.55708	CLs  = 0.04841
+At r = 0.110911:	q_mu = 3.61054	q_A  = 4.17394	CLsb = 0.02871	CLb  = 0.55681	CLs  = 0.05156
+At r = 0.111816:	q_mu = 3.67172	q_A  = 4.24136	CLsb = 0.02767	CLb  = 0.55697	CLs  = 0.04968
+At r = 0.111511:	q_mu = 3.65108	q_A  = 4.21861	CLsb = 0.02802	CLb  = 0.55691	CLs  = 0.05031
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1115
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0763
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1483
+Expected 97.5%: r < 0.1982
+
+Done in 0.18 min (cpu), 0.18 min (real)
+Generate toy 81/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000745 (0.006074 times rMax), while it should be at zero
+Median for expected limits: 0.106179
+Sigma  for expected limits: 0.054174
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -9822.82 (r = 6.95267e-05)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6933.45 (r = 0.000254788)
+At r = 0.026261:	q_mu = 0.81200	q_A  = 0.23856	CLsb = 0.14109	CLb  = 0.27859	CLs  = 0.50642
+At r = 0.052523:	q_mu = 2.03007	q_A  = 0.94982	CLsb = 0.06316	CLb  = 0.28972	CLs  = 0.21800
+At r = 0.105046:	q_mu = 5.64591	q_A  = 3.75506	CLsb = 0.00764	CLb  = 0.31281	CLs  = 0.02442
+At r = 0.052558:	q_mu = 2.03189	q_A  = 0.95112	CLsb = 0.06309	CLb  = 0.28976	CLs  = 0.21773
+At r = 0.078802:	q_mu = 3.64332	q_A  = 2.12437	CLsb = 0.02393	CLb  = 0.30116	CLs  = 0.07946
+At r = 0.092295:	q_mu = 4.62593	q_A  = 2.90506	CLsb = 0.01358	CLb  = 0.30684	CLs  = 0.04425
+At r = 0.087345:	q_mu = 4.25287	q_A  = 2.60500	CLsb = 0.01681	CLb  = 0.30485	CLs  = 0.05516
+At r = 0.090099:	q_mu = 4.45827	q_A  = 2.76987	CLsb = 0.01495	CLb  = 0.30599	CLs  = 0.04884
+At r = 0.089124:	q_mu = 4.38477	q_A  = 2.71083	CLsb = 0.01559	CLb  = 0.30561	CLs  = 0.05101
+At r = 0.089678:	q_mu = 4.42613	q_A  = 2.74421	CLsb = 0.01522	CLb  = 0.30585	CLs  = 0.04978
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0897
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0762
+Expected 50.0%: r < 0.1062
+Expected 84.0%: r < 0.1481
+Expected 97.5%: r < 0.1979
+
+Done in 0.20 min (cpu), 0.20 min (real)
+Generate toy 82/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+Median for expected limits: 0.442057
+Sigma  for expected limits: 0.225544
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -26096.9 (r = 4.87221e-08)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -5731.12 (r = 1.19234e-08)
+At r = 0.059355:	q_mu = 3.79020	q_A  = 1.20873	CLsb = 0.01150	CLb  = 0.12019	CLs  = 0.09568
+At r = 0.118709:	q_mu = 9.95953	q_A  = 4.77525	CLsb = 0.00037	CLb  = 0.11777	CLs  = 0.00317
+At r = 0.059355:	q_mu = 3.79125	q_A  = 1.20939	CLsb = 0.01150	CLb  = 0.12022	CLs  = 0.09562
+At r = 0.089032:	q_mu = 6.58407	q_A  = 2.70318	CLsb = 0.00237	CLb  = 0.11896	CLs  = 0.01991
+At r = 0.075101:	q_mu = 5.20078	q_A  = 1.92871	CLsb = 0.00513	CLb  = 0.11939	CLs  = 0.04298
+At r = 0.069569:	q_mu = 4.68552	q_A  = 1.65725	CLsb = 0.00688	CLb  = 0.11976	CLs  = 0.05744
+At r = 0.072793:	q_mu = 4.98259	q_A  = 1.81288	CLsb = 0.00581	CLb  = 0.11958	CLs  = 0.04858
+At r = 0.071705:	q_mu = 4.88151	q_A  = 1.75950	CLsb = 0.00615	CLb  = 0.11963	CLs  = 0.05143
+At r = 0.072353:	q_mu = 4.94157	q_A  = 1.79115	CLsb = 0.00595	CLb  = 0.11960	CLs  = 0.04972
+At r = 0.072136:	q_mu = 4.92148	q_A  = 1.78056	CLsb = 0.00601	CLb  = 0.11961	CLs  = 0.05028
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0721
+Expected  2.5%: r < 0.4300
+Expected 16.0%: r < 0.4345
+Expected 50.0%: r < 0.4421
+Expected 84.0%: r < 0.4544
+Expected 97.5%: r < 0.4770
+
+Done in 0.31 min (cpu), 0.31 min (real)
+Generate toy 83/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000394 (0.004970 times rMax), while it should be at zero
+Median for expected limits: 0.106378
+Sigma  for expected limits: 0.0542754
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -7070.22 (r = 9.46078e-05)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.6 (r = 0.00158835)
+At r = 0.015665:	q_mu = 0.04697	q_A  = 0.08773	CLsb = 0.41421	CLb  = 0.53166	CLs  = 0.77908
+At r = 0.031330:	q_mu = 0.24849	q_A  = 0.33732	CLsb = 0.30907	CLb  = 0.53280	CLs  = 0.58009
+At r = 0.062661:	q_mu = 1.15875	q_A  = 1.34685	CLsb = 0.14086	CLb  = 0.53351	CLs  = 0.26403
+At r = 0.125322:	q_mu = 4.93009	q_A  = 5.31159	CLsb = 0.01320	CLb  = 0.53359	CLs  = 0.02473
+At r = 0.062708:	q_mu = 1.15964	q_A  = 1.35096	CLsb = 0.14077	CLb  = 0.53404	CLs  = 0.26359
+At r = 0.094015:	q_mu = 2.72398	q_A  = 3.01108	CLsb = 0.04943	CLb  = 0.53379	CLs  = 0.09259
+At r = 0.111966:	q_mu = 3.91185	q_A  = 4.25358	CLsb = 0.02397	CLb  = 0.53370	CLs  = 0.04492
+At r = 0.106249:	q_mu = 3.51113	q_A  = 3.83555	CLsb = 0.03048	CLb  = 0.53373	CLs  = 0.05711
+At r = 0.108781:	q_mu = 3.68582	q_A  = 4.01791	CLsb = 0.02744	CLb  = 0.53372	CLs  = 0.05141
+At r = 0.109943:	q_mu = 3.76741	q_A  = 4.10303	CLsb = 0.02613	CLb  = 0.53371	CLs  = 0.04896
+At r = 0.109310:	q_mu = 3.72279	q_A  = 4.05652	CLsb = 0.02684	CLb  = 0.53372	CLs  = 0.05028
+At r = 0.109544:	q_mu = 3.73929	q_A  = 4.07369	CLsb = 0.02657	CLb  = 0.53372	CLs  = 0.04979
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1095
+Expected  2.5%: r < 0.0573
+Expected 16.0%: r < 0.0761
+Expected 50.0%: r < 0.1064
+Expected 84.0%: r < 0.1484
+Expected 97.5%: r < 0.1983
+
+Done in 0.19 min (cpu), 0.19 min (real)
+Generate toy 84/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.003739 (0.031032 times rMax), while it should be at zero
+Median for expected limits: 0.106566
+Sigma  for expected limits: 0.0543713
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -13987.4 (r = 3.30704e-09)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6931.81 (r = 3.7752e-05)
+At r = 0.081673:	q_mu = 3.02282	q_A  = 2.28032	CLsb = 0.03955	CLb  = 0.40290	CLs  = 0.09817
+At r = 0.163345:	q_mu = 9.81276	q_A  = 8.94385	CLsb = 0.00086	CLb  = 0.44225	CLs  = 0.00194
+At r = 0.081673:	q_mu = 3.02285	q_A  = 2.28208	CLsb = 0.03956	CLb  = 0.40316	CLs  = 0.09812
+At r = 0.122509:	q_mu = 5.96324	q_A  = 5.08140	CLsb = 0.00715	CLb  = 0.42246	CLs  = 0.01692
+At r = 0.102369:	q_mu = 4.39622	q_A  = 3.56503	CLsb = 0.01751	CLb  = 0.41289	CLs  = 0.04240
+At r = 0.094975:	q_mu = 3.87878	q_A  = 3.07469	CLsb = 0.02370	CLb  = 0.40932	CLs  = 0.05789
+At r = 0.099237:	q_mu = 4.17309	q_A  = 3.35279	CLsb = 0.01994	CLb  = 0.41138	CLs  = 0.04846
+At r = 0.097786:	q_mu = 4.07160	q_A  = 3.25666	CLsb = 0.02116	CLb  = 0.41068	CLs  = 0.05152
+At r = 0.098644:	q_mu = 4.13142	q_A  = 3.31326	CLsb = 0.02043	CLb  = 0.41109	CLs  = 0.04969
+At r = 0.098355:	q_mu = 4.11129	q_A  = 3.29423	CLsb = 0.02067	CLb  = 0.41096	CLs  = 0.05030
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0984
+Expected  2.5%: r < 0.0579
+Expected 16.0%: r < 0.0765
+Expected 50.0%: r < 0.1066
+Expected 84.0%: r < 0.1486
+Expected 97.5%: r < 0.1986
+
+Done in 0.18 min (cpu), 0.18 min (real)
+Generate toy 85/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000426 (0.003933 times rMax), while it should be at zero
+Median for expected limits: 0.1065
+Sigma  for expected limits: 0.0543378
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -10686.4 (r = 0.0184361)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.08 (r = 9.03694e-06)
+At r = 0.034025:	q_mu = 0.08429	q_A  = 0.39982	CLsb = 0.38578	CLb  = 0.63382	CLs  = 0.60867
+At r = 0.068049:	q_mu = 0.77781	q_A  = 1.58900	CLsb = 0.18891	CLb  = 0.64752	CLs  = 0.29174
+At r = 0.136098:	q_mu = 4.19455	q_A  = 6.25460	CLsb = 0.02028	CLb  = 0.67468	CLs  = 0.03005
+At r = 0.077267:	q_mu = 1.08375	q_A  = 2.04374	CLsb = 0.14893	CLb  = 0.65120	CLs  = 0.22870
+At r = 0.106683:	q_mu = 2.38850	q_A  = 3.86833	CLsb = 0.06112	CLb  = 0.66324	CLs  = 0.09215
+At r = 0.119524:	q_mu = 3.11857	q_A  = 4.84033	CLsb = 0.03870	CLb  = 0.66790	CLs  = 0.05795
+At r = 0.125818:	q_mu = 3.50734	q_A  = 5.35556	CLsb = 0.03055	CLb  = 0.67054	CLs  = 0.04556
+At r = 0.122611:	q_mu = 3.30527	q_A  = 5.08980	CLsb = 0.03453	CLb  = 0.66931	CLs  = 0.05159
+At r = 0.123898:	q_mu = 3.38550	q_A  = 5.19557	CLsb = 0.03289	CLb  = 0.66982	CLs  = 0.04910
+At r = 0.123262:	q_mu = 3.34557	q_A  = 5.14308	CLsb = 0.03369	CLb  = 0.66958	CLs  = 0.05032
+At r = 0.123521:	q_mu = 3.36184	q_A  = 5.16448	CLsb = 0.03336	CLb  = 0.66968	CLs  = 0.04982
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1235
+Expected  2.5%: r < 0.0570
+Expected 16.0%: r < 0.0767
+Expected 50.0%: r < 0.1065
+Expected 84.0%: r < 0.1485
+Expected 97.5%: r < 0.1985
+
+Done in 0.19 min (cpu), 0.19 min (real)
+Generate toy 86/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.003443 (0.025342 times rMax), while it should be at zero
+Median for expected limits: 0.106575
+Sigma  for expected limits: 0.0543761
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -132.895 (r = 0.0371066)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6931.76 (r = 0.00103451)
+At r = 0.186240:	q_mu = 15.67079	q_A  = 11.54937	CLsb = 0.00003	CLb  = 0.27213	CLs  = 0.00011
+At r = 0.111673:	q_mu = 1.82700	q_A  = 4.23182	CLsb = 0.08824	CLb  = 0.75974	CLs  = 0.11615
+At r = 0.148956:	q_mu = 4.06808	q_A  = 7.46140	CLsb = 0.02185	CLb  = 0.76257	CLs  = 0.02865
+At r = 0.129635:	q_mu = 2.79867	q_A  = 5.67780	CLsb = 0.04717	CLb  = 0.76111	CLs  = 0.06198
+At r = 0.137801:	q_mu = 3.30735	q_A  = 6.40333	CLsb = 0.03449	CLb  = 0.76173	CLs  = 0.04527
+At r = 0.134102:	q_mu = 3.07161	q_A  = 6.06926	CLsb = 0.03984	CLb  = 0.76145	CLs  = 0.05231
+At r = 0.135768:	q_mu = 3.17664	q_A  = 6.21858	CLsb = 0.03735	CLb  = 0.76158	CLs  = 0.04904
+At r = 0.135036:	q_mu = 3.13021	q_A  = 6.15265	CLsb = 0.03843	CLb  = 0.76152	CLs  = 0.05046
+At r = 0.135370:	q_mu = 3.15143	q_A  = 6.18283	CLsb = 0.03793	CLb  = 0.76155	CLs  = 0.04981
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1354
+Expected  2.5%: r < 0.0579
+Expected 16.0%: r < 0.0765
+Expected 50.0%: r < 0.1066
+Expected 84.0%: r < 0.1486
+Expected 97.5%: r < 0.1987
+
+Done in 0.17 min (cpu), 0.17 min (real)
+Generate toy 87/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000300 (0.002014 times rMax), while it should be at zero
+Median for expected limits: 0.106562
+Sigma  for expected limits: 0.0543693
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -881.869 (r = 5.09605e-08)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6931.82 (r = 0.000185579)
+At r = 0.495364:	q_mu = 74.77480	q_A  = 73.95181	CLsb = 0.00000	CLb  = 0.48092	CLs  = 0.00000
+At r = 0.247682:	q_mu = 21.71017	q_A  = 20.07543	CLsb = 0.00000	CLb  = 0.42762	CLs  = 0.00000
+At r = 0.123841:	q_mu = 6.37377	q_A  = 5.19532	CLsb = 0.00558	CLb  = 0.39801	CLs  = 0.01401
+At r = 0.061921:	q_mu = 2.00537	q_A  = 1.31967	CLsb = 0.07392	CLb  = 0.38268	CLs  = 0.19316
+At r = 0.092881:	q_mu = 3.89887	q_A  = 2.94306	CLsb = 0.02307	CLb  = 0.39029	CLs  = 0.05911
+At r = 0.108361:	q_mu = 5.06348	q_A  = 3.98988	CLsb = 0.01172	CLb  = 0.39407	CLs  = 0.02974
+At r = 0.098995:	q_mu = 4.34238	q_A  = 3.33861	CLsb = 0.01778	CLb  = 0.39178	CLs  = 0.04539
+At r = 0.095980:	q_mu = 4.11959	q_A  = 3.13909	CLsb = 0.02026	CLb  = 0.39100	CLs  = 0.05181
+At r = 0.097231:	q_mu = 4.21074	q_A  = 3.22048	CLsb = 0.01920	CLb  = 0.39131	CLs  = 0.04908
+At r = 0.096637:	q_mu = 4.16726	q_A  = 3.18160	CLsb = 0.01970	CLb  = 0.39116	CLs  = 0.05036
+At r = 0.096888:	q_mu = 4.18566	q_A  = 3.19804	CLsb = 0.01949	CLb  = 0.39122	CLs  = 0.04981
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0969
+Expected  2.5%: r < 0.0570
+Expected 16.0%: r < 0.0768
+Expected 50.0%: r < 0.1066
+Expected 84.0%: r < 0.1486
+Expected 97.5%: r < 0.1986
+
+Done in 0.20 min (cpu), 0.20 min (real)
+Generate toy 88/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000944 (0.008860 times rMax), while it should be at zero
+Median for expected limits: 0.106327
+Sigma  for expected limits: 0.0542495
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -15830.4 (r = 0.00816673)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.82 (r = 0.00100822)
+At r = 0.029143:	q_mu = 0.28649	q_A  = 0.29302	CLsb = 0.29624	CLb  = 0.50242	CLs  = 0.58963
+At r = 0.058286:	q_mu = 1.10985	q_A  = 1.16772	CLsb = 0.14606	CLb  = 0.51082	CLs  = 0.28593
+At r = 0.116572:	q_mu = 4.19168	q_A  = 4.60681	CLsb = 0.02031	CLb  = 0.53943	CLs  = 0.03765
+At r = 0.062370:	q_mu = 1.26498	q_A  = 1.33714	CLsb = 0.13035	CLb  = 0.51262	CLs  = 0.25429
+At r = 0.089471:	q_mu = 2.52188	q_A  = 2.73104	CLsb = 0.05614	CLb  = 0.52573	CLs  = 0.10678
+At r = 0.105253:	q_mu = 3.44485	q_A  = 3.76592	CLsb = 0.03172	CLb  = 0.53370	CLs  = 0.05944
+At r = 0.110948:	q_mu = 3.81196	q_A  = 4.17920	CLsb = 0.02544	CLb  = 0.53661	CLs  = 0.04742
+At r = 0.108740:	q_mu = 3.66730	q_A  = 4.01634	CLsb = 0.02775	CLb  = 0.53548	CLs  = 0.05181
+At r = 0.109891:	q_mu = 3.74226	q_A  = 4.10079	CLsb = 0.02653	CLb  = 0.53607	CLs  = 0.04948
+At r = 0.109453:	q_mu = 3.71351	q_A  = 4.06844	CLsb = 0.02699	CLb  = 0.53585	CLs  = 0.05036
+At r = 0.109684:	q_mu = 3.72868	q_A  = 4.08551	CLsb = 0.02674	CLb  = 0.53597	CLs  = 0.04990
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1097
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0763
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1483
+Expected 97.5%: r < 0.1982
+
+Done in 0.19 min (cpu), 0.19 min (real)
+Generate toy 89/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.003386 (0.028063 times rMax), while it should be at zero
+Median for expected limits: 0.106702
+Sigma  for expected limits: 0.0544409
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -0.699349 (r = 0.00342919)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6931.23 (r = 5.94285e-08)
+At r = 0.553336:	q_mu = 84.72948	q_A  = 90.33191	CLsb = 0.00000	CLb  = 0.61770	CLs  = 0.00000
+At r = 0.278383:	q_mu = 23.06537	q_A  = 25.12714	CLsb = 0.00000	CLb  = 0.58319	CLs  = 0.00000
+At r = 0.140906:	q_mu = 5.91414	q_A  = 6.69789	CLsb = 0.00751	CLb  = 0.56203	CLs  = 0.01336
+At r = 0.072168:	q_mu = 1.46562	q_A  = 1.78860	CLsb = 0.11302	CLb  = 0.55043	CLs  = 0.20533
+At r = 0.106537:	q_mu = 3.32436	q_A  = 3.85985	CLsb = 0.03413	CLb  = 0.55621	CLs  = 0.06136
+At r = 0.123721:	q_mu = 4.52763	q_A  = 5.18175	CLsb = 0.01668	CLb  = 0.55904	CLs  = 0.02983
+At r = 0.113877:	q_mu = 3.81700	q_A  = 4.40197	CLsb = 0.02537	CLb  = 0.55740	CLs  = 0.04551
+At r = 0.110560:	q_mu = 3.58881	q_A  = 4.15091	CLsb = 0.02909	CLb  = 0.55684	CLs  = 0.05223
+At r = 0.112065:	q_mu = 3.69072	q_A  = 4.26305	CLsb = 0.02736	CLb  = 0.55709	CLs  = 0.04911
+At r = 0.111413:	q_mu = 3.64634	q_A  = 4.21422	CLsb = 0.02810	CLb  = 0.55698	CLs  = 0.05044
+At r = 0.111715:	q_mu = 3.66695	q_A  = 4.23689	CLsb = 0.02775	CLb  = 0.55703	CLs  = 0.04982
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1117
+Expected  2.5%: r < 0.0571
+Expected 16.0%: r < 0.0769
+Expected 50.0%: r < 0.1067
+Expected 84.0%: r < 0.1488
+Expected 97.5%: r < 0.1989
+
+Done in 0.20 min (cpu), 0.20 min (real)
+Generate toy 90/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000571 (0.004647 times rMax), while it should be at zero
+Median for expected limits: 0.106374
+Sigma  for expected limits: 0.0542733
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -24503.9 (r = 0.0155559)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.62 (r = 0.00416452)
+At r = 0.154980:	q_mu = 6.79494	q_A  = 8.06040	CLsb = 0.00457	CLb  = 0.59188	CLs  = 0.00772
+At r = 0.085268:	q_mu = 1.72137	q_A  = 2.47969	CLsb = 0.09476	CLb  = 0.60361	CLs  = 0.15699
+At r = 0.120124:	q_mu = 3.84916	q_A  = 4.88238	CLsb = 0.02489	CLb  = 0.59781	CLs  = 0.04163
+At r = 0.102696:	q_mu = 2.68026	q_A  = 3.58178	CLsb = 0.05080	CLb  = 0.60080	CLs  = 0.08455
+At r = 0.113033:	q_mu = 3.34965	q_A  = 4.33051	CLsb = 0.03361	CLb  = 0.59901	CLs  = 0.05611
+At r = 0.116641:	q_mu = 3.60055	q_A  = 4.60823	CLsb = 0.02888	CLb  = 0.59838	CLs  = 0.04826
+At r = 0.115242:	q_mu = 3.50187	q_A  = 4.49921	CLsb = 0.03065	CLb  = 0.59863	CLs  = 0.05120
+At r = 0.115971:	q_mu = 3.55284	q_A  = 4.55553	CLsb = 0.02972	CLb  = 0.59850	CLs  = 0.04966
+At r = 0.115695:	q_mu = 3.53321	q_A  = 4.53391	CLsb = 0.03008	CLb  = 0.59856	CLs  = 0.05025
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1157
+Expected  2.5%: r < 0.0573
+Expected 16.0%: r < 0.0761
+Expected 50.0%: r < 0.1064
+Expected 84.0%: r < 0.1484
+Expected 97.5%: r < 0.1983
+
+Done in 0.20 min (cpu), 0.20 min (real)
+Generate toy 91/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.002478 (0.019473 times rMax), while it should be at zero
+Median for expected limits: 0.106187
+Sigma  for expected limits: 0.0541778
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -6247.71 (r = 0.04987)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6933.41 (r = 0.0041248)
+At r = 0.170472:	q_mu = 4.43532	q_A  = 9.71019	CLsb = 0.01760	CLb  = 0.84378	CLs  = 0.02086
+At r = 0.110171:	q_mu = 1.15183	q_A  = 4.11126	CLsb = 0.14158	CLb  = 0.83006	CLs  = 0.17057
+At r = 0.140321:	q_mu = 2.53112	q_A  = 6.62538	CLsb = 0.05581	CLb  = 0.83720	CLs  = 0.06666
+At r = 0.152323:	q_mu = 3.22936	q_A  = 7.78701	CLsb = 0.03616	CLb  = 0.83976	CLs  = 0.04307
+At r = 0.146642:	q_mu = 2.88799	q_A  = 7.22549	CLsb = 0.04462	CLb  = 0.83858	CLs  = 0.05321
+At r = 0.149115:	q_mu = 3.03401	q_A  = 7.46720	CLsb = 0.04077	CLb  = 0.83910	CLs  = 0.04859
+At r = 0.147996:	q_mu = 2.96736	q_A  = 7.35723	CLsb = 0.04248	CLb  = 0.83887	CLs  = 0.05064
+At r = 0.148495:	q_mu = 2.99681	q_A  = 7.40598	CLsb = 0.04171	CLb  = 0.83898	CLs  = 0.04972
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1485
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0762
+Expected 50.0%: r < 0.1062
+Expected 84.0%: r < 0.1481
+Expected 97.5%: r < 0.1979
+
+Done in 0.18 min (cpu), 0.18 min (real)
+Generate toy 92/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+Median for expected limits: 0.106684
+Sigma  for expected limits: 0.0544317
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -445.231 (r = 6.71606e-08)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6931.3 (r = 0.00031885)
+At r = 0.108685:	q_mu = 6.51414	q_A  = 4.01314	CLsb = 0.00430	CLb  = 0.26624	CLs  = 0.01615
+At r = 0.054343:	q_mu = 2.35339	q_A  = 1.01847	CLsb = 0.04740	CLb  = 0.25418	CLs  = 0.18649
+At r = 0.081514:	q_mu = 4.21035	q_A  = 2.27134	CLsb = 0.01576	CLb  = 0.26002	CLs  = 0.06062
+At r = 0.090114:	q_mu = 4.89309	q_A  = 2.77151	CLsb = 0.01067	CLb  = 0.26200	CLs  = 0.04072
+At r = 0.086564:	q_mu = 4.60557	q_A  = 2.55886	CLsb = 0.01257	CLb  = 0.26117	CLs  = 0.04811
+At r = 0.084881:	q_mu = 4.47207	q_A  = 2.46108	CLsb = 0.01356	CLb  = 0.26078	CLs  = 0.05201
+At r = 0.085561:	q_mu = 4.52578	q_A  = 2.50034	CLsb = 0.01315	CLb  = 0.26094	CLs  = 0.05040
+At r = 0.085900:	q_mu = 4.55271	q_A  = 2.52011	CLsb = 0.01295	CLb  = 0.26102	CLs  = 0.04962
+At r = 0.085699:	q_mu = 4.53671	q_A  = 2.50834	CLsb = 0.01307	CLb  = 0.26097	CLs  = 0.05008
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0857
+Expected  2.5%: r < 0.0571
+Expected 16.0%: r < 0.0765
+Expected 50.0%: r < 0.1067
+Expected 84.0%: r < 0.1488
+Expected 97.5%: r < 0.1989
+
+Done in 0.18 min (cpu), 0.18 min (real)
+Generate toy 93/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+Median for expected limits: 0.106347
+Sigma  for expected limits: 0.0542598
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -25024.6 (r = 2.28854e-06)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.73 (r = 5.32015e-08)
+At r = 0.531832:	q_mu = 88.03601	q_A  = 84.11341	CLsb = 0.00000	CLb  = 0.41533	CLs  = 0.00000
+At r = 0.265917:	q_mu = 94.22382	q_A  = 23.01454	CLsb = 0.00000	CLb  = 0.00000	CLs  = 0.00000
+At r = 0.132960:	q_mu = 15.83152	q_A  = 5.97522	CLsb = 0.00000	CLb  = 0.02190	CLs  = 0.00019
+At r = 0.066481:	q_mu = 1.74490	q_A  = 1.51958	CLsb = 0.09273	CLb  = 0.46359	CLs  = 0.20003
+At r = 0.099720:	q_mu = 3.76133	q_A  = 3.38704	CLsb = 0.02606	CLb  = 0.45950	CLs  = 0.05672
+At r = 0.116340:	q_mu = 5.04565	q_A  = 4.59018	CLsb = 0.01226	CLb  = 0.45767	CLs  = 0.02680
+At r = 0.105281:	q_mu = 4.17142	q_A  = 3.77069	CLsb = 0.02043	CLb  = 0.45891	CLs  = 0.04451
+At r = 0.102035:	q_mu = 3.92851	q_A  = 3.54256	CLsb = 0.02359	CLb  = 0.45917	CLs  = 0.05137
+At r = 0.103175:	q_mu = 4.01255	q_A  = 3.62116	CLsb = 0.02244	CLb  = 0.45905	CLs  = 0.04888
+At r = 0.102533:	q_mu = 3.96508	q_A  = 3.57672	CLsb = 0.02308	CLb  = 0.45911	CLs  = 0.05027
+At r = 0.102761:	q_mu = 3.98201	q_A  = 3.59257	CLsb = 0.02285	CLb  = 0.45909	CLs  = 0.04977
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1028
+Expected  2.5%: r < 0.0573
+Expected 16.0%: r < 0.0765
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1483
+Expected 97.5%: r < 0.1982
+
+Done in 0.23 min (cpu), 0.23 min (real)
+Generate toy 94/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.002994 (0.026486 times rMax), while it should be at zero
+Median for expected limits: 0.106326
+Sigma  for expected limits: 0.0542489
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -3212.74 (r = 3.83461e-11)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.82 (r = 0.00182728)
+At r = 0.138628:	q_mu = 8.03819	q_A  = 6.47957	CLsb = 0.00217	CLb  = 0.37974	CLs  = 0.00573
+At r = 0.069314:	q_mu = 2.50666	q_A  = 1.64793	CLsb = 0.05281	CLb  = 0.36901	CLs  = 0.14311
+At r = 0.103971:	q_mu = 4.90267	q_A  = 3.67504	CLsb = 0.01264	CLb  = 0.37441	CLs  = 0.03375
+At r = 0.089496:	q_mu = 3.81105	q_A  = 2.73167	CLsb = 0.02389	CLb  = 0.37201	CLs  = 0.06422
+At r = 0.096896:	q_mu = 4.35232	q_A  = 3.19732	CLsb = 0.01738	CLb  = 0.37336	CLs  = 0.04656
+At r = 0.094103:	q_mu = 4.14379	q_A  = 3.01720	CLsb = 0.01964	CLb  = 0.37286	CLs  = 0.05267
+At r = 0.095603:	q_mu = 4.25512	q_A  = 3.11320	CLsb = 0.01840	CLb  = 0.37312	CLs  = 0.04931
+At r = 0.095049:	q_mu = 4.21378	q_A  = 3.07752	CLsb = 0.01885	CLb  = 0.37302	CLs  = 0.05053
+At r = 0.095351:	q_mu = 4.23631	q_A  = 3.09696	CLsb = 0.01860	CLb  = 0.37308	CLs  = 0.04986
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0954
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0763
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1483
+Expected 97.5%: r < 0.1982
+
+Done in 0.19 min (cpu), 0.19 min (real)
+Generate toy 95/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000525 (0.005003 times rMax), while it should be at zero
+Median for expected limits: 0.106524
+Sigma  for expected limits: 0.0543502
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -1498.82 (r = 0.000123568)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6931.98 (r = 0.000458506)
+At r = 0.041733:	q_mu = 1.41683	q_A  = 0.60275	CLsb = 0.09669	CLb  = 0.30004	CLs  = 0.32225
+At r = 0.083465:	q_mu = 3.91855	q_A  = 2.38095	CLsb = 0.02061	CLb  = 0.30916	CLs  = 0.06667
+At r = 0.166930:	q_mu = 12.00428	q_A  = 9.32789	CLsb = 0.00024	CLb  = 0.33064	CLs  = 0.00072
+At r = 0.083527:	q_mu = 3.92155	q_A  = 2.38898	CLsb = 0.02061	CLb  = 0.31003	CLs  = 0.06646
+At r = 0.125228:	q_mu = 7.46309	q_A  = 5.30606	CLsb = 0.00279	CLb  = 0.31982	CLs  = 0.00872
+At r = 0.104378:	q_mu = 5.56388	q_A  = 3.70497	CLsb = 0.00803	CLb  = 0.31459	CLs  = 0.02551
+At r = 0.092656:	q_mu = 4.61036	q_A  = 2.92940	CLsb = 0.01381	CLb  = 0.31169	CLs  = 0.04431
+At r = 0.088654:	q_mu = 4.30145	q_A  = 2.68529	CLsb = 0.01651	CLb  = 0.31096	CLs  = 0.05310
+At r = 0.090518:	q_mu = 4.44343	q_A  = 2.79716	CLsb = 0.01521	CLb  = 0.31130	CLs  = 0.04885
+At r = 0.089729:	q_mu = 4.38307	q_A  = 2.74909	CLsb = 0.01575	CLb  = 0.31110	CLs  = 0.05062
+At r = 0.090105:	q_mu = 4.41175	q_A  = 2.77154	CLsb = 0.01549	CLb  = 0.31114	CLs  = 0.04977
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0901
+Expected  2.5%: r < 0.0570
+Expected 16.0%: r < 0.0767
+Expected 50.0%: r < 0.1065
+Expected 84.0%: r < 0.1486
+Expected 97.5%: r < 0.1986
+
+Done in 0.21 min (cpu), 0.21 min (real)
+Generate toy 96/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000662 (0.006681 times rMax), while it should be at zero
+Median for expected limits: 0.106317
+Sigma  for expected limits: 0.0542442
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -4565.64 (r = 0.0263373)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.86 (r = 1.18652e-07)
+At r = 0.072278:	q_mu = 0.59447	q_A  = 1.78895	CLsb = 0.22035	CLb  = 0.71447	CLs  = 0.30841
+At r = 0.144556:	q_mu = 4.31254	q_A  = 7.03729	CLsb = 0.01892	CLb  = 0.71773	CLs  = 0.02636
+At r = 0.085447:	q_mu = 1.02263	q_A  = 2.49327	CLsb = 0.15595	CLb  = 0.71490	CLs  = 0.21814
+At r = 0.115001:	q_mu = 2.38879	q_A  = 4.48461	CLsb = 0.06110	CLb  = 0.71638	CLs  = 0.08530
+At r = 0.131665:	q_mu = 3.40402	q_A  = 5.85472	CLsb = 0.03252	CLb  = 0.71724	CLs  = 0.04534
+At r = 0.126268:	q_mu = 3.05633	q_A  = 5.39192	CLsb = 0.04021	CLb  = 0.71695	CLs  = 0.05609
+At r = 0.128599:	q_mu = 3.20412	q_A  = 5.58945	CLsb = 0.03673	CLb  = 0.71708	CLs  = 0.05122
+At r = 0.129696:	q_mu = 3.27486	q_A  = 5.68358	CLsb = 0.03517	CLb  = 0.71714	CLs  = 0.04905
+At r = 0.129087:	q_mu = 3.23543	q_A  = 5.63116	CLsb = 0.03603	CLb  = 0.71711	CLs  = 0.05024
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1291
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0763
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1483
+Expected 97.5%: r < 0.1982
+
+Done in 0.22 min (cpu), 0.21 min (real)
+Generate toy 97/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000626 (0.004411 times rMax), while it should be at zero
+Median for expected limits: 0.10633
+Sigma  for expected limits: 0.0542511
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -2332.01 (r = 0.0251911)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6932.8 (r = 0.000180957)
+At r = 0.181492:	q_mu = 7.44388	q_A  = 10.98634	CLsb = 0.00318	CLb  = 0.72114	CLs  = 0.00441
+At r = 0.103342:	q_mu = 1.89812	q_A  = 3.63494	CLsb = 0.08414	CLb  = 0.70154	CLs  = 0.11994
+At r = 0.142417:	q_mu = 4.23070	q_A  = 6.83297	CLsb = 0.01985	CLb  = 0.71128	CLs  = 0.02791
+At r = 0.122100:	q_mu = 2.90518	q_A  = 5.04808	CLsb = 0.04415	CLb  = 0.70621	CLs  = 0.06251
+At r = 0.130665:	q_mu = 3.43470	q_A  = 5.76931	CLsb = 0.03192	CLb  = 0.70838	CLs  = 0.04506
+At r = 0.126775:	q_mu = 3.18863	q_A  = 5.43575	CLsb = 0.03708	CLb  = 0.70740	CLs  = 0.05241
+At r = 0.128523:	q_mu = 3.29798	q_A  = 5.58435	CLsb = 0.03468	CLb  = 0.70784	CLs  = 0.04900
+At r = 0.127753:	q_mu = 3.24954	q_A  = 5.51857	CLsb = 0.03572	CLb  = 0.70764	CLs  = 0.05048
+At r = 0.128104:	q_mu = 3.27169	q_A  = 5.54863	CLsb = 0.03524	CLb  = 0.70773	CLs  = 0.04980
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.1281
+Expected  2.5%: r < 0.0577
+Expected 16.0%: r < 0.0763
+Expected 50.0%: r < 0.1063
+Expected 84.0%: r < 0.1483
+Expected 97.5%: r < 0.1982
+
+Done in 0.19 min (cpu), 0.19 min (real)
+Generate toy 98/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.007856 (0.055747 times rMax), while it should be at zero
+Median for expected limits: 0.107007
+Sigma  for expected limits: 0.0545965
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -3671.25 (r = 4.4646e-09)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6929.93 (r = 0.00243638)
+At r = 0.064083:	q_mu = 4.29197	q_A  = 1.40549	CLsb = 0.00813	CLb  = 0.11173	CLs  = 0.07279
+At r = 0.128166:	q_mu = 11.15328	q_A  = 5.54834	CLsb = 0.00020	CLb  = 0.11707	CLs  = 0.00168
+At r = 0.064083:	q_mu = 4.29500	q_A  = 1.40426	CLsb = 0.00809	CLb  = 0.11129	CLs  = 0.07272
+At r = 0.096125:	q_mu = 7.41023	q_A  = 3.14158	CLsb = 0.00146	CLb  = 0.11426	CLs  = 0.01275
+At r = 0.080104:	q_mu = 5.77413	q_A  = 2.18748	CLsb = 0.00356	CLb  = 0.11266	CLs  = 0.03157
+At r = 0.073040:	q_mu = 5.10006	q_A  = 1.82115	CLsb = 0.00517	CLb  = 0.11221	CLs  = 0.04606
+At r = 0.069960:	q_mu = 4.81688	q_A  = 1.67195	CLsb = 0.00605	CLb  = 0.11197	CLs  = 0.05404
+At r = 0.071775:	q_mu = 4.98285	q_A  = 1.75885	CLsb = 0.00552	CLb  = 0.11209	CLs  = 0.04921
+At r = 0.071164:	q_mu = 4.92672	q_A  = 1.72918	CLsb = 0.00569	CLb  = 0.11203	CLs  = 0.05079
+At r = 0.071529:	q_mu = 4.96029	q_A  = 1.74668	CLsb = 0.00558	CLb  = 0.11203	CLs  = 0.04984
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0715
+Expected  2.5%: r < 0.0589
+Expected 16.0%: r < 0.0773
+Expected 50.0%: r < 0.1070
+Expected 84.0%: r < 0.1492
+Expected 97.5%: r < 0.1995
+
+Done in 0.19 min (cpu), 0.18 min (real)
+Generate toy 99/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.000302 (0.003844 times rMax), while it should be at zero
+Median for expected limits: 0.106712
+Sigma  for expected limits: 0.0544458
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -29161.5 (r = 2.92932e-09)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6931.18 (r = 5.12751e-08)
+At r = 0.071791:	q_mu = 3.27525	q_A  = 1.75831	CLsb = 0.02885	CLb  = 0.28366	CLs  = 0.10170
+At r = 0.143582:	q_mu = 10.04991	q_A  = 6.93795	CLsb = 0.00063	CLb  = 0.27735	CLs  = 0.00227
+At r = 0.071791:	q_mu = 3.27683	q_A  = 1.75951	CLsb = 0.02882	CLb  = 0.28368	CLs  = 0.10160
+At r = 0.107686:	q_mu = 6.23679	q_A  = 3.93255	CLsb = 0.00517	CLb  = 0.28063	CLs  = 0.01843
+At r = 0.090898:	q_mu = 4.74674	q_A  = 2.81060	CLsb = 0.01210	CLb  = 0.28182	CLs  = 0.04294
+At r = 0.084374:	q_mu = 4.21533	q_A  = 2.42474	CLsb = 0.01650	CLb  = 0.28266	CLs  = 0.05837
+At r = 0.087005:	q_mu = 4.42517	q_A  = 2.57681	CLsb = 0.01459	CLb  = 0.28240	CLs  = 0.05167
+At r = 0.088337:	q_mu = 4.53331	q_A  = 2.65563	CLsb = 0.01370	CLb  = 0.28227	CLs  = 0.04854
+At r = 0.087566:	q_mu = 4.47053	q_A  = 2.60981	CLsb = 0.01421	CLb  = 0.28234	CLs  = 0.05034
+At r = 0.087834:	q_mu = 4.49235	q_A  = 2.62575	CLsb = 0.01403	CLb  = 0.28232	CLs  = 0.04970
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.0878
+Expected  2.5%: r < 0.0571
+Expected 16.0%: r < 0.0761
+Expected 50.0%: r < 0.1067
+Expected 84.0%: r < 0.1488
+Expected 97.5%: r < 0.1989
+
+Done in 0.23 min (cpu), 0.23 min (real)
+Generate toy 100/100
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type SimpleGaussianConstraint: 20
+WARNING: Best fit of asimov dataset is at r = 0.001508 (0.015610 times rMax), while it should be at zero
+Median for expected limits: 0.106581
+Sigma  for expected limits: 0.0543791
+Constraints of type SimpleGaussianConstraint: 20
+Constraints of type SimpleGaussianConstraint: 20
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -68.6266 (r = 0.124477)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -6931.74 (r = 0.000442919)
+At r = 0.292264:	q_mu = 8.02619	q_A  = 27.58708	CLsb = 0.00231	CLb  = 0.99222	CLs  = 0.00232
+At r = 0.208370:	q_mu = 2.05075	q_A  = 14.37248	CLsb = 0.07607	CLb  = 0.99084	CLs  = 0.07677
+At r = 0.250317:	q_mu = 4.56689	q_A  = 20.49095	CLsb = 0.01630	CLb  = 0.99157	CLs  = 0.01644
+At r = 0.226095:	q_mu = 2.99561	q_A  = 16.83441	CLsb = 0.04175	CLb  = 0.99116	CLs  = 0.04212
+At r = 0.218498:	q_mu = 2.56996	q_A  = 15.75744	CLsb = 0.05446	CLb  = 0.99102	CLs  = 0.05495
+At r = 0.222174:	q_mu = 2.77176	q_A  = 16.27429	CLsb = 0.04797	CLb  = 0.99109	CLs  = 0.04840
+At r = 0.220686:	q_mu = 2.68903	q_A  = 16.06398	CLsb = 0.05052	CLb  = 0.99106	CLs  = 0.05098
+At r = 0.221428:	q_mu = 2.73005	q_A  = 16.16859	CLsb = 0.04924	CLb  = 0.99108	CLs  = 0.04968
+
+ -- Asymptotic -- 
+Observed Limit: r < 0.2214
+Expected  2.5%: r < 0.0575
+Expected 16.0%: r < 0.0763
+Expected 50.0%: r < 0.1066
+Expected 84.0%: r < 0.1486
+Expected 97.5%: r < 0.1987
+
+Done in 0.21 min (cpu), 0.21 min (real)
+mean   expected limit: r < 0.10273 +/- 0.00422931 @ 95%CL (100 toyMC)
+median expected limit: r < 0.0976216 @ 95%CL (100 toyMC)
+   68% expected band : 0.0587163 < r < 0.148495
+   95% expected band : 0.0339785 < r < 0.201636
