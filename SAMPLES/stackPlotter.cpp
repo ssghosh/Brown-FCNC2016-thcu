@@ -375,11 +375,11 @@ void stackPlotter::applyStyleToLegend(TLegend* leg ,legendposition pos)const{
 int main(int argc, const char** argv){
 
 	if(argc < 3) {
-		std::cout << "***** stackPlotter ***************************************" << std::endl;
-		std::cout << "**                                                       *" << std::endl;
-		std::cout << "** Usage: ./stackPlotter <input file> <output directory> *" << std::endl;
-		std::cout << "**                                                       *" << std::endl;
-		std::cout << "**********************************************************\n\n" << std::endl;
+		std::cout << "***** stackPlotter *********************************************************************" << std::endl;
+		std::cout << "**                                                                                     *" << std::endl;
+		std::cout << "** Usage: ./stackPlotter <input file> <output directory> <hist name> <legend position> *" << std::endl;
+		std::cout << "**                                                                                     *" << std::endl;
+		std::cout << "****************************************************************************************\n\n" << std::endl;
 		std::cout << "Incorrect usage: number of arguments is " << argc << std::endl;
 		exit(EXIT_FAILURE);
 	}
