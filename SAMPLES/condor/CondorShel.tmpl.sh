@@ -39,7 +39,7 @@ python madspin_fcnc.py cmsgrid_final.lhe tmp DECAY_MODE W_DECAY
 source DECAY_SCRIPT
 
 #gunzip cmsgrid_final_decayed_DECAYED_QUARK.lhe.gz
-xrdcp cmsgrid_final_decayed_DECAYED_QUARK.lhe.gz root://cmseos.fnal.gov:///store/user/USER/EOS_OUTDIRPATH/cmsgrid_final_decayed_DECAYED_QUARK_SUFFIX.lhe.gz
+xrdcp -f cmsgrid_final_decayed_DECAYED_QUARK.lhe.gz root://cmseos.fnal.gov:///store/user/USER/EOS_OUTDIRPATH/cmsgrid_final_decayed_DECAYED_QUARK_SUFFIX.lhe.gz
 
 ## copy analysis files
 #xrdcp ANASUBLOC/anaSubstructure ${_CONDOR_SCRATCH_DIR}/anaSubstructure
