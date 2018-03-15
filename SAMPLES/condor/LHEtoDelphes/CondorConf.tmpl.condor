@@ -1,0 +1,12 @@
+x509userproxy = PROXY
+universe = vanilla
+Executable = RUNDIR/LHEtoDelphes.sh
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+Output = FILENAME.out
+Error = FILENAME.err
+Log = FILENAME.log
+Notification = Never
+Arguments = INPUTDIR/RELPATH OUTPUTDIR/RELPATH_PILEUP FILENAME.lhe.gz QCUT JETS PILEUP
+
+Queue 1
