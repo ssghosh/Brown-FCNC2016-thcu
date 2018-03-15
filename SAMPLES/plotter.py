@@ -62,16 +62,17 @@ bkginfile = rt.TFile(infiledir+'/'+bkginfilename)
 hct_hists = {name:[] for name in hists}
 hut_hists = {name:[] for name in hists}
 bkg_hists = {name:[] for name in hists}
+bkg_hist_dicts = {name:{} for name in hists}
 for key in siginfile.GetListOfKeys():
     name = key.GetName()
     if name in hct_dirs:
         for h in hists.keys():
             hist = siginfile.Get(name+'/'+h)
-            hct_hists[h].append(hist)
+            hct_hists[h].append(hist.Clone())
     elif name in hut_dirs:
         for h in hists:
             hist = siginfile.Get(name+'/'+h)
-            hut_hists[h].append(hist)
+            hut_hists[h].append(hist.Clone())
     else:
         print ">>> not hct or hut, make sure that this is a signal file..."
 
@@ -80,7 +81,8 @@ for key in bkginfile.GetListOfKeys():
     if name in bkg_dirs:
         for h in hists:
             hist = bkginfile.Get(name+'/'+h)
-            bkg_hists[h].append(hist)
+            bkg_hists[h].append(hist.Clone())
+            bkg_hist_dicts[h][name[2:]] = hist.Clone()
     else:
         print ">>> Not in list of bkg dirs, make sure that this is a bkg file..."
 
@@ -134,6 +136,42 @@ if all([item for item in bkg_hists.values()]):
 
 # create a background histogram stack
 bkg_hist_stacks = {}
+bkg_hist_legends = {}
+if all([item for item in bkg_hists.values()]):
+    for key in bkg_hists.keys():
+        bkg_hist_legends[key] = rt.TLegend(0.75,0.2,1,1)
+        # get the normalization
+        norm = 1./total_added_bkg_hists[key].Integral()
+        print "normalization is", str(norm)
+        hist0 = bkg_hist_dicts[key][bkg_hist_dicts[key].keys()[0]]
+        hist0_binwidth = hist0.GetXaxis().GetBinWidth(1)
+        hist0_binwidth_str = "{:.2f}".format(hist0_binwidth)
+        hist0_xtitle = hist0.GetXaxis().GetTitle()
+        hist0_ytitle = hist0.GetYaxis().GetTitle()
+        stack = rt.THStack(key,hists[key]+";"+hist0_xtitle+";"
+                +hist0_ytitle+" / "+hist0_binwidth_str)
+        accumulator = 0.
+        for idx, name in enumerate(bkg_hist_dicts[key].keys()):
+            hist = bkg_hist_dicts[key][name].Clone()
+            print "before norm hist integral was", str(hist.Integral())
+            hist.SetFillColor(colors12[idx])
+            bkg_hist_legends[key].AddEntry(hist,name,"f")
+            hist.SetFillStyle(1001)
+            hist.SetMarkerStyle()
+            hist.SetMarkerColor(1)
+            hist.SetLineColor(1)
+            hist.Scale(norm)
+            print "after norm hist integral was", str(hist.Integral())
+            accumulator += hist.Integral()
+            stack.Add(hist,"HIST")
+        print "total stack integral should be", str(accumulator)
+        print "the type of stack is", type(stack)
+        print "is instance of thstack?", isinstance(stack,rt.THStack)
+        #stack.Scale(1./added_bkg_hists[key].Integral())
+        bkg_hist_stacks[key] = stack
+
+# here's how we were doing these previously
+old_bkg_hist_stacks = {}
 if all([item for item in bkg_hists.values()]):
     for key in bkg_hists.keys():
         # get the normalization
@@ -145,7 +183,7 @@ if all([item for item in bkg_hists.values()]):
         hist0_xtitle = hist0.GetXaxis().GetTitle()
         hist0_ytitle = hist0.GetYaxis().GetTitle()
         stack = rt.THStack(key,hists[key]+";"+hist0_xtitle+";"
-                +hist0_ytitle+"/"+hist0_binwidth_str)
+                +hist0_ytitle+" / "+hist0_binwidth_str)
         accumulator = 0.
         for idx, hist in enumerate(bkg_hists[key]):
             print "before norm hist integral was", str(hist.Integral())
@@ -162,17 +200,8 @@ if all([item for item in bkg_hists.values()]):
         print "the type of stack is", type(stack)
         print "is instance of thstack?", isinstance(stack,rt.THStack)
         #stack.Scale(1./added_bkg_hists[key].Integral())
-        bkg_hist_stacks[key] = stack
+        old_bkg_hist_stacks[key] = stack
 
-
-#print added_hct_hists
-#print added_hut_hists
-# test print the stacks
-for key in bkg_hist_stacks.keys():
-    canvas, unc, aratios = phase2tdrStyle.draw([bkg_hist_stacks[key]],False,False,False)
-    phase2tdrStyle.drawCMS()
-    phase2tdrStyle.drawEnPu()
-    canvas.Print(outdir+'/bkg_stacktest_'+key+'.png')
 
 
 # plot and output them
@@ -198,19 +227,22 @@ for key in added_hct_hists.keys():
             True,False,False)
     phase2tdrStyle.drawCMS()
     phase2tdrStyle.drawEnPu()
+    bkg_hist_legends[key].Draw()
     canvas.Print(outdir+'/'+key+'_stack_hct.png')
 for key in added_hut_hists.keys():
     canvas, unc, aratios = phase2tdrStyle.draw([bkg_hist_stacks[key],added_hut_hists[key]],
             True,False,False)
     phase2tdrStyle.drawCMS()
     phase2tdrStyle.drawEnPu()
+    bkg_hist_legends[key].Draw()
     canvas.Print(outdir+'/'+key+'_stack_hut.png')
 
-# try plotting them manually instead of using phase2tdrstyle:
+# test out plotting the old bkg hist stacks
+for key in added_hut_hists.keys():
+    canvas, unc, aratios = phase2tdrStyle.draw([old_bkg_hist_stacks[key],added_hut_hists[key]],
+            True,False,False)
+    phase2tdrStyle.drawCMS()
+    phase2tdrStyle.drawEnPu()
+    bkg_hist_legends[key].Draw()
+    canvas.Print(outdir+'/old_'+key+'_stack_hut.png')
 
-# try plotting with tdrstyle
-#for key in added_bkg_hists.keys():
-#    canvas, unc, aratios = phase2tdrStyle.draw([added_bkg_hists[key]],True,False,False)
-#    phase2tdrStyle.drawCMS()
-#    phase2tdrStyle.drawEnPu()
-#    canvas.Print('tdr_test.png')
