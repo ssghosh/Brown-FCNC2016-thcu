@@ -10,6 +10,7 @@
     Maxchilds  = 4
     
     Samplesdir = root://cmseos.fnal.gov//store/user/snowmass/noreplica/DelphesFromLHE_333pre16hadd_2016Aug
+    $Samplesdir = root://cmseos.fnal.gov//store/user/snowmass/noreplica/DelphesFromLHE_342pre05hadd_2017Aug
 
 [config-end]
 
