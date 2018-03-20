@@ -53,12 +53,12 @@ print 'Starting submission'
 count=0
 
 dirList = [  # CHOOSE SAMPLES
-    'FCNC_eta_hut_top' ]
+    'TT_topHadronicDecay_eta_hut_LO_14TEV' ]
 
 for sample in dirList:
-    os.system('eos root://cmseos.fnal.gov/ mkdir -p '+outDir+sample+'_'+options.pileup)
-    os.system('eos root://cmseos.fnal.gov/ mkdir -p '+outDir+sample+'_'+options.pileup+'/metaData')
-    os.system('mkdir -p '+options.condorDir+sample+'_'+options.pileup)
+    os.system('eos root://cmseos.fnal.gov/ mkdir -p '+outDir+sample+'_'+options.pileup+'PU')
+    os.system('eos root://cmseos.fnal.gov/ mkdir -p '+outDir+sample+'_'+options.pileup+'PU/metaData')
+    os.system('mkdir -p '+options.condorDir+'/'+sample+'_'+options.pileup+'PU')
     relPath = sample
     #process = sample.split('-')[0]
     #if process == 'Bjj': process = 'Bjj-vbf'    
@@ -87,8 +87,11 @@ for sample in dirList:
         tempcount+=1
         if tempcount > 1: continue   # OPTIONAL: RUN A 1 JOB TEST
 
-        dict={'RUNDIR':runDir, 'RELPATH':relPath, 'PILEUP':options.pileup, 'QCUT':str(qcut), 'JETS':str(maxjets), 'INPUTDIR':inDir, 'FILENAME':rawfile, 'PROXY':proxyPath, 'OUTPUTDIR':outDir}
-        jdfName=options.condorDir+'/%(RELPATH)s_%(PILEUP)s/%(FILENAME)s.jdl'%dict
+        dict={'RUNDIR':runDir, 'RELPATH':relPath, 
+              'PILEUP':options.pileup, 'QCUT':str(qcut), 
+              'JETS':str(maxjets), 'INPUTDIR':inDir, 
+              'FILENAME':rawfile, 'PROXY':proxyPath, 'OUTPUTDIR':outDir}
+        jdfName=options.condorDir+'/%(RELPATH)s_%(PILEUP)sPU/%(FILENAME)s.jdl'%dict
         print jdfName
         jdf_current=open(jdfName,'w')
         jdf_tmpl=open('CondorConf.tmpl.condor')
@@ -107,7 +110,7 @@ for sample in dirList:
 
         jdf_current.close()
         jdf_tmpl.close()
-        os.chdir('%s/%s_%s'%(options.condorDir,relPath,options.pileup))
+        os.chdir('%s/%s_%sPU'%(options.condorDir,relPath,options.pileup))
         os.system('condor_submit %(FILENAME)s.jdl'%dict)
         os.system('sleep 0.5')                                
         os.chdir(runDir)
