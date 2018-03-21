@@ -40,7 +40,7 @@ eval `scram runtime -sh`
 cd -
 
 echo "xrdcp source tarball and pileup file"
-xrdcp -f root://cmseos.fnal.gov//store/user/ssghosh/Delphes342pre12.tar .
+xrdcp -f root://cmseos.fnal.gov//store/user/ssghosh/FCNC/Delphes342pre12.tar .
 XRDEXIT=$?
 if [[ $XRDEXIT -ne 0 ]]; then
     echo "exit code $XRDEXIT, failure in xrdcp of Delphes.tar"
