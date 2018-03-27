@@ -53,7 +53,15 @@ print 'Starting submission'
 count=0
 
 dirList = [  # CHOOSE SAMPLES
-    'TT_topHadronicDecay_eta_hut_LO_14TEV' ]
+    'TT_topHadronicDecay_eta_hut_LO_14TEV',
+    'TT_antitopHadronicDecay_eta_hct_LO_14TEV',
+    'TT_antitopHadronicDecay_eta_hut_LO_14TEV',
+    'TT_antitopLeptonicDecay_eta_hct_LO_14TEV',
+    'TT_antitopLeptonicDecay_eta_hut_LO_14TEV', 
+    'TT_topHadronicDecay_eta_hct_LO_14TEV',
+    'TT_topLeptonicDecay_eta_hct_LO_14TEV',
+    'TT_topLeptonicDecay_eta_hut_LO_14TEV']
+ 
 
 for sample in dirList:
     os.system('eos root://cmseos.fnal.gov/ mkdir -p '+outDir+sample+'_'+options.pileup+'PU')
@@ -84,7 +92,7 @@ for sample in dirList:
         rawfile = file[:-7]
 
         count+=1
-        tempcount+=1
+        #tempcount+=1
         if tempcount > 1: continue   # OPTIONAL: RUN A 1 JOB TEST
 
         dict={'RUNDIR':runDir, 'RELPATH':relPath, 
