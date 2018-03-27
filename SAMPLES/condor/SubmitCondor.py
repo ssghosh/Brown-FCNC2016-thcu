@@ -29,6 +29,10 @@ parser.add_option('--wdecay',      action='store',  dest='w_decay',     default=
 (options, args) = parser.parse_args()
 print ">>> options.homeoutpath is " + options.homeoutpath
 
+print ">>> getting proxy"
+proxyPath = os.popen('voms-proxy-info -path')
+proxyPath = proxyPath.readline().strip()
+
 # check that we have a CMSSW tarball available
 cmssw_loc = "root://cmseos.fnal.gov:///store/user/%s/FCNC/"%(user)
 cmssw_vers = os.environ['CMSSW_VERSION']
@@ -51,8 +55,9 @@ randomseed = int(random.uniform(1,1000000))
 for i in range(nJobs):
     if not os.path.isdir(options.homeoutpath):
         os.system("mkdir -p "+options.homeoutpath)
-    current_basename = 'FCNC_' + options.decayMode + '_' + options.decayQk + 'Decay_' + str(i)
+    current_basename = 'TT_' + options.decayQk + options.w_decay + 'Decay_' + options.decayMode + '_LO_14TEV_' + str(i)
     current_name = options.homeoutpath + current_basename 
+    print ">>> current_name is", current_name
     current_conf = open(current_name + '.condor', 'w')
     current_shel = open(current_name + '.sh', 'w')
 
@@ -83,8 +88,8 @@ for i in range(nJobs):
             line = line.replace('OUTPUT_PATH',   options.homeoutpath)
         if 'EOS_OUTDIRPATH'    in line: 
             line = line.replace('EOS_OUTDIRPATH',options.eosoutpath)
-        if 'SUFFIX'        in line: 
-            line = line.replace('SUFFIX',        str(i))
+        if 'BASENAME'        in line: 
+            line = line.replace('BASENAME',        current_basename)
         #if 'FILE'        in line: line = line.replace('FILE',        files[i].split('.')[0])
         #if 'NAME'        in line: line = line.replace('NAME',        files[i].split('.')[0] + "_%i"%j)
         #if 'ANASUBLOC'   in line: line = line.replace('ANASUBLOC',   options.anaSubLoc)
@@ -102,11 +107,12 @@ for i in range(nJobs):
     conf_tmpl = open('CondorConf.tmpl.condor')
     for line in conf_tmpl:
         if 'OUTPUT_PATH' in line: 
-            print ">>> line was " + line
+            #print ">>> line was " + line
             line = line.replace('OUTPUT_PATH', options.homeoutpath)
-            print ">>> line is now " + line
+            #print ">>> line is now " + line
         if 'NAME'        in line: line = line.replace('NAME',        current_basename)
         if 'USER'        in line: line = line.replace('USER',        os.environ["USER"])
+        if 'PROXY'       in line: line = line.replace('PROXY',       proxyPath)
 
         current_conf.write(line)
 
@@ -117,7 +123,8 @@ for i in range(nJobs):
 
 # run jobs
 for i in range(nJobs):
-    current_name = options.homeoutpath+'/FCNC_' + options.decayMode + '_' + options.decayQk + 'Decay_' + str(i)
+    current_name = options.homeoutpath+'TT_' + options.decayQk + options.w_decay + 'Decay_' + options.decayMode + '_LO_14TEV_' + str(i)
+    #current_name = options.homeoutpath+'/FCNC_' + options.decayMode + '_' + options.decayQk + 'Decay_' + str(i)
     #os.system('mkdir -p .' + options.outdirpath)
     #os.chdir('.' + options.outdirpath)
     print "about to submit job"

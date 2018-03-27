@@ -1,3 +1,4 @@
+x509userproxy = PROXY
 universe = vanilla
 Executable = OUTPUT_PATH/NAME.sh
 Should_Transfer_Files = YES
