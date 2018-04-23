@@ -20,6 +20,7 @@ public:
 
 private:
 	void analyze(size_t id);
+        void postProcess(){}
 
 
 };

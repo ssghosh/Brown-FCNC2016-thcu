@@ -8,6 +8,17 @@
 #include "interface/preselection.h"
 #include <cmath>
 
+float DeltaR(float eta1, float phi1, float eta2, float phi2) {
+
+    float dR=0.;
+    float deta = std::fabs(eta1-eta2);
+    float dphi = std::fabs(phi1-phi2);
+    if(dphi>3.14159) dphi = 2.*3.14159-dphi;
+    dR=std::sqrt(deta*deta+dphi*dphi);
+
+    return dR;
+}
+
 void preselection::analyze(size_t childid /* this info can be used for printouts */){
 
     /*
@@ -36,7 +47,8 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
      */
     d_ana::dBranchHandler<Electron>  elecs(tree(),"Electron");
     d_ana::dBranchHandler<Muon>      muons(tree(),"MuonTight");
-    d_ana::dBranchHandler<Jet>       jets( tree(),"Jet");
+    d_ana::dBranchHandler<Jet>       jets( tree(),"JetPUPPI");
+    d_ana::dBranchHandler<MissingET> mets( tree(),"PuppiMissingET");
     
 
     /* ==SKIM==
@@ -112,10 +124,13 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
     TH1 *totals = addPlot(new TH1I("totals", "Events by Category", 8, 0, 8), "Category", "Events");
 
     // kinematic variables plots
-    TH1 *lepton_pt = addPlot(new TH1F("lep_pt", "Light lepton p_{T}", 30, 20, 100), "p_{T} / 2.6 GeV", "Number");
+    TH1 *lepton_pt = addPlot(new TH1F("lep_pt", "Light lepton p_{T}", 30, 20, 100), "p_{T}", "Number");
     TH1 *lepton_eta = addPlot(new TH1F("lep_eta", "Light lepton #eta", 20, -2.5, 2.5), "#eta", "Number");
-    TH1 *tau_pt = addPlot(new TH1F("tau_pt", "Tau p_{T}", 30, 20, 100), "p_{T} / 2.6 GeV", "Number"); 
+    TH1 *tau_pt = addPlot(new TH1F("tau_pt", "Tau p_{T}", 30, 20, 100), "p_{T}", "Number"); 
     TH1 *tau_eta = addPlot(new TH1F("tau_eta", "Tau #eta", 20, -2.5, 2.5), "#eta", "Number");
+    TH1 *bjet_sep12 = addPlot(new TH1F("bjet_sep12", "DeltaR b/w bjet 1 and 2", 10, 0, 5), "#Delta R", "Number");
+    TH1 *met = addPlot(new TH1F("met", "MET", 50, 0, 200), "MET (GeV)", "Number");
+    //TH1 *tau_eta = addPlot(new TH1F("tau_eta", "Tau #eta", 20, -2.5, 2.5), "#eta", "Number");
     
     totals->GetXaxis()->SetBinLabel(1, "ee4j"        );          
     totals->GetXaxis()->SetBinLabel(2, "ee#geq5j"    );
@@ -135,6 +150,7 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
     //mmgte5j->Fill(0.5);
     //lll->Fill(0.5);
     //llt->Fill(0.5);
+    std::cout << "Number of events: " << nevents << std::endl;
     for(size_t eventno=0;eventno<nevents;eventno++){
         /*
          * The following two lines report the status and set the event link
@@ -183,14 +199,24 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
             lepton_eta->Fill(elecEta);
         }
 
+        for(size_t i=0;i<mets.size();i++){
+            MissingET *missinget = (MissingET*) mets.at(i);
+            met->Fill(missinget->MET);
+        }
+            
+            
+        std::vector<Jet*> bjets;
         for(size_t i=0;i<jets.size();i++){
-            bool isTau = jets.at(i)->TauTag > 0;
-            bool isBJet = (jets.at(i)->BTag>>2) & 0x1;
-            tauPt=jets.at(i)->PT;
-            tauEta=jets.at(i)->Eta;
+            Jet *jet = (Jet*) jets.at(i);
+            bool isTau = jet->TauTag > 0;
+            bool isBJet = (jet->BTag) & 0x1;
+            tauPt=jet->PT;
+            tauEta=jet->Eta;
             if(!isTau) {
                 if (tauPt > 25 && std::abs(tauEta) < 2.5){
-                   nBJets = ((isBJet) ? nBJets + 1 : nBJets);
+                   if(isBJet){
+                       nBJets += 1;
+                       bjets.push_back(jet); }
                    nJets++;
                    continue;
                 } 
@@ -201,6 +227,25 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
             tau_eta->Fill(tauEta);
             nTaus++;
         } 
+
+        // calculate deltaR between leading and subleading bjet
+        for(size_t i=0;i<bjets.size();i++){
+            if (bjets.size()>1) {
+                //std::cout << "2 or more bjets!" << std::endl;
+                Jet *bjet1 = bjets.at(0);
+                Jet *bjet2 = bjets.at(1);
+                float eta1 = bjet1->Eta;
+                float phi1 = bjet1->Phi;
+                float eta2 = bjet2->Eta;
+                float phi2 = bjet2->Phi;
+                float dr = DeltaR(eta1,phi1,eta2,phi2);
+                bjet_sep12->Fill(dr);
+            }
+        }
+
+        
+                
+                
         
 
         // PRESEL: Must have at least 1 lepton and 1 B jets
