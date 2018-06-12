@@ -1,14 +1,17 @@
 [config-begin]
 
     Outputdir  = full_outputs
-    Outputfile = signal_output.root
+    Outputfile = signal_output_200PU.root
     Lumi       = 3000000
     
     Testmode   = false 
 
     Maxchilds  = 4
     $Samplesdir = root://eoscms.cern.ch//eos/cms/store/group/upgrade/delphes_output/DelphesFromLHE_333pre16_2016Aug/ 
-    Samplesdir = root://cmseos.fnal.gov//store/user/snowmass/noreplica/DelphesFromLHE_333pre16hadd_2016Aug/FCNC_signal/
+    $Samplesdir = root://cmseos.fnal.gov//store/user/snowmass/noreplica/DelphesFromLHE_333pre16hadd_2016Aug/FCNC_signal/
+    $Samplesdir = root://cmseos.fnal.gov//store/user/ssghosh/FCNC_signal_samples/DelphesFromLHE_342pre05_2018Apr/
+    Samplesdir = root://cmseos.fnal.gov//store/user/ssghosh/FCNC_signal_samples/DelphesFromLHE_342pre15_2018Jun/
+
 
 
 [config-end]
@@ -17,14 +20,14 @@
 [inputfiles-begin]
 
 $   0PU
-$ TT_antitopHadronicDecay_eta_hct_LO_14TEV_0PU/     , TT_aThadronic_eta_hct, 2, 65.65372  , auto, 13, true
-$ TT_antitopHadronicDecay_eta_hut_LO_14TEV_0PU/     , TT_aThadronic_eta_hut, 3, 65.66524  , auto, 14, true
-$ TT_antitopLeptonicDecay_eta_hct_LO_14TEV_0PU/     , TT_aTleptonic_eta_hct, 4, 31.46717  , auto, 15, true
-$ TT_antitopLeptonicDecay_eta_hut_LO_14TEV_0PU/     , TT_aTleptonic_eta_hut, 5, 31.47269  , auto, 16, true
-$ TT_topHadronicDecay_eta_hct_LO_14TEV_0PU/         , TT_Thadronic_eta_hct,  6, 65.65372  , auto, 17, true
-$ TT_topHadronicDecay_eta_hut_LO_14TEV_0PU/         , TT_Thadronic_eta_hut,  7, 65.66524  , auto, 18, true
-$ TT_topLeptonicDecay_eta_hct_LO_14TEV_0PU/         , TT_Tleptonic_eta_hct,  8, 31.46717  , auto, 19, true
-$ TT_topLeptonicDecay_eta_hut_LO_14TEV_0PU/         , TT_Tleptonic_eta_hut,  9, 31.47269  , auto, 20, true
+$TT_antitopHadronicDecay_eta_hct_LO_14TEV_0PU/     , TT_aThadronic_eta_hct, 2, 65.65372  , auto, 13, true
+$TT_antitopHadronicDecay_eta_hut_LO_14TEV_0PU/     , TT_aThadronic_eta_hut, 3, 65.66524  , auto, 14, true
+$TT_antitopLeptonicDecay_eta_hct_LO_14TEV_0PU/     , TT_aTleptonic_eta_hct, 4, 31.46717  , auto, 15, true
+$TT_antitopLeptonicDecay_eta_hut_LO_14TEV_0PU/     , TT_aTleptonic_eta_hut, 5, 31.47269  , auto, 16, true
+$TT_topHadronicDecay_eta_hct_LO_14TEV_0PU/         , TT_Thadronic_eta_hct,  6, 65.65372  , auto, 17, true
+$TT_topHadronicDecay_eta_hut_LO_14TEV_0PU/         , TT_Thadronic_eta_hut,  7, 65.66524  , auto, 18, true
+$TT_topLeptonicDecay_eta_hct_LO_14TEV_0PU/         , TT_Tleptonic_eta_hct,  8, 31.46717  , auto, 19, true
+$TT_topLeptonicDecay_eta_hut_LO_14TEV_0PU/         , TT_Tleptonic_eta_hut,  9, 31.47269  , auto, 20, true
 
 $ 200PU
 $ ensure the legend ordering is consistent across all config files

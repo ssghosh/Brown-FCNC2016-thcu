@@ -87,7 +87,7 @@ tt-4p-2500-100000-v1510_14TEV_200PU/ , tt4p,     28, 0.05449 , auto, 11
 ttB-4p-0-900-v1510_14TEV_200PU/       , ttB4p,       38, 2.6673    , auto, 12
 ttB-4p-900-1600-v1510_14TEV_200PU/    , ttB4p,       38, 0.2504    , auto, 12
 ttB-4p-1600-2500-v1510_14TEV_200PU/   , ttB4p,       38, 0.0237    , auto, 12
-ttB-4p-2500-100000-v1510_14TEV_200PU/ , ttB4p,       38, 0.002088  , auto, 12
+$ttB-4p-2500-100000-v1510_14TEV_200PU/ , ttB4p,       38, 0.002088  , auto, 12
 
 
 [inputfiles-end]
