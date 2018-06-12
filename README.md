@@ -1,7 +1,7 @@
 # Brown-FCNC2016-thcu
 Codebase for Brown's analysis of Flavor-Changing Neutral Currents: measuring the branching fraction for t->H(c/u) decays.
 
-##Setup Area (LXPLUS):
+## Setup Area (LXPLUS):
 
 Setting up only needs to be done once:
 
@@ -12,16 +12,13 @@ Setting up only needs to be done once:
    $ cmsenv
    $ cd ~
    $ git clone https://github.com/ssghosh/Brown-FCNC2016-thcu.git
-   $ source env.sh
+   $ cd Brown-FCNC2016-thcu/SAMPLES
 ```
+Open the file ```env.sh``` and change the ```DANALYSISPATH```, ```LD_LIBRARY_PATH```, and ```PATH``` variables to reflect your home directory structure, DAnalysis installation path, and username. Then ```source env.sh``` to finish setting up the environment.
 
-For each fresh logon to LXPLUS, source the environment script:
+For each fresh logon to LXPLUS, run ```source env.sh``` before running anything in the repo.
 
-```
-   $ source env.sh
-```
-
-##Setup Area (LPC):
+## Setup Area (LPC):
 
 In order to run the analyzer on LPC, you must install the DAnalysis framework locally:
 
@@ -39,7 +36,6 @@ In order to run the analyzer on LPC, you must install the DAnalysis framework lo
    $ make HAS_PYTHIA8=true
    $ make HAS_PYTHIA8=true DelphesPythia8
    $ cd ../DAnalysis
-   $ source env.sh
    $ make
    $ make
 ```
@@ -54,9 +50,11 @@ Then,
    $ git clone https://github.com/ssghosh/Brown-FCNC2016-thcu.git
 ```
 
-Before running ```source env.sh``` in this situation, you must open the file and change the variables DANALYSISPATH, LD_LIBRARY_PATH, and PATH to reflect the different home directory structure of LPC.
+Open the file ```env.sh``` and change the ```DANALYSISPATH```, ```LD_LIBRARY_PATH```, and ```PATH``` variables to reflect your home directory structure, DAnalysis installation path, and username. Then ```source env.sh``` to finish setting up the environment.
 
-##Running Sample Generation:
+For each fresh logon to LPC, run ```source env.sh``` before running anything in the repo.
+
+## Running Sample Generation:
 
 Sample generation is performed with the DAnalysis framework (by Kieseler, J., Caillol, C., and E. Coleman). 
 
@@ -69,4 +67,4 @@ Sample generation is performed with the DAnalysis framework (by Kieseler, J., Ca
 
 ##Running Analysis: 
 
-The statistical analysis is performed using the Theta suite.
+The statistical analysis is performed using the Higgs Combine framework.
