@@ -48,6 +48,8 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
     d_ana::dBranchHandler<Electron>  elecs(tree(),"Electron");
     d_ana::dBranchHandler<Muon>      muons(tree(),"MuonTight");
     d_ana::dBranchHandler<Jet>       jets( tree(),"JetPUPPI");
+    //d_ana::dBranchHandler<Jet>       taus( tree(),"Jet");
+    //d_ana::dBranchHandler<Jet>       nonpuppijets(tree(),"Jet");
     d_ana::dBranchHandler<MissingET> mets( tree(),"PuppiMissingET");
     
 
@@ -85,6 +87,9 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
     Int_t   naMuons=0;
     Int_t     nTaus=0;
     Int_t     nJets=0;
+    Int_t    nElecPt=0;
+    Int_t nMuonPt=0;
+    Int_t nTauPt=0;
     Double_t elecPt=0;
     Double_t muonPt=0;
     Double_t  tauPt=0;
@@ -107,21 +112,27 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
     Int_t mmgte5jcounter = 0;
     Int_t lllcounter = 0;
     Int_t lltcounter = 0;
-    Int_t nTauTest = 0;
 
     TH1 *data_obs = addPlot(new TH1I("data_obs", "Observed yields", 1, 0, 1), "Category", "Events");
     
-    TH1 *ee4j = addPlot(new TH1I("ee4j", "2 electrons + 4 jets", 1, 0, 1), "Category", "Events");
-    TH1 *eegte5j = addPlot(new TH1I("eegte5j", "2 electrons + #geq 5 jets", 1, 0, 1), "Category", "Events");
-    TH1 *em4j = addPlot(new TH1I("em4j", "1 electron + 1 muon + 4 jets", 1, 0, 1), "Category", "Events");
-    TH1 *emgte5j = addPlot(new TH1I("emgte5j", "1 electron + 1 muon + #geq 5 jets", 1, 0, 1), "Category", "Events");
-    TH1 *mm4j = addPlot(new TH1I("mm4j", "2 muons + 4 jets", 1, 0, 1), "Category", "Events");
-    TH1 *mmgte5j = addPlot(new TH1I("mmgte5j", "2 muons + #gte 5 jets", 1, 0, 1), "Category", "Events");
-    TH1 *lll = addPlot(new TH1I("lll", "3 leptons", 1, 0, 1), "Category", "Events");
-    TH1 *llt = addPlot(new TH1I("llt", "2 leptons + 1 #tau", 1, 0, 1), "Category", "Events");
+    TH1 *ee4j = addPlot(new TH1F("ee4j", "2 electrons + 4 jets", 1, 0, 1), "Category", "Events");
+    TH1 *eegte5j = addPlot(new TH1F("eegte5j", "2 electrons + #geq 5 jets", 1, 0, 1), "Category", "Events");
+    TH1 *em4j = addPlot(new TH1F("em4j", "1 electron + 1 muon + 4 jets", 1, 0, 1), "Category", "Events");
+    TH1 *emgte5j = addPlot(new TH1F("emgte5j", "1 electron + 1 muon + #geq 5 jets", 1, 0, 1), "Category", "Events");
+    TH1 *mm4j = addPlot(new TH1F("mm4j", "2 muons + 4 jets", 1, 0, 1), "Category", "Events");
+    TH1 *mmgte5j = addPlot(new TH1F("mmgte5j", "2 muons + #gte 5 jets", 1, 0, 1), "Category", "Events");
+    TH1 *lll = addPlot(new TH1F("lll", "3 leptons", 1, 0, 1), "Category", "Events");
+    TH1 *llt = addPlot(new TH1F("llt", "2 leptons + 1 #tau", 1, 0, 1), "Category", "Events");
 
     // produce an additional hist which contains all the events binned by category    
-    TH1 *totals = addPlot(new TH1I("totals", "Events by Category", 8, 0, 8), "Category", "Events");
+    TH1 *totals = addPlot(new TH1F("totals", "Events by Category", 8, 0, 8), "Category", "Events");
+
+    // cut flow hist
+    TH1 *cutFlow_ee4j = addPlot(new TH1F("cutFlow_ee4j", "ee4j Cut Flow", 0, 0, 0), "Cut", "Events");
+    cutFlow_ee4j->SetCanExtend(TH1::kAllAxes);
+    TH1 *cutFlow_llt = addPlot(new TH1F("cutFlow_llt", "llt Cut Flow", 0, 0, 0), "Cut", "Events");
+    cutFlow_llt->SetCanExtend(TH1::kAllAxes);
+
 
     // kinematic variables plots
     TH1 *lepton_pt = addPlot(new TH1F("lep_pt", "Light lepton p_{T}", 30, 20, 100), "p_{T}", "Number");
@@ -165,6 +176,9 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
         naMuons=0;
         nTaus =0; 
         nJets =0;
+        nElecPt =0;
+        nMuonPt=0;
+        nTauPt=0;
         Double_t nBJets=0; //needs to be reset each loop
 
         /*
@@ -180,6 +194,7 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
             if(elecPt < 25 || std::abs(elecEta) > 2.4) {
                 continue;
             }
+            nElecPt++;
             if (elecCharge == -1) nElecs++;
             if (elecCharge == 1) naElecs++;
             lepton_pt->Fill(elecPt);
@@ -193,6 +208,7 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
             if(muonPt < 25 || std::abs(muonEta) > 2.5) {
                 continue;
             }
+            nMuonPt++;
             if (muonCharge == -1) nMuons++;
             if (muonCharge == 1) naMuons++;
             lepton_pt->Fill(elecPt);
@@ -206,8 +222,11 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
             
             
         std::vector<Jet*> bjets;
+        //std::cout << "jets has " << jets.size() << " elements" << std::endl;
+        //std::cout << "nonpuppijets has " << nonpuppijets.size() << " elements" << std::endl;
         for(size_t i=0;i<jets.size();i++){
             Jet *jet = (Jet*) jets.at(i);
+            //Jet *nonpuppijet = (Jet*) nonpuppijets.at(i);
             bool isTau = jet->TauTag > 0;
             bool isBJet = (jet->BTag) & 0x1;
             tauPt=jet->PT;
@@ -223,10 +242,27 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
                 continue;
             }
             if (tauPt < 24 || tauEta > 2.5) continue; 
+            nTauPt++;
             tau_pt->Fill(tauPt);
             tau_eta->Fill(tauEta);
             nTaus++;
         } 
+
+        // use the regular jet collection as a tau collection
+        //for (size_t i=0; i < taus.size(); i++) {
+        //    Jet *jet = (Jet*) taus.at(i);
+        //    bool isTau = jet->TauTag > 0;
+        //    if (isTau) {
+        //        tauPt = jet->PT;
+        //        tauEta = jet->Eta;
+        //        if (tauPt < 24 || tauEta > 2.5) continue;
+        //        tau_pt->Fill(tauPt);
+        //        tau_eta->Fill(tauEta);
+        //        nTaus++;
+        //    }
+        //}
+
+
 
         // calculate deltaR between leading and subleading bjet
         for(size_t i=0;i<bjets.size();i++){
@@ -252,28 +288,60 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
         if(nElecs + nMuons + nTaus < 1) continue;
         if (nBJets < 1) continue;
 
+        // Cut flow for ee4j
+        cutFlow_ee4j->Fill("total",1);
+        if (nElecPt >= 2) {
+            cutFlow_ee4j->Fill("nElec>=2,pT>25,eta<2.4",1);
+            if (nJets >= 4) {
+                cutFlow_ee4j->Fill("nJets>=4,pT>25,eta<2.5",1);
+                if (nBJets >= 1) {
+                    cutFlow_ee4j->Fill("nBJets>=1,pT>25,eta<2.5",1);
+                    if (nTaus == 0) {
+                        cutFlow_ee4j->Fill("no taus",1);
+                        if (nElecs == 2 || naElecs == 2) {
+                            cutFlow_ee4j->Fill("exactly 2 SS elecs",1);
+                            if (nJets == 4) {
+                                cutFlow_ee4j->Fill("exactly 4 jets",1);
+                            }}}}}}
+        cutFlow_ee4j->LabelsDeflate();
+        cutFlow_ee4j->LabelsOption("u");
+
+        // Cut flow for llt
+        cutFlow_llt->Fill("total",1);
+        if (nElecPt >= 2 || nMuonPt >= 2) {
+            cutFlow_llt->Fill("nElec>=2,pT>25,eta<2.4||nMuon>=2,pT>25,eta<2.5",1);
+            if (nJets >= 4) {
+                cutFlow_llt->Fill("nJets>=4,pT>25,eta<2.5",1);
+                if (nBJets >= 1) {
+                    cutFlow_llt->Fill("nBJets>=1,pT>25,eta<2.5",1);
+                    if (((nElecs + nMuons) == 2) ^ ((naMuons + naElecs) == 2)) {
+                        cutFlow_llt->Fill("exactly 2 SS light leps",1);
+                        if (nTaus >= 1) {
+                            cutFlow_llt->Fill("exactly 1 tau",1);
+                        }}}}}
+
         // Output channel counts and fills
-        if ((nElecs == 2 || naElecs == 2) && nTaus == 0 && nJets == 4) {
+        if ((nElecs == 2 || naElecs == 2) && nTaus == 0 && nJets == 4 && nBJets >= 1) {
            ee4jcounter++;
            ee4j->Fill(0.5);
            totals->Fill("ee4j", 1); }
-        if ((nElecs == 2 || naElecs == 2) && nTaus == 0 && nJets >= 5) {
+        if ((nElecs == 2 || naElecs == 2) && nTaus == 0 && nJets >= 5 && nBJets >= 1) {
             eegte5jcounter++;
             eegte5j->Fill(0.5);
             totals->Fill("ee#geq5j", 1); }
-        if (((nElecs + nMuons) == 2 || (naElecs + naMuons) == 2) && nJets == 4) {
+        if (((nElecs + nMuons) == 2 || (naElecs + naMuons) == 2) && nJets == 4 && nBJets >= 1) {
             em4jcounter++;
             em4j->Fill(0.5);
             totals->Fill("e#mu4j", 1); }
-        if (((nElecs + nMuons) == 2 || (naElecs + naMuons) == 2) && nJets >= 5) {
+        if (((nElecs + nMuons) == 2 || (naElecs + naMuons) == 2) && nJets >= 5 && nBJets >= 1) {
             emgte5jcounter++;
             emgte5j->Fill(0.5); 
             totals->Fill("e#mu#geq5j", 1);}
-        if ((nMuons == 2 || naMuons == 2) && nJets == 4) {
+        if ((nMuons == 2 || naMuons == 2) && nJets == 4 && nBJets >= 1) {
             mm4jcounter++;
             mm4j->Fill(0.5); 
             totals->Fill("#mu#mu4j", 1);}
-        if ((nMuons == 2 || naMuons == 2) && nJets >= 5) {
+        if ((nMuons == 2 || naMuons == 2) && nJets >= 5 && nBJets >= 1) {
             mmgte5jcounter++;
             mmgte5j->Fill(0.5); 
             totals->Fill("#mu#mu#geq5j", 1);}
@@ -295,7 +363,6 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
     std::cout << "Number of mumu>=5j: " << mmgte5jcounter << std::endl; 
     std::cout << "Number of 3l: " << lllcounter << std::endl; 
     std::cout << "Number of llt: " << lltcounter << std::endl; 
-    std::cout << "Number of taus: " << nTauTest << std::endl;
     /*
      * Must be called in the end, takes care of thread-safe writeout and
      * call-back to the parent process
