@@ -34,7 +34,14 @@ infiledir = 'full_outputs'
 siginfilename = 'signal_output.root'
 bkginfilename = 'bkg_output.root'
 # dict with hist names as keys for the title of each hist
-hists = {'lep_pt' : 'lepton pT','lep_eta' : 'lepton eta','bjet_sep12' : 'bjet 1 & 2 #Delta R'}
+hists = {'lep_pt' : 'lepton pT',
+         'lep_eta' : 'lepton eta',
+         'bjet_sep12' : 'bjet 1 & 2 #Delta R'}
+sig_hists = {'lep_pt' : 'lepton pT',
+         'lep_eta' : 'lepton eta',
+         'bjet_sep12' : 'bjet 1 & 2 #Delta R',
+         'cutFlow_ee4j' : 'ee4j cut flow',
+         'cutFlow_llt' : 'llt cut flow'}
 outdir = 'plotter_test'
 
 hct_dirs = ['d_TT_aThadronic_eta_hct',
@@ -59,18 +66,18 @@ siginfile = rt.TFile(infiledir+'/'+siginfilename)
 bkginfile = rt.TFile(infiledir+'/'+bkginfilename)
 
 # build dicts of the histograms from each directory
-hct_hists = {name:[] for name in hists}
-hut_hists = {name:[] for name in hists}
+hct_hists = {name:[] for name in sig_hists}
+hut_hists = {name:[] for name in sig_hists}
 bkg_hists = {name:[] for name in hists}
 bkg_hist_dicts = {name:{} for name in hists}
 for key in siginfile.GetListOfKeys():
     name = key.GetName()
     if name in hct_dirs:
-        for h in hists.keys():
+        for h in sig_hists.keys():
             hist = siginfile.Get(name+'/'+h)
             hct_hists[h].append(hist.Clone())
     elif name in hut_dirs:
-        for h in hists:
+        for h in sig_hists.keys():
             hist = siginfile.Get(name+'/'+h)
             hut_hists[h].append(hist.Clone())
     else:
@@ -99,7 +106,7 @@ if all([item for item in hct_hists.values()]):
         hist1 = hct_hists[key][0].Clone()
         for hist2 in hct_hists[key][1:]:
             hist1.Add(hist2)
-        hist1.SetTitle("Hct " + hists[key])
+        hist1.SetTitle("Hct " + sig_hists[key])
         hist1.SetLineColor(1)
         hist1.SetLineStyle(7)
         hist1.SetLineWidth(2)
@@ -114,7 +121,7 @@ if all([item for item in hut_hists.values()]):
         hist1 = hut_hists[key][0].Clone()
         for hist2 in hut_hists[key][1:]:
             hist1.Add(hist2)
-        hist1.SetTitle("Hut " + hists[key])
+        hist1.SetTitle("Hut " + sig_hists[key])
         hist1.SetLineColor(1)
         hist1.SetLineStyle(7)
         hist1.SetLineWidth(2)
@@ -206,12 +213,12 @@ if all([item for item in bkg_hists.values()]):
 
 # plot and output them
 for key in added_hct_hists.keys():
-    canvas, unc, aratios = phase2tdrStyle.draw([added_hct_hists[key]],True,False,False)
+    canvas, unc, aratios = phase2tdrStyle.draw([added_hct_hists[key]],True,False,True)
     phase2tdrStyle.drawCMS()
     phase2tdrStyle.drawEnPu()
     canvas.Print(outdir+'/hct_'+key+'.png')
 for key in added_hut_hists.keys():
-    canvas, unc, aratios = phase2tdrStyle.draw([added_hut_hists[key]],True,False,False)
+    canvas, unc, aratios = phase2tdrStyle.draw([added_hut_hists[key]],True,False,True)
     phase2tdrStyle.drawCMS()
     phase2tdrStyle.drawEnPu()
     canvas.Print(outdir+'/hut_'+key+'.png')
