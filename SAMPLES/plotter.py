@@ -26,23 +26,29 @@ colors12.append(rt.TColor.GetColor(106,61,154)) # dark purple
 colors12.append(rt.TColor.GetColor(255,255,153)) # yellow
 colors12.append(rt.TColor.GetColor(177,89,40)) # brown
 
-
+# user-specified settings
 H = 600
 W = 800
 infiledir = 'full_outputs'
-#infilename = 'bkg_output.root'
-siginfilename = 'signal_output.root'
-bkginfilename = 'bkg_output.root'
-# dict with hist names as keys for the title of each hist
-hists = {'lep_pt' : 'lepton pT',
-         'lep_eta' : 'lepton eta',
-         'bjet_sep12' : 'bjet 1 & 2 #Delta R'}
-sig_hists = {'lep_pt' : 'lepton pT',
-         'lep_eta' : 'lepton eta',
-         'bjet_sep12' : 'bjet 1 & 2 #Delta R',
-         'cutFlow_ee4j' : 'ee4j cut flow',
-         'cutFlow_llt' : 'llt cut flow'}
 outdir = 'plotter_test'
+siginfilename = 'signal_output_200PU.root'
+bkginfilename = 'bkg_output.root'
+
+# dict with hist names as keys for the title of each hist
+bkg_hist_titles = {'lep_pt' : 'lepton pT',
+                   'lep_eta' : 'lepton eta',
+                   'bjet_sep12' : 'bjet 1 & 2 #Delta R'}
+sig_hists = {'lep_pt' : 'lepton pT',
+             'lep_eta' : 'lepton eta',
+             'bjet_sep12' : 'bjet 1 & 2 #Delta R',
+             'cutFlow_ee4j' : 'ee4j cut flow',
+             'cutFlow_eegte5j' : 'eegte5j cut flow',
+             'cutFlow_em4j' : 'em4j cut flow',
+             'cutFlow_emgte5j' : 'emgte5j cut flow',
+             'cutFlow_mm4j' : 'mm4j cut flow',
+             'cutFlow_mmgte5j' : 'mmgte5j cut flow',
+             'cutFlow_lll' : 'lll cut flow',
+             'cutFlow_llt' : 'llt cut flow'}
 
 hct_dirs = ['d_TT_aThadronic_eta_hct',
             'd_TT_Thadronic_eta_hct',
@@ -68,8 +74,8 @@ bkginfile = rt.TFile(infiledir+'/'+bkginfilename)
 # build dicts of the histograms from each directory
 hct_hists = {name:[] for name in sig_hists}
 hut_hists = {name:[] for name in sig_hists}
-bkg_hists = {name:[] for name in hists}
-bkg_hist_dicts = {name:{} for name in hists}
+bkg_hists = {name:[] for name in bkg_hist_titles}
+bkg_hist_dicts = {name:{} for name in bkg_hist_titles}
 for key in siginfile.GetListOfKeys():
     name = key.GetName()
     if name in hct_dirs:
@@ -86,7 +92,7 @@ for key in siginfile.GetListOfKeys():
 for key in bkginfile.GetListOfKeys():
     name = key.GetName()
     if name in bkg_dirs:
-        for h in hists:
+        for h in bkg_hist_titles:
             hist = bkginfile.Get(name+'/'+h)
             bkg_hists[h].append(hist.Clone())
             bkg_hist_dicts[h][name[2:]] = hist.Clone()
@@ -133,7 +139,7 @@ if all([item for item in bkg_hists.values()]):
         hist1 = bkg_hists[key][0].Clone()
         for hist2 in bkg_hists[key][1:]:
             hist1.Add(hist2)
-        hist1.SetTitle("Background " + hists[key])
+        hist1.SetTitle("Background " + bkg_hist_titles[key])
         # normalize:
         #print ">>> bkg hist integral was " + str(hist1.Integral())
         total_added_bkg_hists[key] = hist1.Clone()
@@ -155,7 +161,7 @@ if all([item for item in bkg_hists.values()]):
         hist0_binwidth_str = "{:.2f}".format(hist0_binwidth)
         hist0_xtitle = hist0.GetXaxis().GetTitle()
         hist0_ytitle = hist0.GetYaxis().GetTitle()
-        stack = rt.THStack(key,hists[key]+";"+hist0_xtitle+";"
+        stack = rt.THStack(key,bkg_hist_titles[key]+";"+hist0_xtitle+";"
                 +hist0_ytitle+" / "+hist0_binwidth_str)
         accumulator = 0.
         for idx, name in enumerate(bkg_hist_dicts[key].keys()):
@@ -177,40 +183,6 @@ if all([item for item in bkg_hists.values()]):
         #stack.Scale(1./added_bkg_hists[key].Integral())
         bkg_hist_stacks[key] = stack
 
-# here's how we were doing these previously
-old_bkg_hist_stacks = {}
-if all([item for item in bkg_hists.values()]):
-    for key in bkg_hists.keys():
-        # get the normalization
-        norm = 1./total_added_bkg_hists[key].Integral()
-        print "normalization is", str(norm)
-        hist0 = bkg_hists[key][0]
-        hist0_binwidth = hist0.GetXaxis().GetBinWidth(1)
-        hist0_binwidth_str = "{:.2f}".format(hist0_binwidth)
-        hist0_xtitle = hist0.GetXaxis().GetTitle()
-        hist0_ytitle = hist0.GetYaxis().GetTitle()
-        stack = rt.THStack(key,hists[key]+";"+hist0_xtitle+";"
-                +hist0_ytitle+" / "+hist0_binwidth_str)
-        accumulator = 0.
-        for idx, hist in enumerate(bkg_hists[key]):
-            print "before norm hist integral was", str(hist.Integral())
-            hist.SetFillColor(colors12[idx])
-            hist.SetFillStyle(1001)
-            hist.SetMarkerStyle()
-            hist.SetMarkerColor(1)
-            hist.SetLineColor(1)
-            hist.Scale(norm)
-            print "after norm hist integral was", str(hist.Integral())
-            accumulator += hist.Integral()
-            stack.Add(hist,"HIST")
-        print "total stack integral should be", str(accumulator)
-        print "the type of stack is", type(stack)
-        print "is instance of thstack?", isinstance(stack,rt.THStack)
-        #stack.Scale(1./added_bkg_hists[key].Integral())
-        old_bkg_hist_stacks[key] = stack
-
-
-
 # plot and output them
 for key in added_hct_hists.keys():
     canvas, unc, aratios = phase2tdrStyle.draw([added_hct_hists[key]],True,False,True)
@@ -228,28 +200,24 @@ for key in added_bkg_hists.keys():
     phase2tdrStyle.drawEnPu()
     canvas.Print(outdir+'/bkg_'+key+'.png')
 
-# plot hut and hct over bkg stacks
-for key in added_hct_hists.keys():
+# plot hut and hct over bkg stacks (common hists only!)
+# first we get a list of common keys between bkg_hist_titles and sig_hists:
+common_keys = bkg_hist_titles.viewkeys() & sig_hists.viewkeys()
+common_keys = list(common_keys)
+common_hist_titles = {x : bkg_hist_titles[x] for x in common_keys}
+# then loop over the keys in common_hist_titles to get and plot the hists
+for key in common_hist_titles.keys():
     canvas, unc, aratios = phase2tdrStyle.draw([bkg_hist_stacks[key],added_hct_hists[key]],
             True,False,False)
     phase2tdrStyle.drawCMS()
     phase2tdrStyle.drawEnPu()
     bkg_hist_legends[key].Draw()
     canvas.Print(outdir+'/'+key+'_stack_hct.png')
-for key in added_hut_hists.keys():
+for key in common_hist_titles.keys():
     canvas, unc, aratios = phase2tdrStyle.draw([bkg_hist_stacks[key],added_hut_hists[key]],
             True,False,False)
     phase2tdrStyle.drawCMS()
     phase2tdrStyle.drawEnPu()
     bkg_hist_legends[key].Draw()
     canvas.Print(outdir+'/'+key+'_stack_hut.png')
-
-# test out plotting the old bkg hist stacks
-for key in added_hut_hists.keys():
-    canvas, unc, aratios = phase2tdrStyle.draw([old_bkg_hist_stacks[key],added_hut_hists[key]],
-            True,False,False)
-    phase2tdrStyle.drawCMS()
-    phase2tdrStyle.drawEnPu()
-    bkg_hist_legends[key].Draw()
-    canvas.Print(outdir+'/old_'+key+'_stack_hut.png')
 

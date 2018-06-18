@@ -130,6 +130,25 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
     // cut flow hist
     TH1 *cutFlow_ee4j = addPlot(new TH1F("cutFlow_ee4j", "ee4j Cut Flow", 0, 0, 0), "Cut", "Events");
     cutFlow_ee4j->SetCanExtend(TH1::kAllAxes);
+
+    TH1 *cutFlow_eegte5j = addPlot(new TH1F("cutFlow_eegte5j", "eegte5j Cut Flow", 0, 0, 0), "Cut", "Events");
+    cutFlow_eegte5j->SetCanExtend(TH1::kAllAxes);
+
+    TH1 *cutFlow_em4j = addPlot(new TH1F("cutFlow_em4j", "em4j Cut Flow", 0, 0, 0), "Cut", "Events");
+    cutFlow_em4j->SetCanExtend(TH1::kAllAxes);
+
+    TH1 *cutFlow_emgte5j = addPlot(new TH1F("cutFlow_emgte5j", "emgte5j Cut Flow", 0, 0, 0), "Cut", "Events");
+    cutFlow_emgte5j->SetCanExtend(TH1::kAllAxes);
+
+    TH1 *cutFlow_mm4j = addPlot(new TH1F("cutFlow_mm4j", "mm4j Cut Flow", 0, 0, 0), "Cut", "Events");
+    cutFlow_mm4j->SetCanExtend(TH1::kAllAxes);
+
+    TH1 *cutFlow_mmgte5j = addPlot(new TH1F("cutFlow_mmgte5j", "mmgte5j Cut Flow", 0, 0, 0), "Cut", "Events");
+    cutFlow_mmgte5j->SetCanExtend(TH1::kAllAxes);
+
+    TH1 *cutFlow_lll = addPlot(new TH1F("cutFlow_lll", "lll Cut Flow", 0, 0, 0), "Cut", "Events");
+    cutFlow_lll->SetCanExtend(TH1::kAllAxes);
+
     TH1 *cutFlow_llt = addPlot(new TH1F("cutFlow_llt", "llt Cut Flow", 0, 0, 0), "Cut", "Events");
     cutFlow_llt->SetCanExtend(TH1::kAllAxes);
 
@@ -298,13 +317,103 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
                     cutFlow_ee4j->Fill("nBJets>=1,pT>25,eta<2.5",1);
                     if (nTaus == 0) {
                         cutFlow_ee4j->Fill("no taus",1);
-                        if (nElecs == 2 || naElecs == 2) {
+                        if ((nElecs == 2) ^ (naElecs == 2)) {
                             cutFlow_ee4j->Fill("exactly 2 SS elecs",1);
                             if (nJets == 4) {
                                 cutFlow_ee4j->Fill("exactly 4 jets",1);
                             }}}}}}
         cutFlow_ee4j->LabelsDeflate();
         cutFlow_ee4j->LabelsOption("u");
+
+        // Cut flow for eegte5j
+        cutFlow_eegte5j->Fill("total",1);
+        if (nElecPt >= 2) {
+            cutFlow_eegte5j->Fill("nElec>=2,pT>25,eta<2.4",1);
+            if (nJets >= 5) {
+                cutFlow_eegte5j->Fill("nJets>=5,pT>25,eta<2.5",1);
+                if (nBJets >= 1) {
+                    cutFlow_eegte5j->Fill("nBJets>=1,pT>25,eta<2.5",1);
+                    if (nTaus == 0) {
+                        cutFlow_eegte5j->Fill("no taus",1);
+                        if ((nElecs == 2) ^ (naElecs == 2)) {
+                            cutFlow_eegte5j->Fill("exactly 2 SS elecs",1);
+                            }}}}}
+        cutFlow_eegte5j->LabelsDeflate();
+        cutFlow_eegte5j->LabelsOption("u");
+
+        // Cut flow for em4j
+        cutFlow_em4j->Fill("total",1);
+        if (nElecPt >= 1 && nMuonPt >= 1) {
+            cutFlow_em4j->Fill("nElec>=1,nMuon>=1,pT>25,eta<2.4",1);
+            if (nJets >= 4) {
+                cutFlow_em4j->Fill("nJets>=4,pT>25,eta<2.5",1);
+                if (nBJets >= 1) {
+                    cutFlow_em4j->Fill("nBJets>=1,pT>25,eta<2.5",1);
+                    if (nTaus == 0) {
+                        cutFlow_em4j->Fill("no taus",1);
+                        if ((nElecs == 1 && nMuons == 1) ^ (naMuons == 1 && naElecs == 1)) {
+                            cutFlow_em4j->Fill("exactly 2 SS leptons",1);
+                            }}}}}
+        cutFlow_em4j->LabelsDeflate();
+        cutFlow_em4j->LabelsOption("u");
+        
+        // Cut flow for emgte5j
+        cutFlow_emgte5j->Fill("total",1);
+        if (nElecPt >= 1 && nMuonPt >= 1) {
+            cutFlow_emgte5j->Fill("nElec>=1,nMuon>=1,pT>25,eta<2.4",1);
+            if (nJets >= 5) {
+                cutFlow_emgte5j->Fill("nJets>=5,pT>25,eta<2.5",1);
+                if (nBJets >= 1) {
+                    cutFlow_emgte5j->Fill("nBJets>=1,pT>25,eta<2.5",1);
+                    if (nTaus == 0) {
+                        cutFlow_emgte5j->Fill("no taus",1);
+                        if ((nElecs == 1 && nMuons == 1) ^ (naMuons == 1 && naElecs == 1)) {
+                            cutFlow_emgte5j->Fill("exactly 2 SS leptons",1);
+                            }}}}}
+        cutFlow_emgte5j->LabelsDeflate();
+        cutFlow_emgte5j->LabelsOption("u");
+
+        // Cut flow for mm4j
+        cutFlow_mm4j->Fill("total",1);
+        if (nMuonPt >= 2) {
+            cutFlow_mm4j->Fill("nMuon>=2,pT>25,eta<2.4",1);
+            if (nJets >= 4) {
+                cutFlow_mm4j->Fill("nJets>=4,pT>25,eta<2.5",1);
+                if (nBJets >= 1) {
+                    cutFlow_mm4j->Fill("nBJets>=1,pT>25,eta<2.5",1);
+                    if (nTaus == 0) {
+                        cutFlow_mm4j->Fill("no taus",1);
+                        if ((nMuons == 2) ^ (naMuons == 2)) {
+                            cutFlow_mm4j->Fill("exactly 2 SS muons",1);
+                            }}}}}
+        cutFlow_mm4j->LabelsDeflate();
+        cutFlow_mm4j->LabelsOption("u");
+
+        // Cut flow for mmgte5j
+        cutFlow_mmgte5j->Fill("total",1);
+        if (nMuonPt >= 2) {
+            cutFlow_mmgte5j->Fill("nMuon>=2,pT>25,eta<2.4",1);
+            if (nJets >= 5) {
+                cutFlow_mmgte5j->Fill("nJets>=5,pT>25,eta<2.5",1);
+                if (nBJets >= 1) {
+                    cutFlow_mmgte5j->Fill("nBJets>=1,pT>25,eta<2.5",1);
+                    if (nTaus == 0) {
+                        cutFlow_mmgte5j->Fill("no taus",1);
+                        if ((nMuons == 2) ^ (naMuons == 2)) {
+                            cutFlow_mmgte5j->Fill("exactly 2 SS muons",1);
+                            }}}}}
+        cutFlow_mmgte5j->LabelsDeflate();
+        cutFlow_mmgte5j->LabelsOption("u");
+        
+        // Cut flow for lll
+        cutFlow_lll->Fill("total",1);
+        if (nElecPt >= 2 || nMuonPt >= 2) {
+            cutFlow_lll->Fill("nElec>=2,nMuon>=2,pT>25,eta<2.4||nMuon>=2,pT>25,eta<2.5",1);
+            if ((nJets >= 4 && nBJets >= 1) || (nJets >= 3 && nBJets >= 2)) {
+                cutFlow_lll->Fill("nJets & nBJets,pT>25,eta<2.5",1);
+                    if ((((nElecs + nMuons) == 2) && ((naMuons + naElecs) == 1)) ^ (((nElecs + nMuons) == 1) && ((naMuons + naElecs) == 2))) {
+                        cutFlow_lll->Fill("exactly 3 light leps",1);
+                        }}}
 
         // Cut flow for llt
         cutFlow_llt->Fill("total",1);
@@ -316,40 +425,42 @@ void preselection::analyze(size_t childid /* this info can be used for printouts
                     cutFlow_llt->Fill("nBJets>=1,pT>25,eta<2.5",1);
                     if (((nElecs + nMuons) == 2) ^ ((naMuons + naElecs) == 2)) {
                         cutFlow_llt->Fill("exactly 2 SS light leps",1);
-                        if (nTaus >= 1) {
+                        if (nTaus == 1) {
                             cutFlow_llt->Fill("exactly 1 tau",1);
                         }}}}}
 
+
         // Output channel counts and fills
-        if ((nElecs == 2 || naElecs == 2) && nTaus == 0 && nJets == 4 && nBJets >= 1) {
+        if (((nElecs == 2) ^ (naElecs == 2)) && nTaus == 0 && nJets == 4 && nBJets >= 1) {
            ee4jcounter++;
            ee4j->Fill(0.5);
            totals->Fill("ee4j", 1); }
-        if ((nElecs == 2 || naElecs == 2) && nTaus == 0 && nJets >= 5 && nBJets >= 1) {
+        if (((nElecs == 2) ^ (naElecs == 2)) && nTaus == 0 && nJets >= 5 && nBJets >= 1) {
             eegte5jcounter++;
             eegte5j->Fill(0.5);
             totals->Fill("ee#geq5j", 1); }
-        if (((nElecs + nMuons) == 2 || (naElecs + naMuons) == 2) && nJets == 4 && nBJets >= 1) {
+        if (((nElecs == 1 && nMuons == 1) ^ (naElecs == 1 && naMuons == 2)) && nJets == 4 && nBJets >= 1) {
             em4jcounter++;
             em4j->Fill(0.5);
             totals->Fill("e#mu4j", 1); }
-        if (((nElecs + nMuons) == 2 || (naElecs + naMuons) == 2) && nJets >= 5 && nBJets >= 1) {
+        if (((nElecs == 1 && nMuons == 1) ^ (naElecs == 1 && naMuons == 1)) && nJets >= 5 && nBJets >= 1) {
             emgte5jcounter++;
             emgte5j->Fill(0.5); 
             totals->Fill("e#mu#geq5j", 1);}
-        if ((nMuons == 2 || naMuons == 2) && nJets == 4 && nBJets >= 1) {
+        if (((nMuons == 2) ^ (naMuons == 2)) && nJets == 4 && nBJets >= 1) {
             mm4jcounter++;
             mm4j->Fill(0.5); 
             totals->Fill("#mu#mu4j", 1);}
-        if ((nMuons == 2 || naMuons == 2) && nJets >= 5 && nBJets >= 1) {
+        if (((nMuons == 2) ^ (naMuons == 2)) && nJets >= 5 && nBJets >= 1) {
             mmgte5jcounter++;
             mmgte5j->Fill(0.5); 
             totals->Fill("#mu#mu#geq5j", 1);}
-        if (((nMuons + nElecs + naMuons + naElecs) == 3) && ((nJets >= 3 && nBJets >= 2) || (nJets >= 4 && nBJets >= 1))) {
+        if ((((nMuons + nElecs == 2) && (naMuons + naElecs == 1)) ^ ((nMuons + nElecs == 1) && (naMuons + naElecs == 2))) 
+            && ((nJets >= 3 && nBJets >= 2) || (nJets >= 4 && nBJets >= 1))) {
             lllcounter++;
             lll->Fill(0.5); 
             totals->Fill("3l", 1);}
-        if (((nMuons + nElecs) == 2 || (naMuons + naElecs) == 2) && nTaus == 1 && nJets >= 4) {
+        if ((((nMuons + nElecs) == 2) ^ ((naMuons + naElecs) == 2)) && nTaus == 1 && nJets >= 4 && nBJets >= 1) {
             lltcounter++; 
             llt->Fill(0.5); 
             totals->Fill("2l1#tau", 1);}
